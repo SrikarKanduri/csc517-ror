@@ -1,0 +1,42 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      # Upgrade AWS CLI to the latest version
+      - pip3 install --upgrade awscli
+
+      # Install Ruby dependencies from the Gemfile.
+      - bundle install
+
+  pre_build:
+    commands:
+      # Set the SECRET_KEY_BASE environment variable for running tests
+      - export SECRET_KEY_BASE=$(rake secret)
+
+      # Run the tests using RSpec.
+      - rspec
+
+  post_build:
+    commands:
+      # Do not remove this statement. This command is required for AWS CodeStar projects.
+      # Update the AWS Partition, AWS Region, account ID and project ID in the project ARN on template-configuration.json file so AWS CloudFormation can tag project resources.
+      - sed -i.bak 's/\$PARTITION\$/'${PARTITION}'/g;s/\$AWS_REGION\$/'${AWS_REGION}'/g;s/\$ACCOUNT_ID\$/'${ACCOUNT_ID}'/g;s/\$PROJECT_ID\$/'${PROJECT_ID}'/g' template-configuration.json
+
+artifacts:
+  type: zip
+  files:
+    - 'appspec.yml'
+    - 'template.yml'
+    - 'scripts/*'
+    - 'config.ru'
+    - 'Gemfile'
+    - 'README.md'
+    - 'Rakefile'
+    - 'app/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'log/**/*'
+    - 'public/**/*'
+    - 'vendor/**/*'
+    - 'template-configuration.json'
