@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :customers
+  resources :agents
   root 'landing_page#index'
 
   get 'landing_page/index'
