@@ -9,6 +9,7 @@ phases:
       # Install Ruby dependencies from the Gemfile.
       - gem install mysql2 -v '0.5.2' --source 'https://rubygems.org/'
       - bundle install
+      - rake about
 
   pre_build:
     commands:
