@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  root 'landing_page#index'
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :customers
   resources :agents
-  root 'landing_page#index'
 
   get 'landing_page/index'
   get 'landing_page/welcome'
