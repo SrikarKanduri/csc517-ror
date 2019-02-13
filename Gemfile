@@ -31,6 +31,10 @@ gem 'jbuilder', '2.7.0'
 # gem 'bcrypt', '3.1.7'
 gem 'passenger', '5.2.3'
 gem 'therubyracer', '0.12.3'
+
+# Use Clearance for Rails authentication & authorization with email and password
+gem 'clearance'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
