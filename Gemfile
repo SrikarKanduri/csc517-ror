@@ -35,6 +35,9 @@ gem 'therubyracer', '0.12.3'
 # Use Clearance for Rails authentication & authorization with email and password
 gem 'clearance'
 
+# Use RailsAdmin for an Admin dashboard
+gem 'rails_admin'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
