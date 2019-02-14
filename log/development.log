@@ -4570,3 +4570,133 @@ Processing by LandingPageController#index as HTML
 Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-14 16:10:09 +0900
+Started GET "/" for 127.0.0.1 at 2019-02-14 16:10:13 +0900
+  [1m[35m (161.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (377.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (164.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.9ms)
+  [1m[35m (272.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4953ms (Views: 4945.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 4812ms (Views: 4811.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-14 16:10:40 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.8ms)
+  Rendered sessions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-14 16:10:43 +0900
+Processing by RailsAdmin::MainController#dashboard as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-14 16:10:43 +0900
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-14 16:10:47 +0900
+Processing by LandingPageController#welcome as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-14 16:10:47 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (4.8ms)
+  Rendered sessions/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 48ms (Views: 45.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-14 16:11:27 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (293.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/landing_page/welcome
+Completed 302 Found in 1326ms (ActiveRecord: 1164.6ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-14 16:11:28 +0900
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (299.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/welcome.html.erb within layouts/application
+  Rendered landing_page/welcome.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 353ms (Views: 40.1ms | ActiveRecord: 299.4ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-14 16:11:34 +0900
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (300.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (330.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mAgent Load (304.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[35m (358.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `customers`[0m
+  [1m[36mCustomer Load (311.0ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY `customers`.`id` DESC LIMIT 1[0m
+  [1m[35m (137.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `tours`[0m
+  [1m[36mTour Load (300.9ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` ORDER BY `tours`.`id` DESC LIMIT 1[0m
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (82.6ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.1ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (12.4ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (3.2ms)
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (6.8ms)
+Completed 200 OK in 4175ms (Views: 483.9ms | ActiveRecord: 3024.9ms)
+
+
+Started GET "/admin/agent?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-14 16:11:46 +0900
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"agent"}
+  [1m[36mUser Load (154.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mAgent Load (286.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (370.0ms)
+Completed 200 OK in 569ms (Views: 102.8ms | ActiveRecord: 441.2ms)
+
+
+Started GET "/admin/tour?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-14 16:12:12 +0900
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"tour"}
+  [1m[36mUser Load (304.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mTour Load (268.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` ORDER BY tours.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (306.2ms)
+Completed 200 OK in 648ms (Views: 59.9ms | ActiveRecord: 572.4ms)
+
+
+Started GET "/admin/customer?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-14 16:12:15 +0900
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"customer"}
+  [1m[36mUser Load (296.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mCustomer Load (492.0ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY customers.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (535.4ms)
+Completed 200 OK in 866ms (Views: 62.1ms | ActiveRecord: 788.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-14 16:13:26 +0900
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (261.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 310ms (Views: 44.1ms | ActiveRecord: 261.2ms)
+
+
