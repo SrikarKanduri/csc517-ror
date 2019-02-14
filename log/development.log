@@ -2670,3 +2670,874 @@ Processing by Clearance::SessionsController#new as HTML
 Completed 200 OK in 45ms (Views: 42.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-13 11:09:01 -0500
+  [1m[35m (105.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (108.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5145ms (Views: 5140.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-13 11:09:13 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 11:09:13 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-13 11:09:15 -0500
+Processing by LandingPageController#welcome as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-13 11:09:15 -0500
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/_form.html.erb (8.6ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 33ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-13 11:16:24 -0500
+  [1m[35m (109.8ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (108.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/landing_page/welcome
+Completed 302 Found in 639ms (ActiveRecord: 446.9ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-13 11:16:25 -0500
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (112.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '8bafd5adf6f62330d3faaac0e9a9453665418410' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/welcome.html.erb within layouts/application
+  Rendered landing_page/welcome.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 152ms (Views: 34.1ms | ActiveRecord: 112.7ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-13 11:16:36 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (108.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '8bafd5adf6f62330d3faaac0e9a9453665418410' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (108.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `agents`[0m
+  [1m[36mAgent Load (110.8ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY `agents`.`id` DESC LIMIT 1[0m
+  [1m[35m (109.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `customers`[0m
+  [1m[36mCustomer Load (109.2ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY `customers`.`id` DESC LIMIT 1[0m
+  [1m[35m (109.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (114.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (32.6ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (3.2ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (8.7ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (2.5ms)
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (3.5ms)
+Completed 200 OK in 1968ms (Views: 326.2ms | ActiveRecord: 1221.0ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-13 11:16:39 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (112.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '8bafd5adf6f62330d3faaac0e9a9453665418410' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (109.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `agents`[0m
+  [1m[36mAgent Load (105.9ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY `agents`.`id` DESC LIMIT 1[0m
+  [1m[35m (109.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `customers`[0m
+  [1m[36mCustomer Load (111.1ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY `customers`.`id` DESC LIMIT 1[0m
+  [1m[35m (111.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (119.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (12.9ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.9ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (8.7ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (2.4ms)
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (2.8ms)
+Completed 200 OK in 958ms (Views: 167.3ms | ActiveRecord: 778.4ms)
+
+
+Started GET "/admin/user?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:27:10 -0500
+  [1m[35m (110.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[36mUser Load (115.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '8bafd5adf6f62330d3faaac0e9a9453665418410' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (116.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (197.6ms)
+Completed 200 OK in 451ms (Views: 95.0ms | ActiveRecord: 344.0ms)
+
+
+Started GET "/admin/agent?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:27:20 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"agent"}
+  [1m[36mUser Load (114.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '8bafd5adf6f62330d3faaac0e9a9453665418410' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mAgent Load (116.0ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY agents.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (273.7ms)
+Completed 200 OK in 535ms (Views: 57.8ms | ActiveRecord: 461.0ms)
+
+
+Started GET "/admin/customer?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:27:23 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"customer"}
+  [1m[36mUser Load (111.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '8bafd5adf6f62330d3faaac0e9a9453665418410' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mCustomer Load (117.1ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY customers.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (268.5ms)
+Completed 200 OK in 401ms (Views: 50.7ms | ActiveRecord: 340.1ms)
+
+
+Started GET "/admin/user?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:27:25 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[36mUser Load (109.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '8bafd5adf6f62330d3faaac0e9a9453665418410' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (113.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (159.2ms)
+Completed 200 OK in 286ms (Views: 54.0ms | ActiveRecord: 222.9ms)
+
+
+Started GET "/admin/agent?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:27:27 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"agent"}
+  [1m[36mUser Load (112.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '8bafd5adf6f62330d3faaac0e9a9453665418410' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mAgent Load (119.0ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY agents.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (200.3ms)
+Completed 200 OK in 328ms (Views: 89.2ms | ActiveRecord: 231.3ms)
+
+
+Started GET "/admin/?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:27:30 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (111.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '8bafd5adf6f62330d3faaac0e9a9453665418410' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (110.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `agents`[0m
+  [1m[36mAgent Load (115.4ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY `agents`.`id` DESC LIMIT 1[0m
+  [1m[35m (111.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `customers`[0m
+  [1m[36mCustomer Load (112.7ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY `customers`.`id` DESC LIMIT 1[0m
+  [1m[35m (113.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (114.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax (12.8ms)
+Completed 200 OK in 829ms (Views: 30.9ms | ActiveRecord: 788.1ms)
+
+
+Started GET "/admin/?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:27:37 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (118.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '8bafd5adf6f62330d3faaac0e9a9453665418410' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (114.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `agents`[0m
+  [1m[36mAgent Load (115.8ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY `agents`.`id` DESC LIMIT 1[0m
+  [1m[35m (113.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `customers`[0m
+  [1m[36mCustomer Load (118.2ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY `customers`.`id` DESC LIMIT 1[0m
+  [1m[35m (116.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (116.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax (10.5ms)
+Completed 200 OK in 848ms (Views: 22.9ms | ActiveRecord: 813.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 11:27:40 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (144.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '8bafd5adf6f62330d3faaac0e9a9453665418410' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 181ms (Views: 33.4ms | ActiveRecord: 144.1ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-02-13 11:27:45 -0500
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (111.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '8bafd5adf6f62330d3faaac0e9a9453665418410' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (111.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (110.2ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = 'ae32c0e0fdf0055fdcf0b0b16e145c3ed912821b', `updated_at` = '2019-02-13 16:27:46' WHERE `users`.`id` = 1[0m
+  [1m[35m (116.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 457ms (ActiveRecord: 450.3ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-13 11:27:46 -0500
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/_form.html.erb (1.5ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 11:27:58 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-13 11:28:24 -0500
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/_form.html.erb (1.8ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-13 11:28:39 -0500
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"'admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (111.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '\'admin@test.org' LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/_form.html.erb (1.5ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application (3.3ms)
+Completed 401 Unauthorized in 138ms (Views: 24.4ms | ActiveRecord: 111.9ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-13 11:28:55 -0500
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"'admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (111.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '\'admin@test.org' LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/_form.html.erb (1.8ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 401 Unauthorized in 138ms (Views: 23.9ms | ActiveRecord: 111.4ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-13 11:29:24 -0500
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (128.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 204ms (ActiveRecord: 128.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 11:29:25 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (115.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'ae32c0e0fdf0055fdcf0b0b16e145c3ed912821b' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 138ms (Views: 20.5ms | ActiveRecord: 115.7ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-13 11:29:28 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (117.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'ae32c0e0fdf0055fdcf0b0b16e145c3ed912821b' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (112.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `agents`[0m
+  [1m[36mAgent Load (118.7ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY `agents`.`id` DESC LIMIT 1[0m
+  [1m[35m (111.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `customers`[0m
+  [1m[36mCustomer Load (112.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY `customers`.`id` DESC LIMIT 1[0m
+  [1m[35m (112.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (112.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (14.4ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (3.2ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (8.3ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (2.5ms)
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (3.5ms)
+Completed 200 OK in 956ms (Views: 148.2ms | ActiveRecord: 796.6ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-13 11:29:29 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (113.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'ae32c0e0fdf0055fdcf0b0b16e145c3ed912821b' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (110.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `agents`[0m
+  [1m[36mAgent Load (111.2ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY `agents`.`id` DESC LIMIT 1[0m
+  [1m[35m (112.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `customers`[0m
+  [1m[36mCustomer Load (115.1ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY `customers`.`id` DESC LIMIT 1[0m
+  [1m[35m (116.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (111.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (12.0ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.9ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (7.6ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (2.4ms)
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (2.9ms)
+Completed 200 OK in 919ms (Views: 118.4ms | ActiveRecord: 791.1ms)
+
+
+Started GET "/admin/?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:29:36 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (107.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'ae32c0e0fdf0055fdcf0b0b16e145c3ed912821b' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (109.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `agents`[0m
+  [1m[36mAgent Load (107.9ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY `agents`.`id` DESC LIMIT 1[0m
+  [1m[35m (108.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `customers`[0m
+  [1m[36mCustomer Load (112.1ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY `customers`.`id` DESC LIMIT 1[0m
+  [1m[35m (109.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (108.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax (9.5ms)
+Completed 200 OK in 1134ms (Views: 19.7ms | ActiveRecord: 1102.7ms)
+
+
+Started GET "/admin/?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:29:39 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (111.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'ae32c0e0fdf0055fdcf0b0b16e145c3ed912821b' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (114.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `agents`[0m
+  [1m[36mAgent Load (111.6ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY `agents`.`id` DESC LIMIT 1[0m
+  [1m[35m (112.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `customers`[0m
+  [1m[36mCustomer Load (108.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY `customers`.`id` DESC LIMIT 1[0m
+  [1m[35m (108.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (120.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax (11.0ms)
+Completed 200 OK in 821ms (Views: 23.7ms | ActiveRecord: 786.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 11:29:40 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (110.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'ae32c0e0fdf0055fdcf0b0b16e145c3ed912821b' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 135ms (Views: 22.2ms | ActiveRecord: 110.2ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-13 11:29:48 -0500
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (116.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'ae32c0e0fdf0055fdcf0b0b16e145c3ed912821b' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/welcome.html.erb within layouts/application
+  Rendered landing_page/welcome.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 144ms (Views: 22.4ms | ActiveRecord: 116.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 11:33:22 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (124.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'ae32c0e0fdf0055fdcf0b0b16e145c3ed912821b' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 157ms (Views: 28.8ms | ActiveRecord: 124.3ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-02-13 11:33:25 -0500
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (107.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'ae32c0e0fdf0055fdcf0b0b16e145c3ed912821b' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (112.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (109.7ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = '3a2ebbd449666e3d6a28451795488c7f8b4b29ae', `updated_at` = '2019-02-13 16:33:25' WHERE `users`.`id` = 1[0m
+  [1m[35m (122.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 458ms (ActiveRecord: 451.7ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-13 11:33:25 -0500
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/_form.html.erb (2.5ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/passwords/new" for 127.0.0.1 at 2019-02-13 11:33:29 -0500
+Processing by Clearance::PasswordsController#new as HTML
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/passwords/new.html.erb within layouts/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/passwords/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 11:33:31 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 11:33:35 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-13 11:33:35 -0500
+Processing by LandingPageController#welcome as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-13 11:33:35 -0500
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/_form.html.erb (1.3ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 11:33:37 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-13 11:33:38 -0500
+Processing by LandingPageController#welcome as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-13 11:33:39 -0500
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/_form.html.erb (1.7ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-13 11:33:40 -0500
+Processing by Clearance::UsersController#new as HTML
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/users/new.html.erb within layouts/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/users/_form.html.erb (1.4ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/users/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 11:40:39 -0500
+  [1m[35m (109.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-13 11:40:41 -0500
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/_form.html.erb (2.3ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-13 11:41:18 -0500
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (107.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/landing_page/welcome
+Completed 302 Found in 288ms (ActiveRecord: 222.8ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-13 11:41:19 -0500
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (108.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '3a2ebbd449666e3d6a28451795488c7f8b4b29ae' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/welcome.html.erb within layouts/application
+  Rendered landing_page/welcome.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 137ms (Views: 23.8ms | ActiveRecord: 108.7ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-13 11:41:22 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (107.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '3a2ebbd449666e3d6a28451795488c7f8b4b29ae' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (112.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `agents`[0m
+  [1m[36mAgent Load (113.8ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY `agents`.`id` DESC LIMIT 1[0m
+  [1m[35m (118.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `customers`[0m
+  [1m[36mCustomer Load (109.1ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY `customers`.`id` DESC LIMIT 1[0m
+  [1m[35m (112.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (109.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (11.4ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.6ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (7.4ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (2.6ms)
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (3.2ms)
+Completed 200 OK in 1210ms (Views: 190.4ms | ActiveRecord: 1009.0ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-13 11:41:23 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (110.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '3a2ebbd449666e3d6a28451795488c7f8b4b29ae' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (123.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `agents`[0m
+  [1m[36mAgent Load (108.0ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY `agents`.`id` DESC LIMIT 1[0m
+  [1m[35m (112.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `customers`[0m
+  [1m[36mCustomer Load (110.1ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY `customers`.`id` DESC LIMIT 1[0m
+  [1m[35m (108.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (115.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (12.5ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (3.7ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (8.5ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (2.4ms)
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (2.8ms)
+Completed 200 OK in 916ms (Views: 116.9ms | ActiveRecord: 788.0ms)
+
+
+Started GET "/admin/agent?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:42:25 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"agent"}
+  [1m[36mUser Load (109.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '3a2ebbd449666e3d6a28451795488c7f8b4b29ae' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mAgent Load (106.5ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY agents.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (247.4ms)
+Completed 200 OK in 505ms (Views: 40.5ms | ActiveRecord: 455.2ms)
+
+
+Started GET "/admin/agent/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:42:29 -0500
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"agent"}
+  [1m[36mUser Load (110.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '3a2ebbd449666e3d6a28451795488c7f8b4b29ae' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax
+  [1m[35m (107.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (113.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY users.id desc[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_filtering_select.html.haml (242.9ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_submit_buttons.html.haml (7.8ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (259.1ms)
+Completed 200 OK in 387ms (Views: 47.3ms | ActiveRecord: 332.0ms)
+
+
+Started GET "/admin/user/new?modal=true" for 127.0.0.1 at 2019-02-13 11:42:36 -0500
+Processing by RailsAdmin::MainController#new as JS
+  Parameters: {"modal"=>"true", "model_name"=>"user"}
+  [1m[36mUser Load (182.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '3a2ebbd449666e3d6a28451795488c7f8b4b29ae' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_boolean.html.haml (4.2ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (1.7ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.1ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.1ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.1ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.1ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.1ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_submit_buttons.html.haml (5.9ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml (31.7ms)
+Completed 200 OK in 225ms (Views: 33.1ms | ActiveRecord: 182.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 11:42:51 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (107.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '3a2ebbd449666e3d6a28451795488c7f8b4b29ae' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 135ms (Views: 25.7ms | ActiveRecord: 107.6ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-02-13 11:42:54 -0500
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (116.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '3a2ebbd449666e3d6a28451795488c7f8b4b29ae' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (109.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (108.8ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066', `updated_at` = '2019-02-13 16:42:54' WHERE `users`.`id` = 1[0m
+  [1m[35m (117.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 458ms (ActiveRecord: 451.4ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-13 11:42:54 -0500
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/_form.html.erb (1.5ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 71ms (Views: 69.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-02-13 11:42:58 -0500
+Processing by Clearance::UsersController#new as HTML
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/users/new.html.erb within layouts/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/users/_form.html.erb (1.3ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/users/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-13 11:43:33 -0500
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"agent1@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (109.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (114.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'agent1@test.org' LIMIT 1[0m
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'agent1@test.org' LIMIT 1[0m
+  [1m[36mUser Create (107.6ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`) VALUES ('2019-02-13 16:43:33', '2019-02-13 16:43:33', 'agent1@test.org', '$2a$10$rggyrebtghFsMRN4qgev5.un3BV9dbP4.IemQV.fNLPlCY2NOtFC2', '1509d1fb5a218c220baf1cdeec76b1ca8c2bd640')[0m
+  [1m[35m (116.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 521ms (ActiveRecord: 448.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 11:43:33 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (110.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1509d1fb5a218c220baf1cdeec76b1ca8c2bd640' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 136ms (Views: 23.0ms | ActiveRecord: 110.2ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-13 11:43:45 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (104.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1509d1fb5a218c220baf1cdeec76b1ca8c2bd640' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 109ms (ActiveRecord: 104.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 11:43:46 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (105.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1509d1fb5a218c220baf1cdeec76b1ca8c2bd640' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 132ms (Views: 23.9ms | ActiveRecord: 105.5ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-02-13 11:43:51 -0500
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (111.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1509d1fb5a218c220baf1cdeec76b1ca8c2bd640' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (108.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (113.4ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = '3075abcf17aa7457afcffeafa7fb3abecc3abe58', `updated_at` = '2019-02-13 16:43:52' WHERE `users`.`id` = 2[0m
+  [1m[35m (112.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 452ms (ActiveRecord: 446.2ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-13 11:43:52 -0500
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/_form.html.erb (2.1ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-13 11:43:57 -0500
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (108.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 173ms (ActiveRecord: 108.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 11:43:58 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (106.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 126ms (Views: 19.0ms | ActiveRecord: 106.0ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-13 11:44:04 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (117.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (105.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `agents`[0m
+  [1m[36mAgent Load (110.2ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY `agents`.`id` DESC LIMIT 1[0m
+  [1m[35m (108.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `customers`[0m
+  [1m[36mCustomer Load (140.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY `customers`.`id` DESC LIMIT 1[0m
+  [1m[35m (108.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (111.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (8.5ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.9ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (8.5ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (2.7ms)
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (2.9ms)
+Completed 200 OK in 1025ms (Views: 104.0ms | ActiveRecord: 910.9ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-13 11:44:05 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (112.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (108.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `agents`[0m
+  [1m[36mAgent Load (108.7ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY `agents`.`id` DESC LIMIT 1[0m
+  [1m[35m (110.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `customers`[0m
+  [1m[36mCustomer Load (106.9ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY `customers`.`id` DESC LIMIT 1[0m
+  [1m[35m (111.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (107.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (11.8ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.5ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (6.3ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (2.6ms)
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (2.8ms)
+Completed 200 OK in 891ms (Views: 115.5ms | ActiveRecord: 764.8ms)
+
+
+Started GET "/admin/user?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:44:21 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[36mUser Load (112.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (111.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (151.2ms)
+Completed 200 OK in 282ms (Views: 49.3ms | ActiveRecord: 223.3ms)
+
+
+Started GET "/admin/user/1?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:44:35 -0500
+Processing by RailsAdmin::MainController#show as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user", "id"=>"1"}
+  [1m[36mUser Load (116.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (111.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/pjax
+  [1m[36mAgent Load (105.3ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` WHERE `agents`.`user_id` = 1 LIMIT 1[0m
+  [1m[36mCustomer Load (112.8ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`user_id` = 1 LIMIT 1[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/pjax (231.0ms)
+Completed 200 OK in 483ms (Views: 25.6ms | ActiveRecord: 446.3ms)
+
+
+Started GET "/admin/customer?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:45:33 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"customer"}
+  [1m[36mUser Load (107.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mCustomer Load (109.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY customers.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (136.1ms)
+Completed 200 OK in 262ms (Views: 36.0ms | ActiveRecord: 217.4ms)
+
+
+Started GET "/admin/customer?model_name=customer&utf8=%E2%9C%93&query=&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:45:37 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"customer", "utf8"=>"✓", "query"=>"", "_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (126.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mCustomer Load (111.0ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY customers.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (137.8ms)
+Completed 200 OK in 281ms (Views: 35.3ms | ActiveRecord: 237.2ms)
+
+
+Started GET "/admin/agent?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:45:38 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"agent"}
+  [1m[36mUser Load (110.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mAgent Load (107.4ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY agents.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (134.4ms)
+Completed 200 OK in 263ms (Views: 36.4ms | ActiveRecord: 218.0ms)
+
+
+Started GET "/admin/agent?model_name=agent&utf8=%E2%9C%93&query=&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:45:39 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"agent", "utf8"=>"✓", "query"=>"", "_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (110.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mAgent Load (113.3ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY agents.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (140.7ms)
+Completed 200 OK in 269ms (Views: 36.5ms | ActiveRecord: 223.7ms)
+
+
+Started GET "/admin/?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:51:29 -0500
+  [1m[35m (111.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by RailsAdmin::MainController#dashboard as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (109.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (110.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `agents`[0m
+  [1m[36mAgent Load (109.4ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY `agents`.`id` DESC LIMIT 1[0m
+  [1m[35m (107.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `customers`[0m
+  [1m[36mCustomer Load (112.8ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY `customers`.`id` DESC LIMIT 1[0m
+Started GET "/admin/" for 127.0.0.1 at 2019-02-13 11:51:31 -0500
+  [1m[35m (179.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (109.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax (8.7ms)
+Completed 200 OK in 1210ms (Views: 18.5ms | ActiveRecord: 1179.7ms)
+
+
+  [1m[35m (108.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (109.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (106.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `agents`[0m
+  [1m[36mAgent Load (108.9ms)[0m  [1m[34mSELECT  `agents`.* FROM `agents` ORDER BY `agents`.`id` DESC LIMIT 1[0m
+  [1m[35m (109.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `customers`[0m
+  [1m[36mCustomer Load (117.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` ORDER BY `customers`.`id` DESC LIMIT 1[0m
+  [1m[35m (115.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (110.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (13.5ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.5ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (7.5ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (3.0ms)
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (0.8ms)
+Completed 200 OK in 1321ms (Views: 195.9ms | ActiveRecord: 1111.8ms)
+
+
+Started GET "/admin/user?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:51:35 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[36mUser Load (109.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (114.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (153.5ms)
+Completed 200 OK in 279ms (Views: 48.1ms | ActiveRecord: 224.2ms)
+
+
+Started GET "/admin/user/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-13 11:51:41 -0500
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[36mUser Load (108.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_boolean.html.haml (2.1ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (1.4ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.2ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.1ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.1ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.1ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.1ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_submit_buttons.html.haml (8.7ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (81.5ms)
+Completed 200 OK in 208ms (Views: 91.6ms | ActiveRecord: 108.3ms)
+
+
+  [1m[35m (115.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (109.8ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (109.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddRoleToUsers (20190213185216)
+  [1m[35m (148.9ms)[0m  [1m[35mALTER TABLE `users` ADD `role` varchar(255)[0m
+  [1m[35m (105.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (110.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213185216')[0m
+  [1m[35m (114.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (108.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (110.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (108.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (106.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (109.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (110.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (109.8ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (110.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateTours (20190213185921)
+  [1m[35m (128.9ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[35m (112.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (109.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213185921')[0m
+  [1m[35m (121.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (109.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (120.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (108.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (112.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (112.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2019-02-13 20:39:29 -0500
+  [1m[35m (117.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (115.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (114.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 1179ms (Views: 703.0ms | ActiveRecord: 467.5ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-13 20:39:35 -0500
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (110.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 243ms (ActiveRecord: 224.8ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-13 20:39:35 -0500
+Processing by Clearance::SessionsController#new as HTML
+  [1m[36mUser Load (108.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/_form.html.erb (9.0ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/clearance-1.16.1/app/views/sessions/new.html.erb within layouts/application (11.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 145ms (Views: 35.1ms | ActiveRecord: 108.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 20:39:37 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (110.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '383dbf3f4de1182ed8b3c271881b2490966fd066' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 136ms (Views: 23.6ms | ActiveRecord: 110.6ms)
+
+
