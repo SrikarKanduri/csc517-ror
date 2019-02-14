@@ -12,8 +12,6 @@ class User < ApplicationRecord
   def role_symbols
     [role.to_sym]
   end
-  validates :email, uniqueness: true
 
-  # make every User (Admin, Agent, Customer) have a name
-  validates :name, presence: true
+  validates :email, uniqueness: true
 end
