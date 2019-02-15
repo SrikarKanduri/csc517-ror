@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_13_185921) do
+ActiveRecord::Schema.define(version: 2019_02_15_075446) do
 
   create_table "agents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -26,11 +26,43 @@ ActiveRecord::Schema.define(version: 2019_02_13_185921) do
     t.index ["user_id"], name: "index_customers_on_user_id"
   end
 
+  create_table "tour_locations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "country"
+    t.string "state_or_province"
+    t.boolean "starting_point"
+    t.bigint "tour_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tour_id"], name: "index_tour_locations_on_tour_id"
+  end
+
   create_table "tours", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "price", precision: 8, scale: 2
+    t.datetime "booking_deadline"
+    t.date "from_date"
+    t.date "to_date"
+    t.integer "total_seats"
+    t.string "op_email", limit: 128
+    t.string "op_phone", limit: 128
+    t.string "status", limit: 128
+  end
+
+  create_table "user_tours", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "tour_id"
+    t.boolean "booked"
+    t.integer "num_booked"
+    t.boolean "wait_listed"
+    t.integer "num_wait_listed"
+    t.boolean "bookmarked"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tour_id"], name: "index_user_tours_on_tour_id"
+    t.index ["user_id"], name: "index_user_tours_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -50,4 +82,6 @@ ActiveRecord::Schema.define(version: 2019_02_13_185921) do
 
   add_foreign_key "agents", "users", name: "agents_ibfk_1"
   add_foreign_key "customers", "users", name: "customers_ibfk_1"
+  add_foreign_key "user_tours", "tours"
+  add_foreign_key "user_tours", "users"
 end

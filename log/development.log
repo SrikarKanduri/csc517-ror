@@ -4700,3 +4700,87 @@ Processing by LandingPageController#index as HTML
 Completed 200 OK in 310ms (Views: 44.1ms | ActiveRecord: 261.2ms)
 
 
+  [1m[35m (301.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (304.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (139.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (305.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (307.6ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (307.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateTours (20190213185921)
+  [1m[35m (299.1ms)[0m  [1m[35mDROP TABLE `tours`[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (302.1ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20190213185921'[0m
+  [1m[35m (307.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (306.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (299.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (304.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (302.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (306.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (307.0ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (304.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddRoleToUsers (20190213185216)
+  [1m[35m (212.4ms)[0m  [1m[35mALTER TABLE `users` DROP COLUMN `role`[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (400.6ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20190213185216'[0m
+  [1m[35m (306.9ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (309.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (311.3ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (310.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddRoleToUsers (20190213185216)
+  [1m[35m (303.3ms)[0m  [1m[35mALTER TABLE `users` ADD `role` varchar(255)[0m
+  [1m[35m (309.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (302.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213185216')[0m
+  [1m[35m (306.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTours (20190213185921)
+  [1m[35m (310.9ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[35m (302.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (306.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213185921')[0m
+  [1m[35m (310.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddFieldsToTour (20190214080039)
+  [1m[35m (303.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (303.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (306.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (139.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (296.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (304.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (474.5ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (267.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddFieldsToTour (20190214080039)
+  [1m[35m (342.4ms)[0m  [1m[35mALTER TABLE `tours` ADD `price` decimal(8,2)[0m
+  [1m[35m (199.3ms)[0m  [1m[35mALTER TABLE `tours` ADD `booking_deadline` datetime[0m
+  [1m[35m (159.5ms)[0m  [1m[35mALTER TABLE `tours` ADD `from_date` date[0m
+  [1m[35m (181.1ms)[0m  [1m[35mALTER TABLE `tours` ADD `to_date` date[0m
+  [1m[35m (379.8ms)[0m  [1m[35mALTER TABLE `tours` ADD `total_seats` int[0m
+  [1m[35m (159.7ms)[0m  [1m[35mALTER TABLE `tours` ADD `op_email` varchar(128)[0m
+  [1m[35m (455.5ms)[0m  [1m[35mALTER TABLE `tours` ADD `op_phone` varchar(128)[0m
+  [1m[35m (304.4ms)[0m  [1m[35mALTER TABLE `tours` ADD `status` varchar(128)[0m
+  [1m[35m (140.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (164.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190214080039')[0m
+  [1m[35m (306.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTourLocations (20190215063503)
+  [1m[35m (304.7ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`))[0m
+  [1m[35m (306.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (140.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190215063503')[0m
+  [1m[35m (165.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (302.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (302.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (303.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (306.9ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (139.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (151.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (307.1ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (304.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUserTours (20190215075446)
+  [1m[35m (308.8ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_user_id`  (`user_id`),  INDEX `index_user_tours_on_tour_id`  (`tour_id`), CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+)[0m
+  [1m[35m (305.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (308.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190215075446')[0m
+  [1m[35m (304.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (308.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (305.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (303.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (307.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (305.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m

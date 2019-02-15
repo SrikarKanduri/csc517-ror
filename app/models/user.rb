@@ -1,9 +1,8 @@
 class User < ApplicationRecord
   include Clearance::User
 
-  # has_one :agent
-  # has_one :customer
-  has_many :tours
+  has_many :user_tours
+  has_many :tours, through: :user_tours
 
   # User can have only one role
   ROLES = %w[admin agent customer].freeze
