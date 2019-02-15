@@ -12,20 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_02_15_085335) do
 
-  create_table "agents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_agents_on_user_id"
-  end
-
-  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_customers_on_user_id"
-  end
-
   create_table "tour_locations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "country"
     t.string "state_or_province"
@@ -80,8 +66,6 @@ ActiveRecord::Schema.define(version: 2019_02_15_085335) do
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
-  add_foreign_key "agents", "users", name: "agents_ibfk_1"
-  add_foreign_key "customers", "users", name: "customers_ibfk_1"
   add_foreign_key "user_tours", "tours"
   add_foreign_key "user_tours", "users"
 end
