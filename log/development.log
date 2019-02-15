@@ -4842,3 +4842,20 @@ Migrating to ChangeTourStatusColumn (20190215085335)
   [1m[35m (304.7ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (306.9ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
   [1m[35m (300.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (309.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (306.7ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (304.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateAgents (20190213101455)
+  [1m[35m (283.6ms)[0m  [1m[35mDROP TABLE `agents`[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (307.5ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20190213101455'[0m
+  [1m[35m (303.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (140.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (446.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (308.9ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (302.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateCustomers (20190213101543)
+  [1m[35m (300.0ms)[0m  [1m[35mDROP TABLE `customers`[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (304.2ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20190213101543'[0m
+  [1m[35m (304.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (306.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (300.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m

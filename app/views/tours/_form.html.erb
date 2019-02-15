@@ -1,0 +1,82 @@
+<%= form_with(model: tour, local: true) do |form| %>
+  <% if tour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tour.errors.count, "error") %> prohibited this tour from being saved:</h2>
+
+      <ul>
+      <% tour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.text_field :id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.text_field :created_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :updated_at %>
+    <%= form.text_field :updated_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :booking_deadline %>
+    <%= form.text_field :booking_deadline %>
+  </div>
+
+  <div class="field">
+    <%= form.label :from_date %>
+    <%= form.text_field :from_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :to_date %>
+    <%= form.text_field :to_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_seats %>
+    <%= form.text_field :total_seats %>
+  </div>
+
+  <div class="field">
+    <%= form.label :op_email %>
+    <%= form.text_field :op_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :op_phone %>
+    <%= form.text_field :op_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
