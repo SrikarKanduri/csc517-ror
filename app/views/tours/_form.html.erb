@@ -11,10 +11,6 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :id %>
-    <%= form.text_field :id %>
-  </div>
 
   <div class="field">
     <%= form.label :name %>
@@ -23,22 +19,12 @@
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :created_at %>
-    <%= form.text_field :created_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :updated_at %>
-    <%= form.text_field :updated_at %>
+    <%= form.text_area :description, rows:"5" %>
   </div>
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, placeholder:"$" %>
   </div>
 
   <div class="field">
@@ -47,27 +33,27 @@
   </div>
 
   <div class="field">
-    <%= form.label :from_date %>
+    <%= form.label :from_date, "From Date" %>
     <%= form.text_field :from_date %>
   </div>
 
   <div class="field">
-    <%= form.label :to_date %>
+    <%= form.label :to_date, "To Date" %>
     <%= form.text_field :to_date %>
   </div>
 
   <div class="field">
-    <%= form.label :total_seats %>
+    <%= form.label :total_seats, "Total Seats" %>
     <%= form.text_field :total_seats %>
   </div>
 
   <div class="field">
-    <%= form.label :op_email %>
+    <%= form.label :op_email, "Operator Email" %>
     <%= form.text_field :op_email %>
   </div>
 
   <div class="field">
-    <%= form.label :op_phone %>
+    <%= form.label :op_phone, "Operator Phone" %>
     <%= form.text_field :op_phone %>
   </div>
 
@@ -76,7 +62,7 @@
     <%= form.text_field :status %>
   </div>
 
-  <div class="actions">
+  <div class="actions create">
     <%= form.submit %>
   </div>
 <% end %>

@@ -1,0 +1,44 @@
+
+/*Custom stylesheet for views*/
+
+
+html, body {
+    height: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+label, textarea {
+    vertical-align:middle;
+}
+
+.field label {
+    width: 150px;
+    display: inline-block;
+    text-align: right;
+    padding: 15px 15px 15px;
+}
+
+.field textarea {
+    width: 250px;
+}
+
+.field input[type=text] {
+    width: 250px;
+    height: 25px;
+}
+
+.page-title {
+    padding-left: 30px;
+}
+
+.back-link {
+    padding: 30px;
+}
+
+.create {
+    padding: 30px;
+}
+
