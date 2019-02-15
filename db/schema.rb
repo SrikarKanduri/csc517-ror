@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_15_075446) do
+ActiveRecord::Schema.define(version: 2019_02_15_085335) do
 
   create_table "agents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2019_02_15_075446) do
     t.integer "total_seats"
     t.string "op_email", limit: 128
     t.string "op_phone", limit: 128
-    t.string "status", limit: 128
+    t.string "status", limit: 9
   end
 
   create_table "user_tours", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

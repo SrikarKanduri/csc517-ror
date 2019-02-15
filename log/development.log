@@ -4784,3 +4784,61 @@ FOREIGN KEY (`tour_id`)
   [1m[35m (303.7ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (307.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
   [1m[35m (305.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (306.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (139.6ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (306.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to RemoveStatusFromTours (20190215083212)
+  [1m[35m (170.2ms)[0m  [1m[35mALTER TABLE `tours` DROP COLUMN `status`[0m
+  [1m[35m (154.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (307.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190215083212')[0m
+  [1m[35m (200.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (275.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (302.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (306.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (307.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (138.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (442.8ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (460.9ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (310.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddStatusToTours (20190215083456)
+  [1m[35m (300.3ms)[0m  [1m[35mALTER TABLE `tours` ADD `status` int[0m
+  [1m[35m (301.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (167.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190215083456')[0m
+  [1m[35m (449.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (305.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (300.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (310.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (198.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (237.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (305.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (308.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (301.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (306.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (139.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (138.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (306.7ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (139.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddStatusToTours (20190215083456)
+  [1m[35m (254.1ms)[0m  [1m[35mALTER TABLE `tours` DROP COLUMN `status`[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (371.1ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20190215083456'[0m
+Migrating to RemoveStatusFromTours (20190215083212)
+  [1m[35m (303.6ms)[0m  [1m[35mALTER TABLE `tours` ADD `status` varchar(255)[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (305.1ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20190215083212'[0m
+  [1m[35m (308.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (306.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (173.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (302.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (297.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (162.3ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (160.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTourStatusColumn (20190215085335)
+  [1m[35m (323.8ms)[0m  [1m[35m      ALTER TABLE tours MODIFY status enum('In Future', 'Completed', 'Cancelled');
+[0m
+  [1m[35m (298.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (304.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190215085335')[0m
+  [1m[35m (310.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (300.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (291.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (304.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (306.9ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (300.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
