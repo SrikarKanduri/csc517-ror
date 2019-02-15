@@ -7,3 +7,20 @@
   <%= form.label :password %>
   <%= form.password_field :password %>
 </div>
+
+<div class="first-name">
+  <%= form.label :first_name %>
+  <%= form.text_field :first_name %>
+</div>
+
+<div class="last-name">
+  <%= form.label :last_name %>
+  <%= form.text_field :last_name %>
+</div>
+
+<div class="role-dropdown">
+  <p>
+    <%= form.label :role %><br />
+    <%= form.collection_select :role, User::ROLES.select { |role|  role != "admin"  }, :to_s, :titleize %>
+  </p>
+</div>

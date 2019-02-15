@@ -18,7 +18,7 @@ if !User.exists?(email: "admin@test.org")
   admin_file = IO.readlines("admin_secrets.txt")
   email = admin_file[0]
   passwd = admin_file[1]
-  User.create!([email: email, password: passwd, role: "admin"])
+  User.create!([email: email.to_s, password: passwd.to_s, role: "admin"])
 end
 
 # Create 5 Agents
