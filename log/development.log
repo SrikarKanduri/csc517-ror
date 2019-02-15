@@ -5445,3 +5445,1728 @@ Processing by ToursController#new as HTML
 Completed 200 OK in 101ms (Views: 95.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-15 11:18:17 -0500
+  [1m[35m (107.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (116.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3466ms (Views: 3461.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-15 11:18:29 -0500
+Processing by LandingPageController#welcome as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 11:18:29 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (9.5ms)
+  Rendered sessions/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 11:18:31 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 11:18:32 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 11:18:33 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 11:18:34 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.7ms)
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-15 11:18:38 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (110.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/landing_page/welcome
+Completed 302 Found in 555ms (ActiveRecord: 463.5ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-15 11:18:39 -0500
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (113.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/welcome.html.erb within layouts/application
+  Rendered landing_page/welcome.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 133ms (Views: 16.9ms | ActiveRecord: 113.5ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-15 11:18:41 -0500
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (118.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/welcome.html.erb within layouts/application
+  Rendered landing_page/welcome.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 139ms (Views: 18.3ms | ActiveRecord: 118.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 11:18:42 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (109.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 128ms (Views: 17.9ms | ActiveRecord: 109.1ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-15 11:18:43 -0500
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (115.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/welcome.html.erb within layouts/application
+  Rendered landing_page/welcome.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 137ms (Views: 19.8ms | ActiveRecord: 115.4ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 11:18:46 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (109.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (110.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `tours`[0m
+  [1m[36mTour Load (114.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` ORDER BY `tours`.`id` DESC LIMIT 1[0m
+  [1m[35m (111.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `tour_locations`[0m
+  [1m[36mTourLocation Load (117.6ms)[0m  [1m[34mSELECT  `tour_locations`.* FROM `tour_locations` ORDER BY `tour_locations`.`id` DESC LIMIT 1[0m
+  [1m[35m (118.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (112.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[35m (110.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `user_tours`[0m
+  [1m[36mUserTour Load (111.1ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` ORDER BY `user_tours`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (26.8ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.6ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (6.8ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (2.9ms)
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (3.0ms)
+Completed 200 OK in 2537ms (Views: 354.0ms | ActiveRecord: 1692.3ms)
+
+
+Started GET "/admin/user?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-15 11:18:58 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[36mUser Load (110.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (117.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (181.3ms)
+Completed 200 OK in 427ms (Views: 76.8ms | ActiveRecord: 338.0ms)
+
+
+Started GET "/admin/tour_location?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-15 11:19:03 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"tour_location"}
+  [1m[36mUser Load (110.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mTourLocation Load (107.5ms)[0m  [1m[34mSELECT  `tour_locations`.* FROM `tour_locations` ORDER BY tour_locations.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (259.2ms)
+Completed 200 OK in 511ms (Views: 45.5ms | ActiveRecord: 449.6ms)
+
+
+Started GET "/admin/tour?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-15 11:19:04 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"tour"}
+  [1m[36mUser Load (110.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mTour Load (109.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` ORDER BY tours.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (248.4ms)
+Completed 200 OK in 380ms (Views: 35.3ms | ActiveRecord: 331.0ms)
+
+
+  [1m[35m (1.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20190213061214)
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1), `email` varchar(255) NOT NULL, `encrypted_password` varchar(128) NOT NULL, `confirmation_token` varchar(128), `remember_token` varchar(128) NOT NULL)[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE  INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE  INDEX `index_users_on_remember_token`  ON `users` (`remember_token`) [0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213061214')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNameToUser (20190213100511)
+  [1m[35m (7.9ms)[0m  [1m[35mALTER TABLE `users` ADD `first_name` varchar(128)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mALTER TABLE `users` ADD `last_name` varchar(128)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213100511')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRoleToUsers (20190213185216)
+  [1m[35m (6.1ms)[0m  [1m[35mALTER TABLE `users` ADD `role` varchar(255)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213185216')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTours (20190213185921)
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213185921')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddFieldsToTour (20190214080039)
+  [1m[35m (5.2ms)[0m  [1m[35mALTER TABLE `tours` ADD `price` decimal(8,2)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mALTER TABLE `tours` ADD `booking_deadline` datetime[0m
+  [1m[35m (4.7ms)[0m  [1m[35mALTER TABLE `tours` ADD `from_date` date[0m
+  [1m[35m (4.7ms)[0m  [1m[35mALTER TABLE `tours` ADD `to_date` date[0m
+  [1m[35m (6.7ms)[0m  [1m[35mALTER TABLE `tours` ADD `total_seats` int[0m
+  [1m[35m (5.1ms)[0m  [1m[35mALTER TABLE `tours` ADD `op_email` varchar(128)[0m
+  [1m[35m (5.8ms)[0m  [1m[35mALTER TABLE `tours` ADD `op_phone` varchar(128)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mALTER TABLE `tours` ADD `status` varchar(128)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190214080039')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTourLocations (20190215063503)
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`))[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190215063503')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUserTours (20190215075446)
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_user_id`  (`user_id`),  INDEX `index_user_tours_on_tour_id`  (`tour_id`), CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190215075446')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeTourStatusColumn (20190215085335)
+  [1m[35m (23.0ms)[0m  [1m[35m      ALTER TABLE tours MODIFY status enum('In Future', 'Completed', 'Cancelled');
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190215085335')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-02-15 16:40:46', '2019-02-15 16:40:46')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/admin/tour" for 127.0.0.1 at 2019-02-15 11:41:42 -0500
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"tour"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 65ms (ActiveRecord: 13.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 11:41:42 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 508ms (Views: 504.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 11:41:47 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (6.1ms)
+  Rendered sessions/new.html.erb within layouts/application (8.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-15 11:41:51 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.3ms)
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 31ms (Views: 27.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 11:41:57 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 11:41:57 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 17:40:48', '2019-02-15 17:40:48', 'admin@test.org', '$2a$10$F0kamTSgu6Y8acyVM0Zl9u3yDzlDsdpjciQkbkaB363eylFk6QFkG', '9c0b666764e55754003d336eae2d9297291417e4', 'admin')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (6.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 1[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 19:14:33', '2019-02-15 19:14:33', 'admin@test.org', '$2a$10$b508D8r/Fh7ZDPJC4V3qweQSzzKQO61hKhtnQXXF.zA4b.NsiDiDe', 'a8f02709ae994aaa8c15c3fddf875f06b5706ec4', 'admin')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ikekutch@wyman.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:14:34', '2019-02-15 19:14:34', 'ikekutch@wyman.biz', '$2a$10$4dutNLv7YLuPk2538Xjxc./435TGqAU7kbOnJ/vKa.WJADSOEaLZ6', 'eb438d04b432bc36e997a537079f2d47abb2f5b1', 'Esperanza', 'Conroy', 'agent')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'darlene@keler.name' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:14:34', '2019-02-15 19:14:34', 'darlene@keler.name', '$2a$10$4vFNiuoE1PWVXewsIpNep.uRrIwcb7AHrkxXUCPYK/eB7zR0GwTVK', '409093826a0fc90ffb4ca3222ed4efe6a1d9d32d', 'Kenyatta', 'Cassin', 'agent')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'porfiriobartoletti@strosinmonahan.net' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:14:34', '2019-02-15 19:14:34', 'porfiriobartoletti@strosinmonahan.net', '$2a$10$ZER59Jciy4zO84bBYZOQ5OBLCZdLIIamsGyCsTBtzANWskkT7WbAa', '1390f9bcfbba7140572b982c7aa2a730e3211b73', 'Linwood', 'Shields', 'agent')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'leonardsatterfield@thiel.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:14:34', '2019-02-15 19:14:34', 'leonardsatterfield@thiel.biz', '$2a$10$QU5K74yf7VrI8iA3VNs7w.x5FEAymOZrWWh7j3KtRN4wZRScaZs/S', 'a5256d621caae970c7f592cfda39bfac85f49cb6', 'Lissa', 'Heathcote', 'agent')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'quintondamore@balistreri.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:14:34', '2019-02-15 19:14:34', 'quintondamore@balistreri.com', '$2a$10$yyIrDM1/r1Hbtbb2luwEXOO2VLLKQixa63WNpGpr.R7vVpWEoHWTu', '30b53c2f67bd163962a4fb4518c74d1dfcaf7859', 'Zachery', 'Bechtelar', 'agent')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'alexkemmer@handtorphy.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:14:34', '2019-02-15 19:14:34', 'alexkemmer@handtorphy.biz', '$2a$10$OUS1CNnvThyCBoRrz2f4WOYExKrmRMKvP/oJ7z76Ynlm101zksyv2', '075b893f2e2087119461c151146da86dd72c67f8', 'Ehtel', 'Mraz', 'customer')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'numberskuvalis@connelly.io' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:14:34', '2019-02-15 19:14:34', 'numberskuvalis@connelly.io', '$2a$10$gbM6AhMkCo105Z/Lgpx3ceMN6ZAuZpjq0AcTQ8g9lPaqYcmKQpdV.', 'ef78d290a40c2479b83add95ccb3fd44cc891959', 'Gilberto', 'Franecki', 'customer')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'johnson@rosenbaum.biz' LIMIT 1[0m
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:14:34', '2019-02-15 19:14:34', 'johnson@rosenbaum.biz', '$2a$10$CxWdZyrjmUNf8TkX7DD1oeKrL/7.e/FB3kRnHz42B4eURWY.ehYzW', '05f39c1d0f1b0b49f50d5bbb0de86fae2191a450', 'Rudolf', 'Schmitt', 'customer')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'fidela@ruelquitzon.name' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:14:34', '2019-02-15 19:14:34', 'fidela@ruelquitzon.name', '$2a$10$NXAQtPU7M4d6.hJ675zTBedJuna9s0nlbMwbSai7uCqKF0GkWbjTG', '04a0048e3e4d54093ca394252e0d85dd06120587', 'Domingo', 'Satterfield', 'customer')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'windy@wolff.info' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:14:34', '2019-02-15 19:14:34', 'windy@wolff.info', '$2a$10$Jh.dSh/VImBQYAmgqK6e7uFa98Bx81PLidQ21Zu8JvOHtfAhiTH9q', '667fb35e036f184e810f12c9307006fde312eae2', 'Gary', 'DuBuque', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 2[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 3[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 4[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 5[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 6[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 7[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 8[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 9[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 10[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 11[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 12[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 19:16:03', '2019-02-15 19:16:03', 'admin@test.org', '$2a$10$yLEc6.qmDZjvFz/4qGSGcu3YwFirvWDbTxXFSXL423vU2dEI/xx56', '3b103fc7c42fc6f41087712f48ecaec49e5d7681', 'admin')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'damonbailey@dickensbecker.info' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:16:04', '2019-02-15 19:16:04', 'damonbailey@dickensbecker.info', '$2a$10$ucLrqxVRwPPc9RI0pWEgouviJui9sbEMrN93ohbp1J7Dp5rNmmBXm', 'c955bf0b0f49ce0339f335e4793fa70e44b602cd', 'Forest', 'Murazik', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'delbertharvey@beier.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:16:04', '2019-02-15 19:16:04', 'delbertharvey@beier.io', '$2a$10$MqX0cde2uBaNac6WgxDcS.3WbPNkOTK1MB4dBAxHh0mOrU7xwSaqS', '1d96fa753817aed245be00ead36d0bdb528148fe', 'Shannon', 'Romaguera', 'agent')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'norris@mueller.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:16:04', '2019-02-15 19:16:04', 'norris@mueller.com', '$2a$10$RuyNQ9jRf.JGSMxjVE1E/O6rmkMrAXLYhO1OfCTuNFMg8Db4g9n86', '2b5486deb5ae45549a295ca8eb8b4807c1f32e90', 'Minta', 'Morissette', 'agent')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'joannehaag@hermannhayes.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:16:04', '2019-02-15 19:16:04', 'joannehaag@hermannhayes.org', '$2a$10$55W8/TAkhTmjV.W55OJXO.dxUeDVuP0UtiXZnHGFRtjEJIt0x7tSK', 'cfd56069ea91d4d9585962698feaf24f6685e91f', 'Willian', 'Emard', 'agent')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'eie@tremblay.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:16:04', '2019-02-15 19:16:04', 'eie@tremblay.biz', '$2a$10$OQL/pC/XXXQUohUY2JtwO.0QLlhah0Jff5zz2zS4AnTZnsDZN2dgi', '13c62e4571e13f5adf032c141514bc36ea772c95', 'Shelby', 'Von', 'agent')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'yukiko@farrell.io' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:16:04', '2019-02-15 19:16:04', 'yukiko@farrell.io', '$2a$10$9zBG370Aa5tjC9AmXZFUHeV8bVBQy.iuIoymu4YjUtQb6IW0F6HaW', '209f415fe2979a5542b94f276efc10b4e93a7dce', 'Josiah', 'Bartell', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jerrica@dare.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:16:05', '2019-02-15 19:16:05', 'jerrica@dare.name', '$2a$10$aTfaQ8sAwhxd3hP8i5TDu.GZxpZs3dynj6JDj5P2pP0Bwg4USKRu.', 'ab2795f8f99e892af3ca3068da0b22149bf872e3', 'Rod', 'Braun', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'murraymante@brekkegislason.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:16:05', '2019-02-15 19:16:05', 'murraymante@brekkegislason.org', '$2a$10$QR2ESuxgHTeIf0reYwUaEObOocBX.ZYwlyZXCXVJC6/OomBCKXLUy', 'f60a2c11e365e717c81ddfdc48058ad905ba69ae', 'Dong', 'Koepp', 'customer')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'tiannabruen@schmittquigley.co' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:16:05', '2019-02-15 19:16:05', 'tiannabruen@schmittquigley.co', '$2a$10$BlQ9O1QoW1aGMwOdIr8Lb.igJUOadLN255BWsyV1Up/Y3fpiE7L0m', '4e920dd064334843919d98e4c3dd74778bb83c5e', 'Erma', 'Terry', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'krista@damore.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:16:05', '2019-02-15 19:16:05', 'krista@damore.biz', '$2a$10$qdBlf0CJJhd.Yitk2B3Pc.h3A9dbM0u6rV4wwSGyL.qY02V2HHArm', 'b4e8ef2d83f1cddff321f8b27f6025762bbf3f31', 'Dagny', 'Zulauf', 'customer')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 13[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 14[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 15[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 16[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 17[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 18[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 19[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 20[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 21[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 22[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 23[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 19:23:08', '2019-02-15 19:23:08', 'admin@test.org', '$2a$10$xxqxnbYTGQh3PiPI6NMTreE7zrEBLJ.iH/hVXfCP.FbearttprZ6W', '963c91a3999df3dc39d5c262e5f5698396400bbf', 'admin')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'enriquekunde@fritschhalvorson.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:23:08', '2019-02-15 19:23:08', 'enriquekunde@fritschhalvorson.biz', '$2a$10$mIjkB4nESUR7VW5LOs4ncOUKieRycjRt.xRhY8fF.9LSipqhZq2SS', '2fe8d3c5022d92a1fb25bd33b85e65a32ae86326', 'Walton', 'Corwin', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'porterhauck@mcglynn.name' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:23:09', '2019-02-15 19:23:09', 'porterhauck@mcglynn.name', '$2a$10$aSuysR/XRMhTKFPCPThvrOb5WpALj1n34luRqZdGfE5roBu86D2vK', '09a06039b168cb7293283b494a0fc030d5974227', 'Michiko', 'Crist', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'elisha@rath.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:23:09', '2019-02-15 19:23:09', 'elisha@rath.biz', '$2a$10$m3kSC0VwnFMxzMeqSaDQY.qKLZc60xUQhJFarLwj595htlLsMzF1.', '34551090918b86aacbfd9e05ca0057853b4fc7f1', 'Shaquita', 'Pfeffer', 'agent')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'aldo@schaden.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:23:09', '2019-02-15 19:23:09', 'aldo@schaden.biz', '$2a$10$uW4fZUgaxKKQibhEm.N0eOmmYSuoB4ECQWAfY5wOaIDPd3nDp8D/m', '08d543557b1aee5284f76eece4d2b466caa32521', 'Patrica', 'Howell', 'agent')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'saundrabradtke@yost.org' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 19:23:09', '2019-02-15 19:23:09', 'saundrabradtke@yost.org', '$2a$10$ShNgXRguSaEYSh5pyuql/Oug9UDhIgRSEOcOK0YGnp4jBccTM2E.q', '6d0cc34c15f0ab63b83ca9bc7c0d1594454753ed', 'Sidney', 'Kling', 'agent')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'lon@simonisreinger.info' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 19:23:09', '2019-02-15 19:23:09', 'lon@simonisreinger.info', '$2a$10$yiUlhIjZfiSyk8vKJD8g1OWGgsSJmv9xwaMJpG/47KQwcfgDJitAW', '4f3778330164c68dcde7ec69793d24fd47d11c35', 'Ruecker', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'marandalarson@connellyjaskolski.name' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 19:23:09', '2019-02-15 19:23:09', 'marandalarson@connellyjaskolski.name', '$2a$10$vzFjoUC5bBFf/wOKezLAd.l3803y3Hvpri0oPGKTjQ/CyOcov10/e', '6d4ffbe7503783654ebf66e8151527987f45e818', 'Goldner', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'wiley@kaulke.net' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 19:23:09', '2019-02-15 19:23:09', 'wiley@kaulke.net', '$2a$10$afJIICT8bjDrgXxaFH8bm.Eu1Eb0wOHOj7K6HwodXT4dxwesFrjwe', '371d5f078fd655c8ec02d69b733dc9743d96f82d', 'Jakubowski', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mayolapurdy@terrycain.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 19:23:09', '2019-02-15 19:23:09', 'mayolapurdy@terrycain.name', '$2a$10$oalBc.U..NJMi6q8xzSAv.eY9IRKuJ5QopvnOghnJ6gRXpBnBonUO', '212c728d2852f9053d5b88bb6bc1875e16eb4481', 'Herman', 'customer')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'michafunk@beahan.name' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 19:23:09', '2019-02-15 19:23:09', 'michafunk@beahan.name', '$2a$10$Oxm74SUYy6snM5X7eSyo4.LaQcSfCexZAVO6hWjrRdLzefpdCu94q', '2204599ba9b82737a8b1bd38578a3e26b1db8dd6', 'Ebert', 'customer')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (2.9ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 24[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 25[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 26[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (4.9ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 27[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 28[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 29[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 30[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 31[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 32[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 33[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 34[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 20:23:25', '2019-02-15 20:23:25', 'admin@test.org', '$2a$10$ApqrYNmJm7lprrFC4mvILeTkOn69FE3KxLR3FCcFDMlUgf31.OSMq', '62f44070975158db547a3cfa0fe334b459c30b63', 'admin')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'elsalindgren@bergnaum.name' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 20:23:26', '2019-02-15 20:23:26', 'elsalindgren@bergnaum.name', '$2a$10$TyXO0D/g8T1CsJsZ0b/h5.NUpsXS/UurCwI8KQoOJHyk90y/u0p42', '03a607e5388a378921df7966a66ad85fc5095220', 'Donnell', 'Kuhic', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'milanwitting@bergstrom.org' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 20:23:26', '2019-02-15 20:23:26', 'milanwitting@bergstrom.org', '$2a$10$6499qTFiLvph/vMNczH1TOwshSkGOjUGXSXVsLQjiXAnT1aC.PWtK', '6c65fdd2f2f0f2b36d6b55bc6badbb242a5f4f2e', 'Doretta', 'Wiza', 'agent')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'louisa@moenlindgren.net' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 20:23:26', '2019-02-15 20:23:26', 'louisa@moenlindgren.net', '$2a$10$KJzonMDL6brBQZM59t7HoOBwISCKSRvw4Te844Kv/AEHVu4W56g7.', '5479fd03120f39a1b8c0dec0ff66d95a5ce12f92', 'Chris', 'Graham', 'agent')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'emeritamacejkovic@collinsbrekke.org' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 20:23:26', '2019-02-15 20:23:26', 'emeritamacejkovic@collinsbrekke.org', '$2a$10$bQ6CDway0rQxJPSb.4VH.uO9bri/84Dcjgvfa3ZEwci8nqzPCjv0G', 'a426a5db2f345f7080c47196a8e958469684a1b5', 'Bennett', 'Tremblay', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'stephania@oreilly.name' LIMIT 1[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 20:23:26', '2019-02-15 20:23:26', 'stephania@oreilly.name', '$2a$10$HH5vLZ9L4m6jcFSguATWG.3XtKIdpbYbLbOufAnFMkpITJOFu0n0u', 'da8dce3759511da5171a845e0528bd1815bfd124', 'Kacie', 'Nitzsche', 'agent')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'melvinquigley@bartoletti.co' LIMIT 1[0m
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 20:23:26', '2019-02-15 20:23:26', 'melvinquigley@bartoletti.co', '$2a$10$iDKjZs90MAjXKgBVaTb/h.sXeCkg6Th5uJummilT1SdiRFb6TVeO2', '1f6b2afc0e73f0b1344cd41c03124c75e7b7c868', 'Kessler', 'customer')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'tyreebeatty@heaneyberge.org' LIMIT 1[0m
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 20:23:26', '2019-02-15 20:23:26', 'tyreebeatty@heaneyberge.org', '$2a$10$aLLfvR9ZADNFBccLnEVugOOjcAUFdb7lvvVy5EFdL8tmhQvjSPI.q', '11b9c7b50457a33f0261941954503683f3af1649', 'Smitham', 'customer')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'myrlkling@mitchell.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 20:23:26', '2019-02-15 20:23:26', 'myrlkling@mitchell.com', '$2a$10$ioEuWobAJYZPcL/J7lla0uxkIZDMYrCYrMAISMZr9pUTi9dtvhpaa', '49acb8d18f568b76fb3c0735a5c30255faac0617', 'Jenkins', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'katherin@medhurst.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 20:23:26', '2019-02-15 20:23:26', 'katherin@medhurst.com', '$2a$10$BhM/h6fYXj.oxAqCrG0hvem.5ZZoNO.4b9QO2vIxKilWS6XhpOBhu', '827923996b37c2db66a9eb1ec41291f2e32406db', 'Rodriguez', 'customer')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'carolyne@gerlach.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 20:23:26', '2019-02-15 20:23:26', 'carolyne@gerlach.name', '$2a$10$W6eIJp5Iek6X1fwfLykwt.7aj.sBpBM5.iWSEYrl4psZnx0yJScp2', '1bfe2a664b3323be87dd53246d3083404bd46761', 'Miller', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 35[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 36[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 37[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 38[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 39[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 40[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 41[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 42[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 43[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 44[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (1.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 45[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 20:24:14', '2019-02-15 20:24:14', 'admin@test.org', '$2a$10$RptBII64/q7fCFIihSFpd.i8YOLoUm7OVD0tdVbIWrbVqnI4L3gmu', '2e7a7ffbf591830db1530083328ba40025bb7d1d', 'admin')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jeica@keeling.co' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 20:24:15', '2019-02-15 20:24:15', 'jeica@keeling.co', '$2a$10$wl8P2/ci.5.18.tvJOXNKOxv6MrYsRilPxy5Pohxoh897ZTGNWQ7y', '21ac37df023a585e9e6d08f50ea9eda71985adb4', 'Bernita', 'Larkin', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'tami@aufderharsteuber.name' LIMIT 1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 20:24:15', '2019-02-15 20:24:15', 'tami@aufderharsteuber.name', '$2a$10$obuRAB/yJSM4Ft8Zirii/uUQM8tNVJE7FxkM6xLlmevHTX3aNmwtS', '6550c60aa90c06fe5fd178fd82e57adf73b892a8', 'Chet', 'Ernser', 'agent')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'andrea@hegmann.co' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 20:24:15', '2019-02-15 20:24:15', 'andrea@hegmann.co', '$2a$10$AzgksKzwWGEfE/zuq6M2TeJQuOSsAEOpSb6ey7VOsdXCsGpM4AMRC', 'cbcf2bd421bdbd78d8d6a48aa3f53f3ad86f49ed', 'Scarlett', 'Thompson', 'agent')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'justineschmitt@millergleason.org' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 20:24:15', '2019-02-15 20:24:15', 'justineschmitt@millergleason.org', '$2a$10$RaG5dawphkKgyBBdsRtSMubqhSBkiKYssLjyv37JfhdDo3PVoY8Du', '1cbc1b6868b38cca3b8a806df7b07776ed81b475', 'Marielle', 'Sanford', 'agent')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'geniapredovic@bradtke.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 20:24:15', '2019-02-15 20:24:15', 'geniapredovic@bradtke.com', '$2a$10$8Qihosvb1mbf7r3yT92ERu2/VB/l4sq9zR3Y3c488X5NFZG3zQawm', '8bd4b61a90b747a49e14ba01139f061ab556bf38', 'Phung', 'Lesch', 'agent')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rico@kuhic.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 20:24:15', '2019-02-15 20:24:15', 'rico@kuhic.biz', '$2a$10$tiGoJ9Om0RrV8eoEg3y5V..S7dz.gvPIX2anv52eW2vr7yzrHKaBS', '05780e548e376dd2bee9381a9dae32f396a44ecf', 'Jaskolski', 'customer')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'devin@kerlukelueilwitz.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 20:24:15', '2019-02-15 20:24:15', 'devin@kerlukelueilwitz.com', '$2a$10$OYBcaqRr3aAuzkADWrJrqOYvUrNGwG/P5QcnEampvvzwryQvqXj..', 'c320a0d6c63cddf99550787471ddb879fdad5ed4', 'Hermann', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'houston@emard.info' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 20:24:16', '2019-02-15 20:24:16', 'houston@emard.info', '$2a$10$a8rjyQjS0g0fP0EV2ippFeKmfgZI0RlGfITGx7cwKECv9R.PmBqHO', '854e7e9c26683320438bc5c9a60662591abeeb5c', 'Herman', 'customer')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'walterbartell@bins.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 20:24:16', '2019-02-15 20:24:16', 'walterbartell@bins.com', '$2a$10$9bN.AoIDdIgsoO96zxOzwuT7fXzUcObx/oEla.EdK/3JeH9K8vhpe', 'ad091408373243125a020d517c542f18c302937c', 'Smitham', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'harlanward@hodkiewicz.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 20:24:16', '2019-02-15 20:24:16', 'harlanward@hodkiewicz.io', '$2a$10$VjqJZYJni/UAeHUKQReO7OOHy07KMYvfUoPe/iWRsTbvLQfg6oyZ6', 'cb5d279ef45021d980d376b42877e32e6d586c3a', 'Kovacek', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 46[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (1.1ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 47[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 48[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 49[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 50[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 51[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 52[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 53[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 54[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 55[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 56[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 20:25:41', '2019-02-15 20:25:41', 'admin@test.org', '$2a$10$bG.mI61k9KMgv7PA9UW2oOY5rj25/qwJze5TDuKVXczaP.LBxWWlK', '0de451dd3dbd6e00f84ec390d92cb5b906a0ff6b', 'admin')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'claiekozey@sipes.info' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 20:25:42', '2019-02-15 20:25:42', 'claiekozey@sipes.info', '$2a$10$zuj9gglG2gUBoPh76C3odeHrn5k0UJbbodYDINmah0tiJkWgqzLyq', 'e9c222cf17607b4b883254c543b448ca20fcfefe', 'Wilfred', 'Beer', 'agent')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ladawn@kling.co' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 20:25:42', '2019-02-15 20:25:42', 'ladawn@kling.co', '$2a$10$TRTL/8AK122/rEbJoztbAOCAtXlpc.ZfWWu3szKLhBueNpe2Xpy.m', '9fdcdc0dc000ebefaeff3e43448bd5c38ea8d224', 'Ayesha', 'Haley', 'agent')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'tracee@schowalter.net' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 20:25:42', '2019-02-15 20:25:42', 'tracee@schowalter.net', '$2a$10$8w.jJJp5PF9VZ/ZmQWwMGuxNrfnssZDbuVdaD1h5KDujgnNEkdjIm', '9c6a97f106576fa4157d09166622a1fcfde94375', 'Laureen', 'Hyatt', 'agent')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'florettaspinka@parker.org' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 20:25:42', '2019-02-15 20:25:42', 'florettaspinka@parker.org', '$2a$10$3Xa7fNpGfI4ugjiVtnlxcu.HykZgBIhVJiv2rJ4iJ2B8mjH73Pd4S', '0ef02bc3dcbab82ee65aeed304e1a62e7388109a', 'Hilary', 'Kuvalis', 'agent')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'nolan@douglaswiegand.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 20:25:42', '2019-02-15 20:25:42', 'nolan@douglaswiegand.org', '$2a$10$6/K5R1OWXGo/LrIiYH8mZuKwDGwYu/yGHw8LAfl9x.xJ87hrqwdTG', 'b3cee7915838f59b55a5a489ab29354d2556c939', 'Ronnie', 'Schiller', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'bethanie@kleinklocko.co' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 20:25:42', '2019-02-15 20:25:42', 'bethanie@kleinklocko.co', '$2a$10$1kBDKdFKyCSziN8fdyROke98vFeJtUdOMZLV6oIRjOpPLOfHt4jh2', '4312072c81e585cb17d469dfd033875c61e034c9', 'Hansen', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'dollielueilwitz@yost.net' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 20:25:42', '2019-02-15 20:25:42', 'dollielueilwitz@yost.net', '$2a$10$ihAreMy0DA9rG6zswVFQ/.vzsEooAo/hyUEAa/GDDfM7NoK41Qjae', '77e7a1f566d1a96ab81d2896607e94f3f894eb33', 'Macejkovic', 'customer')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'cory@dickinson.net' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 20:25:42', '2019-02-15 20:25:42', 'cory@dickinson.net', '$2a$10$xdhgrgbPlXwu1UQEuKbGTengNAoon4bBWnbIO7TblX94kPD.vGtji', 'bacb6306942270fb1510ec47b0ef6123d4241ee7', 'Gleason', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jordon@schneider.info' LIMIT 1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 20:25:42', '2019-02-15 20:25:42', 'jordon@schneider.info', '$2a$10$03rJyf7mDxHJNlt01gxh9.V3QqeAeycrzaOuTPw3oksabJQxWYapK', '73c056e701ff4835ebb30d04fc6bc5d4a118c96c', 'Considine', 'customer')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'angelo@stantonyost.co' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `last_name`, `role`) VALUES ('2019-02-15 20:25:42', '2019-02-15 20:25:42', 'angelo@stantonyost.co', '$2a$10$h5JHrUV8j8/mxCflBDcg/el5piqiQcKglCVg6063kYhFH6xAAnA2m', 'bb54091c9696c901f5baffd32133638a6020c49c', 'McLaughlin', 'customer')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeUserRoleColumn (20190215203934)
+  [1m[35m (2.7ms)[0m  [1m[35m      ALTER TABLE users MODIFY status enum(:customer, :agent, :admin);
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeUserRoleColumn (20190215203934)
+  [1m[35m (0.4ms)[0m  [1m[35m      ALTER TABLE users MODIFY role enum(:customer, :agent, :admin);
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeUserRoleColumn (20190215203934)
+  [1m[35m (62.6ms)[0m  [1m[35m      ALTER TABLE users MODIFY role enum('customer', 'agent', 'admin');
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190215203934')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20190213061214)
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1), `email` varchar(255) NOT NULL, `encrypted_password` varchar(128) NOT NULL, `confirmation_token` varchar(128), `remember_token` varchar(128) NOT NULL)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE  INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE  INDEX `index_users_on_remember_token`  ON `users` (`remember_token`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213061214')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNameToUser (20190213100511)
+  [1m[35m (9.4ms)[0m  [1m[35mALTER TABLE `users` ADD `first_name` varchar(128)[0m
+  [1m[35m (9.5ms)[0m  [1m[35mALTER TABLE `users` ADD `last_name` varchar(128)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213100511')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRoleToUsers (20190213185216)
+  [1m[35m (8.5ms)[0m  [1m[35mALTER TABLE `users` ADD `role` int[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213185216')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTours (20190213185921)
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213185921')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddFieldsToTour (20190214080039)
+  [1m[35m (5.3ms)[0m  [1m[35mALTER TABLE `tours` ADD `price` decimal(8,2)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mALTER TABLE `tours` ADD `booking_deadline` datetime[0m
+  [1m[35m (4.9ms)[0m  [1m[35mALTER TABLE `tours` ADD `from_date` date[0m
+  [1m[35m (4.5ms)[0m  [1m[35mALTER TABLE `tours` ADD `to_date` date[0m
+  [1m[35m (5.7ms)[0m  [1m[35mALTER TABLE `tours` ADD `total_seats` int[0m
+  [1m[35m (6.4ms)[0m  [1m[35mALTER TABLE `tours` ADD `op_email` varchar(128)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mALTER TABLE `tours` ADD `op_phone` varchar(128)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mALTER TABLE `tours` ADD `status` varchar(128)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190214080039')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTourLocations (20190215063503)
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`))[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190215063503')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUserTours (20190215075446)
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_user_id`  (`user_id`),  INDEX `index_user_tours_on_tour_id`  (`tour_id`), CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190215075446')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeTourStatusColumn (20190215085335)
+  [1m[35m (21.7ms)[0m  [1m[35m      ALTER TABLE tours MODIFY status enum('In Future', 'Completed', 'Cancelled');
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190215085335')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-02-15 21:07:12', '2019-02-15 21:07:12')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (2.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 21:23:20', '2019-02-15 21:23:20', 'admin@test.org', '$2a$10$.meht/thaDYBl80HC4iEWeH4nyrIPfAiABBofbbTMYSp2LzDedwnO', '74eaabc28f20a538f6e8b2a116a4a7616e18e90c', 2)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'tricia@franecki.name' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:23:21', '2019-02-15 21:23:21', 'tricia@franecki.name', '$2a$10$uNiW7GZB2DUu3szkNJDYve4YFuzqPtePOM3c4GwSVASgNAhUwDf2y', '5c33b2b1c4939e1034b6b4ee6af467a6d2f5a0ed', 'Hollie', 'Bednar', 1)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'toby@nolankiehn.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:23:21', '2019-02-15 21:23:21', 'toby@nolankiehn.io', '$2a$10$f0M9luPp64YV3wrxTyQ8vuR5HoHlwVj1nnsqlSUpjSQBqUxBTVIly', '1213acd720da7dfa8616902d202eeb9463f41b03', 'Isaiah', 'Howell', 1)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'lavonda@wintheiser.com' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:23:21', '2019-02-15 21:23:21', 'lavonda@wintheiser.com', '$2a$10$a4xHFlXWoiLyf9gcDctL1.c1NOQu96S982oE2KZ86l8Ta3.Nw9TN2', '09d952f910eb6ced6fbf12621a676ee2a480acbb', 'Chance', 'Kuvalis', 1)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'danial@kub.co' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:23:21', '2019-02-15 21:23:21', 'danial@kub.co', '$2a$10$qIHZU/GnAUL3lkOZaChm7uaJ8Tq3G5vK7f6m75GJulTtKWRg2Q/bK', '675ce7d98d386349a89a4c6f450f11a022437bc3', 'Danilo', 'Waters', 1)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'shadoconnell@labadie.io' LIMIT 1[0m
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:23:21', '2019-02-15 21:23:21', 'shadoconnell@labadie.io', '$2a$10$LfjoMFFNQXXbrfw7BwPGFO3V7mhUAkAM/cwGuHr2IricIy4h9wY7G', '85c894e7ac96adbf8febe2de313f040243c41c36', 'Raymond', 'Streich', 1)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'darnellkling@schmelergoodwin.name' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 1[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 2[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 3[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 4[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 5[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 6[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 21:25:18', '2019-02-15 21:25:18', 'admin@test.org', '$2a$10$R4We5VJn7j5ZJsbVKdLzre/4JcgtXOcKdXx5K5BjsFPsjuM51f2Ni', '907e87a1a4a216b898115b8cd83dba926aaaa623', 2)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'erin@baumbachpowlowski.biz' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 7[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20190213061214)
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1), `email` varchar(255) NOT NULL, `encrypted_password` varchar(128) NOT NULL, `confirmation_token` varchar(128), `remember_token` varchar(128) NOT NULL)[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE  INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE  INDEX `index_users_on_remember_token`  ON `users` (`remember_token`) [0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213061214')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNameToUser (20190213100511)
+  [1m[35m (9.0ms)[0m  [1m[35mALTER TABLE `users` ADD `first_name` varchar(128)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mALTER TABLE `users` ADD `last_name` varchar(128)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213100511')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRoleToUsers (20190213185216)
+  [1m[35m (8.1ms)[0m  [1m[35mALTER TABLE `users` ADD `role` varchar(255)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213185216')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTours (20190213185921)
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190213185921')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddFieldsToTour (20190214080039)
+  [1m[35m (5.8ms)[0m  [1m[35mALTER TABLE `tours` ADD `price` decimal(8,2)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mALTER TABLE `tours` ADD `booking_deadline` datetime[0m
+  [1m[35m (5.8ms)[0m  [1m[35mALTER TABLE `tours` ADD `from_date` date[0m
+  [1m[35m (5.8ms)[0m  [1m[35mALTER TABLE `tours` ADD `to_date` date[0m
+  [1m[35m (4.4ms)[0m  [1m[35mALTER TABLE `tours` ADD `total_seats` int[0m
+  [1m[35m (5.0ms)[0m  [1m[35mALTER TABLE `tours` ADD `op_email` varchar(128)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mALTER TABLE `tours` ADD `op_phone` varchar(128)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mALTER TABLE `tours` ADD `status` varchar(128)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190214080039')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTourLocations (20190215063503)
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`))[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190215063503')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUserTours (20190215075446)
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_user_id`  (`user_id`),  INDEX `index_user_tours_on_tour_id`  (`tour_id`), CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190215075446')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeTourStatusColumn (20190215085335)
+  [1m[35m (21.8ms)[0m  [1m[35m      ALTER TABLE tours MODIFY status enum('In Future', 'Completed', 'Cancelled');
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190215085335')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-02-15 21:34:03', '2019-02-15 21:34:03')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (14.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 21:35:35', '2019-02-15 21:35:35', 'admin@test.org', '$2a$10$tfDdKs5QS61hVFpGosK66uSBPqMX2cjygOMiqPQsQw5IW5qbv.SFq', '8613956ff0a3fca0a706bead8f49657d6786cdc5', 'admin')[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'alexlittel@stanton.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 1[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 21:36:38', '2019-02-15 21:36:38', 'admin@test.org', '$2a$10$.JWyAk/2Y2L6GT.Su4Bb4.AeMr.8uSQTyxamIAqKtKip8bH3DQOai', '8d01233d7ef0e769d2f8acad41d459d170ad7d81', 'admin')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'willy@rau.co' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:36:39', '2019-02-15 21:36:39', 'willy@rau.co', '$2a$10$FpXXzqaK3KJ.37DaSENZ8.HaHXaLLLue.UOT1W88r53Rbe5HYPe5u', 'ac012e7e3ad086791d50abcfa5c5c081c76ccf86', 'Caroline', 'Huel', 'agent')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'charise@kihn.info' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:36:39', '2019-02-15 21:36:39', 'charise@kihn.info', '$2a$10$leo4z1Jk62NDm/v16ZtG1.6u9THheS.GhVwHug770LLcLupG9uf4q', '72abfeb464daa96827bf8454e49613a61762a42a', 'Cletus', 'Pfannerstill', 'agent')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'berrymurphy@mertzmosciski.net' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:36:39', '2019-02-15 21:36:39', 'berrymurphy@mertzmosciski.net', '$2a$10$rrzlMBYecC83sV/zsCd0QuypRdkziH0RcpkuaKE1GCob07cDCbRSm', '136af0ea8af5a4e9a7be7d170891a896d7b690ab', 'John', 'Corkery', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'stacee@moriettejakubowski.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:36:39', '2019-02-15 21:36:39', 'stacee@moriettejakubowski.org', '$2a$10$Lu9XDdFDadmU5SM.JvNJuOqfF.2pX/ZRkCh8K99ZdiLvOUXcgZVDq', 'f1a920d758352e45ca4e2447d00e706b1ce4be8f', 'Rasheeda', 'Reichel', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'leopoldoklein@nitzsche.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:36:40', '2019-02-15 21:36:40', 'leopoldoklein@nitzsche.com', '$2a$10$hs3JLaA.om8cwCLMXiQ26OZ.tZ1ZvawRwuakt1ZSS4JfMjf3ajEqW', '0945c18a301347e7d51af0f49b817bbad47703d6', 'Krystin', 'Reinger', 'agent')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'dorris@lynchziemann.org' LIMIT 1[0m
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:36:40', '2019-02-15 21:36:40', 'dorris@lynchziemann.org', '$2a$10$.sMRlta9Zlbr4lICDO0fl.vOZEX0MwVORFxo.jGkr/xEhp.gjT102', 'e0f3d26716c6f4b6abe9f89af5314bd0a5c015a7', 'Ross', 'Ernser', 'customer')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'terriepowlowski@gislasonmorar.co' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:36:40', '2019-02-15 21:36:40', 'terriepowlowski@gislasonmorar.co', '$2a$10$PxH/KWelY0Wdz/5dndiP6O.GHcDGiVGpqtsTfnkcO7WssVXuRuHgG', '80e13ead790beb734afcbecbfb0d7176ce5f678b', 'Ken', 'Rowe', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'reggiesipes@oreilly.net' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:36:40', '2019-02-15 21:36:40', 'reggiesipes@oreilly.net', '$2a$10$Byx2tv/xB/h8PQn2sSZCGO6QqUNdmyx62GEjqRQntAMU9Q2/ZTpQm', '9dc45999c88929f924f6460cfd0248f526057f61', 'Concepcion', 'Herman', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'marg@bogisichkuvalis.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:36:40', '2019-02-15 21:36:40', 'marg@bogisichkuvalis.com', '$2a$10$QFqtj9FY9pfm.golBWFAMOLOEF9.yUzT2RloCz/ZWr7n9aJ5l/Z6G', 'fea44120d3c9f9aeb282dee2d19070e295b1e9f0', 'Lesley', 'Veum', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'graig@stoltenberg.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:36:40', '2019-02-15 21:36:40', 'graig@stoltenberg.io', '$2a$10$xZ5yYFLFKsbWUt7lRatHK.H60fQNDZXae3FCMvE1QNyrzAnoJvaOi', '522bd3cc58f7f852a226dcc5bcca5edbf2f63c86', 'Marisol', 'Considine', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 2[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (1.5ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 3[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 4[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 5[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 6[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 7[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 8[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 9[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 10[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 11[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 12[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 21:37:25', '2019-02-15 21:37:25', 'admin@test.org', '$2a$10$qMPZ0KGzXWe0m4m8aRRJNOo4zVTMObK8ZJaqFJY07dTYrP6WbYpEC', 'cad04e9e96dd272768d5968ac58a9f0a090638c1', 'admin')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ruelkris@schmidt.co' LIMIT 1[0m
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:37:26', '2019-02-15 21:37:26', 'ruelkris@schmidt.co', '$2a$10$HWnyJ7NLfgi/g8YV7aEv..aXXqsELvfn5r9CF9iwU1PKyUno/Tywq', 'af55f69047c28d16d19e3ac1c6621292a841f192', 'Roxane', 'Hoppe', 'agent')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'hubertstreich@buckridgehills.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:37:26', '2019-02-15 21:37:26', 'hubertstreich@buckridgehills.com', '$2a$10$haggYDD2NBkPu4MAttMXI..b6ty7oZT5mZ7/0JQN4OPOm/agNPG8.', 'dc8983a4441846536bc8bb0f42cad4b52fd3d268', 'Janyce', 'Hahn', 'agent')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'raphaelbauch@rice.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:37:26', '2019-02-15 21:37:26', 'raphaelbauch@rice.org', '$2a$10$Ubn/pqo2NFhP.RyN3yQ6g.AWQlwGHAmidzh5YrcnDMi2YPoDKQcnS', 'f4a895ca5f5991c646ab885b76dec5c0036794d1', 'Terrell', 'Nicolas', 'agent')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'sandee@bergstrom.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:37:26', '2019-02-15 21:37:26', 'sandee@bergstrom.io', '$2a$10$B6NsGhmmT4GIYkrPcOPXE.6Elkf6kjmIj1/NuxiRoAIg9XB/VDzDe', '3acdade2b83bd83178203ea1285fffea9f956b4b', 'Romelia', 'Hermiston', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jayson@koeppryan.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:37:26', '2019-02-15 21:37:26', 'jayson@koeppryan.biz', '$2a$10$HQCTm.9FY7AgrPnmHoDv4OzsXTknH7SK59toAThrBgHSmeRG1du5K', '0903ab8f8f76bc6228167c6182a8dd8990d7917b', 'Edie', 'Hand', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'daphinehuel@damorecarter.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:37:26', '2019-02-15 21:37:26', 'daphinehuel@damorecarter.name', '$2a$10$zyfDxRgDcsE5qf2zNx6fcOfnBBpJ8tlRycN7ARs7ifvfFa/W1Fc0C', 'e45b769886ddd077d4a168b4583c79c7b8652af9', 'Elmo', 'Runte', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'berniestamm@pagacfadel.net' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:37:26', '2019-02-15 21:37:26', 'berniestamm@pagacfadel.net', '$2a$10$QOLUOVTt.7UXshUK3zT6VOcTStsXnI7lTxK0qvR3o8yY8cmFA3F3S', '6829dcdb6a53db7f97c0657c918cc7769d91b282', 'Zenaida', 'Rowe', 'customer')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'deidra@kilback.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:37:26', '2019-02-15 21:37:26', 'deidra@kilback.io', '$2a$10$tXoShqRXnLvacnLWvS2YUeUkngYPfGtidn8/OC0Zthd4UccQyPPkW', '9ea893b1b8f5fd2e9d27be2e7a2054b81c09a6d8', 'Hildred', 'Prohaska', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'karon@ondricka.info' LIMIT 1[0m
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:37:26', '2019-02-15 21:37:26', 'karon@ondricka.info', '$2a$10$dytkqY/C13KCvoLZ78kJdOtyNiiYx2VZpRxOmdUQcCnvSL2DTYv/G', '59f055e7e46904ac20dd38a7c426093f06519a05', 'Darnell', 'Treutel', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rolanda@streich.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:37:26', '2019-02-15 21:37:26', 'rolanda@streich.io', '$2a$10$hEYb05RpWtwOJTvfosxqhOdbd6TfaRkHkKV8iqizqutwsoFWEAF2y', '41f39c15271f98fbcf9bf58708ff5792279ee364', 'Alfred', 'Ratke', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (34.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS `dev_proj2`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE DATABASE `dev_proj2` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE `test_proj2` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE IF EXISTS `tour_locations` CASCADE[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS `tours` CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `price` decimal(8,2), `booking_deadline` datetime, `from_date` date, `to_date` date, `total_seats` int, `op_email` varchar(128), `op_phone` varchar(128), `status` varchar(9)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `user_tours` CASCADE[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_tour_id`  (`tour_id`),  INDEX `index_user_tours_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1), `email` varchar(255) NOT NULL, `encrypted_password` varchar(128) NOT NULL, `confirmation_token` varchar(128), `remember_token` varchar(128) NOT NULL, `first_name` varchar(128), `last_name` varchar(128), `role` varchar(255),  INDEX `index_users_on_email`  (`email`),  INDEX `index_users_on_remember_token`  (`remember_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (24.1ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+[0m
+  [1m[35m (20.4ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20190215085335)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20190213100511),
+(20190213185921),
+(20190213185216),
+(20190213061214),
+(20190215075446),
+(20190214080039),
+(20190215063503);
+
+[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-02-15 21:42:45', '2019-02-15 21:42:45')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `tour_locations` CASCADE[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS `tours` CASCADE[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `price` decimal(8,2), `booking_deadline` datetime, `from_date` date, `to_date` date, `total_seats` int, `op_email` varchar(128), `op_phone` varchar(128), `status` varchar(9)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS `user_tours` CASCADE[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_tour_id`  (`tour_id`),  INDEX `index_user_tours_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1), `email` varchar(255) NOT NULL, `encrypted_password` varchar(128) NOT NULL, `confirmation_token` varchar(128), `remember_token` varchar(128) NOT NULL, `first_name` varchar(128), `last_name` varchar(128), `role` varchar(255),  INDEX `index_users_on_email`  (`email`),  INDEX `index_users_on_remember_token`  (`remember_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (20.9ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+[0m
+  [1m[35m (23.3ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20190215085335)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20190213100511),
+(20190213185921),
+(20190213185216),
+(20190213061214),
+(20190215075446),
+(20190214080039),
+(20190215063503);
+
+[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-02-15 21:42:46', '2019-02-15 21:42:46')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.0ms)[0m  [1m[33mUPDATE `ar_internal_metadata` SET `value` = 'test' WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 21:42:46', '2019-02-15 21:42:46', 'admin@test.org', '$2a$10$xo3RT6duiPQ0lvQKWhf0Iup3s50zO4TzvzL0JZ30X8EoKrqSOfGg.', '83c383bc43c2322fd319636301f4f1b8faf0f152', 'admin')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'delmer@rogahn.co' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:47', '2019-02-15 21:42:47', 'delmer@rogahn.co', '$2a$10$f25LzhKnEfcEB7nNkmsEROwzztAxSDoWU2YTumzIsFYT69uvt.Qwy', 'f2f06b83fda22e8f2d82749372862789f813dff6', 'Werner', 'Kerluke', 'agent')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jolandawalker@daugherty.net' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:47', '2019-02-15 21:42:47', 'jolandawalker@daugherty.net', '$2a$10$UfUuLQQSJelOz1cC9lhAk.2pTnBr3ZoV.E93CBb6PQuqCMCbxCxYO', 'e296eda472b56cc92d5109c212bd87f19e51f230', 'Thaddeus', 'Daniel', 'agent')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rolang@streichjacobson.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:47', '2019-02-15 21:42:47', 'rolang@streichjacobson.biz', '$2a$10$.aRHS83gmV.Goj4w8xibCu4Y8jJzL5LHFPCJUcu8ngIUjfHsVDhz.', '6c27885b7c5a1a3acfaa84b37f06eb07c5048db7', 'Dorie', 'Hickle', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'shadmonahan@huelryan.info' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:47', '2019-02-15 21:42:47', 'shadmonahan@huelryan.info', '$2a$10$LNgBsorE.suSbHpSsok/dO6smyoqeXzyHvrNa.Fu6jiBfB2p0S6qC', '3be6a97f164adc9e51139620300126ba7ca177b9', 'Kelli', 'Christiansen', 'agent')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'isidro@oreillyheathcote.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:47', '2019-02-15 21:42:47', 'isidro@oreillyheathcote.biz', '$2a$10$lprxTdMOKkqT/wY8wXNVauRbNYSSYAQcs13n2KywcvUYmPGhHjygO', 'ac47162c9818514fee085cf1128ba78ded23dcde', 'Devon', 'Larkin', 'agent')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'doloresosinski@mitchell.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:47', '2019-02-15 21:42:47', 'doloresosinski@mitchell.name', '$2a$10$BwQkod3iEPkaC5GnfmVVpunBs1kcLxe6SkZBddJXDEW12o7r3BHcq', '3f87d557e94adbc7aeb738521308ba299e684411', 'Marvin', 'Leuschke', 'customer')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'greg@hartmannheel.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:47', '2019-02-15 21:42:47', 'greg@hartmannheel.com', '$2a$10$.6XcP/.pTysxAK8aZA/7geIgiSa3KHPelTDnzyNoGvHlIsT7JsH86', 'cbe5b5451007ab8e37d74b1ed6c80aaa6a165289', 'Joeann', 'Grady', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'thomasnitzsche@rippin.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:47', '2019-02-15 21:42:47', 'thomasnitzsche@rippin.com', '$2a$10$XFQRkn9phsMcjXwljaDNj.SNMFmMTIBj90U7mc0Pc3vB75xJ.Uko2', '18edcdceaf14a056c29dc7b09e2c06548e30da58', 'Vania', 'Okuneva', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ngan@harrisbosco.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:47', '2019-02-15 21:42:47', 'ngan@harrisbosco.com', '$2a$10$IjDi3oCAdtpXslZsXFgZieCkan1PkC316jJrzpzZ.ryeB05Hnepxu', '8cc45d3dc97a5a39db7a97527191d55820e14bfc', 'Ja', 'Lockman', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'latisha@nolan.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:47', '2019-02-15 21:42:47', 'latisha@nolan.name', '$2a$10$k7xlFETrQZRW3A2apdC.Wu8rwye8.tfcfqprxj8mQTWzHP7vdUgqG', '8affe2edb5bb34eeded54487a7bf497fac418297', 'Mitchell', 'Stroman', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 1[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 2[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 3[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 4[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 5[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 6[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 7[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 9[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 10[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 11[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 21:42:50', '2019-02-15 21:42:50', 'admin@test.org', '$2a$10$W9T4DxuEMxrkbL1y.3znxeYODqPPBA5CmzjLoujJLApIrWfGxAR8K', '28eab20a29d75c6fd7a0a1edba65b9e82d3b0896', 'admin')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'earnest@bruenkuhlman.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:51', '2019-02-15 21:42:51', 'earnest@bruenkuhlman.name', '$2a$10$avFFeBFNLcy.PS0t1BxRmea2a/oa7uHlaObNiGIgOutaOoM4Ac2.W', 'a412ef696e211ee4aea675f9884a4f63568cf694', 'Roxana', 'Kulas', 'agent')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'dennychamplin@jaskolski.net' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:51', '2019-02-15 21:42:51', 'dennychamplin@jaskolski.net', '$2a$10$N09GRML2UmPaf1f8DEWY7.oF3x8jR8g2k2OB0rD22qGAKVUWVA72S', 'ddffd2e9c0004e2615974a6aa8710cfe8dbb1854', 'Greg', 'Nicolas', 'agent')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'bruce@connellywest.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:51', '2019-02-15 21:42:51', 'bruce@connellywest.name', '$2a$10$7X7DPRJuEFcMMGHZHcNWCuFoipcVQkvDdq1WZlXbGi81eDLuwCTvm', '97ba86c73b976f7b1aa1f8be3c4ee5f8673d6056', 'Joanna', 'Swaniawski', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'madonna@murray.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:51', '2019-02-15 21:42:51', 'madonna@murray.biz', '$2a$10$dmCVeSPNiSakIrXRnEc7se10Hra8qN4c/rFgKBihnjFtdO.O8J2W6', '8d013a208546c5ab9933980bf6caaaa17bd7ba78', 'Ardella', 'Kuvalis', 'agent')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'collette@thiel.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:51', '2019-02-15 21:42:51', 'collette@thiel.org', '$2a$10$NzBU02/l.hhDxGFvwtERUOR0.Jh8NH4FUzDR9NJWfT8tCjToxlt6m', '6a52ed372bac3e1592424ad1891ad2cc66137780', 'Adeline', 'Davis', 'agent')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ursulahoeger@dare.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:51', '2019-02-15 21:42:51', 'ursulahoeger@dare.biz', '$2a$10$7mG31wVhPH1S0aGAPVGmzemNh.EKlJgjYs82sad3SYCQLzKEnDrq6', 'c1434215ae496a879151e06fc506c4f8c7236305', 'Odell', 'Mann', 'customer')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'eli@marquardt.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:51', '2019-02-15 21:42:51', 'eli@marquardt.io', '$2a$10$iLmFb.p8MfxaXE45Cw5n.O85EcO5D3DIR/IOINIASsU1Wq23bfNf.', 'e662047438efa59039fcec856eee1b2c3c14ac74', 'Deidra', 'Kreiger', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'maria@kilback.co' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:51', '2019-02-15 21:42:51', 'maria@kilback.co', '$2a$10$L.Zrtx8KEX/FfPqMazCbPemh7NMtW26cNiXf4FXzNHShk2iCDprOm', '4dfbeb72e3c167e41d1054ac6efacd47b54a0a8e', 'Toya', 'Orn', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'lilliana@stanton.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:51', '2019-02-15 21:42:51', 'lilliana@stanton.name', '$2a$10$yWc.sai2RewjZHoKpsrcu.3OkW3bAtT7RSa/YBSlB8wMzcfRxqKVy', 'ebd235bf2e8254b192591f2a40ec9526b219da3e', 'Jamar', 'Jones', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'adelia@thiel.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:42:51', '2019-02-15 21:42:51', 'adelia@thiel.io', '$2a$10$ywbun57wxwC2wApHIW9D4uPtgj6NH524qhDCS6oADlrsL1NPFjP8K', 'd667e0921edb672cf374401f91645b66c74a81c2', 'Kerry', 'Schulist', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 12[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 13[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 14[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 15[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 16[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 17[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 18[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 19[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 20[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 21[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 22[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 21:53:23', '2019-02-15 21:53:23', 'admin@test.org', '$2a$10$RCc8XBpHwIRZAKp4M18pnu/Ohqf58/HOOp0QllM1RE6IOPMxu.mN2', '01c44d61c94fb55409523cdfcb764edcef81c6d1', 'admin')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zachery@king.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:53:24', '2019-02-15 21:53:24', 'zachery@king.name', '$2a$10$sxC.G5i3sj/4owyAVxtS9eh.JLo30FkSK5LCQado1KIr/B7msPSlO', 'a32254da55862c7ed765beee56756a0377afe30e', 'Otha', 'Weimann', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mariano@swaniawski.net' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:53:24', '2019-02-15 21:53:24', 'mariano@swaniawski.net', '$2a$10$EE6Reedjl/giT9gOU3jmJeQENffcUS4Xw1jJ29fuDwGLS20gCYz0e', 'f9dc44d9edf407e547eb844f41d54d881ab44399', 'Dillon', 'Christiansen', 'agent')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'shonta@harber.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:53:24', '2019-02-15 21:53:24', 'shonta@harber.com', '$2a$10$e6NguDAuMsGi6LHsgXdXMOAlRD4eY9MF6AqkdDeZ19HF9HC1z30pS', 'dff07100c4214b0482139f8806c4c462ae9d9e50', 'Gregoria', 'Herman', 'agent')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'hayleyschoen@bosco.info' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:53:24', '2019-02-15 21:53:24', 'hayleyschoen@bosco.info', '$2a$10$dY7Ue30suOZhFhdzVN2PCu5VcGvYmfwRa1ufvDNg66T5V.rhMxIfO', '509cdfb9567840c4f6a43af1256ee1feb1a689cf', 'Myra', 'Welch', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'nickolasyundt@abbottberge.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:53:24', '2019-02-15 21:53:24', 'nickolasyundt@abbottberge.org', '$2a$10$P1g0jc61fQo/DdVmi5z9GufOxIhHmm6.ya0rrNqt6T.KBtVwp8GJu', '8e12f308c8486f27d16fe4f40cb80b148882bcde', 'Cordell', 'Sanford', 'agent')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'wiltonrice@zulauf.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:53:24', '2019-02-15 21:53:24', 'wiltonrice@zulauf.biz', '$2a$10$cQ7GKvnQhI5zFrceJnL6GunCmHRiWbSv/cgPz6u3wWO4W/O0q5Y86', '46ccb04b89b4d66b6ff27ec7b713c5251d37910b', 'Teodoro', 'Schneider', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'merlemonahan@abbott.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:53:24', '2019-02-15 21:53:24', 'merlemonahan@abbott.org', '$2a$10$W64YCqAxlQP0CVxsY5VmLeFKdOuTZboTDmbFk4Nu1bDxvPiMY5GE.', '235732334ff9394b60d7914c9a4ff0c413992632', 'Charis', 'Howell', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ashleykerluke@yost.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:53:24', '2019-02-15 21:53:24', 'ashleykerluke@yost.biz', '$2a$10$RKaLvwagcmhPsAlpaTV5j.Ph/ktB7VFvXuJ6w36wyrZJm.0UsaZMS', 'd9eb4a83b0a40eda369c46fb82a816b0ea764f51', 'Anisa', 'Gerlach', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'warren@nienowlubowitz.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:53:24', '2019-02-15 21:53:24', 'warren@nienowlubowitz.org', '$2a$10$lDyLqG4KbGIBtU4j6Bi2x.eob3XH0NBqOMvCc316U0kuGnsXfenAi', '58c661045666b987a68ef416835d24644ba36f38', 'Agustin', 'Kreiger', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'shila@klocko.co' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:53:24', '2019-02-15 21:53:24', 'shila@klocko.co', '$2a$10$yhTJ4G3PJL4yjoTZwVfJuuK2HmgDuwNcmsK2aaX4zahVS4Tm/miSq', 'c9ed73754f8d761b16711c9e1f838b4db6e1477d', 'Cary', 'Swaniawski', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 23[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 24[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 25[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 26[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 27[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 28[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 29[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 30[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 31[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 32[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 33[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 21:55:38', '2019-02-15 21:55:38', 'admin@test.org', '$2a$10$8zjV4Ionnb6BwF/BrocK.uK6FJBwL8lS2X6JVI4adu0aVInZzgwQC', 'fd4768ef35d2155412a50e61874213406d94bdea', 'admin')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'markkeler@conroy.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:55:39', '2019-02-15 21:55:39', 'markkeler@conroy.biz', '$2a$10$gcRp1LGz85g7Fc0N..TIp.49.AzG/ax.TrM7OiAAyFviQlDGDgp.u', '95a7ed2684b691b45666e305afbe915554b303af', 'Jeni', 'Schaden', 'agent')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'reannagutkowski@ernser.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:55:39', '2019-02-15 21:55:39', 'reannagutkowski@ernser.org', '$2a$10$UHLU0QPhAeleMaIqj6I29u9kdCJDP.YKh8dKZBegP4wLtLejrMuES', '552aba841cc8c2621c187f1123016efcb29239f2', 'Loren', 'Ortiz', 'agent')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'kasandra@wilkinson.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:55:39', '2019-02-15 21:55:39', 'kasandra@wilkinson.biz', '$2a$10$8M3JSF6t3ndRTiTvvK4f9ubCklEYQXDjqrPFjacNVNCEPow5xZJTW', '1259a4767f95ec917943330feb7c424e4ade9064', 'Karl', 'Schuppe', 'agent')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'glory@okuneva.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:55:39', '2019-02-15 21:55:39', 'glory@okuneva.io', '$2a$10$OREopH83sR5RhLCxC9pNguTO/Ms1TjjvLG1cqkXFIeL5oRFTzrtiS', '36b50d3a7d3e7956ec0715077663900595c15418', 'Monroe', 'Kreiger', 'agent')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'addie@macejkovic.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:55:39', '2019-02-15 21:55:39', 'addie@macejkovic.org', '$2a$10$tkMFl.avKMMU..7.MP12Oe1uxttaY86RUrDU.cavdkD23Z.tuPE0G', '0476ee9ae9f00b10b8819404868076421d6be996', 'Bree', 'Mertz', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'tarsha@price.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:55:39', '2019-02-15 21:55:39', 'tarsha@price.io', '$2a$10$xpt/Hx4AWM/AvfEYf0TljuSC8bafvB1eSmAswz/a9J2/RI7QL0W2S', 'a0842d79c3938eff7cf18b3df4c5df2230be46f4', 'Bobby', 'West', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'juniorcrona@smitham.net' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:55:39', '2019-02-15 21:55:39', 'juniorcrona@smitham.net', '$2a$10$WqglWgXOyeyGpD4HBiRgFeznpcEVDOAUzN6FRsjoBQWDeKTwh0g3m', '13f08b3b4f3ebe992893b6f6eeac54e3b565df8c', 'Jerold', 'Satterfield', 'customer')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'tova@schoenmorar.info' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:55:39', '2019-02-15 21:55:39', 'tova@schoenmorar.info', '$2a$10$LNac6Ay6vR3E0u9mbI0LVuEoPAwREZ7YolW3Ny0CEv.wRsAC/lPum', '17ac65390b01efe9dd2b4a0a086512c6b0249cc6', 'Grant', 'Funk', 'customer')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'star@conn.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:55:39', '2019-02-15 21:55:39', 'star@conn.com', '$2a$10$so/vKmCmpzggsMITySSuZuxGJMRUWusoiLAalfJvl3ZDhRGAIvyiC', '5f8b6e651f2f6536939291378f6dafff05bbd24a', 'Raymond', 'Schiller', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'tamarlesch@kutch.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 21:55:39', '2019-02-15 21:55:39', 'tamarlesch@kutch.com', '$2a$10$az09CB.lvuVhaX.jRaGsI.uNeVvoMBLEPFQtuCsMmUKI1xwpUO.Q.', '51648fc43127f9f2f5ec0a17686d31410f3fdb21', 'Jose', 'Halvorson', 'customer')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (26.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `dev_proj2`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (24.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS `test_proj2`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE `dev_proj2` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE `test_proj2` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE IF EXISTS `tour_locations` CASCADE[0m
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS `tours` CASCADE[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `price` decimal(8,2), `booking_deadline` datetime, `from_date` date, `to_date` date, `total_seats` int, `op_email` varchar(128), `op_phone` varchar(128), `status` varchar(9)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `user_tours` CASCADE[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_tour_id`  (`tour_id`),  INDEX `index_user_tours_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1), `email` varchar(255) NOT NULL, `encrypted_password` varchar(128) NOT NULL, `confirmation_token` varchar(128), `remember_token` varchar(128) NOT NULL, `first_name` varchar(128), `last_name` varchar(128), `role` varchar(255),  INDEX `index_users_on_email`  (`email`),  INDEX `index_users_on_remember_token`  (`remember_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (22.7ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+[0m
+  [1m[35m (23.7ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20190215085335)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20190213100511),
+(20190213185921),
+(20190213185216),
+(20190213061214),
+(20190215075446),
+(20190214080039),
+(20190215063503);
+
+[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-02-15 22:00:51', '2019-02-15 22:00:51')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS `tour_locations` CASCADE[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS `tours` CASCADE[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `price` decimal(8,2), `booking_deadline` datetime, `from_date` date, `to_date` date, `total_seats` int, `op_email` varchar(128), `op_phone` varchar(128), `status` varchar(9)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS `user_tours` CASCADE[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_tour_id`  (`tour_id`),  INDEX `index_user_tours_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1), `email` varchar(255) NOT NULL, `encrypted_password` varchar(128) NOT NULL, `confirmation_token` varchar(128), `remember_token` varchar(128) NOT NULL, `first_name` varchar(128), `last_name` varchar(128), `role` varchar(255),  INDEX `index_users_on_email`  (`email`),  INDEX `index_users_on_remember_token`  (`remember_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (19.8ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+[0m
+  [1m[35m (19.8ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20190215085335)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20190213100511),
+(20190213185921),
+(20190213185216),
+(20190213061214),
+(20190215075446),
+(20190214080039),
+(20190215063503);
+
+[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-02-15 22:00:51', '2019-02-15 22:00:51')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE `ar_internal_metadata` SET `value` = 'test' WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'a' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'a' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'a' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-15 22:02:00', '2019-02-15 22:02:00', 'admin@test.org', '$2a$10$VAiHisQ5/cR9bb7kdtIIVuGUKs5XbIOMQh6f0JNMiDys2oY.UHW3.', '629f7078dcb9d20527e3dc1b33025fec7a2188be', 'admin')[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jammiejones@torp.net' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 22:02:01', '2019-02-15 22:02:01', 'jammiejones@torp.net', '$2a$10$tiQszR.8KEoltjoPI9V6fuYpPUStOiHNybKUKjJHo5Re049dtFHsu', '49703e07cc0dc69f8c8c7154340cf4ed6c65c9f4', 'Sol', 'Bashirian', 'agent')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'bernie@cronin.net' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 22:02:01', '2019-02-15 22:02:01', 'bernie@cronin.net', '$2a$10$6C4WFe3FiWrfEIHRmB5HgO7pT3mB4kOXcgOc0JKiBu/q8xJ7xjoGi', '9cf22ed17487c3960b174c67a2ea0ba02fb9239e', 'Wen', 'Champlin', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'hobert@thompson.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 22:02:01', '2019-02-15 22:02:01', 'hobert@thompson.biz', '$2a$10$Lvsa674/T5xpNWUidk4kFuLQZ8MlGI9efoW0EKM5al9xis14CSSV2', '39f4c624b2d75a6d6b223222c0f20917286ccbdf', 'Ha', 'Hahn', 'agent')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jefferson@boehmschiller.co' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 22:02:01', '2019-02-15 22:02:01', 'jefferson@boehmschiller.co', '$2a$10$n9Dkohl3EIeEbCtaqMBPw.beRICM5FoBKOQIymai0zyDTI28yXRka', 'cece56c134f88dcaf86e75f6ab294d599af9db57', 'Darwin', 'Welch', 'agent')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'laurindahammes@blockrath.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 22:02:01', '2019-02-15 22:02:01', 'laurindahammes@blockrath.org', '$2a$10$yhdWy1NaEgL74cFjpaJKsudWAukQ/Cun9m2sYY/0CxX7CN6K3uQ0y', '993f908a02cac7a69d842e9e68e89ca90c9ca1db', 'Simona', 'Gorczany', 'agent')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'matildekertzmann@mrazko.co' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 22:02:01', '2019-02-15 22:02:01', 'matildekertzmann@mrazko.co', '$2a$10$jFPwSoJ2l7gyaX/ruq7ldOmQicbWJId7x2GYVEtNPRvA2IfIG38/W', 'd06531599110f031089f36e3064595ac07fdc895', 'Dallas', 'Kohler', 'customer')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'hsiumoriette@damoreboyle.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 22:02:02', '2019-02-15 22:02:02', 'hsiumoriette@damoreboyle.org', '$2a$10$.kGeDzE9X3fu03QXUWLWm.ruw3lgf6MWKHAfjNvn8Mh5ByLL4MIw.', 'b0efa7cf39fbf1942009d218517fa948ca745ff5', 'Kory', 'Fadel', 'customer')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'brendon@krajcik.com' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 22:02:02', '2019-02-15 22:02:02', 'brendon@krajcik.com', '$2a$10$XQUha14DPo7ZfoZ1CwZAOuCGvYYWIqXEA895.vYISTlpou55vjuyu', '9293c2096376d561d3e326773071fb56f8737dd9', 'Gabriel', 'Paucek', 'customer')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'keenanoberbrunner@connelly.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 22:02:02', '2019-02-15 22:02:02', 'keenanoberbrunner@connelly.name', '$2a$10$uP3J3x7sLBl.cFShAKZHnOz1g9KGA5XcDNAFiSQClbEFRRYHjHBTm', '38148a7aacbfa239895c03752355a15f914d5f18', 'Earle', 'Padberg', 'customer')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'charles@heathcote.co' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-15 22:02:02', '2019-02-15 22:02:02', 'charles@heathcote.co', '$2a$10$m5KC2/DsyD4JMBXaTisu/uWO4XHhR0KdCpXXVEOpVH3sGa9SBLU8u', '2ddbbfe35f5f4acadfd0ead2b186f58b271dd881', 'Marlon', 'Kuphal', 'customer')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m

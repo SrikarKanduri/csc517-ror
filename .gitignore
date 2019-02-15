@@ -1,3 +1,6 @@
+# Ignore sensitive files
+admin_secrets.txt
+
 # For RubyMine
 *.idea
 
