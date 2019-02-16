@@ -8874,3 +8874,73 @@ Processing by RailsAdmin::MainController#dashboard as HTML
 Completed 200 OK in 848ms (Views: 301.7ms | ActiveRecord: 40.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-15 20:37:54 -0500
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 20:37:54 -0500
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by LandingPageController#index as HTML
+Processing by RailsAdmin::MainController#dashboard as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f2731565a2da2a4285e03b93ade7ae41af0579df' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f2731565a2da2a4285e03b93ade7ae41af0579df' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 1950ms (Views: 1905.9ms | ActiveRecord: 38.9ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `tours`[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` ORDER BY `tours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `tour_locations`[0m
+  [1m[36mTourLocation Load (0.9ms)[0m  [1m[34mSELECT  `tour_locations`.* FROM `tour_locations` ORDER BY `tour_locations`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `user_tours`[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` ORDER BY `user_tours`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (19.2ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.6ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (7.0ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (2.6ms)
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (3.3ms)
+Completed 200 OK in 2748ms (Views: 276.3ms | ActiveRecord: 49.2ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 20:37:59 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f2731565a2da2a4285e03b93ade7ae41af0579df' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `tours`[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` ORDER BY `tours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `tour_locations`[0m
+  [1m[36mTourLocation Load (0.2ms)[0m  [1m[34mSELECT  `tour_locations`.* FROM `tour_locations` ORDER BY `tour_locations`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `user_tours`[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` ORDER BY `user_tours`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (15.3ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.0ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (5.8ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (2.3ms)
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (2.7ms)
+Completed 200 OK in 162ms (Views: 150.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-15 20:38:02 -0500
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f2731565a2da2a4285e03b93ade7ae41af0579df' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/welcome.html.erb within layouts/application
+  Rendered landing_page/welcome.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 26.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 20:38:03 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f2731565a2da2a4285e03b93ade7ae41af0579df' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.4ms)
+
+
