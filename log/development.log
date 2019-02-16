@@ -9932,3 +9932,1610 @@ Processing by RailsAdmin::MainController#index as HTML
 Completed 200 OK in 102ms (Views: 91.2ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-16 20:18:23 +0900
+  
+Mysql2::Error::ConnectionError (Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)):
+  
+mysql2 (0.5.2) lib/mysql2/client.rb:90:in `connect'
+mysql2 (0.5.2) lib/mysql2/client.rb:90:in `initialize'
+activerecord (5.2.2) lib/active_record/connection_adapters/mysql2_adapter.rb:22:in `new'
+activerecord (5.2.2) lib/active_record/connection_adapters/mysql2_adapter.rb:22:in `mysql2_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:811:in `new_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:855:in `checkout_new_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:834:in `try_to_checkout_new_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:795:in `acquire_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:523:in `checkout'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:1010:in `retrieve_connection'
+activerecord (5.2.2) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.2) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.2) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-02-16 20:19:40 +0900
+  [1m[35m (296.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (303.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1099ms (Views: 1091.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-16 20:19:57 +0900
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 44ms (Views: 39.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-16 20:20:00 +0900
+Processing by LandingPageController#welcome as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-16 20:20:00 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (6.9ms)
+  Rendered sessions/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-16 20:20:13 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (295.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/landing_page/welcome
+Completed 302 Found in 1314ms (ActiveRecord: 1160.5ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-16 20:20:14 +0900
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (289.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/welcome.html.erb within layouts/application
+  Rendered landing_page/welcome.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 317ms (Views: 18.2ms | ActiveRecord: 289.5ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2019-02-16 20:20:31 +0900
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (255.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 266ms (ActiveRecord: 255.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-16 20:20:31 +0900
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (286.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 310ms (Views: 22.0ms | ActiveRecord: 286.6ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-02-16 20:20:59 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (301.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1a601cae928fba29cddb93384e6757bca5ff5b04' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (304.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (303.5ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = '16ff6dfb2f7b0a92a0e49ac8df8b46af71f6ebfc', `updated_at` = '2019-02-16 11:21:00' WHERE `users`.`id` = 1[0m
+  [1m[35m (302.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 1227ms (ActiveRecord: 1213.1ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-16 20:21:01 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.8ms)
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `dev_proj2` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE DATABASE `test_proj2` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS `dev_proj2`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS `test_proj2`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `dev_proj2` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `test_proj2` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS `tour_locations` CASCADE[0m
+  [1m[35m (15.7ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `tours` CASCADE[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `price` decimal(8,2), `booking_deadline` datetime, `from_date` date, `to_date` date, `total_seats` int, `op_email` varchar(128), `op_phone` varchar(128), `status` varchar(9)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `user_tours` CASCADE[0m
+  [1m[35m (17.2ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_tour_id`  (`tour_id`),  INDEX `index_user_tours_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (17.0ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1), `email` varchar(255) NOT NULL, `encrypted_password` varchar(128) NOT NULL, `confirmation_token` varchar(128), `remember_token` varchar(128) NOT NULL, `first_name` varchar(128), `last_name` varchar(128), `role` varchar(255),  INDEX `index_users_on_email`  (`email`),  INDEX `index_users_on_remember_token`  (`remember_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (32.1ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+[0m
+  [1m[35m (45.4ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20190215085335)[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20190215075446),
+(20190213185216),
+(20190214080039),
+(20190213100511),
+(20190213185921),
+(20190215063503),
+(20190213061214);
+
+[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-02-16 11:35:34', '2019-02-16 11:35:34')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `tour_locations` CASCADE[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `tours` CASCADE[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `price` decimal(8,2), `booking_deadline` datetime, `from_date` date, `to_date` date, `total_seats` int, `op_email` varchar(128), `op_phone` varchar(128), `status` varchar(9)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `user_tours` CASCADE[0m
+  [1m[35m (17.6ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_tour_id`  (`tour_id`),  INDEX `index_user_tours_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (18.4ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1), `email` varchar(255) NOT NULL, `encrypted_password` varchar(128) NOT NULL, `confirmation_token` varchar(128), `remember_token` varchar(128) NOT NULL, `first_name` varchar(128), `last_name` varchar(128), `role` varchar(255),  INDEX `index_users_on_email`  (`email`),  INDEX `index_users_on_remember_token`  (`remember_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (202.0ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+[0m
+  [1m[35m (40.2ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20190215085335)[0m
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20190215075446),
+(20190213185216),
+(20190214080039),
+(20190213100511),
+(20190213185921),
+(20190215063503),
+(20190213061214);
+
+[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-02-16 11:35:34', '2019-02-16 11:35:34')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE `ar_internal_metadata` SET `value` = 'test' WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-16 11:35:34', '2019-02-16 11:35:34', 'admin@test.org', '$2a$10$YLZ0PYJFPKp/LeCS6q5Ri.yNo/DiemwqOoO0lGIzBLya4EZpBKq0a', '1fe507b9b80fe85612ae77403448235d6aec925f', 'admin')[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'terry@kuphalgutmann.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:35', '2019-02-16 11:35:35', 'terry@kuphalgutmann.biz', '$2a$10$soXFF.wfSUk/iKFQymAXXuzF.udlu1OeTd1rlWJnfVYW6md923TN6', '387f49ef3bf2c6c577766301d831d32f53873440', 'Jordan', 'Considine', 'agent')[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'minh@hansen.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:35', '2019-02-16 11:35:35', 'minh@hansen.name', '$2a$10$q40yr1XrGMurrz2YKd53qO4EvMYnMxqvrLoTGdQa7FfNY52QFkaoG', '1e9d268c68bb94f08b273800148a09aab807623e', 'Kattie', 'Will', 'agent')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'waylonsteuber@kaulke.info' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:35', '2019-02-16 11:35:35', 'waylonsteuber@kaulke.info', '$2a$10$J1.QD2EJ0K.zrSrjw3QtWOzESPr/z51zu4cTusJ1jHbd7xFVDqM0G', '983471fe4e7a7afb9e2d9a432546f8ede2fe3c1c', 'Jimmie', 'Block', 'agent')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'crysta@rogahn.org' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:35', '2019-02-16 11:35:35', 'crysta@rogahn.org', '$2a$10$f5mNQvnUCUNVCVNWBhGxN.Zv6c9f7Bx4u84dsjQhK6SaOWZyjITk2', '8005ee98228e631d945997f4cdc29ce6ce59d5cd', 'Toby', 'Schuster', 'agent')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'janitakonopelski@walter.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:35', '2019-02-16 11:35:35', 'janitakonopelski@walter.biz', '$2a$10$yltjcAH2d2sR9I29WfWbXeIa.DsVPSDZswn9/mmO9Q8OTJm28.AgO', 'a67c773302a633b757cd8b917a9dfa49c07bb8c9', 'Deandre', 'Ziemann', 'agent')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'arlettedubuque@parisian.net' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:35', '2019-02-16 11:35:35', 'arlettedubuque@parisian.net', '$2a$10$1qwV1f1seEPCLlcIgkilXOeeJgcfBWAJI1w4Kjv4AloCyCXJ1JP4S', '7f3be48e7cf7133a06de71d52cd611990516665c', 'Ute', 'Lynch', 'customer')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'yuko@metz.net' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:35', '2019-02-16 11:35:35', 'yuko@metz.net', '$2a$10$KW4.W1fAJk.lTCdSfpTcfuZW.Pz4DbC.k165o969CA/o2dpSpLPLS', 'cb49305f802cd63bfd6b5f088dc8a0345f2cba22', 'Rubin', 'Greenfelder', 'customer')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'benprohaska@feil.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:35', '2019-02-16 11:35:35', 'benprohaska@feil.biz', '$2a$10$ZrgsKIVRIYURLwCbUk80e.7QH3iNYTnNUoQNXatJ4csEGyWsQvMES', '46b9eefb63c104bee0a2dc088f71f4be5d9aec3d', 'Gonzalo', 'Schaefer', 'customer')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ezequiel@klocko.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:35', '2019-02-16 11:35:35', 'ezequiel@klocko.biz', '$2a$10$V/cJGrYnaZj.3wGJ1g7nzO8Wo/uXxbN3zkC41475Lmd2PpdCbro.S', 'd517e936027b69da063476fd9658e36673d43f89', 'Clarice', 'Effertz', 'customer')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rafaelhills@marvin.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:35', '2019-02-16 11:35:35', 'rafaelhills@marvin.org', '$2a$10$8eIMTBKFxxXuMC52KMa2JuP.MHWTAkqCYL3FRrSmkTQMja9YCqgbi', 'fd40d08f174104337ae4c19d2cd236e561334bd4', 'Jodi', 'Langworth', 'customer')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 1[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 2[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 3[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 4[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 5[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 6[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 7[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 8[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 9[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 10[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 11[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-16 11:35:45', '2019-02-16 11:35:45', 'admin@test.org', '$2a$10$9hIyRlIOkjg1kFuIhnhiQuWZUFxEYY1oEJ14NolNbu4.OJpbFckLK', '1f3f00a6e724d69782cd04b49e0f11d6bb704eee', 'admin')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'lashandra@crona.co' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:45', '2019-02-16 11:35:45', 'lashandra@crona.co', '$2a$10$iGx9iFr0S.N9XdNSu8aGyu/drXIqByaOsSgi5ZrMdrzVvYC/YXW5O', '9266465643b09bf3546fe3b606f8a5410b5b0fe8', 'Jess', 'Wilderman', 'agent')[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mariokovacek@satterfieldnolan.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:45', '2019-02-16 11:35:45', 'mariokovacek@satterfieldnolan.org', '$2a$10$s0Vdrx6xzdKPHAJhx0kI6e1ihH.vobVM/qz8sB0aDSMPwQijLqfE6', 'e8dc6311aa1f0a304fc8b9a440a51b725a7083b8', 'Shavon', 'McDermott', 'agent')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'matthew@quigley.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:45', '2019-02-16 11:35:45', 'matthew@quigley.org', '$2a$10$5Raq/fCaBTNkGwWgV5.12uxVl/dttJX0fJlERx573XfDMxoSKL0DW', 'a42112aac0b8c02f2cf3af4e277fc2c03b13f942', 'Rodrigo', 'Durgan', 'agent')[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'danny@murray.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:45', '2019-02-16 11:35:45', 'danny@murray.io', '$2a$10$puIV/tH4Y1Atuu6Xb9br.enSNsaxLxfv0se1lH6Vmu3iVOebTk1Xa', 'f30bec23ca5f1300699314c8b59e7fa1053a205f', 'Jamie', 'Dibbert', 'agent')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'bartonkuhlman@mclaughlin.net' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:45', '2019-02-16 11:35:45', 'bartonkuhlman@mclaughlin.net', '$2a$10$rm4ZpjBCU.0D7WGECnQWMeh/hWl35hKBWwJqYKxetDT/cx3BtoQk6', 'e240b856bf589c0052b198d2e5ddbca71c31c138', 'Napoleon', 'Hagenes', 'agent')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'wanda@zboncak.net' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:45', '2019-02-16 11:35:45', 'wanda@zboncak.net', '$2a$10$AedfCiWfRWqtVnUBfU7OJurhrvICFxS0iXBn7vN9IIsUZewkOC3AK', 'bc8267d245ca4bf3581a594707f367fa50feca1a', 'Danyell', 'Koepp', 'customer')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'hubertortiz@douglas.co' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:46', '2019-02-16 11:35:46', 'hubertortiz@douglas.co', '$2a$10$GzamAXuYz1i1ijgqg5LYweDRrK7WftQjzw5pW1hCiPhAHXu/PPt5W', 'cc46672cc70aaeda536484eeaa506a8aba81f64c', 'Theron', 'Homenick', 'customer')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'linnea@buckridge.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:46', '2019-02-16 11:35:46', 'linnea@buckridge.biz', '$2a$10$grB96Uqg/rm2w1q5RKHnEOq/kodnS4TJKX1PKa4QHmK.k3C3771nq', 'd773b1f88661872186f81647593689bf025f119d', 'Dirk', 'Senger', 'customer')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jaunita@ruel.net' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:46', '2019-02-16 11:35:46', 'jaunita@ruel.net', '$2a$10$.lZ8wWqVK.QfVVWv4f.ajuq7H4mMeKjX3JHNdCyxPyL6lTzxIvfeW', '117ece5947618f15322d2f403e71cd25374f8e1a', 'Theo', 'Fahey', 'customer')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jeie@gibson.info' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:35:46', '2019-02-16 11:35:46', 'jeie@gibson.info', '$2a$10$FQKu4h6TPHXDjy5HnXxMmOhf/wMeqCW9fz1hCXNAehvMkp/wNL9j.', '8b4803e82c36b32f813ac04e900a39a487e93d35', 'Alfred', 'Donnelly', 'customer')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2019-02-16 20:38:35 +0900
+  [1m[35m (0.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1025ms (Views: 1021.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-16 20:38:47 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.0ms)
+  Rendered sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-16 20:38:57 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.9ms)
+  Rendered sessions/new.html.erb within layouts/application (3.4ms)
+Completed 401 Unauthorized in 115ms (Views: 25.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-16 20:39:33 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.0ms)
+  Rendered sessions/new.html.erb within layouts/application (3.8ms)
+Completed 401 Unauthorized in 81ms (Views: 19.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-16 20:42:25 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 401 Unauthorized in 83ms (Views: 15.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-16 20:43:07 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"lashandra@crona.co", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'lashandra@crona.co' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 70ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-16 20:43:07 +0900
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '9266465643b09bf3546fe3b606f8a5410b5b0fe8' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-02-16 20:43:23 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '9266465643b09bf3546fe3b606f8a5410b5b0fe8' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = '7af7343a79bb8c0cfe669d1d65718ce6cc27ea86', `updated_at` = '2019-02-16 11:43:24' WHERE `users`.`id` = 13[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 18ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-16 20:43:24 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.2ms)
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 36ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (31.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS `dev_proj2`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (32.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS `test_proj2`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE DATABASE `dev_proj2` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE DATABASE `test_proj2` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS `tour_locations` CASCADE[0m
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `tours` CASCADE[0m
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `price` decimal(8,2), `booking_deadline` datetime, `from_date` date, `to_date` date, `total_seats` int, `op_email` varchar(128), `op_phone` varchar(128), `status` varchar(9)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `user_tours` CASCADE[0m
+  [1m[35m (18.6ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_tour_id`  (`tour_id`),  INDEX `index_user_tours_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (19.6ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1), `email` varchar(255) NOT NULL, `encrypted_password` varchar(128) NOT NULL, `confirmation_token` varchar(128), `remember_token` varchar(128) NOT NULL, `first_name` varchar(128), `last_name` varchar(128), `role` varchar(255),  INDEX `index_users_on_email`  (`email`),  INDEX `index_users_on_remember_token`  (`remember_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (30.5ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+[0m
+  [1m[35m (38.1ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20190215085335)[0m
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20190215075446),
+(20190213185216),
+(20190214080039),
+(20190213100511),
+(20190213185921),
+(20190215063503),
+(20190213061214);
+
+[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-02-16 11:47:39', '2019-02-16 11:47:39')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `tour_locations` CASCADE[0m
+  [1m[35m (18.7ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `tours` CASCADE[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `price` decimal(8,2), `booking_deadline` datetime, `from_date` date, `to_date` date, `total_seats` int, `op_email` varchar(128), `op_phone` varchar(128), `status` varchar(9)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `user_tours` CASCADE[0m
+  [1m[35m (18.4ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_tour_id`  (`tour_id`),  INDEX `index_user_tours_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (17.3ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1), `email` varchar(255) NOT NULL, `encrypted_password` varchar(128) NOT NULL, `confirmation_token` varchar(128), `remember_token` varchar(128) NOT NULL, `first_name` varchar(128), `last_name` varchar(128), `role` varchar(255),  INDEX `index_users_on_email`  (`email`),  INDEX `index_users_on_remember_token`  (`remember_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (40.6ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+[0m
+  [1m[35m (31.0ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20190215085335)[0m
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20190215075446),
+(20190213185216),
+(20190214080039),
+(20190213100511),
+(20190213185921),
+(20190215063503),
+(20190213061214);
+
+[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-02-16 11:47:40', '2019-02-16 11:47:40')[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE `ar_internal_metadata` SET `value` = 'test' WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-16 11:47:40', '2019-02-16 11:47:40', 'admin@test.org', '$2a$10$u0CnyUaiml5jcAu0lziHiurqXluFvcV/ClKOtjYLIPmpfhMvfqyeO', '2393be696511908fe8dffed236136d429ce6d590', 'admin')[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'dwight@lind.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:40', '2019-02-16 11:47:40', 'dwight@lind.io', '$2a$10$g0NjfFVu3/jzRzBozFP4B.WD3NKuAl9yNum/0wIgvQagIyLMlDX5i', '6c98f9171351342f687360dbaad0fa6273bfc8fa', 'Gustavo', 'Spinka', 'agent')[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'thaliaoberbrunner@cole.org' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:40', '2019-02-16 11:47:40', 'thaliaoberbrunner@cole.org', '$2a$10$WLsLamAXHhHtzjuVhSuokuQbh8iF3d.5Ny9GBl2KNLHkPhC6vpKUS', '59570d3c8a6dc0c875cd3d4dec4a0cf5f150c7a4', 'Kenny', 'Quitzon', 'agent')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'magnoliazieme@bernier.co' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:41', '2019-02-16 11:47:41', 'magnoliazieme@bernier.co', '$2a$10$Lu.ek6sHtWQct6el3ruxDumT/XTgOJm6GbHqBR7tdh5TtCObM3Yy.', 'fb696af8a454bbbb41cfd8569cbb5a68376fc2ce', 'Ambrose', 'Mills', 'agent')[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'aleasekrajcik@macgyver.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:41', '2019-02-16 11:47:41', 'aleasekrajcik@macgyver.org', '$2a$10$CbXbCu2snnM5ixubrvZuau4hAbeOHECTLafkoJDvVX8A/1GDImkYG', '781048d89f46a34c4ba72817a812af7da0141da9', 'Evonne', 'Weissnat', 'agent')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jeni@tromp.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:41', '2019-02-16 11:47:41', 'jeni@tromp.com', '$2a$10$vjsgHn6GfTiX6FQX/xfwkOfsF7oES.GDuTyT0/FWBadVqUjRAzkkC', '8d89ec7cbc5e0ec4ba927026782b050e0485e8a3', 'Jacob', 'Greenholt', 'agent')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'lyle@abernathykonopelski.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:41', '2019-02-16 11:47:41', 'lyle@abernathykonopelski.org', '$2a$10$lyC6kdZpVxuzpav/pSoDdeAXnKXi0n2BkmEEntLinJDkG/McBFUBO', '1af0171ea69ab0cb0a46143e5e0bfcc05cd9dcd8', 'Alfredia', 'Barrows', 'customer')[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'keikobayer@nienow.io' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:41', '2019-02-16 11:47:41', 'keikobayer@nienow.io', '$2a$10$4qoWeAshfIev0fxqGnaINukk828gJJUNhfEu2x5E8UixXnugWOjLu', '1e7ea136318d2a9a78bc8db0444f247ccdc0f205', 'Nila', 'Dach', 'customer')[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'oscar@reingerjast.net' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:41', '2019-02-16 11:47:41', 'oscar@reingerjast.net', '$2a$10$ZOp6vM3OERRqKk9TEnySoeD0NRsZP4E7FO9juV1ltvrAZnhQfTC6e', 'c2059a506e24bad605d67f367e4a3e4b8d4050a4', 'Avelina', 'Bins', 'customer')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'raleighgorczany@webercrooks.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:41', '2019-02-16 11:47:41', 'raleighgorczany@webercrooks.name', '$2a$10$ZjTQuquFmPRtCeOfABW3cOX/AclthkS0x5uBUNDN1BizOZqF6Vftu', 'd8a4083230de46772783de7f4ab424b4d1934ac5', 'Blossom', 'Jacobi', 'customer')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'nicholas@grimes.info' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:41', '2019-02-16 11:47:41', 'nicholas@grimes.info', '$2a$10$i8zVS0Sl1RR.t4x6i4Xn4unl/Bl203AlFCJhpCjTWKw7xmiqGC2Dy', 'b39bb3fca1d18e07bbd28eb84649df7989a8f510', 'Wan', 'Stokes', 'customer')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 1[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 2[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 3[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 4[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 5[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 6[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 7[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 8[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 9[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 10[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 11[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-16 11:47:43', '2019-02-16 11:47:43', 'admin@test.org', '$2a$10$/XwjO8xi3pb7cTKZR1V/EeTBrC.MJHia9qgNhHo6CW.r1a8.ScECy', 'cc9168b1875ff18582ccae9fddc864848c066cc9', 'admin')[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ruellbradtke@brakuscasper.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:43', '2019-02-16 11:47:43', 'ruellbradtke@brakuscasper.com', '$2a$10$0pjQIYa980Nr8JPxX3eRz.Q8s/QhxcrgIn1ykiLSxKeCKT1sfd5iu', 'a9e624123319ea6423cad9013542b1adb358aba1', 'Rolland', 'Volkman', 'agent')[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'halgislason@douglas.name' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:43', '2019-02-16 11:47:43', 'halgislason@douglas.name', '$2a$10$ny/Zo0uZKXQLXVhMPabPdOVKcXiy8uPPsz/FAenmhfYM/axA1rcWC', '78a8c0be376c85d86681ea969fe4ef6ffaa2365e', 'Chester', 'Pfeffer', 'agent')[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'herminia@erdmandaniel.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:43', '2019-02-16 11:47:43', 'herminia@erdmandaniel.io', '$2a$10$GayApA4MP5Fi23GPaZqc7Oi9tYtOjcRcXcawr0X4c.M8aDnMYUK8S', '3dd2f32eea40f31c47758dfc222f9c74040aaa4f', 'Mari', 'Hermann', 'agent')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'marlon@becker.info' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:44', '2019-02-16 11:47:44', 'marlon@becker.info', '$2a$10$mgXbidChN3jscku1uXP3leSu4e4HX1g4JL9DNX8NZPCn.B8xdL6Jq', 'f02fa7c61fd4f59425ffe7dfda3334874b649532', 'Lesley', 'Aufderhar', 'agent')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ronaldlubowitz@goodwin.net' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:44', '2019-02-16 11:47:44', 'ronaldlubowitz@goodwin.net', '$2a$10$9cR9pAtFzHMPp0pBOaAqk.1vzOkOpRo4OAFLg.ZKDpd6FhMhpXjJa', 'cbda5f616fd1e5cb8a1a66777f5565e1b8fe5241', 'Abe', 'Hessel', 'agent')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jackmueller@dicki.net' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:44', '2019-02-16 11:47:44', 'jackmueller@dicki.net', '$2a$10$yimllwpgO81uQLgMHw5mzeb1EXeDDbkGB.SfGZZGmKFlec50vVQzS', '1ea087b71e0a1a0cc740d57ed4b6239af5bdad9e', 'Bev', 'Cummerata', 'customer')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'kelsielind@feilvolkman.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:44', '2019-02-16 11:47:44', 'kelsielind@feilvolkman.io', '$2a$10$RF5h/7YvmUbvg0DDfR6lX.MZqw3JvoXcRF8r4HJb7a/SEJ.67SfL6', 'a8df96a5284e2ba72c5fb9e936a1b9bb425dd616', 'Bennie', 'Little', 'customer')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'elroy@wisokythompson.info' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:44', '2019-02-16 11:47:44', 'elroy@wisokythompson.info', '$2a$10$OxmjxNFHKAwX9o63Y1OwNul8y765EOnqmWtreYRyihosm94j8LS.a', '3cba92b4112736ec52cc72c56a27d860acc6f059', 'Kathyrn', 'Hermiston', 'customer')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'evan@jaskolski.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:44', '2019-02-16 11:47:44', 'evan@jaskolski.biz', '$2a$10$1Ajyh/8PYR/oYx0ZzIJYsO770ZE.umRIDA7yU51LB.ITRArOrWtV6', '09d63eccb5216962bc5dab310e7ca356f73c392d', 'Charlie', 'Schneider', 'customer')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'aleen@langworth.info' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:47:44', '2019-02-16 11:47:44', 'aleen@langworth.info', '$2a$10$wJV/k56vaxH6pa6lCm7eDOFV7lpz00buoOU7ZK62ga2XOVeD.cjzi', '3a669cd59c33f660ff62832f9c7053f81153d54e', 'Mason', 'Schinner', 'customer')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2019-02-16 20:49:15 +0900
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 985ms (Views: 979.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-16 20:49:18 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (8.0ms)
+  Rendered sessions/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 38ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-16 20:49:26 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.3ms)
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 401 Unauthorized in 122ms (Views: 22.9ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-16 20:49:38 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.0ms)
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 401 Unauthorized in 89ms (Views: 24.1ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (38.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS `dev_proj2`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (30.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS `test_proj2`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE DATABASE `dev_proj2` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE DATABASE `test_proj2` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS `tour_locations` CASCADE[0m
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `tours` CASCADE[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `price` decimal(8,2), `booking_deadline` datetime, `from_date` date, `to_date` date, `total_seats` int, `op_email` varchar(128), `op_phone` varchar(128), `status` varchar(9)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `user_tours` CASCADE[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_tour_id`  (`tour_id`),  INDEX `index_user_tours_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1), `email` varchar(255) NOT NULL, `encrypted_password` varchar(128) NOT NULL, `confirmation_token` varchar(128), `remember_token` varchar(128) NOT NULL, `first_name` varchar(128), `last_name` varchar(128), `role` varchar(255),  INDEX `index_users_on_email`  (`email`),  INDEX `index_users_on_remember_token`  (`remember_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (44.0ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+[0m
+  [1m[35m (29.7ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20190215085335)[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20190215075446),
+(20190213185216),
+(20190214080039),
+(20190213100511),
+(20190213185921),
+(20190215063503),
+(20190213061214);
+
+[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-02-16 11:52:07', '2019-02-16 11:52:07')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS `tour_locations` CASCADE[0m
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `tours` CASCADE[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `price` decimal(8,2), `booking_deadline` datetime, `from_date` date, `to_date` date, `total_seats` int, `op_email` varchar(128), `op_phone` varchar(128), `status` varchar(9)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `user_tours` CASCADE[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_tour_id`  (`tour_id`),  INDEX `index_user_tours_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (22.3ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1), `email` varchar(255) NOT NULL, `encrypted_password` varchar(128) NOT NULL, `confirmation_token` varchar(128), `remember_token` varchar(128) NOT NULL, `first_name` varchar(128), `last_name` varchar(128), `role` varchar(255),  INDEX `index_users_on_email`  (`email`),  INDEX `index_users_on_remember_token`  (`remember_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (31.1ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+[0m
+  [1m[35m (29.0ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20190215085335)[0m
+  [1m[35m (2.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20190215075446),
+(20190213185216),
+(20190214080039),
+(20190213100511),
+(20190213185921),
+(20190215063503),
+(20190213061214);
+
+[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-02-16 11:52:07', '2019-02-16 11:52:07')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE `ar_internal_metadata` SET `value` = 'test' WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-16 11:52:07', '2019-02-16 11:52:07', 'admin@test.org', '$2a$10$HBk9Ad62pkBIE/NKSw0ha.ep2vFo5wg6m6gaoa0wABOczvs1J2ziS', 'af966271515b8689539ddda52191feffd94cb6ce', 'admin')[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ayannatreutel@batz.co' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:08', '2019-02-16 11:52:08', 'ayannatreutel@batz.co', '$2a$10$GhSauqbx/Y2lpZVju3h.XOHtu1RIwI9O315pluk7fftfLVn8q368.', '67325bc3acf17effe0a228760dcb3c91d0062f8c', 'Mindy', 'Beatty', 'agent')[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'bo@rutherford.net' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:08', '2019-02-16 11:52:08', 'bo@rutherford.net', '$2a$10$R3lwqEURsOzocqKosNvyf.TjKXoarXXxlgGSZhQyR/V2trt5zluG2', '003abda4d6af72f34d925c0bfc5375c9f4cb0f3a', 'Twana', 'Mitchell', 'agent')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'leandro@gorczany.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:08', '2019-02-16 11:52:08', 'leandro@gorczany.name', '$2a$10$VKJDYFhGp4PAJ3pq6lfd2Ov3PWbrW/U6Ez6kgJJ6Q9qTJqkXnFTxK', '2793153a9d464476845614eea7f1e6d79bc688eb', 'Delbert', 'Lockman', 'agent')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'leviswaniawski@stokes.co' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:08', '2019-02-16 11:52:08', 'leviswaniawski@stokes.co', '$2a$10$w5m7DCEY4reiHMb5HdMmGOUVanFHrMjXfpggPjKtRAa/tFFYEoe4.', 'd91cd48d0352ab2378314291308e835e34796d8d', 'Francis', 'Conn', 'agent')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'kareen@howenolan.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:08', '2019-02-16 11:52:08', 'kareen@howenolan.com', '$2a$10$8P6s.ZKF8jn3We2EIlt6aeqvHq3kVfuHugTsvq5i2w2uHPvMOB1h2', 'fea5438bcbc8a4b5e9054a3034cfcba91ae67294', 'Barton', 'Krajcik', 'agent')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'fredric@mrazsimonis.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:08', '2019-02-16 11:52:08', 'fredric@mrazsimonis.name', '$2a$10$H8MJRKKW.owatHDtiY3C9OOzmvMx./yA7k.6ygqZZEXrfSN65wNbe', '924605e41c5d313f30449d9dda4ba06d202cc01f', 'Jeromy', 'Thompson', 'customer')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'cristobal@konopelski.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:08', '2019-02-16 11:52:08', 'cristobal@konopelski.biz', '$2a$10$m7Tgg.woHA66TR3zMe6KTuIUOLpUqOZxAMLXRW/sUcu8O.3jAQcX.', '5727d871d3af19b843e4806151a1a58e651031da', 'Rudy', 'Leuschke', 'customer')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'colleenkunze@hoppe.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:08', '2019-02-16 11:52:08', 'colleenkunze@hoppe.com', '$2a$10$v3oM8WEWSOT9pSlKRKOisulpIOCzvyAPgy37QfoJdCFzw6qsF7e.q', 'e5203c311dc58e77007dd3027804d00a896675ea', 'Elane', 'Welch', 'customer')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'landonwillms@mayer.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:08', '2019-02-16 11:52:08', 'landonwillms@mayer.org', '$2a$10$JjDKITLKmyLCR.N1s24Spen9V5Zith0KYVk2jAeywuE2GJaFhTAQq', '9647814c28741c455d65f664347ea1931acdb4fe', 'Len', 'Runte', 'customer')[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'asley@smith.net' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:09', '2019-02-16 11:52:09', 'asley@smith.net', '$2a$10$2vy7K0A567K1gwIM/YAaZu9j1PxashvrLbVN.0TmbXMbCH0CAHfe.', 'f7adf0dfade8ae31e0e6e6a7c609721c214479fa', 'Yaeko', 'Lubowitz', 'customer')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 1[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 2[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 3[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 4[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 5[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 6[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 7[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 8[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 9[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 10[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 11[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-16 11:52:10', '2019-02-16 11:52:10', 'admin@test.org', '$2a$10$6g5PEhD9GaY1HRiLvdOoCudHPdWXRgri/XmGHIjGl3M8RhdbIJXFa', 'beaeda391274b3c1f96e433886952f9ac7939c9d', 'admin')[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mariel@homenick.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:11', '2019-02-16 11:52:11', 'mariel@homenick.org', '$2a$10$5NspCfESJuUqSqY/6f8g8uV8XlY4QFJ3TZk138IRcNgdFZxbADOGC', '44dacff39a5c459cddb3167215e81ddee0380e10', 'Gabriele', 'Ryan', 'agent')[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'libby@lemke.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:11', '2019-02-16 11:52:11', 'libby@lemke.biz', '$2a$10$XmAe30m1wlVhjCkH28EIaePtlxHSLW06JyTTlQ4s8EsiG0IyPcjwe', '3bb68a13a5cea0e3c03d22991a8a82a70a291f8b', 'Elnora', 'Fisher', 'agent')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'cyruskuvalis@toy.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:11', '2019-02-16 11:52:11', 'cyruskuvalis@toy.io', '$2a$10$aWNUSHQsE.ycmojfOInLOO9Xiwi/RsloxJo9OZXTl4jIa2gHJ5C0e', 'd6a513161398bb4ef6c92ff33d7354ba2d185e06', 'Charissa', 'Larkin', 'agent')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'reta@beierhettinger.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:11', '2019-02-16 11:52:11', 'reta@beierhettinger.org', '$2a$10$TPnnSyz7NVgOycYK5T2tzex2JMAUFMarww2ZoeWsMtMwa6zRy/FQK', 'e0aed480f1f8a65e57e913ae00258268b4aa49a5', 'Mindy', 'Pfeffer', 'agent')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'eugenia@mayerwunsch.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:11', '2019-02-16 11:52:11', 'eugenia@mayerwunsch.com', '$2a$10$d2eW4ck7E5kHbG.wxBpP9O1ARhuwgmApp62zHwDwYF1XR6FOkRTMS', 'be4156950e497e31a16b8f689a936497e97b49f9', 'Wilburn', 'Keebler', 'agent')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rodbecker@hermann.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:11', '2019-02-16 11:52:11', 'rodbecker@hermann.biz', '$2a$10$aY3CKjoDZPrQvKpwcU.bxeoO.5LSt6p9V9DLD3t0v9JL75riThpVm', '815fbf578f32bfecee71e1622067491ef9f61439', 'Twila', 'Stoltenberg', 'customer')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jonathonspinka@zboncakbechtelar.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:11', '2019-02-16 11:52:11', 'jonathonspinka@zboncakbechtelar.org', '$2a$10$PVTQLTFc6jgipONdUjn83uKyevXVgt5tRRCHaTd9yV2eA9/kTKYIu', '589e755aaf2fa99007d6d50c275b84ec50552399', 'Ronald', 'Mills', 'customer')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'lupita@kohlertromp.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:11', '2019-02-16 11:52:11', 'lupita@kohlertromp.com', '$2a$10$ghVRW7z66x1l66qIjDtoO.fSVdNWZdgArmuMqhFN.bKxpOYz9aT9O', '8811be302a3d947e397b81f296c7f12bacf27757', 'Damien', 'Smitham', 'customer')[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'gary@wiegand.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:11', '2019-02-16 11:52:11', 'gary@wiegand.name', '$2a$10$EdgdH4nQ77ArvNwW6ykh.uJvRPyF7Q4WhGRbLMtXhY0Qmei0QqH8a', '377cc271c3e4da584015a3ef4f37c2fcf53996d2', 'Jazmine', 'Kirlin', 'customer')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'billiegoldner@turner.name' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:11', '2019-02-16 11:52:11', 'billiegoldner@turner.name', '$2a$10$Be0T6d9IN1nzooxAtYa.reIs.dpz3cbaULM1Pi8ijcHxekJ52vN2i', 'a201dc01a64a6d843921186265c984b171adaad7', 'Scotty', 'Schuster', 'customer')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (41.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `dev_proj2`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (32.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS `test_proj2`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `dev_proj2` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `test_proj2` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `tour_locations` CASCADE[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `tours` CASCADE[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `price` decimal(8,2), `booking_deadline` datetime, `from_date` date, `to_date` date, `total_seats` int, `op_email` varchar(128), `op_phone` varchar(128), `status` varchar(9)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `user_tours` CASCADE[0m
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_tour_id`  (`tour_id`),  INDEX `index_user_tours_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1), `email` varchar(255) NOT NULL, `encrypted_password` varchar(128) NOT NULL, `confirmation_token` varchar(128), `remember_token` varchar(128) NOT NULL, `first_name` varchar(128), `last_name` varchar(128), `role` varchar(255),  INDEX `index_users_on_email`  (`email`),  INDEX `index_users_on_remember_token`  (`remember_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (27.4ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+[0m
+  [1m[35m (27.8ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20190215085335)[0m
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20190215075446),
+(20190213185216),
+(20190214080039),
+(20190213100511),
+(20190213185921),
+(20190215063503),
+(20190213061214);
+
+[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-02-16 11:52:55', '2019-02-16 11:52:55')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `tour_locations` CASCADE[0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE `tour_locations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `country` varchar(255), `state_or_province` varchar(255), `starting_point` tinyint(1), `tour_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_tour_locations_on_tour_id`  (`tour_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `tours` CASCADE[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `price` decimal(8,2), `booking_deadline` datetime, `from_date` date, `to_date` date, `total_seats` int, `op_email` varchar(128), `op_phone` varchar(128), `status` varchar(9)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS `user_tours` CASCADE[0m
+  [1m[35m (19.1ms)[0m  [1m[35mCREATE TABLE `user_tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `tour_id` bigint, `booked` tinyint(1), `num_booked` int, `wait_listed` tinyint(1), `num_wait_listed` int, `bookmarked` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_user_tours_on_tour_id`  (`tour_id`),  INDEX `index_user_tours_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1), `email` varchar(255) NOT NULL, `encrypted_password` varchar(128) NOT NULL, `confirmation_token` varchar(128), `remember_token` varchar(128) NOT NULL, `first_name` varchar(128), `last_name` varchar(128), `role` varchar(255),  INDEX `index_users_on_email`  (`email`),  INDEX `index_users_on_remember_token`  (`remember_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci[0m
+  [1m[35m (29.5ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_603b214c14`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+[0m
+  [1m[35m (31.8ms)[0m  [1m[35mALTER TABLE `user_tours` ADD CONSTRAINT `fk_rails_1554b6de8e`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20190215085335)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20190215075446),
+(20190213185216),
+(20190214080039),
+(20190213100511),
+(20190213185921),
+(20190215063503),
+(20190213061214);
+
+[0m
+  [1m[35m (14.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-02-16 11:52:55', '2019-02-16 11:52:55')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE `ar_internal_metadata` SET `value` = 'test' WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-16 11:52:55', '2019-02-16 11:52:55', 'admin@test.org', '$2a$10$5cDvJXlVelmzAbAaoNM6NeZ0VWkiQ/qeh/Zlv/oK868y/tXVlVEGG', '2113b0b52439f1899ce87094681dc685448f2aed', 'admin')[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'moserice@larson.io' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:55', '2019-02-16 11:52:55', 'moserice@larson.io', '$2a$10$qbaPK3g8v0xHaq2pvyIEcehAy4yjDTtyY6cOa25tHwZjTHSUYOJJK', '0632e85a5bb5e9da7628a73b4f6daf9b262b93b4', 'Ali', 'Hahn', 'agent')[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'santiagorogahn@flatleysatterfield.name' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:55', '2019-02-16 11:52:55', 'santiagorogahn@flatleysatterfield.name', '$2a$10$0lf8I0/ZuEr4bq.fSn.teeDw9adlI9B.RlGWdYklExXJag/8vfJMe', '1f6e14007d160d81ebe0940c511fe762740af3af', 'Walton', 'Purdy', 'agent')[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'tyron@danielhuel.info' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:56', '2019-02-16 11:52:56', 'tyron@danielhuel.info', '$2a$10$T7ZYncRklkADjl4OFZ7MsOO76F7Ws/iSVf421kYvdsWZjE9RrXgfy', 'ae6ceb85e89bd4df8cc51e1d4d1747ee8ff576d0', 'Isidra', 'Gerlach', 'agent')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'carolberge@quitzon.name' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:56', '2019-02-16 11:52:56', 'carolberge@quitzon.name', '$2a$10$b8cIu7gu2ajR23nZDTsYyeMX42XKyHy2Smc6TS70lFpicJ5aLDnd6', '7c55a3f3adc8981d3382b17fa3f73b00a4eead4c', 'Katina', 'Ritchie', 'agent')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jana@reichel.io' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:56', '2019-02-16 11:52:56', 'jana@reichel.io', '$2a$10$/BnCIjt6OMMsE6F3JNGjM.2ai2Et3GGAdjK/OedNUHhDJcWSCgrmG', 'c8b7f621d8ed32a7732b39478a05dc1f8a13d405', 'Keven', 'McLaughlin', 'agent')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'nikifranecki@haucktoy.info' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:56', '2019-02-16 11:52:56', 'nikifranecki@haucktoy.info', '$2a$10$1cJNBB5TYW83mavofOc6weFMbzx/CXxFTu6p3RiK2CEKdCDTvppuS', 'c34ae8d699582b944f61d2b25165e7f8fc8bf8a8', 'Rob', 'Johns', 'customer')[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'antonespinka@graham.org' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:56', '2019-02-16 11:52:56', 'antonespinka@graham.org', '$2a$10$KdxrCgeCJFkwPZC1YLWeYu//oHLr88YRgokAJUTlz4OZWDpImKw9O', 'b463cb872c3394c65fe98a31c08e117a50686ae4', 'Maryjo', 'Ondricka', 'customer')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'trenton@lesch.com' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:56', '2019-02-16 11:52:56', 'trenton@lesch.com', '$2a$10$0Q/SEYW/WBud0Py7rh8m3.8NyqHYPhXvrQLfas4y.TOxFbSe/gWhy', '9aa45ed8767063f826a95d748f6213d247960d69', 'Kristle', 'McCullough', 'customer')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'adelia@dietrich.biz' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:56', '2019-02-16 11:52:56', 'adelia@dietrich.biz', '$2a$10$ycXhisI0/qelJIec8NT9Huqi82YFjWNHIjHiDvoNru.fMPFn0R06W', '3e0db30accb441eda9b49c33339c1bf23075f796', 'Tomas', 'Baumbach', 'customer')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'leon@dickinson.name' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `first_name`, `last_name`, `role`) VALUES ('2019-02-16 11:52:56', '2019-02-16 11:52:56', 'leon@dickinson.name', '$2a$10$TXU8o3Jwj7HAy95oImkXOuCdV4GlB.GListv0D46YX.aB9DqOKLAe', 'af18d71ba29055617411d047cfb22d4ac1933921', 'Reuben', 'O\'Conner', 'customer')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@test.org' LIMIT 1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`, `remember_token`, `role`) VALUES ('2019-02-16 11:58:16', '2019-02-16 11:58:16', 'admin@test.org', '$2a$10$NuWeJACmcbeKRApZRSy6W.BIrEsAODOMUvk/AdsaYVqXXDHE5ppH6', '43063994a97a64a80fca688f65dd8f4f0feab2ad', 'admin')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/session" for 127.0.0.1 at 2019-02-16 20:59:07 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 64ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-16 20:59:07 +0900
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-16 20:59:12 +0900
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `tours`[0m
+  [1m[36mTour Load (0.1ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` ORDER BY `tours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `tour_locations`[0m
+  [1m[36mTourLocation Load (0.2ms)[0m  [1m[34mSELECT  `tour_locations`.* FROM `tour_locations` ORDER BY `tour_locations`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `user_tours`[0m
+  [1m[36mUserTour Load (0.1ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` ORDER BY `user_tours`.`id` DESC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (21.4ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.4ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (6.3ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (3.2ms)
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (3.1ms)
+Completed 200 OK in 618ms (Views: 305.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/admin/user?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-16 20:59:18 +0900
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (116.4ms)
+Completed 200 OK in 170ms (Views: 136.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/admin/user?model_name=user&set=1&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-16 20:59:34 +0900
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"user", "set"=>"1", "_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 12[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 11[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 11[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 10[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 10[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 9[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 9[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 8[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 8[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 7[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 7[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 6[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 6[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 5[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 5[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 4[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 4[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 3[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 3[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 2[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 2[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (128.5ms)
+Completed 200 OK in 170ms (Views: 135.1ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/admin/user?model_name=user&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-16 20:59:49 +0900
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"user", "_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (60.6ms)
+Completed 200 OK in 124ms (Views: 85.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/user/12?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-16 21:00:04 +0900
+Processing by RailsAdmin::MainController#show as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user", "id"=>"12"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 12 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/pjax
+  [1m[36mUserTour Load (0.4ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 12[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/pjax (7.0ms)
+Completed 200 OK in 42ms (Views: 19.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/admin/user/12/edit?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-16 21:00:07 +0900
+Processing by RailsAdmin::MainController#edit as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user", "id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 12 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/edit.html.haml within layouts/rails_admin/pjax
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_boolean.html.haml (3.8ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (2.9ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.2ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.2ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.1ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.1ms)
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `user_tours`[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` ORDER BY user_tours.id desc[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (15.0ms)
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 12[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `tours`[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` ORDER BY tours.id desc[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (11.0ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_submit_buttons.html.haml (5.2ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/edit.html.haml within layouts/rails_admin/pjax (59.6ms)
+Completed 200 OK in 83ms (Views: 69.7ms | ActiveRecord: 2.6ms)
+
+
+Started PUT "/admin/user/12/edit" for 127.0.0.1 at 2019-02-16 21:00:56 +0900
+Processing by RailsAdmin::MainController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"admin"=>"0", "email"=>"admin@test.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirmation_token"=>"[FILTERED]", "first_name"=>"", "last_name"=>"", "role"=>"admin", "user_tour_ids"=>["", ""], "tour_ids"=>["", ""]}, "return_to"=>"http://localhost:3000/admin/user/12", "_continue"=>"", "model_name"=>"user", "id"=>"12"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 12 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/admin/user/12
+Filter chain halted as :check_for_cancel rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/user/12" for 127.0.0.1 at 2019-02-16 21:00:56 +0900
+Processing by RailsAdmin::MainController#show as HTML
+  Parameters: {"model_name"=>"user", "id"=>"12"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 12 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/application
+  [1m[36mUserTour Load (0.4ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 12[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/application (6.1ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.8ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (7.5ms)
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (2.8ms)
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (5.0ms)
+Completed 200 OK in 149ms (Views: 139.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/admin/?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-16 21:01:02 +0900
+Processing by RailsAdmin::MainController#dashboard as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `tours`[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` ORDER BY `tours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `tour_locations`[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT  `tour_locations`.* FROM `tour_locations` ORDER BY `tour_locations`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `user_tours`[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` ORDER BY `user_tours`.`id` DESC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax (16.5ms)
+Completed 200 OK in 49ms (Views: 33.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/admin/user?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-16 21:01:07 +0900
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (149.5ms)
+Completed 200 OK in 183ms (Views: 161.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/user?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-16 21:01:23 +0900
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (72.8ms)
+Completed 200 OK in 114ms (Views: 83.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/user?model_name=user&set=1&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-16 21:01:31 +0900
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"user", "set"=>"1", "_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 12[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 11[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 11[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 10[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 10[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 9[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 9[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 8[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 8[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 7[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 7[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 6[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 6[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 5[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 5[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 4[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 4[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 3[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 3[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 2[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 2[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (67.3ms)
+Completed 200 OK in 102ms (Views: 67.7ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/admin/user?model_name=user&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-16 21:01:46 +0900
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"user", "_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (58.5ms)
+Completed 200 OK in 83ms (Views: 64.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/user?model_name=user&sort=id&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-16 21:01:50 +0900
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"user", "sort"=>"id", "_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (63.8ms)
+Completed 200 OK in 84ms (Views: 70.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/user?model_name=user&sort=id&sort_reverse=true&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-16 21:01:52 +0900
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"user", "sort"=>"id", "sort_reverse"=>"true", "_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id asc LIMIT 20 OFFSET 0[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (68.8ms)
+Completed 200 OK in 100ms (Views: 76.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/tour?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-16 21:02:04 +0900
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"tour"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` ORDER BY tours.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (71.6ms)
+Completed 200 OK in 121ms (Views: 84.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/tours" for 127.0.0.1 at 2019-02-16 21:02:53 +0900
+Processing by ToursController#index as HTML
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  Rendered tours/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 52ms (Views: 42.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tours" for 127.0.0.1 at 2019-02-16 21:04:30 +0900
+  [1m[35m (0.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ToursController#index as HTML
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  Rendered tours/index.html.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 1003ms (Views: 985.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:04:34 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (13.7ms)
+  Rendered tours/new.html.erb within layouts/application (16.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 107ms (Views: 44.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:18:48 +0900
+  [1m[35m (0.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (27.5ms)
+  Rendered tours/new.html.erb within layouts/application (30.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 78ms (Views: 72.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:21:18 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (45.0ms)
+  Rendered tours/new.html.erb within layouts/application (49.7ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 117ms (Views: 111.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:41:10 +0900
+  [1m[35m (1.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (45.6ms)
+  Rendered tours/new.html.erb within layouts/application (49.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 102ms (Views: 94.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:44:23 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (78.0ms)
+  Rendered tours/new.html.erb within layouts/application (82.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 136ms (Views: 131.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:45:16 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (41.3ms)
+  Rendered tours/new.html.erb within layouts/application (47.4ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 100ms (Views: 93.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:45:53 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (38.1ms)
+  Rendered tours/new.html.erb within layouts/application (42.5ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 89ms (Views: 84.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:49:09 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (88.7ms)
+  Rendered tours/new.html.erb within layouts/application (91.2ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 138ms (Views: 131.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:49:57 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (74.3ms)
+  Rendered tours/new.html.erb within layouts/application (79.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 126ms (Views: 121.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:54:39 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (89.1ms)
+  Rendered tours/new.html.erb within layouts/application (91.8ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `status' for #<Class:0x000055fb0146ea40>
+Did you mean?  statuses):
+    59: 
+    60:   <div class="field">
+    61:     <%= form.label :status %>
+    62:     <%= form.select :status, Tour.status.keys.to_a %>
+    63:   </div>
+    64: 
+    65:   <div class="actions create">
+  
+app/views/tours/_form.html.erb:62:in `block in _app_views_tours__form_html_erb__957181131666515704_69893279653180'
+app/views/tours/_form.html.erb:1:in `_app_views_tours__form_html_erb__957181131666515704_69893279653180'
+app/views/tours/new.html.erb:3:in `_app_views_tours_new_html_erb__2806401120447813577_69893279803880'
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:56:50 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (30.5ms)
+  Rendered tours/new.html.erb within layouts/application (33.3ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 88ms (Views: 83.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:57:12 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (52.6ms)
+  Rendered tours/new.html.erb within layouts/application (57.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 102ms (Views: 96.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:58:19 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (73.3ms)
+  Rendered tours/new.html.erb within layouts/application (76.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 121ms (Views: 116.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:58:47 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (44.0ms)
+  Rendered tours/new.html.erb within layouts/application (47.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 88ms (Views: 82.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:59:06 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (67.6ms)
+  Rendered tours/new.html.erb within layouts/application (71.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 123ms (Views: 117.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 21:59:44 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (74.0ms)
+  Rendered tours/new.html.erb within layouts/application (76.7ms)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for "+1":String):
+    54: 
+    55:   <div class="field">
+    56:     <%= form.label :op_phone, "Operator Phone" %>
+    57:     <%= form.text_field :op_phone, placeholder="+1" %>
+    58:   </div>
+    59: 
+    60:   <div class="field">
+  
+app/views/tours/_form.html.erb:57:in `block in _app_views_tours__form_html_erb__957181131666515704_69893098137940'
+app/views/tours/_form.html.erb:1:in `_app_views_tours__form_html_erb__957181131666515704_69893098137940'
+app/views/tours/new.html.erb:3:in `_app_views_tours_new_html_erb__2806401120447813577_69893098493920'
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 22:00:39 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (65.4ms)
+  Rendered tours/new.html.erb within layouts/application (67.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 115ms (Views: 109.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 22:02:10 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (66.5ms)
+  Rendered tours/new.html.erb within layouts/application (72.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 117ms (Views: 112.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 22:02:58 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (49.3ms)
+  Rendered tours/new.html.erb within layouts/application (54.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 127ms (Views: 103.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 22:03:00 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (31.6ms)
+  Rendered tours/new.html.erb within layouts/application (33.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 72ms (Views: 68.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 22:03:02 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (28.2ms)
+  Rendered tours/new.html.erb within layouts/application (31.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 81ms (Views: 77.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 22:03:18 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (47.4ms)
+  Rendered tours/new.html.erb within layouts/application (49.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 116ms (Views: 113.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 22:03:39 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (87.4ms)
+  Rendered tours/new.html.erb within layouts/application (91.4ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 154ms (Views: 149.0ms | ActiveRecord: 0.8ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddForeignKeyToTourLocations (20190216135623)
+  [1m[35m (16.0ms)[0m  [1m[35mALTER TABLE `tour_locations` ADD CONSTRAINT `fk_rails_a095194d1c`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tour` (`id`)
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('1146570335446526970', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddForeignKeyToTourLocations (20190216135623)
+  [1m[35m (30.2ms)[0m  [1m[35mALTER TABLE `tour_locations` ADD CONSTRAINT `fk_rails_a095194d1c`
+FOREIGN KEY (`tour_id`)
+  REFERENCES `tours` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190216135623')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
