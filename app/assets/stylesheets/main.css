@@ -42,3 +42,12 @@ label, textarea {
     padding: 30px;
 }
 
+.nested_tour_tour_locations {
+    border: none;
+}
+
+.nested-form-ul {
+    list-style: none;
+    margin: 0;
+}
+

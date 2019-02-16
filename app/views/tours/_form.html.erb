@@ -62,7 +62,32 @@
     <%= form.select :status, Tour.statuses.values.to_a %>
   </div>
 
-  <div class="create"><b>Add Itinerary</b></div>
+  <div class="field page-title"><b><h2>Itinerary</h2></b></div>
+
+  <div class="field">
+    <label><b>Enter Start Location: </b></label>
+  </div>
+
+  <ul class="nested-form-ul">
+    <%= form.nested_fields_for :tour_locations do |tour_loc_form| %>
+      <li>
+
+        <div class="field">
+          <%= tour_loc_form.label :country %>
+          <%= tour_loc_form.text_field :country %>
+        </div>
+
+        <div class="field">
+          <%= tour_loc_form.label :state_or_province, "State/Province" %>
+          <%= tour_loc_form.text_field :state_or_province %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="page-title">
+    <%= form.add_nested_fields_link :tour_locations %>
+  </div>
 
   <div class="actions create">
     <%= form.submit %>

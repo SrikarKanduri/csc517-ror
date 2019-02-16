@@ -11539,3 +11539,212 @@ FOREIGN KEY (`tour_id`)
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('1146570335446526970')[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 23:40:48 +0900
+  [1m[35m (0.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (933.3ms)
+  Rendered tours/new.html.erb within layouts/application (937.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 4323ms (Views: 4246.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 23:50:46 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (23.0ms)
+  Rendered tours/new.html.erb within layouts/application (24.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 111ms (Views: 72.4ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 23:51:03 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (64.6ms)
+  Rendered tours/new.html.erb within layouts/application (68.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 121ms (Views: 111.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 23:52:21 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (70.0ms)
+  Rendered tours/new.html.erb within layouts/application (73.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 119ms (Views: 111.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 23:55:11 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (29.4ms)
+  Rendered tours/new.html.erb within layouts/application (30.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 77ms (Views: 74.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 23:58:21 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (37.3ms)
+  Rendered tours/new.html.erb within layouts/application (39.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 79ms (Views: 76.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-16 23:59:02 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (25.4ms)
+  Rendered tours/new.html.erb within layouts/application (26.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 59ms (Views: 56.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:00:12 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (47.0ms)
+  Rendered tours/new.html.erb within layouts/application (49.8ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 105ms (Views: 98.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:01:51 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (33.0ms)
+  Rendered tours/new.html.erb within layouts/application (35.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 82ms (Views: 74.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:02:36 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (50.9ms)
+  Rendered tours/new.html.erb within layouts/application (55.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 98ms (Views: 88.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:02:53 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (55.6ms)
+  Rendered tours/new.html.erb within layouts/application (61.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 113ms (Views: 103.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:03:38 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (59.7ms)
+  Rendered tours/new.html.erb within layouts/application (63.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 108ms (Views: 101.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:05:08 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (67.7ms)
+  Rendered tours/new.html.erb within layouts/application (71.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 114ms (Views: 107.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:05:31 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (64.9ms)
+  Rendered tours/new.html.erb within layouts/application (70.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 118ms (Views: 111.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:05:57 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (51.9ms)
+  Rendered tours/new.html.erb within layouts/application (57.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 98ms (Views: 91.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:06:37 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (80.0ms)
+  Rendered tours/new.html.erb within layouts/application (83.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 132ms (Views: 123.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:09:41 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (4.7ms)
+  Rendered tours/new.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/gabalmat/_git/csc517-ror/app/views/tours/_form.html.erb:96: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/tours/_form.html.erb:96: syntax error, unexpected end-of-input, expecting keyword_end
+app/views/tours/new.html.erb:3:in `_app_views_tours_new_html_erb__2064683746969962316_70321670612920'
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:10:25 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (44.6ms)
+  Rendered tours/new.html.erb within layouts/application (49.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 89ms (Views: 81.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:10:40 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (52.6ms)
+  Rendered tours/new.html.erb within layouts/application (55.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 97ms (Views: 90.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:11:11 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (52.7ms)
+  Rendered tours/new.html.erb within layouts/application (54.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 94ms (Views: 88.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:11:52 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (60.7ms)
+  Rendered tours/new.html.erb within layouts/application (63.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 116ms (Views: 111.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:14:15 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (68.2ms)
+  Rendered tours/new.html.erb within layouts/application (74.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 119ms (Views: 111.8ms | ActiveRecord: 0.5ms)
+
+

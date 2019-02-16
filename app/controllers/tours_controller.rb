@@ -15,6 +15,8 @@ class ToursController < ApplicationController
   # GET /tours/new
   def new
     @tour = Tour.new
+    # create a new empty tour_locations instance so locations can be saved while creating a tour
+    @tour.tour_locations.build
   end
 
   # GET /tours/1/edit
