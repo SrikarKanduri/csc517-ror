@@ -1,17 +1,4 @@
 
-<% if @user.role != "admin" %>
-  <div class="role-dropdown">
-    <p>
-      <%= form.label :role %><br />
-      <%= form.collection_select :role, User::ROLES.select { |role|  role != "admin"  }, :to_s, :titleize %>
-    </p>
-
-  <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-<% end %>
-
 <div class="first-name">
   <%= form.label :first_name %>
   <%= form.text_field :first_name %>
@@ -22,4 +9,17 @@
   <%= form.text_field :last_name %>
 </div>
 
-</div>
+<% if @user.role != "admin" %>
+  <div class="password-field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="role-dropdown">
+    <p>
+      <%= form.label :role %><br />
+      <%= form.collection_select :role, User::ROLES.select { |role|  role != "admin"  }, :to_s, :titleize %>
+    </p>
+  </div>
+
+<% end %>

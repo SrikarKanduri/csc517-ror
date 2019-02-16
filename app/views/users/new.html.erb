@@ -2,6 +2,12 @@
   <h2><%= t(".title") %></h2>
 
   <%= form_for @user do |form| %>
+
+    <div class="email">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+
     <%= render partial: '/users/form', object: form %>
 
     <div class="submit-field">
