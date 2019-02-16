@@ -1,4 +1,5 @@
 RailsAdmin.config do |config|
+  config.main_app_name = ["TMS", "Project 2"]
 
   ## == Clearance ==
   config.parent_controller = "::ApplicationController"

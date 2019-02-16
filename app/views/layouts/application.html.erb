@@ -20,7 +20,7 @@
       <% else %>
         <h4>
           Currently signed in as: Admin.
-          <% if !current_user.first_name.empty? %>
+          <% if current_user.first_name %>
             Welcome <%= current_user.first_name %> <%= current_user.last_name %>.
           <% end %>
           Your email is: <%= current_user.email %>
@@ -41,6 +41,8 @@
         <span><%= link_to " Profile", user_path(current_user.id) %></span>
         <% if current_user.role == "admin" %>
           <span><%= link_to " Admin Section", rails_admin.dashboard_path %></span>
+        <% else %>
+          <span><%= link_to " Bookmarked Tours", "/tours/bookmarked" %></span>
         <% end %>
       <% end %>
     <hr>
