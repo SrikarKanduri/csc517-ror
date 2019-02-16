@@ -8,10 +8,18 @@
 </head>
 <body>
   <h2>Tour Management System</h2>
+
   <div id="header">
-    <% if signed_in? -%>
+    <% if signed_in? %>
+      <% if current_user.role != "admin" %>
+        <h4>Currently signed in as: <%= current_user.first_name %> <%= current_user.last_name %> .
+          Your role is: <%= current_user.role.to_s %></h4>
+      <% else %>
+        <h4>Currently signed in as: Admin</h4>
+      <% end %>
       <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
     <% else -%>
+      <h4>Not signed in...</h4>
       <%= link_to t(".sign_in"), sign_in_path %>
     <% end -%>
   </div>
@@ -19,7 +27,10 @@
   <hr>
     <span><%= link_to " Home", root_path %></span>
     <span><%= link_to " Welcome", landing_page_welcome_path %></span>
-    <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
+    <% if signed_in? && current_user.role == "admin" %>
+      <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
+    <% end %>
+<!--    <span><%#= link_to " Admin", rails_admin.dashboard_path %></span>-->
   <hr>
 
   <div id="flash">

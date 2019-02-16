@@ -8944,3 +8944,991 @@ Processing by LandingPageController#index as HTML
 Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-15 20:39:55 -0500
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 20:39:55 -0500
+  [1m[35m (1.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by LandingPageController#index as HTML
+Processing by RailsAdmin::MainController#dashboard as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f2731565a2da2a4285e03b93ade7ae41af0579df' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f2731565a2da2a4285e03b93ade7ae41af0579df' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 1982ms (Views: 1950.2ms | ActiveRecord: 23.2ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `tours`[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` ORDER BY `tours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `tour_locations`[0m
+  [1m[36mTourLocation Load (0.6ms)[0m  [1m[34mSELECT  `tour_locations`.* FROM `tour_locations` ORDER BY `tour_locations`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `user_tours`[0m
+  [1m[36mUserTour Load (0.5ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` ORDER BY `user_tours`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (19.1ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.4ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (6.6ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (2.6ms)
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (2.9ms)
+Completed 200 OK in 2774ms (Views: 247.3ms | ActiveRecord: 49.9ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-15 20:40:05 -0500
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f2731565a2da2a4285e03b93ade7ae41af0579df' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/welcome.html.erb within layouts/application
+  Rendered landing_page/welcome.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 29.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 20:40:07 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f2731565a2da2a4285e03b93ade7ae41af0579df' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 38ms (Views: 35.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-02-15 20:40:08 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f2731565a2da2a4285e03b93ade7ae41af0579df' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = '642ba581e3575193a91ff5db22b351001af5524d', `updated_at` = '2019-02-16 01:40:08' WHERE `users`.`id` = 24[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 8ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 20:40:08 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (7.0ms)
+  Rendered sessions/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-15 20:40:29 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"malcomblanda@wisozk.net", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'malcomblanda@wisozk.net' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 63ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 20:40:29 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 20:40:35 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 20:40:35 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 20:46:54 -0500
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 20:46:54 -0500
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by LandingPageController#index as HTML
+  [1m[35m (1.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 4.5ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    19:   <hr>
+    20:     <span><%= link_to " Home", root_path %></span>
+    21:     <span><%= link_to " Welcome", landing_page_welcome_path %></span>
+    22:     <% if can? :manage, :all %>
+    23:       <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
+    24:     <% end %>
+    25: <!--    <span><%#= link_to " Admin", rails_admin.dashboard_path %></span>-->
+  
+app/models/ability.rb:5:in `initialize'
+app/views/layouts/application.html.erb:22:in `_app_views_layouts_application_html_erb___323755658695864697_70215257915600'
+Started GET "/" for 127.0.0.1 at 2019-02-15 20:49:09 -0500
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 20:49:09 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 12.4ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    19:   <hr>
+    20:     <span><%= link_to " Home", root_path %></span>
+    21:     <span><%= link_to " Welcome", landing_page_welcome_path %></span>
+    22:     <% if can? :manage, "all" %>
+    23:       <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
+    24:     <% end %>
+    25: <!--    <span><%#= link_to " Admin", rails_admin.dashboard_path %></span>-->
+  
+app/models/ability.rb:8:in `initialize'
+app/views/layouts/application.html.erb:22:in `_app_views_layouts_application_html_erb___323755658695864697_70215313527140'
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 25ms (ActiveRecord: 10.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 20:49:21 -0500
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 20:49:21 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+Processing by LandingPageController#index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.5ms)
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 22ms (ActiveRecord: 10.3ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    19:   <hr>
+    20:     <span><%= link_to " Home", root_path %></span>
+    21:     <span><%= link_to " Welcome", landing_page_welcome_path %></span>
+    22:     <% if can? :manage %>
+    23:       <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
+    24:     <% end %>
+    25: <!--    <span><%#= link_to " Admin", rails_admin.dashboard_path %></span>-->
+  
+app/models/ability.rb:8:in `initialize'
+app/views/layouts/application.html.erb:22:in `_app_views_layouts_application_html_erb___323755658695864697_70215234019060'
+Started GET "/" for 127.0.0.1 at 2019-02-15 20:54:33 -0500
+Processing by LandingPageController#index as HTML
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 20:54:33 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+  Rendering landing_page/index.html.erb within layouts/application
+Filter chain halted as :_authorize! rendered or redirected
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+Completed 302 Found in 5ms (ActiveRecord: 2.3ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 244ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00007fb88428bf60>:0x00007fb887ca1f60>
+Did you mean?  super):
+    19:   <hr>
+    20:     <span><%= link_to " Home", root_path %></span>
+    21:     <span><%= link_to " Welcome", landing_page_welcome_path %></span>
+    22:     <% if user.role == "admin" %>
+    23:       <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
+    24:     <% end %>
+    25: <!--    <span><%#= link_to " Admin", rails_admin.dashboard_path %></span>-->
+  
+app/views/layouts/application.html.erb:22:in `_app_views_layouts_application_html_erb___323755658695864697_70215264505860'
+Started GET "/" for 127.0.0.1 at 2019-02-15 20:56:19 -0500
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 20:56:19 -0500
+Processing by LandingPageController#index as HTML
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+  Rendering landing_page/index.html.erb within layouts/application
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 4.3ms)
+
+
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 88ms (Views: 81.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 20:59:52 -0500
+Processing by LandingPageController#index as HTML
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 20:59:52 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 8.9ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 65ms (Views: 61.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:03:02 -0500
+Processing by LandingPageController#index as HTML
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 21:03:02 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+  Rendering landing_page/index.html.erb within layouts/application
+Filter chain halted as :_authorize! rendered or redirected
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+Completed 302 Found in 5ms (ActiveRecord: 2.3ms)
+
+
+Completed 500 Internal Server Error in 240ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `signed_in' for #<#<Class:0x00007fb88428bf60>:0x00007fb88bc330c0>
+Did you mean?  signed_in?):
+     9: <body>
+    10:   <h2>Tour Management System</h2>
+    11: 
+    12:   <% if signed_in %>
+    13:     <h4>Currently signed in as: <%= current_user.first_name current_user.last_name %></h4>
+    14:   <% end %>
+    15: 
+  
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___323755658695864697_70215305380380'
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:03:16 -0500
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 21:03:16 -0500
+Processing by LandingPageController#index as HTML
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+  Rendering landing_page/index.html.erb within layouts/application
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    10:   <h2>Tour Management System</h2>
+    11: 
+    12:   <% if signed_in? %>
+    13:     <h4>Currently signed in as: <%= current_user.first_name current_user.last_name %></h4>
+    14:   <% end %>
+    15: 
+    16:   <div id="header">
+  
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___323755658695864697_70215313098300'
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:03:42 -0500
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 21:03:42 -0500
+Processing by LandingPageController#index as HTML
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/index.html.erb within layouts/application
+Redirected to http://localhost:3000/
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 2.3ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:06:39 -0500
+Processing by LandingPageController#index as HTML
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 21:06:39 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/index.html.erb within layouts/application
+Redirected to http://localhost:3000/
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 1.9ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-02-15 21:06:41 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'f1f6cab3588ad68c0985936b98467ceb98bb7cca' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = '1afb080d1a4d32c3546b86b15c5dfa5dafde849d', `updated_at` = '2019-02-16 02:06:41' WHERE `users`.`id` = 31[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 5ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 21:06:41 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.6ms)
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `role' for nil:NilClass):
+    27:   <hr>
+    28:     <span><%= link_to " Home", root_path %></span>
+    29:     <span><%= link_to " Welcome", landing_page_welcome_path %></span>
+    30:     <% if current_user.role == "admin" %>
+    31:       <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
+    32:     <% end %>
+    33: <!--    <span><%#= link_to " Admin", rails_admin.dashboard_path %></span>-->
+  
+app/views/layouts/application.html.erb:30:in `_app_views_layouts_application_html_erb___323755658695864697_70215263960220'
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 21:07:13 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.3ms)
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `role' for nil:NilClass):
+    27:   <hr>
+    28:     <span><%= link_to " Home", root_path %></span>
+    29:     <span><%= link_to " Welcome", landing_page_welcome_path %></span>
+    30:     <% if current_user.role == "admin" %>
+    31:       <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
+    32:     <% end %>
+    33: <!--    <span><%#= link_to " Admin", rails_admin.dashboard_path %></span>-->
+  
+app/views/layouts/application.html.erb:30:in `_app_views_layouts_application_html_erb___323755658695864697_70215297477040'
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 21:07:15 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.6ms)
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `role' for nil:NilClass):
+    27:   <hr>
+    28:     <span><%= link_to " Home", root_path %></span>
+    29:     <span><%= link_to " Welcome", landing_page_welcome_path %></span>
+    30:     <% if current_user.role == "admin" %>
+    31:       <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
+    32:     <% end %>
+    33: <!--    <span><%#= link_to " Admin", rails_admin.dashboard_path %></span>-->
+  
+app/views/layouts/application.html.erb:30:in `_app_views_layouts_application_html_erb___323755658695864697_70215298025840'
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 21:07:54 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.6ms)
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `role' for nil:NilClass):
+    27:   <hr>
+    28:     <span><%= link_to " Home", root_path %></span>
+    29:     <span><%= link_to " Welcome", landing_page_welcome_path %></span>
+    30:     <% if current_user.role == "admin" %>
+    31:       <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
+    32:     <% end %>
+    33: <!--    <span><%#= link_to " Admin", rails_admin.dashboard_path %></span>-->
+  
+app/views/layouts/application.html.erb:30:in `_app_views_layouts_application_html_erb___323755658695864697_70215257865340'
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 21:08:42 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.2ms)
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `role' for nil:NilClass):
+    28:   <hr>
+    29:     <span><%= link_to " Home", root_path %></span>
+    30:     <span><%= link_to " Welcome", landing_page_welcome_path %></span>
+    31:     <% if current_user.role == "admin" %>
+    32:       <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
+    33:     <% end %>
+    34: <!--    <span><%#= link_to " Admin", rails_admin.dashboard_path %></span>-->
+  
+app/views/layouts/application.html.erb:31:in `_app_views_layouts_application_html_erb___323755658695864697_70215263721080'
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 21:09:07 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.3ms)
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `role' for nil:NilClass):
+    25:   <hr>
+    26:     <span><%= link_to " Home", root_path %></span>
+    27:     <span><%= link_to " Welcome", landing_page_welcome_path %></span>
+    28:     <% if current_user.role == "admin" %>
+    29:       <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
+    30:     <% end %>
+    31: <!--    <span><%#= link_to " Admin", rails_admin.dashboard_path %></span>-->
+  
+app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb___323755658695864697_70215263972860'
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:09:14 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `role' for nil:NilClass):
+    25:   <hr>
+    26:     <span><%= link_to " Home", root_path %></span>
+    27:     <span><%= link_to " Welcome", landing_page_welcome_path %></span>
+    28:     <% if current_user.role == "admin" %>
+    29:       <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
+    30:     <% end %>
+    31: <!--    <span><%#= link_to " Admin", rails_admin.dashboard_path %></span>-->
+  
+app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb___323755658695864697_70215265208500'
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:09:14 -0500
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 21:09:14 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `role' for nil:NilClass):
+    25:   <hr>
+    26:     <span><%= link_to " Home", root_path %></span>
+    27:     <span><%= link_to " Welcome", landing_page_welcome_path %></span>
+    28:     <% if current_user.role == "admin" %>
+    29:       <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
+    30:     <% end %>
+    31: <!--    <span><%#= link_to " Admin", rails_admin.dashboard_path %></span>-->
+  
+app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb___323755658695864697_70215297222480'
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 21:10:04 -0500
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:10:04 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+Processing by LandingPageController#index as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:12:12 -0500
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 21:12:12 -0500
+Processing by LandingPageController#index as HTML
+Processing by RailsAdmin::MainController#dashboard as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:12:55 -0500
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 21:12:55 -0500
+Processing by LandingPageController#index as HTML
+Processing by RailsAdmin::MainController#dashboard as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:12:57 -0500
+Processing by LandingPageController#index as HTML
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 21:12:57 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+Redirected to http://localhost:3000/
+  Rendering landing_page/index.html.erb within layouts/application
+Filter chain halted as :_authorize! rendered or redirected
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:15:38 -0500
+Processing by LandingPageController#index as HTML
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 21:15:38 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+Redirected to http://localhost:3000/
+  Rendering landing_page/index.html.erb within layouts/application
+Filter chain halted as :_authorize! rendered or redirected
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:15:40 -0500
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 21:15:40 -0500
+Processing by LandingPageController#index as HTML
+Processing by RailsAdmin::MainController#dashboard as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 44ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:16:05 -0500
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 21:16:05 -0500
+Processing by LandingPageController#index as HTML
+Processing by RailsAdmin::MainController#dashboard as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :_authorize! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 21:16:08 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.4ms)
+  Rendered sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-15 21:16:12 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 61ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:16:12 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '642ba581e3575193a91ff5db22b351001af5524d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-02-15 21:16:21 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '642ba581e3575193a91ff5db22b351001af5524d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = '11bc104752f486d9f6ae309a86768618182fdc46', `updated_at` = '2019-02-16 02:16:21' WHERE `users`.`id` = 24[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 8ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 21:16:21 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.0ms)
+  Rendered sessions/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 21:16:23 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.5ms)
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-15 21:16:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"agent1@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'agent1@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 59ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:16:28 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'b4a8d19cf82725ca9029236d9f0361f8cd98f0ab' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:17:41 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'b4a8d19cf82725ca9029236d9f0361f8cd98f0ab' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:21:45 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'b4a8d19cf82725ca9029236d9f0361f8cd98f0ab' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 41ms (Views: 38.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:22:07 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'b4a8d19cf82725ca9029236d9f0361f8cd98f0ab' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-02-15 21:22:20 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'b4a8d19cf82725ca9029236d9f0361f8cd98f0ab' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = 'd01de7c2649e6bf0e930e0ed502634dd110aa68f', `updated_at` = '2019-02-16 02:22:20' WHERE `users`.`id` = 35[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 10ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 21:22:20 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.7ms)
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-15 21:22:41 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"malcomblanda@wisozk.net", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'malcomblanda@wisozk.net' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 61ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:22:41 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1afb080d1a4d32c3546b86b15c5dfa5dafde849d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:23:22 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1afb080d1a4d32c3546b86b15c5dfa5dafde849d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-15 21:23:36 -0500
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1afb080d1a4d32c3546b86b15c5dfa5dafde849d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/welcome.html.erb within layouts/application
+  Rendered landing_page/welcome.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46ms (Views: 41.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:23:39 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1afb080d1a4d32c3546b86b15c5dfa5dafde849d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 32ms (Views: 27.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-15 21:23:40 -0500
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1afb080d1a4d32c3546b86b15c5dfa5dafde849d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/welcome.html.erb within layouts/application
+  Rendered landing_page/welcome.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 29ms (Views: 25.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:23:41 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1afb080d1a4d32c3546b86b15c5dfa5dafde849d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-15 21:23:43 -0500
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1afb080d1a4d32c3546b86b15c5dfa5dafde849d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/welcome.html.erb within layouts/application
+  Rendered landing_page/welcome.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:23:45 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1afb080d1a4d32c3546b86b15c5dfa5dafde849d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-02-15 21:26:46 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1afb080d1a4d32c3546b86b15c5dfa5dafde849d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = '4de96b0d9a2142deebd6dea602aabc37d6b3bd30', `updated_at` = '2019-02-16 02:26:46' WHERE `users`.`id` = 31[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 6ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 21:26:46 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.4ms)
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 59ms (Views: 58.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:27:10 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-15 21:29:36 -0500
+Processing by LandingPageController#welcome as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 21:29:36 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.3ms)
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:29:37 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-15 21:33:39 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (5.3ms)
+  Rendered sessions/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 100ms (Views: 95.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-15 21:33:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/landing_page/welcome
+Completed 302 Found in 67ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-15 21:33:43 -0500
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '11bc104752f486d9f6ae309a86768618182fdc46' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/welcome.html.erb within layouts/application
+  Rendered landing_page/welcome.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 21.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 21:33:44 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '11bc104752f486d9f6ae309a86768618182fdc46' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `tours`[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` ORDER BY `tours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `tour_locations`[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT  `tour_locations`.* FROM `tour_locations` ORDER BY `tour_locations`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `user_tours`[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` ORDER BY `user_tours`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (18.7ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (3.1ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (7.7ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (2.8ms)
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (3.3ms)
+Completed 200 OK in 302ms (Views: 224.4ms | ActiveRecord: 44.7ms)
+
+
+Started GET "/admin/tour_location?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-15 21:33:47 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"tour_location"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '11bc104752f486d9f6ae309a86768618182fdc46' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT  `tour_locations`.* FROM `tour_locations` ORDER BY tour_locations.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (80.7ms)
+Completed 200 OK in 139ms (Views: 92.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/tour?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-15 21:33:49 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"tour"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '11bc104752f486d9f6ae309a86768618182fdc46' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` ORDER BY tours.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (29.1ms)
+Completed 200 OK in 51ms (Views: 36.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/user?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-15 21:33:50 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '11bc104752f486d9f6ae309a86768618182fdc46' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (110.7ms)
+Completed 200 OK in 129ms (Views: 116.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:52:57 -0500
+  [1m[35m (3.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '11bc104752f486d9f6ae309a86768618182fdc46' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 119ms (Views: 84.8ms | ActiveRecord: 28.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:52:58 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '11bc104752f486d9f6ae309a86768618182fdc46' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 21:53:02 -0500
+Processing by LandingPageController#index as HTML
+  Rendering landing_page/index.html.erb within layouts/application
+  Rendered landing_page/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '11bc104752f486d9f6ae309a86768618182fdc46' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 88ms (Views: 82.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/landing_page/welcome" for 127.0.0.1 at 2019-02-15 21:53:04 -0500
+Processing by LandingPageController#welcome as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '11bc104752f486d9f6ae309a86768618182fdc46' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering landing_page/welcome.html.erb within layouts/application
+  Rendered landing_page/welcome.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2019-02-15 21:53:05 -0500
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '11bc104752f486d9f6ae309a86768618182fdc46' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `tours`[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` ORDER BY `tours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `tour_locations`[0m
+  [1m[36mTourLocation Load (0.6ms)[0m  [1m[34mSELECT  `tour_locations`.* FROM `tour_locations` ORDER BY `tour_locations`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `user_tours`[0m
+  [1m[36mUserTour Load (0.7ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` ORDER BY `user_tours`.`id` DESC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (12.8ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (13.1ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (18.6ms)
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (22.2ms)
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (12.8ms)
+Completed 200 OK in 290ms (Views: 230.8ms | ActiveRecord: 37.3ms)
+
+
+Started GET "/admin/user?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-15 21:53:10 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '11bc104752f486d9f6ae309a86768618182fdc46' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (198.9ms)
+Completed 200 OK in 232ms (Views: 211.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/user_tour?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-15 21:53:11 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user_tour"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '11bc104752f486d9f6ae309a86768618182fdc46' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUserTour Load (0.4ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` ORDER BY user_tours.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (37.1ms)
+Completed 200 OK in 76ms (Views: 48.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/user?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-02-15 21:53:12 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '11bc104752f486d9f6ae309a86768618182fdc46' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  Rendered /Users/bnmwaniki/.rvm/gems/ruby-2.6.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (85.5ms)
+Completed 200 OK in 102ms (Views: 91.2ms | ActiveRecord: 0.9ms)
+
+
