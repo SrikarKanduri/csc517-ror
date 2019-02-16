@@ -9,7 +9,6 @@ class User < ApplicationRecord
   ROLES = %w(customer agent admin)
 
   # every User must have: Email, password, role
-  # Clearance::User already checks for Email and password
   validates :role, presence: true
 
   # A User's role can be either: admin, agent, or customer
@@ -24,11 +23,6 @@ class User < ApplicationRecord
   # If a user is not an admin, which is usually the case, make sure user has a first and last name
   validates :first_name, presence: true, if: :user_is_not_admin?
   validates :last_name, presence: true, if: :user_is_not_admin?
-
-  # generate symbol list
-  # def role_symbols
-  #   [role.to_sym]
-  # end
 
   # check if user is admin
   def user_is_not_admin?

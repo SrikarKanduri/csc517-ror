@@ -14,11 +14,21 @@
 User.destroy_all
 
 # Statically create Admin user if admin user doesn't exist
+# An admin does not have to create first or last name
 if !User.exists?(email: "admin@test.org")
   admin_file = IO.readlines("admin_secrets.txt")
   email = admin_file[0]
   passwd = admin_file[1]
   User.create!([email: email.to_s, password: passwd.to_s, role: "admin"])
+end
+
+# Statically create a User called user1. Can be an agent or customer
+if !User.exists?(email: "user1@test.org")
+User.create!(role: "agent",
+             email: "user1@test.org",
+             password: "user1",
+             first_name: "User1",
+             last_name: "One")
 end
 
 # Create 5 Agents

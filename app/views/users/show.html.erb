@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="available-options">
+  <h3><b>Available Options: </b></h3>
+  <% if @user.role != "admin" %>
+    <%= button_to ("Delete Myself"), user_path(@user.id), method: :delete %>
+  <% end %>
+  <br>
+  <%= link_to 'Edit Myself', edit_user_path(@user) %>
+</div>

@@ -72,6 +72,10 @@ AWS CodeStar User Guide.
 
         $ rake app:update:bin && rails server
 
+7. If using the local db, you may need to start the SQL server
+     
+        $ mysql.server start
+   
 7. Open http://localhost:3000/ in a web browser to view your application.
 
 What Do I Do Next?
