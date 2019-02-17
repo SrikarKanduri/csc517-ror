@@ -11748,3 +11748,23 @@ Processing by ToursController#new as HTML
 Completed 200 OK in 119ms (Views: 111.8ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/tours/" for 127.0.0.1 at 2019-02-17 00:48:34 +0900
+  [1m[35m (0.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ToursController#index as HTML
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.6ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  Rendered tours/index.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 1032ms (Views: 1010.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-02-17 00:48:37 +0900
+Processing by ToursController#new as HTML
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (14.8ms)
+  Rendered tours/new.html.erb within layouts/application (15.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '43063994a97a64a80fca688f65dd8f4f0feab2ad' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 70ms (Views: 29.8ms | ActiveRecord: 2.2ms)
+
+
