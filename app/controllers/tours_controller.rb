@@ -1,5 +1,7 @@
 class ToursController < ApplicationController
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
+  before_action :require_login
+  load_and_authorize_resource
 
   # GET /tours
   # GET /tours.json
@@ -30,9 +32,10 @@ class ToursController < ApplicationController
 
     respond_to do |format|
       if @tour.save
-        # Add the new tour to the agent's list of tours
+        # Add the new tour to the agent's list of tours and the agent to the tour's list of users
         @user = current_user
         @user.tours << @tour
+        @tour.users << @user
         format.html { redirect_to @tour, notice: 'Tour was successfully created.' }
         format.json { render :show, status: :created, location: @tour }
       else
@@ -59,6 +62,7 @@ class ToursController < ApplicationController
   # DELETE /tours/1
   # DELETE /tours/1.json
   def destroy
+    current_user.tours.destroy(@tour)
     @tour.destroy
     respond_to do |format|
       format.html { redirect_to tours_url, notice: 'Tour was successfully destroyed.' }

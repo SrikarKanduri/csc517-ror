@@ -60,5 +60,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "faker", "~> 1.9"
 
-gem "cancan", "~> 1.6"
+#gem "cancan", "~> 1.6"
+gem 'cancancan', '~> 2.0'
 gem 'nested_form_fields'
