@@ -1,10 +1,30 @@
 <p id="notice"><%= notice %></p>
 
+<% if current_user && @user %>
+
 <div class="available-options">
-  <h3><b>Available Options: </b></h3>
-  <% if @user.role != "admin" %>
-    <%= button_to ("Delete Myself"), user_path(@user.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+<!--  This is the admin (current_user) viewing some other user (agent or customer)-->
+  <% if current_user.id != @user.id && current_user.role == "admin" %>
+    <h4><b>The User to modify... </b></h4>
+    <p><b>Full name: </b><%= @user.first_name %> <%= @user.last_name %></p>
+    <p><b>Email: </b><%= @user.email %></p>
+    <p><b>Role: </b><%= @user.role %></p>
+    <h4><b>Available Options: </b></h4>
+    <%= button_to ("Delete User"), user_path(@user.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <br>
+    <%= link_to 'Edit User', edit_user_path(@user) %>
+
+<!--  This is the user (agent or customer) viewing their profile-->
+  <% else %>
+    <h4><b>Available Options: </b></h4>
+    <% if @user.role != "admin" %>
+      <%= button_to ("Delete Myself"), user_path(@user.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    <br>
+    <%= link_to 'Edit Myself', edit_user_path(@user) %>
   <% end %>
-  <br>
-  <%= link_to 'Edit Myself', edit_user_path(@user) %>
 </div>
+
+<% else %>
+  An error has occurred. This page requires both current_user and @user of which, none were found
+<% end %>

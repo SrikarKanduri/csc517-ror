@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :reviews
   # Others
   resources :users
-  resources :customers
-  resources :agents
   resources :tours
+  resources :reviews
 
   # Generated from Clearance
   resources :passwords, controller: "passwords", only: [:create, :new]
@@ -23,11 +21,13 @@ Rails.application.routes.draw do
   delete "/sign_out" => "sessions#destroy", as: "sign_out"
   get "/sign_up" => "users#new", as: "sign_up"
 
-  # RailsAdmin link
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  # # RailsAdmin link
+  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   # Home page
-  root 'tours#index'
+  root 'home#index'
+
+  get '/', to: "home#index", as: "home"
 
   # # Show Profile page
   # get "/users/:id", to: "users#show", as: "user"

@@ -15,7 +15,9 @@
     </div>
 
     <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
+      <% if !signed_in? %>
+        <%= link_to "Sign In", sign_in_path %>
+      <% end %>
     </div>
   <% end %>
 </div>

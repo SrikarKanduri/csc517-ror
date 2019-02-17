@@ -36,14 +36,21 @@
 
   <div id="link-menu">
     <hr>
-      <span><%= link_to " Home", root_path %></span>
+      <span><%= link_to "Home", root_path %></span>
       <% if signed_in? %>
-        <span><%= link_to " Profile", user_path(current_user.id) %></span>
-        <% if current_user.role == "admin" %>
-          <span><%= link_to " Admin Section", rails_admin.dashboard_path %></span>
-        <% else %>
-          <span><%= link_to " Bookmarked Tours", "/tours/bookmarked" %></span>
+        <span><%= link_to "Profile", user_path(current_user.id) %></span>
+
+        <% if current_user.role == "agent" || current_user.role == "admin" %>
+          <span><%= link_to "My Tours", tours_path %></span>
         <% end %>
+
+      <% if current_user.role == "customer" || current_user.role == "admin" %>
+        <span><%= link_to "My Bookmarked Tours", "/tours/bookmarked" %></span>
+        <span><%= link_to "My Reviews", reviews_path %></span>
+      <% end %>
+        <%# if current_user.role == "admin" %>
+<!--          <span><%#= link_to " Admin Section", rails_admin.dashboard_path %></span>-->
+        <%# end %>
       <% end %>
     <hr>
   </div>

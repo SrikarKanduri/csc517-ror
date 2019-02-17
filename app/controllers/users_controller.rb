@@ -1,14 +1,19 @@
-class UsersController < Clearance::UsersController
-  before_action :require_login, except: [:new]
+class UsersController < ApplicationController
+  # All methods here except new require user to be logged in
+  before_action :require_login, except: [:new, :create]
 
-  # def index
-  #   if current_user.role == "admin"
-  #     @users = User.all
-  #   else
-  #     flash[:error] = "Access denied."
-  #     redirect_to root_url
-  #   end
-  # end
+  # before_action :redirect_signed_in_users, only: [:create, :new]
+  # skip_before_action :require_login, only: [:create, :new], raise: false
+  # skip_before_action :authorize, only: [:create, :new], raise: false
+
+  def index
+    if current_user.role == "admin"
+      @users = User.all
+    else
+      flash[:error] = "Access denied."
+      redirect_to root_url
+    end
+  end
 
   def new
     @user = User.new
@@ -19,7 +24,7 @@ class UsersController < Clearance::UsersController
     @user = user_from_params
 
     if @user.save
-      sign_in @user
+      # sign_in @user
       redirect_back_or url_after_create
     else
       render template: "users/new"
@@ -35,7 +40,6 @@ class UsersController < Clearance::UsersController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
@@ -88,6 +92,17 @@ class UsersController < Clearance::UsersController
   end
 
   private
+
+  def redirect_signed_in_users
+    if signed_in?
+      redirect_to Clearance.configuration.redirect_url
+    end
+  end
+
+  def url_after_create
+    Clearance.configuration.redirect_url
+  end
+
   def user_from_params
     email = user_params.delete(:email)
     password = user_params.delete(:password)
