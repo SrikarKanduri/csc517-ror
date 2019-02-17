@@ -30,6 +30,9 @@ class ToursController < ApplicationController
 
     respond_to do |format|
       if @tour.save
+        # Add the new tour to the agent's list of tours
+        @user = current_user
+        @user.tours << @tour
         format.html { redirect_to @tour, notice: 'Tour was successfully created.' }
         format.json { render :show, status: :created, location: @tour }
       else
@@ -71,6 +74,7 @@ class ToursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
-      params.require(:tour).permit(:id, :name, :description, :created_at, :updated_at, :price, :booking_deadline, :from_date, :to_date, :total_seats, :op_email, :op_phone, :status)
+      params.require(:tour).permit(:id, :name, :description, :created_at, :updated_at, :price, :booking_deadline, :from_date, :to_date, :total_seats, :op_email, :op_phone, :status,
+                                   tour_locations_attributes: [:id, :country, :state_or_province, :_destroy])
     end
 end

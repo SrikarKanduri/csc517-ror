@@ -51,3 +51,7 @@ label, textarea {
     margin: 0;
 }
 
+.nested-form-ul > li:first-child > div > a.remove-link {
+    display: none;
+}
+

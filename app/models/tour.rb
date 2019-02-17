@@ -1,9 +1,8 @@
 class Tour < ApplicationRecord
   has_many :user_tours
   has_many :users, through: :user_tours
-  has_many :tour_locations
-  accepts_nested_attributes_for :tour_locations, allow_destroy: true,
-                                reject_if: lambda {|attr| attr['country'].blank? || attr['state_or_province'].blank?}
+  has_many :tour_locations, dependent: :delete_all
+  accepts_nested_attributes_for :tour_locations, allow_destroy: true
 
   enum status: {
       in_future: "In Future",
