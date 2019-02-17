@@ -72,7 +72,15 @@ AWS CodeStar User Guide.
 
         $ rake app:update:bin && rails server
 
-7. Open http://localhost:3000/ in a web browser to view your application.
+7. Can also reset and seed db by running
+     
+        $ scripts/reset_db.sh
+    
+8. If using the local db, you may need to start the SQL server
+     
+        $ mysql.server start
+
+9. Open http://localhost:3000/ in a web browser to view your application.
 
 What Do I Do Next?
 ------------------

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <%= javascript_include_tag 'application' %>
   <%= stylesheet_link_tag "main" %>
@@ -11,12 +11,22 @@
 
   <div id="header">
     <% if signed_in? %>
+
       <% if current_user.role != "admin" %>
         <h4>Currently signed in as: <%= current_user.first_name %> <%= current_user.last_name %> .
-          Your role is: <%= current_user.role.to_s %></h4>
+          Your role is: <%= current_user.role.to_s %>.
+          Your email is: <%= current_user.email %>
+        </h4>
       <% else %>
-        <h4>Currently signed in as: Admin</h4>
+        <h4>
+          Currently signed in as: Admin.
+          <% if current_user.first_name %>
+            Welcome <%= current_user.first_name %> <%= current_user.last_name %>.
+          <% end %>
+          Your email is: <%= current_user.email %>
+        </h4>
       <% end %>
+
       <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
     <% else -%>
       <h4>Not signed in...</h4>
@@ -24,21 +34,33 @@
     <% end -%>
   </div>
 
-  <hr>
-    <span><%= link_to " Home", root_path %></span>
-    <span><%= link_to " Welcome", landing_page_welcome_path %></span>
-    <% if signed_in? && current_user.role == "admin" %>
-      <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
-    <% end %>
-<!--    <span><%#= link_to " Admin", rails_admin.dashboard_path %></span>-->
-  <hr>
+  <div id="link-menu">
+    <hr>
+      <span><%= link_to "Home", root_path %></span>
+      <% if signed_in? %>
+        <span><%= link_to "Profile", user_path(current_user.id) %></span>
+
+        <% if current_user.role == "agent" || current_user.role == "admin" %>
+          <span><%= link_to "My Tours", tours_path %></span>
+        <% end %>
+
+      <% if current_user.role == "customer" || current_user.role == "admin" %>
+        <span><%= link_to "My Bookmarked Tours", "/tours/bookmarked" %></span>
+        <span><%= link_to "My Reviews", reviews_path %></span>
+      <% end %>
+        <%# if current_user.role == "admin" %>
+<!--          <span><%#= link_to " Admin Section", rails_admin.dashboard_path %></span>-->
+        <%# end %>
+      <% end %>
+    <hr>
+  </div>
+
+  <%= yield %>
 
   <div id="flash">
     <% flash.each do |key, value| -%>
       <div id="flash_<%= key %>"><%=h value %></div>
     <% end %>
   </div>
-
-  <%= yield %>
 </body>
 </html>
