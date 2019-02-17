@@ -1,4 +1,14 @@
 class UsersController < Clearance::UsersController
+  before_action :require_login, except: [:new]
+
+  # def index
+  #   if current_user.role == "admin"
+  #     @users = User.all
+  #   else
+  #     flash[:error] = "Access denied."
+  #     redirect_to root_url
+  #   end
+  # end
 
   def new
     @user = User.new

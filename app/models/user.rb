@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   has_many :user_tours
   has_many :tours, through: :user_tours
+  has_many :reviews
 
   # User can have only one role
   # Default should be customer?

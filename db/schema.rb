@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_16_135623) do
+ActiveRecord::Schema.define(version: 2019_02_17_000451) do
+
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "subject"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "tour_locations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "country"
@@ -66,6 +75,7 @@ ActiveRecord::Schema.define(version: 2019_02_16_135623) do
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
+  add_foreign_key "reviews", "users"
   add_foreign_key "tour_locations", "tours"
   add_foreign_key "user_tours", "tours"
   add_foreign_key "user_tours", "users"
