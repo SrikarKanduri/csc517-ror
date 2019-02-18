@@ -7,9 +7,21 @@ class ToursController < ApplicationController
   # GET /tours.json
   def index
     personalize = params[:my_tours]
+    bookmarked_tours = params[:bookmarked_tours]
+
     if personalize
-      @tours = current_user.tours
-      @page_title = "My Tours"
+      if current_user.role.eql? 'agent'
+        @tours = current_user.tours
+        @page_title = "My Tours"
+      elsif current_user.role.eql? 'customer'
+        booked_user_tours = current_user.user_tours.select {|x| x.booked?}
+        @tours = booked_user_tours.map {|ut| Tour.find(ut[:tour_id])}
+        @page_title = "My Booked Tours"
+      end
+    elsif bookmarked_tours
+      bookmarked_user_tours = current_user.user_tours.select {|x| x.bookmarked?}
+      @tours = bookmarked_user_tours.map {|ut| Tour.find(ut[:tour_id])}
+      @page_title = "My Bookmarked Tours"
     else
       @tours = Tour.all
       @page_title = "All Tours"
@@ -19,6 +31,8 @@ class ToursController < ApplicationController
   # GET /tours/1
   # GET /tours/1.json
   def show
+    # If a user_tours record exists for this tour and this user, send it to the show view
+    @user_tour_rec = UserTour.find_by('user_id': current_user.id, 'tour_id': @tour.id)
   end
 
   # GET /tours/new
@@ -72,6 +86,25 @@ class ToursController < ApplicationController
       format.html { redirect_to tours_url, notice: 'Tour was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def bookmark
+    @tour = Tour.find(params[:tour_id])
+    @tour.users << current_user unless @tour.users.include? current_user
+    user_tour = UserTour.find_by('user_id': current_user.id, 'tour_id': @tour.id)
+    user_tour[:bookmarked] = true
+    user_tour.save
+    respond_to do |format|
+      format.html { redirect_to @tour, notice: 'Tour has been bookmarked.' }
+    end
+  end
+
+  def undo_bookmark
+
+  end
+
+  def book
+
   end
 
   private

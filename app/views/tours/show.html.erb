@@ -65,5 +65,55 @@
   <%= Tour.statuses[@tour.status] %>
 </p>
 
-<%= link_to 'Edit', edit_tour_path(@tour) %> |
+<div><h2>Itinerary:</h2></div>
+
+<% @tour.tour_locations.each do |loc| %>
+  <div>
+    <p>
+      <strong>Country:</strong>
+      <%= loc.country %>
+    </p>
+  </div>
+
+  <div>
+    <p>
+      <strong>State/Province:</strong>
+      <%= loc.state_or_province %>
+    </p>
+  </div>
+<% end %>
+
+<!--If the currently logged in user is a customer, allow them book or bookmark this tour-->
+<% if current_user.role.eql? 'customer' %>
+  <hr>
+    <div>
+      <span>
+        <% if @user_tour_rec && @user_tour_rec.bookmarked? %>
+          <div class="tour-bookmark">
+            <span>Bookmarked!</span>
+          </div>
+        <% else %>
+          <%= form_with :url => bookmark_path, method: :post, html: {class: "tour-bookmark"} do |f| %>
+            <%= f.hidden_field :tour_id, :value => @tour.id %>
+              <%= f.submit "Bookmark Tour" %>
+          <% end %>
+        <% end %>
+      </span>
+
+      <span>
+        <%= form_with url: {action: "book"}, html: {} do |f| %>
+          <%= f.submit "Book Tour" %>
+          <%= f.label :num_seats, "# seats: " %>
+          <%= f.select(:num_seats, options_for_select(1..1000)) %>
+        <% end %>
+      </span>
+    </div>
+  <hr>
+<% end %>
+
+<!--Only show the edit link if the current user can 'manage' this tour-->
+<% if can? :manage, @tour %>
+  <%= link_to 'Edit', edit_tour_path(@tour) %> |
+<% end %>
+
 <%= link_to 'Back', tours_path %>

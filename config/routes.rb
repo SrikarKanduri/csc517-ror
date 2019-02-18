@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get '/', to: "home#index", as: "home"
+  post '/bookmark', to: "tours#bookmark", as: "bookmark"
+  post '/book', to: "tours#book", as: "book"
 
   # # Show Profile page
   # get "/users/:id", to: "users#show", as: "user"

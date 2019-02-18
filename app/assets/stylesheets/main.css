@@ -59,3 +59,12 @@ label, textarea {
     display: none;
 }
 
+.tour-bookmark {
+    float: left;
+    margin: 0px 30px 0px 10px;
+}
+
+#link-menu span {
+    margin: 8px;
+}
+
