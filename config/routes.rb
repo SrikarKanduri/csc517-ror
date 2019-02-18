@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
   get '/', to: "home#index", as: "home"
   post '/bookmark', to: "tours#bookmark", as: "bookmark"
+  post '/undobookmark', to: "tours#undo_bookmark", as: "undo_bookmark"
   post '/book', to: "tours#book", as: "book"
 
   # # Show Profile page

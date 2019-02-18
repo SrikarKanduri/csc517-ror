@@ -16,6 +16,7 @@ class Ability
       can :read, Tour
       can :search, Tour
       can :bookmark, Tour
+      can :undo_bookmark, Tour
       can :book, Tour
       can :manage, Review
     end

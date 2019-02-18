@@ -100,7 +100,13 @@ class ToursController < ApplicationController
   end
 
   def undo_bookmark
-
+    @tour = Tour.find(params[:tour_id])
+    user_tour = UserTour.find_by('user_id': current_user.id, 'tour_id': @tour.id)
+    user_tour[:bookmarked] = false
+    user_tour.save
+    respond_to do |format|
+      format.html { redirect_to @tour, notice: 'Bookmark removed!'}
+    end
   end
 
   def book

@@ -91,6 +91,12 @@
         <% if @user_tour_rec && @user_tour_rec.bookmarked? %>
           <div class="tour-bookmark">
             <span>Bookmarked!</span>
+            <span>
+              <%= form_with :url => undo_bookmark_path, method: :post, html: {class: "remove-bookmark"} do |f| %>
+                <%= f.hidden_field :tour_id, :value => @tour.id %>
+                <%= f.submit "undo" %>
+              <% end %>
+            </span>
           </div>
         <% else %>
           <%= form_with :url => bookmark_path, method: :post, html: {class: "tour-bookmark"} do |f| %>
