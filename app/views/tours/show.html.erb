@@ -62,7 +62,7 @@
 
 <p>
   <strong>Status:</strong>
-  <%= @tour.status %>
+  <%= Tour.statuses[@tour.status] %>
 </p>
 
 <%= link_to 'Edit', edit_tour_path(@tour) %> |

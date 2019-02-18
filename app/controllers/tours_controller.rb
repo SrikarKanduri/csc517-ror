@@ -6,7 +6,14 @@ class ToursController < ApplicationController
   # GET /tours
   # GET /tours.json
   def index
-    @tours = Tour.all
+    personalize = params[:my_tours]
+    if personalize
+      @tours = current_user.tours
+      @page_title = "My Tours"
+    else
+      @tours = Tour.all
+      @page_title = "All Tours"
+    end
   end
 
   # GET /tours/1
@@ -32,10 +39,8 @@ class ToursController < ApplicationController
 
     respond_to do |format|
       if @tour.save
-        # Add the new tour to the agent's list of tours and the agent to the tour's list of users
-        @user = current_user
-        @user.tours << @tour
-        @tour.users << @user
+        # Save the current user to the new tour's list of users... this creates the association record in the user_tours table
+        @tour.users << current_user
         format.html { redirect_to @tour, notice: 'Tour was successfully created.' }
         format.json { render :show, status: :created, location: @tour }
       else
@@ -62,7 +67,6 @@ class ToursController < ApplicationController
   # DELETE /tours/1
   # DELETE /tours/1.json
   def destroy
-    current_user.tours.destroy(@tour)
     @tour.destroy
     respond_to do |format|
       format.html { redirect_to tours_url, notice: 'Tour was successfully destroyed.' }
@@ -78,7 +82,7 @@ class ToursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
-      params.require(:tour).permit(:id, :name, :description, :created_at, :updated_at, :price, :booking_deadline, :from_date, :to_date, :total_seats, :op_email, :op_phone, :status,
+      params.require(:tour).permit(:id, :name, :description, :created_at, :updated_at, :price, :booking_deadline, :from_date, :to_date, :total_seats, :op_email, :op_phone, :status, :my_tours,
                                    tour_locations_attributes: [:id, :country, :state_or_province, :_destroy])
     end
 end

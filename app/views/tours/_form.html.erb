@@ -59,7 +59,7 @@
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.select :status, Tour.statuses.values.to_a %>
+    <%= form.select :status, options_for_select(Tour.statuses.values.to_a, :selected => Tour.statuses[tour.status]), {}, :id => "tour-status-select" %>
   </div>
 
   <div class="field page-title"><b><h2>Itinerary</h2></b></div>

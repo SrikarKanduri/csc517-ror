@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tours</h1>
+<h1><%= @page_title %></h1>
 
 <table>
   <thead>
@@ -35,10 +35,12 @@
         <td><%= tour.total_seats %></td>
         <td><%= tour.op_email %></td>
         <td><%= tour.op_phone %></td>
-        <td><%= tour.status %></td>
+        <td><%= Tour.statuses[tour.status] %></td>
         <td><%= link_to 'Show', tour %></td>
-        <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
-        <td><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if can? :manage, tour %>
+          <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
+          <td><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -46,4 +48,7 @@
 
 <br>
 
-<%= link_to 'New Tour', new_tour_path %>
+<% if current_user.role.eql? 'agent' %>
+  <%= link_to 'New Tour', new_tour_path %>
+<% end %>
+

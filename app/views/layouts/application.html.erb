@@ -40,9 +40,7 @@
       <% if signed_in? %>
         <span><%= link_to "Profile", user_path(current_user.id) %></span>
 
-        <% if current_user.role == "agent" || current_user.role == "admin" %>
-          <span><%= link_to "My Tours", tours_path %></span>
-        <% end %>
+        <span><%= link_to "My Tours", tours_path(:my_tours => true) %></span>
 
       <% if current_user.role == "customer" || current_user.role == "admin" %>
         <span><%= link_to "My Bookmarked Tours", "/tours/bookmarked" %></span>
