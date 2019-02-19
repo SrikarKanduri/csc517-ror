@@ -1,29 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Reviews</h1>
+<h1><%= @title_message %></h1>
 
-<table>
-  <thead>
+<% if @reviews == nil || @reviews.empty? %>
+  <h3 style="color: red">No Reviews found</h3>
+  <p><%= link_to "Click here to create one", new_review_path %></p>
+<% else %>
+  <p><%= link_to "Create another review", new_review_path %></p>
+  <table>
+    <thead>
     <tr>
       <th>Subject</th>
       <th>Message</th>
+      <th>Tour Name</th>
+      <th>Tour Date</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @reviews.each do |review| %>
       <tr>
         <td><%= review.subject %></td>
         <td><%= review.message %></td>
+        <td><%= review.tour.name %></td>
+        <td><%= review.tour.created_at %></td>
         <td><%= link_to 'Show', review %></td>
         <td><%= link_to 'Edit', edit_review_path(review) %></td>
         <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
-
+    </tbody>
+  </table>
+<% end %>
 <br>
 
-<%= link_to 'New Review', new_review_path %>

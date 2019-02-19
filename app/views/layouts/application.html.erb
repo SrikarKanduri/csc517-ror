@@ -44,7 +44,7 @@
 
       <% if current_user.role == "customer" || current_user.role == "admin" %>
         <span><%= link_to "My Bookmarked Tours", tours_path(:bookmarked_tours => true) %></span>
-        <span><%= link_to "My Reviews", reviews_path %></span>
+        <span><%= link_to "My Reviews", reviews_path(:my_reviews => true) %></span>
       <% end %>
         <%# if current_user.role == "admin" %>
 <!--          <span><%#= link_to " Admin Section", rails_admin.dashboard_path %></span>-->

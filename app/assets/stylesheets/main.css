@@ -77,3 +77,8 @@ label, textarea {
     margin: 15px;
 }
 
+#flash {
+    color: red;
+    font-weight: bold;
+}
+
