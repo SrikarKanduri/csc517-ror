@@ -1,67 +1,67 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Id:</strong>
-  <%= @tour.id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
+  <strong>Name: </strong>
   <%= @tour.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Description: </strong>
   <%= @tour.description %>
 </p>
 
 <p>
-  <strong>Created at:</strong>
+  <strong>Created at: </strong>
   <%= @tour.created_at %>
 </p>
 
 <p>
-  <strong>Updated at:</strong>
+  <strong>Updated at: </strong>
   <%= @tour.updated_at %>
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <%= @tour.price %>
+  <strong>Price: </strong>
+  <%= number_to_currency(@tour.price) %>
 </p>
 
 <p>
-  <strong>Booking deadline:</strong>
+  <strong>Booking deadline: </strong>
   <%= @tour.booking_deadline %>
 </p>
 
 <p>
-  <strong>From date:</strong>
+  <strong>From date: </strong>
   <%= @tour.from_date %>
 </p>
 
 <p>
-  <strong>To date:</strong>
+  <strong>To date: </strong>
   <%= @tour.to_date %>
 </p>
 
 <p>
-  <strong>Total seats:</strong>
+  <strong>Total seats: </strong>
   <%= @tour.total_seats %>
 </p>
 
 <p>
-  <strong>Op email:</strong>
+  <strong>Available seats: </strong>
+  <%= @seats_available %>
+</p>
+
+<p>
+  <strong>Operator email: </strong>
   <%= @tour.op_email %>
 </p>
 
 <p>
-  <strong>Op phone:</strong>
+  <strong>Operator phone: </strong>
   <%= @tour.op_phone %>
 </p>
 
 <p>
-  <strong>Status:</strong>
+  <strong>Status: </strong>
   <%= Tour.statuses[@tour.status] %>
 </p>
 
@@ -107,15 +107,23 @@
       </span>
 
       <span>
-        <%= form_with url: {action: "book"}, html: {} do |f| %>
+        <%= form_with :url => book_path, method: :post, id: :book_form, data: {"seats" => @seats_available} do |f| %>
           <%= f.submit "Book Tour" %>
-          <%= f.label :num_seats, "# seats: " %>
-          <%= f.select(:num_seats, options_for_select(1..1000)) %>
+          <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
+          <%= f.select(:num_seats, options_for_select(1..1000), {}, {id: 'book_tour_select'}) %>
+          <%= f.hidden_field :waitlist_amt, :value => nil, :id => 'waitlist_amt' %>
+          <%= f.hidden_field :tour_id, :value => @tour.id %>
         <% end %>
       </span>
     </div>
   <hr>
 <% end %>
+
+<div id="book_dialog" title="Waitlist Seats?" style="display:none">
+  <input type="radio" name="book_options" value="no_waitlist"> No, just book the available seats<br>
+  <input type="radio" name="book_options" value="waitlist_some"> Yes, book available seats, waitlist the remaining seats<br>
+  <input type="radio" name="book_options" value="waitlist_all"> Waitlist all requested seats<br>
+</div>
 
 <!--Only show the edit link if the current user can 'manage' this tour-->
 <% if can? :manage, @tour %>
