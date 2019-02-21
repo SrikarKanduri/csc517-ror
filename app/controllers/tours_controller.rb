@@ -1,5 +1,5 @@
 class ToursController < ApplicationController
-  before_action :set_tour, only: [:show, :edit, :update, :destroy]
+  before_action :set_tour, only: [:edit, :update, :destroy]
   before_action :require_login
   load_and_authorize_resource
 
@@ -31,10 +31,11 @@ class ToursController < ApplicationController
   # GET /tours/1
   # GET /tours/1.json
   def show
-    # Get user_tour information from the UserTour model so we use it in the show view
-    user_tour_hash = UserTour.get_user_tour_info(@tour.id, current_user.id)
-    @seats_available = user_tour_hash[:seats_available]
-    @user_tour_rec = user_tour_hash[:user_tour_rec]
+    # Get tour information from the model so we use it in the show view
+    hash = Tour.handle_show(params[:id], current_user.id)
+    @tour = hash[:tour]
+    @seats_available = hash[:seats_available]
+    @user_tour = hash[:user_tour]
   end
 
   # GET /tours/new
@@ -92,10 +93,7 @@ class ToursController < ApplicationController
 
   def bookmark
     @tour = Tour.find(params[:tour_id])
-    @tour.users << current_user unless @tour.users.include? current_user
-    user_tour = UserTour.find_by('user_id': current_user.id, 'tour_id': @tour.id)
-    user_tour[:bookmarked] = true
-    user_tour.save
+    @tour.add_bookmark(current_user)
     respond_to do |format|
       format.html { redirect_to @tour, notice: 'Tour has been bookmarked.' }
     end
@@ -103,29 +101,18 @@ class ToursController < ApplicationController
 
   def undo_bookmark
     @tour = Tour.find(params[:tour_id])
-    user_tour = UserTour.find_by('user_id': current_user.id, 'tour_id': @tour.id)
-    user_tour[:bookmarked] = false
-    user_tour.save
+    @tour.remove_bookmark(current_user)
     respond_to do |format|
       format.html { redirect_to @tour, notice: 'Bookmark removed!'}
     end
   end
 
   def book
-    tour = Tour.find(params[:tour_id])
-    user_tour_hash = UserTour.get_user_tour_info(tour.id, current_user.id)
-    seats_available = user_tour_hash[:seats_available]
-    user_tour_rec = user_tour_has[:user_tour_rec]
-    waitlist_seats = params[:waitlist_amt].to_i
-
-    tour.users << current_user unless tour.users.include? current_user
-
-
-    if seats_available.zero? && waitlist_seats > 0
-      user_tour_rec[:wait_listed] = true
-      user_tour_rec[:num_wait_listed] = waitlist_seats
+    @tour = Tour.find(params[:tour_id])
+    @tour.book_tour(current_user, params[:num_seats].to_i, params[:waitlist_amt].to_i)
+    respond_to do |format|
+      format.html { redirect_to @tour, notice: 'Booking complete!'}
     end
-
   end
 
   private
