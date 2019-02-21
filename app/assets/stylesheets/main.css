@@ -77,8 +77,15 @@ label, textarea {
     margin: 15px;
 }
 
+.num-seats-label {
+    margin-left: 10px;
+}
+
+.no-close .ui-dialog-titlebar-close {
+    display: none;
+}
+
 #flash {
     color: red;
     font-weight: bold;
 }
-

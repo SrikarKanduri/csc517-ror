@@ -31,8 +31,10 @@ class ToursController < ApplicationController
   # GET /tours/1
   # GET /tours/1.json
   def show
-    # If a user_tours record exists for this tour and this user, send it to the show view
-    @user_tour_rec = UserTour.find_by('user_id': current_user.id, 'tour_id': @tour.id)
+    # Get user_tour information from the UserTour model so we use it in the show view
+    user_tour_hash = UserTour.get_user_tour_info(@tour.id, current_user.id)
+    @seats_available = user_tour_hash[:seats_available]
+    @user_tour_rec = user_tour_hash[:user_tour_rec]
   end
 
   # GET /tours/new
@@ -110,6 +112,19 @@ class ToursController < ApplicationController
   end
 
   def book
+    tour = Tour.find(params[:tour_id])
+    user_tour_hash = UserTour.get_user_tour_info(tour.id, current_user.id)
+    seats_available = user_tour_hash[:seats_available]
+    user_tour_rec = user_tour_has[:user_tour_rec]
+    waitlist_seats = params[:waitlist_amt].to_i
+
+    tour.users << current_user unless tour.users.include? current_user
+
+
+    if seats_available.zero? && waitlist_seats > 0
+      user_tour_rec[:wait_listed] = true
+      user_tour_rec[:num_wait_listed] = waitlist_seats
+    end
 
   end
 
