@@ -70,7 +70,7 @@ label, textarea {
 }
 
 .remove-bookmark input[type=submit] {
-    border-radius: 3px;
+    /*border-radius: 3px;*/
 }
 
 #link-menu span {
@@ -83,5 +83,10 @@ label, textarea {
 
 .no-close .ui-dialog-titlebar-close {
     display: none;
+}
+
+.update_booking {
+    display: inline;
+    margin-left: 15px;
 }
 

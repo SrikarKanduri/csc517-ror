@@ -1,5 +1,5 @@
 class ToursController < ApplicationController
-  before_action :set_tour, only: [:edit, :update, :destroy]
+  before_action :set_tour, only: [:edit, :update, :destroy, :bookmark, :undo_bookmark, :book, :update_booking]
   before_action :require_login
   load_and_authorize_resource
 
@@ -35,6 +35,7 @@ class ToursController < ApplicationController
     hash = Tour.handle_show(params[:id], current_user.id)
     @tour = hash[:tour]
     @seats_available = hash[:seats_available]
+    @seats_waitlisted = hash[:seats_waitlisted]
     @user_tour = hash[:user_tour]
   end
 
@@ -92,7 +93,6 @@ class ToursController < ApplicationController
   end
 
   def bookmark
-    @tour = Tour.find(params[:tour_id])
     @tour.add_bookmark(current_user)
     respond_to do |format|
       format.html { redirect_to @tour, notice: 'Tour has been bookmarked.' }
@@ -100,7 +100,6 @@ class ToursController < ApplicationController
   end
 
   def undo_bookmark
-    @tour = Tour.find(params[:tour_id])
     @tour.remove_bookmark(current_user)
     respond_to do |format|
       format.html { redirect_to @tour, notice: 'Bookmark removed!'}
@@ -108,10 +107,16 @@ class ToursController < ApplicationController
   end
 
   def book
-    @tour = Tour.find(params[:tour_id])
     @tour.book_tour(current_user, params[:num_seats].to_i, params[:waitlist_amt].to_i)
     respond_to do |format|
       format.html { redirect_to @tour, notice: 'Booking complete!'}
+    end
+  end
+
+  def update_booking
+    @tour.update_booking(current_user, params[:cancel_seats].to_i)
+    respond_to do |format|
+      format.html { redirect_to @tour, notice: 'Booking updated!'}
     end
   end
 

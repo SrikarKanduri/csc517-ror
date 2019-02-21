@@ -39,3 +39,24 @@ $(document).on 'turbolinks:load', ->
     width: 500,
     modal: true
   })
+
+  $('#cancel_seats_dialog').dialog({
+    autoOpen: false,
+    resizable: false,
+    height: "auto",
+    width: 400,
+    modal: true,
+    buttons: {
+      Cancel: ->
+        $(this).dialog('close')
+      Submit: ->
+        $('#seats_to_cancel').val($('#cancel_seats_select').val())
+        $('#update_book_form').submit()
+        $(this).dialog("close")
+    }
+  })
+
+  $('#update_book_form').submit ->
+    if $('#seats_to_cancel').val() then return true
+    $('#cancel_seats_dialog').dialog('open')
+    return false

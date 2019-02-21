@@ -48,7 +48,7 @@
 
 <br>
 
-<% if current_user.role.eql? 'agent' %>
+<% if %w[admin agent].include?(current_user.role) %>
   <%= link_to 'New Tour', new_tour_path %>
 <% end %>
 

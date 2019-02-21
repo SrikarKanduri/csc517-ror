@@ -18,6 +18,7 @@ class Ability
       can :bookmark, Tour
       can :undo_bookmark, Tour
       can :book, Tour
+      can :update_booking, Tour
       can :manage, Review
     end
   end

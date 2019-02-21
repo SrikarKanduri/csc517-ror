@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   post '/bookmark', to: "tours#bookmark", as: "bookmark"
   post '/undobookmark', to: "tours#undo_bookmark", as: "undo_bookmark"
   post '/book', to: "tours#book", as: "book"
+  post '/updatebooking', to: "tours#update_booking", as: "update_booking"
 
   # # Show Profile page
   # get "/users/:id", to: "users#show", as: "user"
