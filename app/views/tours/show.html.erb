@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<span>
+  <%= link_to 'Back', tours_path %>
+  <% if @show_review_options %>
+    <%= link_to "Add review", new_review_path(:tour_id => @tour.id) %>
+    <%= link_to "Show reviews", reviews_path(:tour_id => @tour.id) %>
+  <% end %>
+</span>
+
 <p>
   <strong>Name: </strong>
   <%= @tour.name %>
@@ -129,5 +137,3 @@
 <% if can? :manage, @tour %>
   <%= link_to 'Edit', edit_tour_path(@tour) %> |
 <% end %>
-
-<%= link_to 'Back', tours_path %>

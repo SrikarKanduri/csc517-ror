@@ -41,7 +41,9 @@
       <% if signed_in? %>
         <span><%= link_to "Profile", user_path(current_user.id) %></span>
 
+        <span><%= link_to "All Tours", tours_path %></span>
         <span><%= link_to "My Tours", tours_path(:my_tours => true) %></span>
+        <span><%= link_to "All Reviews", reviews_path %></span>
 
       <% if current_user.role == "customer" || current_user.role == "admin" %>
         <span><%= link_to "My Bookmarked Tours", tours_path(:bookmarked_tours => true) %></span>

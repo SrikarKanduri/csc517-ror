@@ -12,8 +12,10 @@
   <% end %>
 
   <div class="field">
-  <%= form.label :selected_tour, "Selected Tour" %>
-  <%= form.select :selected_tour, @completed_tours %>
+    <span>
+      <%= form.label :tour_name, "Selected Tour: " %>
+      <%= @completed_tour.name %>
+    </span>
   </div>
 
   <div class="field">
@@ -27,6 +29,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.button name: "tour_id",value: @completed_tour.id%>
   </div>
 <% end %>
