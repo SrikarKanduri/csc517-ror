@@ -8,6 +8,7 @@ class ToursController < ApplicationController
   def index
     personalize = params[:my_tours]
     bookmarked_tours = params[:bookmarked_tours]
+    waitlisted_tours = params[:waitlisted_tours]
 
     if personalize
       if current_user.role.eql? 'agent'
@@ -22,6 +23,10 @@ class ToursController < ApplicationController
       bookmarked_user_tours = current_user.user_tours.select {|x| x.bookmarked?}
       @tours = bookmarked_user_tours.map {|ut| Tour.find(ut[:tour_id])}
       @page_title = "My Bookmarked Tours"
+    elsif waitlisted_tours
+      waitlisted_user_tours = current_user.user_tours.select {|x| x.wait_listed?}
+      @tours = waitlisted_user_tours.map {|ut| Tour.find(ut[:tour_id])}
+      @page_title = "My Waitlisted Tours"
     else
       @tours = Tour.all
       @page_title = "All Tours"

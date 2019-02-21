@@ -15,8 +15,8 @@
 
   <div class="other-links">
     <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
+      <span><%= link_to t(".sign_up"), sign_up_path %></span>
     <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
+    <span><%= link_to t(".forgot_password"), new_password_path %></span>
   </div>
 <% end %>

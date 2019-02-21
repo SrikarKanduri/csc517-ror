@@ -41,10 +41,13 @@
       <% if signed_in? %>
         <span><%= link_to "Profile", user_path(current_user.id) %></span>
 
+        <span><%= link_to "View all Tours", tours_path %></span>
+
         <span><%= link_to "My Tours", tours_path(:my_tours => true) %></span>
 
       <% if current_user.role == "customer" || current_user.role == "admin" %>
         <span><%= link_to "My Bookmarked Tours", tours_path(:bookmarked_tours => true) %></span>
+        <span><%= link_to "My Waitlisted Tours", tours_path(:waitlisted_tours => true) %></span>
         <span><%= link_to "My Reviews", reviews_path %></span>
       <% end %>
         <%# if current_user.role == "admin" %>
