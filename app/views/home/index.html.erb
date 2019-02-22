@@ -4,17 +4,21 @@
 
 <h4>Tasks</h4>
 <% if @role == "admin" %>
-  <p>
-    <span><%= link_to "Create User", new_user_path %></span>
-    <span><%= link_to "View all Users", users_path %></span>
-    <span><%= link_to "View all Tours", tours_path %></span>
-    <span><%= link_to "View all Reviews", reviews_path %></span>
-  </p>
+  <div class="link-menu">
+    <p>
+      <span><%= link_to "Create User", new_user_path %></span>
+      <span><%= link_to "View all Users", users_path %></span>
+      <span><%= link_to "View all Tours", tours_path %></span>
+      <span><%= link_to "View all Reviews", reviews_path %></span>
+    </p>
+  </div>
 <% elsif @role == "agent" %>
-  <p>
-    <span><%= link_to "View all Tours", tours_path %></span>
-    <span><%= link_to "View all Reviews", reviews_path %></span>
-  </p>
+  <div class="link-menu">
+    <p>
+      <span><%= link_to "View all Tours", tours_path %></span>
+      <span><%= link_to "View all Reviews", reviews_path %></span>
+    </p>
+  </div>
 <% else %>
   <p>
     <span><%= link_to "View all Tours", tours_path %></span>

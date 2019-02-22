@@ -1,16 +1,16 @@
 
-<div class="first-name">
+<div class="first-name sign-up-field">
   <%= form.label :first_name %>
   <%= form.text_field :first_name %>
 </div>
 
-<div class="last-name">
+<div class="last-name sign-up-field">
   <%= form.label :last_name %>
   <%= form.text_field :last_name %>
 </div>
 
 <% if @user.role != "admin" %>
-  <div class="password-field">
+  <div class="password-field sign-up-field">
     <%= form.label :password %>
     <%= form.password_field :password %>
   </div>
