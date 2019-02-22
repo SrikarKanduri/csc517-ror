@@ -106,3 +106,7 @@ label, textarea {
     color: red;
     font-weight: bold;
 }
+
+#show-links span a {
+    margin: 0 5px;
+}

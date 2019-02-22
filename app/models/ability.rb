@@ -15,11 +15,12 @@ class Ability
     elsif user.role.eql? "customer"
       can :read, Tour
       can :search, Tour
-      can :bookmark, Tour
-      can :undo_bookmark, Tour
-      can :book, Tour
-      can :update_booking, Tour
-      can :manage, Review
+      can :bookmark, Tour, :users => { :id => user.id }
+      can :undo_bookmark, Tour, :users => { :id => user.id }
+      can :book, Tour, :users => { :id => user.id }
+      can :update_booking, Tour, :users => { :id => user.id }
+      can :read, Review
+      can :manage, Review, :user_id => user.id
     end
   end
 end

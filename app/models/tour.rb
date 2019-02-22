@@ -88,8 +88,8 @@ class Tour < ApplicationRecord
       user_tour[:wait_listed] = false
       user_tour[:num_wait_listed] = 0
       users.delete(current_user) unless user_tour[:bookmarked]
-      user_tour.save
     end
+    user_tour.save
 
     waitlisted = Tour.seats_waitlisted(id)
     next_waitlisted_customer = users.joins(:user_tours).where({user_tours: {num_wait_listed: 1..num_cancel_seats}})

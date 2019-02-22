@@ -3,7 +3,7 @@
 <h1><%= @title_message %></h1>
 
 <% if @reviews == nil || @reviews.empty? %>
-  <h4 style="color: red">No Reviews found...Use links below to go to Tours where you can create a Review</h4>
+  <h4 style="color: red">No Reviews yet...If you are a customer, you can use the links below to create a review.</h4>
   <span>
     <p style="margin-right: 10px;"><%= link_to "Go to All Tours", tours_path %></p>
     <p><%= link_to "Go to My Tours", tours_path(my_tours: true) %></p>

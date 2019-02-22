@@ -1,12 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<span>
-  <%= link_to 'Back', tours_path %>
-  <%# if @show_review_options %>
-    <%= link_to "Add review", new_review_path(:tour_id => @tour.id) %>
+<div id="show-links">
+  <span>
+    <!--Only show the edit link if the current user can 'manage' this tour-->
+    <% if can? :manage, @tour %>
+      <%= link_to 'Edit', edit_tour_path(@tour) %> |
+    <% end %>
+    <%= link_to 'Back', tours_path %> |
+    <%# if @show_review_options %>
+    <% if %w[admin customer].include?(current_user.role) %>
+      <%= link_to "Add review", new_review_path(:tour_id => @tour.id) %> |
+    <% end %>
     <%= link_to "Show reviews", reviews_path(:tour_id => @tour.id) %>
-  <%# end %>
+    <%# end %>
 </span>
+</div>
 
 <p>
   <strong>Name: </strong>
@@ -138,7 +146,7 @@
           <%= form_with :url => book_path, method: :post, id: :book_form, data: {"seats" => @seats_available} do |f| %>
           <%= f.submit "Book Tour" %>
             <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
-            <%= f.select(:num_seats, options_for_select(1..1000), {}, {id: 'book_tour_select'}) %>
+            <%= f.select(:num_seats, options_for_select(1..@tour.total_seats), {}, {id: 'book_tour_select'}) %>
             <%= f.hidden_field :waitlist_amt, :value => nil, :id => 'waitlist_amt' %>
             <%= f.hidden_field :id, :value => @tour.id %>
           <% end %>
@@ -160,10 +168,3 @@
     <%= select_tag(:cancel_seats_select, options_for_select(1..@user_tour.num_booked)) %>
   </div>
 <% end %>
-
-<!--Only show the edit link if the current user can 'manage' this tour-->
-<% if can? :manage, @tour %>
-  <%= link_to 'Edit', edit_tour_path(@tour) %> |
-<% end %>
-
-<%= link_to 'Back', tours_path %>
