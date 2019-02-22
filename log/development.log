@@ -33600,9 +33600,9 @@ Can't verify CSRF token authenticity.
 Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
-  
+
 actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
 actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
 clearance (1.16.1) lib/clearance/authentication.rb:113:in `handle_unverified_request'
@@ -34114,16 +34114,16 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 7621ms (ActiveRecord: 7.9ms)
 
 
-  
+
 ActionView::Template::Error (no implicit conversion of BigDecimal into String):
-    22: 
+    22:
     23: <p>
     24:   <strong>Price: </strong>
     25:   <%= '$' + @tour.price %>
     26: </p>
-    27: 
+    27:
     28: <p>
-  
+
 app/views/tours/show.html.erb:25:in `+'
 app/views/tours/show.html.erb:25:in `_app_views_tours_show_html_erb__551008625360453718_70275451949180'
 Started GET "/tours/12" for 127.0.0.1 at 2019-02-21 00:37:02 +0900
@@ -34255,17 +34255,17 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 298ms (ActiveRecord: 19.3ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `checkBooking' for #<#<Class:0x00007fd48c094d78>:0x00007fd484c9c1c8>
 Did you mean?  check_box):
     107:       </span>
-    108: 
+    108:
     109:       <span>
     110:         <%= form_with url: {action: "book"}, html: {:onsubmit => checkBooking(@seats_available)} do |f| %>
     111:           <%= f.submit :book_btn, "Book Tour" %>
     112:           <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
     113:           <%= f.select(:num_seats, options_for_select(@seats_available > 0 ? 1..@seats_available: 0..0)) %>
-  
+
 app/views/tours/show.html.erb:110:in `_app_views_tours_show_html_erb__551008625360453718_70275368805900'
 Started GET "/tours/12" for 127.0.0.1 at 2019-02-21 01:44:11 +0900
   [1m[35m (0.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
@@ -34282,16 +34282,16 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 48ms (ActiveRecord: 10.5ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `deep_stringify_keys' for "Book Tour":String):
-    108: 
+    108:
     109:       <span>
     110:         <%= form_with url: {action: "book"}, html: {:id => 'book-form', :data => {:seats_available => @seats_available}} do |f| %>
     111:           <%= f.submit :book_btn, "Book Tour" %>
     112:           <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
     113:           <%= f.select(:num_seats, options_for_select(@seats_available > 0 ? 1..@seats_available: 0..0)) %>
     114:         <% end %>
-  
+
 app/views/tours/show.html.erb:111:in `block in _app_views_tours_show_html_erb__551008625360453718_70275499062080'
 app/views/tours/show.html.erb:110:in `_app_views_tours_show_html_erb__551008625360453718_70275499062080'
 Started GET "/tours/12" for 127.0.0.1 at 2019-02-21 01:50:36 +0900
@@ -34309,16 +34309,16 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 92ms (ActiveRecord: 16.9ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `deep_stringify_keys' for "Book Tour":String):
-    108: 
+    108:
     109:       <span>
     110:         <%= form_with url: {action: "book"}, html: {:id => 'book-form'} do |f| %>
     111:           <%= f.submit :book_btn, "Book Tour" %>
     112:           <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
     113:           <%= f.select(:num_seats, options_for_select(@seats_available > 0 ? 1..@seats_available: 0..0)) %>
     114:         <% end %>
-  
+
 app/views/tours/show.html.erb:111:in `block in _app_views_tours_show_html_erb__551008625360453718_70275497626120'
 app/views/tours/show.html.erb:110:in `_app_views_tours_show_html_erb__551008625360453718_70275497626120'
 Started GET "/tours/12" for 127.0.0.1 at 2019-02-21 01:51:19 +0900
@@ -34335,16 +34335,16 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 78ms (ActiveRecord: 6.8ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `deep_stringify_keys' for "Book Tour":String):
-    108: 
+    108:
     109:       <span>
     110:         <%= form_with url: {action: "book"}, html: {} do |f| %>
     111:           <%= f.submit :book_btn, "Book Tour" %>
     112:           <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
     113:           <%= f.select(:num_seats, options_for_select(@seats_available > 0 ? 1..@seats_available: 0..0)) %>
     114:         <% end %>
-  
+
 app/views/tours/show.html.erb:111:in `block in _app_views_tours_show_html_erb__551008625360453718_70275799024260'
 app/views/tours/show.html.erb:110:in `_app_views_tours_show_html_erb__551008625360453718_70275799024260'
 Started GET "/" for 127.0.0.1 at 2019-02-21 01:51:44 +0900
@@ -34357,7 +34357,7 @@ Processing by HomeController#index as HTML
 Completed 500 Internal Server Error in 325ms (ActiveRecord: 1.9ms)
 
 
-  
+
 ActionView::Template::Error (SyntaxError: [stdin]:10:11: unexpected <):
     1: <!DOCTYPE html>
     2: <html lang="en">
@@ -34366,7 +34366,7 @@ ActionView::Template::Error (SyntaxError: [stdin]:10:11: unexpected <):
     5:   <%= stylesheet_link_tag "main" %>
     6:   <%= csrf_meta_tag %>
     7:   <title>TMS</title>
-  
+
 app/views/layouts/application.html.erb:4:in `_app_views_layouts_application_html_erb___107204081292207330_47341869274520'
 Started GET "/" for 127.0.0.1 at 2019-02-21 01:52:20 +0900
 Processing by HomeController#index as HTML
@@ -34401,16 +34401,16 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 78ms (ActiveRecord: 9.3ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `deep_stringify_keys' for "Book Tour":String):
-    108: 
+    108:
     109:       <span>
     110:         <%= form_with url: {action: "book"}, html: {:id => 'book-form'} do |f| %>
     111:           <%= f.submit :book_btn, "Book Tour" %>
     112:           <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
     113:           <%= f.select(:num_seats, options_for_select(@seats_available > 0 ? 1..@seats_available: 0..0)) %>
     114:         <% end %>
-  
+
 app/views/tours/show.html.erb:111:in `block in _app_views_tours_show_html_erb__1435099708037272384_70011413312560'
 app/views/tours/show.html.erb:110:in `_app_views_tours_show_html_erb__1435099708037272384_70011413312560'
 Started GET "/tours/12" for 127.0.0.1 at 2019-02-21 01:54:30 +0900
@@ -34427,16 +34427,16 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 74ms (ActiveRecord: 7.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `deep_stringify_keys' for "Book Tour":String):
-    108: 
+    108:
     109:       <span>
     110:         <%= form_with url: {action: "book"}, html: {} do |f| %>
     111:           <%= f.submit :book_btn, "Book Tour" %>
     112:           <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
     113:           <%= f.select(:num_seats, options_for_select(@seats_available > 0 ? 1..@seats_available: 0..0)) %>
     114:         <% end %>
-  
+
 app/views/tours/show.html.erb:111:in `block in _app_views_tours_show_html_erb__1435099708037272384_70011394817440'
 app/views/tours/show.html.erb:110:in `_app_views_tours_show_html_erb__1435099708037272384_70011394817440'
 Started GET "/tours/12" for 127.0.0.1 at 2019-02-21 01:56:59 +0900
@@ -34453,16 +34453,16 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 64ms (ActiveRecord: 5.8ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `deep_stringify_keys' for "Book Tour":String):
-    108: 
+    108:
     109:       <span>
     110:         <%= form_with url: {action: "book"}, html: {} do |f| %>
     111:           <%= f.submit :book_btn, "Book Tour" %>
     112:           <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
     113:           <%= f.select(:num_seats, options_for_select(@seats_available > 0 ? 1..@seats_available: 0..0)) %>
     114:         <% end %>
-  
+
 app/views/tours/show.html.erb:111:in `block in _app_views_tours_show_html_erb__1435099708037272384_70011457392540'
 app/views/tours/show.html.erb:110:in `_app_views_tours_show_html_erb__1435099708037272384_70011457392540'
 Started GET "/" for 127.0.0.1 at 2019-02-21 02:00:07 +0900
@@ -34500,16 +34500,16 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 105ms (ActiveRecord: 8.4ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `deep_stringify_keys' for "Book Tour":String):
-    108: 
+    108:
     109:       <span>
     110:         <%= form_with url: {action: "book"}, html: {} do |f| %>
     111:           <%= f.submit :book_btn, "Book Tour" %>
     112:           <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
     113:           <%= f.select(:num_seats, options_for_select(@seats_available > 0 ? 1..@seats_available: 0..0)) %>
     114:         <% end %>
-  
+
 app/views/tours/show.html.erb:111:in `block in _app_views_tours_show_html_erb___1893333862698487535_69981895250040'
 app/views/tours/show.html.erb:110:in `_app_views_tours_show_html_erb___1893333862698487535_69981895250040'
 Started GET "/tours/12" for 127.0.0.1 at 2019-02-21 02:05:10 +0900
@@ -34556,17 +34556,17 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 455ms (ActiveRecord: 8.7ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x000055f141383f00>:0x00007f1ee5c73520>
 Did you mean?  fork):
     107:       </span>
-    108: 
+    108:
     109:       <span>
     110:         <%= form_with :url => book_path, method: :post, id: :book-form do |f| %>
     111:           <%= f.submit "Book Tour" %>
     112:           <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
     113:           <%= f.select(:num_seats, options_for_select(@seats_available > 0 ? 1..@seats_available: 0..0)) %>
-  
+
 app/views/tours/show.html.erb:110:in `_app_views_tours_show_html_erb__4217375368921820771_69885426238320'
 Started GET "/tours/12" for 127.0.0.1 at 2019-02-21 02:12:24 +0900
 Processing by ToursController#show as HTML
@@ -34596,7 +34596,7 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 224ms (ActiveRecord: 6.4ms)
 
 
-  
+
 ActionView::Template::Error (SyntaxError: [stdin]:10:11: unexpected <):
     1: <!DOCTYPE html>
     2: <html lang="en">
@@ -34605,7 +34605,7 @@ ActionView::Template::Error (SyntaxError: [stdin]:10:11: unexpected <):
     5:   <%= stylesheet_link_tag "main" %>
     6:   <%= csrf_meta_tag %>
     7:   <title>TMS</title>
-  
+
 app/views/layouts/application.html.erb:4:in `_app_views_layouts_application_html_erb___3015169509354856986_69885456240960'
 Started GET "/tours/12" for 127.0.0.1 at 2019-02-21 02:14:21 +0900
 Processing by ToursController#show as HTML
@@ -34694,9 +34694,9 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 140ms (ActiveRecord: 14.4ms)
 
 
-  
+
 ActionView::Template::Error (couldn't find file 'jquery.ui.all' with type 'application/javascript'
-Checked in these paths: 
+Checked in these paths:
   /home/gabalmat/_git/csc517-ror/app/assets/config
   /home/gabalmat/_git/csc517-ror/app/assets/images
   /home/gabalmat/_git/csc517-ror/app/assets/javascripts
@@ -34729,7 +34729,7 @@ Checked in these paths:
     5:   <%= stylesheet_link_tag "main" %>
     6:   <%= csrf_meta_tag %>
     7:   <title>TMS</title>
-  
+
 app/assets/javascripts/application.js:18
 app/views/layouts/application.html.erb:4:in `_app_views_layouts_application_html_erb___3015169509354856986_69885398446740'
 Started GET "/tours/12" for 127.0.0.1 at 2019-02-21 03:29:38 +0900
@@ -34746,9 +34746,9 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 118ms (ActiveRecord: 6.0ms)
 
 
-  
+
 ActionView::Template::Error (couldn't find file 'jquery.ui' with type 'application/javascript'
-Checked in these paths: 
+Checked in these paths:
   /home/gabalmat/_git/csc517-ror/app/assets/config
   /home/gabalmat/_git/csc517-ror/app/assets/images
   /home/gabalmat/_git/csc517-ror/app/assets/javascripts
@@ -34781,7 +34781,7 @@ Checked in these paths:
     5:   <%= stylesheet_link_tag "main" %>
     6:   <%= csrf_meta_tag %>
     7:   <title>TMS</title>
-  
+
 app/assets/javascripts/application.js:18
 app/views/layouts/application.html.erb:4:in `_app_views_layouts_application_html_erb___3015169509354856986_69885399655520'
 Started GET "/tours/12" for 127.0.0.1 at 2019-02-21 03:30:13 +0900
@@ -34800,9 +34800,9 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 992ms (ActiveRecord: 7.2ms)
 
 
-  
+
 ActionView::Template::Error (couldn't find file 'jquery.ui' with type 'application/javascript'
-Checked in these paths: 
+Checked in these paths:
   /home/gabalmat/_git/csc517-ror/app/assets/config
   /home/gabalmat/_git/csc517-ror/app/assets/images
   /home/gabalmat/_git/csc517-ror/app/assets/javascripts
@@ -34835,7 +34835,7 @@ Checked in these paths:
     5:   <%= stylesheet_link_tag "main" %>
     6:   <%= csrf_meta_tag %>
     7:   <title>TMS</title>
-  
+
 app/assets/javascripts/application.js:18
 app/views/layouts/application.html.erb:4:in `_app_views_layouts_application_html_erb__3504779562050327837_47227482464340'
 Started GET "/tours/12" for 127.0.0.1 at 2019-02-21 03:34:46 +0900
@@ -36103,9 +36103,9 @@ Processing by ToursController#book as HTML
 Completed 500 Internal Server Error in 229ms (ActiveRecord: 1.1ms)
 
 
-  
+
 NoMethodError (undefined method `seats_available' for #<Class:0x00007faad742fd18>):
-  
+
 app/controllers/tours_controller.rb:116:in `book'
 Started GET "/" for 127.0.0.1 at 2019-02-21 15:29:15 +0900
 Processing by HomeController#index as HTML
@@ -36236,9 +36236,9 @@ Can't verify CSRF token authenticity.
 Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
-  
+
 actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
 actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
 clearance (1.16.1) lib/clearance/authentication.rb:113:in `handle_unverified_request'
@@ -36369,10 +36369,10 @@ Processing by ToursController#book as HTML
 Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.2ms)
 
 
-  
+
 NoMethodError (undefined method `get_user_tour_info' for #<Class:0x00007fc572ea9bd0>
 Did you mean?  get_user_tour):
-  
+
 app/controllers/tours_controller.rb:117:in `book'
 Started GET "/" for 127.0.0.1 at 2019-02-21 18:09:27 +0900
   [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
@@ -36726,10 +36726,10 @@ Processing by ToursController#book as HTML
 Completed 500 Internal Server Error in 26ms (ActiveRecord: 2.5ms)
 
 
-  
+
 NameError (undefined local variable or method `tour_id' for #<Tour:0x00007fc84277d780>
 Did you mean?  to_gid):
-  
+
 app/models/tour.rb:48:in `book_tour'
 app/controllers/tours_controller.rb:112:in `book'
 Started GET "/" for 127.0.0.1 at 2019-02-21 18:50:21 +0900
@@ -36776,9 +36776,9 @@ Processing by ToursController#book as HTML
 Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.6ms)
 
 
-  
+
 NoMethodError (undefined method `seats_booked' for #<Tour:0x00007f39121a4c38>):
-  
+
 app/models/tour.rb:48:in `book_tour'
 app/controllers/tours_controller.rb:112:in `book'
 Started GET "/" for 127.0.0.1 at 2019-02-21 18:52:40 +0900
@@ -37082,9 +37082,9 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 92ms (ActiveRecord: 4.9ms)
 
 
-  
+
 NameError (undefined local variable or method `num_wait_listed' for #<Class:0x000055f721fdf070>):
-  
+
 app/models/tour.rb:26:in `seats_waitlisted'
 app/models/tour.rb:32:in `handle_show'
 app/controllers/tours_controller.rb:35:in `show'
@@ -37135,18 +37135,18 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 57ms (ActiveRecord: 12.6ms)
 
 
-  
+
 SyntaxError (/home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:115: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
 ...? || @user_tour.wait_listed?) );@output_buffer.safe_append='
 ...                              ^
 /home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:120: syntax error, unexpected keyword_else, expecting ')'
-'.freeze;         else 
+'.freeze;         else
                   ^~~~
 /home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:128: syntax error, unexpected keyword_end, expecting ')'
-         end 
+         end
          ^~~
 /home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:132: syntax error, unexpected keyword_end, expecting ')'
-'.freeze; end 
+'.freeze; end
           ^~~
 /home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:148: syntax error, unexpected keyword_ensure, expecting ')'
           ensure
@@ -37154,7 +37154,7 @@ SyntaxError (/home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:115: s
 /home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:150: syntax error, unexpected keyword_end, expecting ')'
           end
           ^~~):
-  
+
 app/views/tours/show.html.erb:115: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
 app/views/tours/show.html.erb:120: syntax error, unexpected keyword_else, expecting ')'
 app/views/tours/show.html.erb:128: syntax error, unexpected keyword_end, expecting ')'
@@ -37176,18 +37176,18 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 71ms (ActiveRecord: 13.8ms)
 
 
-  
+
 SyntaxError (/home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:115: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
 ... || @user_tour.wait_listed?)) );@output_buffer.safe_append='
 ...                              ^
 /home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:120: syntax error, unexpected keyword_else, expecting ')'
-'.freeze;         else 
+'.freeze;         else
                   ^~~~
 /home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:128: syntax error, unexpected keyword_end, expecting ')'
-         end 
+         end
          ^~~
 /home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:132: syntax error, unexpected keyword_end, expecting ')'
-'.freeze; end 
+'.freeze; end
           ^~~
 /home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:148: syntax error, unexpected keyword_ensure, expecting ')'
           ensure
@@ -37195,7 +37195,7 @@ SyntaxError (/home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:115: s
 /home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:150: syntax error, unexpected keyword_end, expecting ')'
           end
           ^~~):
-  
+
 app/views/tours/show.html.erb:115: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
 app/views/tours/show.html.erb:120: syntax error, unexpected keyword_else, expecting ')'
 app/views/tours/show.html.erb:128: syntax error, unexpected keyword_end, expecting ')'
@@ -37216,18 +37216,18 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 55ms (ActiveRecord: 6.1ms)
 
 
-  
+
 SyntaxError (/home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:115: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
 ...d? || @user_tour.wait_listed? );@output_buffer.safe_append='
 ...                              ^
 /home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:120: syntax error, unexpected keyword_else, expecting ')'
-'.freeze;         else 
+'.freeze;         else
                   ^~~~
 /home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:128: syntax error, unexpected keyword_end, expecting ')'
-         end 
+         end
          ^~~
 /home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:132: syntax error, unexpected keyword_end, expecting ')'
-'.freeze; end 
+'.freeze; end
           ^~~
 /home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:148: syntax error, unexpected keyword_ensure, expecting ')'
           ensure
@@ -37235,7 +37235,7 @@ SyntaxError (/home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:115: s
 /home/gabalmat/_git/csc517-ror/app/views/tours/show.html.erb:150: syntax error, unexpected keyword_end, expecting ')'
           end
           ^~~):
-  
+
 app/views/tours/show.html.erb:115: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
 app/views/tours/show.html.erb:120: syntax error, unexpected keyword_else, expecting ')'
 app/views/tours/show.html.erb:128: syntax error, unexpected keyword_end, expecting ')'
@@ -37948,9 +37948,9 @@ Processing by ToursController#update_booking as HTML
 Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.2ms)
 
 
-  
+
 ArgumentError (comparison of Symbol with 0 failed):
-  
+
 app/models/tour.rb:83:in `>'
 app/models/tour.rb:83:in `update_booking'
 app/controllers/tours_controller.rb:117:in `update_booking'
@@ -38039,9 +38039,9 @@ Processing by ToursController#update_booking as HTML
 Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.7ms)
 
 
-  
+
 TypeError (no implicit conversion of Symbol into Integer):
-  
+
 app/models/tour.rb:83:in `[]'
 app/models/tour.rb:83:in `update_booking'
 app/controllers/tours_controller.rb:117:in `update_booking'
@@ -38173,16 +38173,16 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 154ms (ActiveRecord: 6.8ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `num_booked' for nil:NilClass):
-    148: 
+    148:
     149: <div id="cancel_seats_dialog" title="Cancel Seats" style="display:none">
     150:   <p>How many seats would you like to cancel?</p>
     151:   <%= select_tag(:cancel_seats_select, options_for_select(1..@user_tour.num_booked)) %>
     152: </div>
-    153: 
+    153:
     154: <!--Only show the edit link if the current user can 'manage' this tour-->
-  
+
 app/views/tours/show.html.erb:151:in `_app_views_tours_show_html_erb___997925733974714688_70068382702820'
 Started GET "/tours/12" for 127.0.0.1 at 2019-02-22 00:37:24 +0900
 Processing by ToursController#show as HTML
@@ -38233,7 +38233,7 @@ Processing by ToursController#show as HTML
 Completed 500 Internal Server Error in 117ms (ActiveRecord: 3.3ms)
 
 
-  
+
 ActionView::Template::Error (bad value for range):
     149: <% if @user_tour %>
     150:   <div id="cancel_seats_dialog" title="Cancel Seats" style="display:none">
@@ -38241,8 +38241,8 @@ ActionView::Template::Error (bad value for range):
     152:     <%= select_tag(:cancel_seats_select, options_for_select(1..@user_tour.num_booked)) %>
     153:   </div>
     154: <% end %>
-    155: 
-  
+    155:
+
 app/views/tours/show.html.erb:152:in `_app_views_tours_show_html_erb___997925733974714688_70068098168240'
 Started GET "/tours/12" for 127.0.0.1 at 2019-02-22 00:38:48 +0900
 Processing by ToursController#show as HTML
@@ -38605,9 +38605,9 @@ Processing by ToursController#update_booking as HTML
 Completed 500 Internal Server Error in 47ms (ActiveRecord: 2.3ms)
 
 
-  
+
 ArgumentError (bad value for range):
-  
+
 app/models/tour.rb:83:in `update_booking'
 app/controllers/tours_controller.rb:117:in `update_booking'
 Started GET "/" for 127.0.0.1 at 2019-02-22 02:07:22 +0900
@@ -38707,9 +38707,9 @@ Processing by ToursController#update_booking as HTML
 Completed 500 Internal Server Error in 18ms (ActiveRecord: 2.8ms)
 
 
-  
+
 ArgumentError (too few arguments):
-  
+
 app/controllers/tours_controller.rb:118:in `format'
 app/controllers/tours_controller.rb:118:in `update_booking'
 Started GET "/" for 127.0.0.1 at 2019-02-22 02:35:45 +0900
@@ -39149,9 +39149,9 @@ Processing by ToursController#update_booking as HTML
 Completed 500 Internal Server Error in 4728ms (ActiveRecord: 14.5ms)
 
 
-  
+
 NoMethodError (undefined method `+' for nil:NilClass):
-  
+
 app/models/tour.rb:100:in `update_booking'
 app/controllers/tours_controller.rb:117:in `update_booking'
   [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m

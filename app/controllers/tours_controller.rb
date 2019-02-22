@@ -2,6 +2,7 @@ class ToursController < ApplicationController
   before_action :set_tour, only: [:edit, :update, :destroy, :bookmark, :undo_bookmark, :book, :update_booking]
   before_action :require_login
   load_and_authorize_resource
+  # before_action :check_review_options, only: [:show]
 
   # GET /tours
   # GET /tours.json
@@ -131,6 +132,15 @@ class ToursController < ApplicationController
       @tour = Tour.find(params[:id])
     end
 
+    # To create review, User must have booked Tour and Tour must be "completed"
+    # def check_review_options
+    #   user_id = current_user.id
+    #   if UserTour.find_by(id: params[:id], user_id: user_id)
+    #     @show_review_options = true
+    #   else
+    #     @show_review_options = false
+    #   end
+    # end
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
       params.require(:tour).permit(:id, :name, :description, :created_at, :updated_at, :price, :booking_deadline, :from_date, :to_date, :total_seats, :op_email, :op_phone, :status, :my_tours,

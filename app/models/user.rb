@@ -22,8 +22,7 @@ class User < ApplicationRecord
   # Clearance:: User already checks for Email uniqueness
 
   # If a user is not an admin, which is usually the case, make sure user has a first and last name
-  validates :first_name, presence: true, if: :user_is_not_admin?
-  validates :last_name, presence: true, if: :user_is_not_admin?
+  validates :first_name, :last_name, presence: true, if: :user_is_not_admin?
 
   # check if user is admin
   def user_is_not_admin?
