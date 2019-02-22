@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<% if can? :manage, @review %>
+  <%= link_to 'Edit', edit_review_path(@review) %> |
+  <%= link_to 'Back', reviews_path %> |
+  <%= link_to 'Delete Review', review_path(id: @review.id, tour_id: @review.tour.id) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>
+
+<!-- 2 views for Show! One is 'show me all reviews for Tour ...'--->
+<!-- 2 views for Show! The other is 'show me this specific review...'-->
+<%# if  @multiple_reviews %>
+
+<%# else %>
+  <h3>Review for <%= @review.tour.name %></h3>
+  <p>
+    <strong>Subject:</strong>
+    <%= @review.subject %>
+  </p>
+
+  <p>
+    <strong>Message:</strong>
+    <%= @review.message %>
+  </p>
+<%# end %>

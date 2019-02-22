@@ -10,23 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_13_101543) do
+ActiveRecord::Schema.define(version: 2019_02_21_180042) do
 
-  create_table "agents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "subject"
+    t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_agents_on_user_id"
+    t.bigint "user_id"
+    t.bigint "tour_id"
+    t.index ["tour_id"], name: "index_reviews_on_tour_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
+  create_table "tour_locations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "country"
+    t.string "state_or_province"
+    t.boolean "starting_point"
+    t.bigint "tour_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_customers_on_user_id"
+    t.index ["tour_id"], name: "index_tour_locations_on_tour_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "tours", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "price", precision: 8, scale: 2
+    t.datetime "booking_deadline"
+    t.date "from_date"
+    t.date "to_date"
+    t.integer "total_seats"
+    t.string "op_email", limit: 128
+    t.string "op_phone", limit: 128
+    t.string "status", limit: 9
+  end
+
+  create_table "user_tours", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "tour_id"
+    t.boolean "booked"
+    t.integer "num_booked", default: 0
+    t.boolean "wait_listed"
+    t.integer "num_wait_listed", default: 0
+    t.boolean "bookmarked"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "waitlisted_at"
+    t.index ["tour_id"], name: "index_user_tours_on_tour_id"
+    t.index ["user_id"], name: "index_user_tours_on_user_id"
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin"
@@ -36,8 +73,14 @@ ActiveRecord::Schema.define(version: 2019_02_13_101543) do
     t.string "remember_token", limit: 128, null: false
     t.string "first_name", limit: 128
     t.string "last_name", limit: 128
+    t.string "role"
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
+  add_foreign_key "reviews", "tours"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "tour_locations", "tours"
+  add_foreign_key "user_tours", "tours"
+  add_foreign_key "user_tours", "users"
 end

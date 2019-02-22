@@ -1,0 +1,112 @@
+
+/*Custom stylesheet for views*/
+
+
+html, body {
+    height: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+table td {
+    text-align: center;
+}
+
+label, textarea {
+    vertical-align:middle;
+}
+
+.field label {
+    width: 150px;
+    display: inline-block;
+    text-align: right;
+    padding: 15px 15px 15px;
+}
+
+.field textarea {
+    width: 250px;
+}
+
+.field input[type=text] {
+    width: 250px;
+    height: 25px;
+}
+
+.page-title {
+    padding-left: 30px;
+}
+
+.back-link {
+    padding: 30px;
+}
+
+.create {
+    padding: 30px;
+}
+
+.nested_tour_tour_locations {
+    border: none;
+}
+
+.nested-form-ul {
+    list-style: none;
+    margin: 0;
+}
+
+.nested-form-ul > li:first-child > div > a.remove-link {
+    display: none;
+}
+
+.tour-bookmark {
+    float: left;
+    margin: 0px 30px 0px 10px;
+}
+
+.remove-bookmark {
+    display: inline;
+    margin-right: 10px;
+}
+
+.remove-bookmark input[type=submit] {
+    /*border-radius: 3px;*/
+}
+
+#link-menu span {
+    margin: 15px;
+}
+
+.num-seats-label {
+    margin-left: 10px;
+}
+
+.no-close .ui-dialog-titlebar-close {
+    display: none;
+}
+
+.update_booking {
+    display: inline;
+    margin-left: 15px;
+}
+
+.other-links span {
+    margin: 10px 10px 0 0;
+}
+
+.num-seats-label {
+    margin-left: 10px;
+}
+
+.no-close .ui-dialog-titlebar-close {
+    display: none;
+}
+
+#flash {
+    color: red;
+    font-weight: bold;
+}
+
+#show-links span a {
+    margin: 0 5px;
+}

@@ -1,0 +1,170 @@
+<p id="notice"><%= notice %></p>
+
+<div id="show-links">
+  <span>
+    <!--Only show the edit link if the current user can 'manage' this tour-->
+    <% if can? :manage, @tour %>
+      <%= link_to 'Edit', edit_tour_path(@tour) %> |
+    <% end %>
+    <%= link_to 'Back', tours_path %> |
+    <%# if @show_review_options %>
+    <% if %w[admin customer].include?(current_user.role) %>
+      <%= link_to "Add review", new_review_path(:tour_id => @tour.id) %> |
+    <% end %>
+    <%= link_to "Show reviews", reviews_path(:tour_id => @tour.id) %>
+    <%# end %>
+</span>
+</div>
+
+<p>
+  <strong>Name: </strong>
+  <%= @tour.name %>
+</p>
+
+<p>
+  <strong>Description: </strong>
+  <%= @tour.description %>
+</p>
+
+<p>
+  <strong>Created at: </strong>
+  <%= @tour.created_at %>
+</p>
+
+<p>
+  <strong>Updated at: </strong>
+  <%= @tour.updated_at %>
+</p>
+
+<p>
+  <strong>Price: </strong>
+  <%= number_to_currency(@tour.price) %>
+</p>
+
+<p>
+  <strong>Booking deadline: </strong>
+  <%= @tour.booking_deadline %>
+</p>
+
+<p>
+  <strong>From date: </strong>
+  <%= @tour.from_date %>
+</p>
+
+<p>
+  <strong>To date: </strong>
+  <%= @tour.to_date %>
+</p>
+
+<p>
+  <strong>Total seats: </strong>
+  <%= @tour.total_seats %>
+</p>
+
+<p>
+  <strong>Available seats: </strong>
+  <%= @seats_available %>
+</p>
+
+<p>
+  <strong>Waitlisted seats: </strong>
+  <%= @seats_waitlisted %>
+</p>
+
+<p>
+  <strong>Operator email: </strong>
+  <%= @tour.op_email %>
+</p>
+
+<p>
+  <strong>Operator phone: </strong>
+  <%= @tour.op_phone %>
+</p>
+
+<p>
+  <strong>Status: </strong>
+  <%= Tour.statuses[@tour.status] %>
+</p>
+
+<div><h2>Itinerary:</h2></div>
+
+<% @tour.tour_locations.each do |loc| %>
+  <div>
+    <p>
+      <strong>Country:</strong>
+      <%= loc.country %>
+    </p>
+  </div>
+
+  <div>
+    <p>
+      <strong>State/Province:</strong>
+      <%= loc.state_or_province %>
+    </p>
+  </div>
+<% end %>
+
+<!--If the currently logged in user is a customer, allow them book or bookmark this tour-->
+<% if current_user.role.eql? 'customer' %>
+  <hr>
+    <div>
+      <span>
+        <% if @user_tour && @user_tour.bookmarked? %>
+          <div class="tour-bookmark">
+            <span>Bookmarked!</span>
+            <span>
+              <%= form_with :url => undo_bookmark_path, method: :post, html: {class: "remove-bookmark"} do |f| %>
+                <%= f.hidden_field :id, :value => @tour.id %>
+                <%= f.submit "undo" %>
+              <% end %>
+            </span>
+          </div>
+        <% else %>
+          <%= form_with :url => bookmark_path, method: :post, html: {class: "tour-bookmark"} do |f| %>
+            <%= f.hidden_field :id, :value => @tour.id %>
+              <%= f.submit "Bookmark Tour" %>
+          <% end %>
+        <% end %>
+      </span>
+
+      <span>
+        <% if @user_tour && (@user_tour.booked? || @user_tour.wait_listed?) %>
+          <div>
+            <span>Tickets Booked: </span>
+            <span><%= @user_tour.num_booked %></span>&nbsp;&nbsp;&nbsp;
+            <span>Tickets Waitlisted: </span>
+            <span><%= @user_tour.num_wait_listed %></span>
+            <span>
+              <%= form_with :url => update_booking_path, method: :post, id: :update_book_form, data: {}, class: "update_booking" do |f| %>
+                <%= f.submit "cancel seats" %>
+                <%= f.hidden_field :cancel_seats, :value =>nil, :id => 'seats_to_cancel' %>
+                <%= f.hidden_field :id, :value => @tour.id %>
+              <% end %>
+            </span>
+          </div>
+        <% else %>
+          <%= form_with :url => book_path, method: :post, id: :book_form, data: {"seats" => @seats_available} do |f| %>
+          <%= f.submit "Book Tour" %>
+            <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
+            <%= f.select(:num_seats, options_for_select(1..@tour.total_seats), {}, {id: 'book_tour_select'}) %>
+            <%= f.hidden_field :waitlist_amt, :value => nil, :id => 'waitlist_amt' %>
+            <%= f.hidden_field :id, :value => @tour.id %>
+          <% end %>
+        <% end %>
+      </span>
+    </div>
+  <hr>
+<% end %>
+
+<div id="book_dialog" title="Waitlist Seats?" style="display:none">
+  <input type="radio" name="book_options" value="no_waitlist"> No, just book the available seats<br>
+  <input type="radio" name="book_options" value="waitlist_some"> Yes, book available seats, waitlist the remaining seats<br>
+  <input type="radio" name="book_options" value="waitlist_all"> Waitlist all requested seats<br>
+</div>
+
+<% if @user_tour && @user_tour.num_booked %>
+  <div id="cancel_seats_dialog" title="Cancel Seats" style="display:none">
+    <p>How many seats would you like to cancel?</p>
+    <%= select_tag(:cancel_seats_select, options_for_select(1..@user_tour.num_booked)) %>
+  </div>
+<% end %>

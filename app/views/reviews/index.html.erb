@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @title_message %></h1>
+
+<% if @reviews == nil || @reviews.empty? %>
+  <h4 style="color: red">No Reviews yet...If you are a customer, you can use the links below to create a review.</h4>
+  <span>
+    <p style="margin-right: 10px;"><%= link_to "Go to All Tours", tours_path %></p>
+    <p><%= link_to "Go to My Tours", tours_path(my_tours: true) %></p>
+  </span>
+<% else %>
+  <%# if can? :manage, @reviews %>
+<!--    <p><%#= link_to "Create another review", new_review_path %></p>-->
+  <%# end %>
+  <table>
+    <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Message</th>
+      <th>Tour Name</th>
+      <th>Tour Date</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @reviews.each do |review| %>
+      <tr>
+        <td><%= review.subject %></td>
+        <td><%= review.message %></td>
+        <td><%= review.tour.name %></td>
+        <td><%= review.tour.created_at %></td>
+        <td><%= link_to 'Show', review %></td>
+        <% if can? :manage, review %>
+          <td><%= link_to 'Edit', edit_review_path(review, :tour_id => review.tour.id) %></td>
+          <td><%= link_to 'Destroy', review_path(id: review.id, tour_id: review.tour.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
+<br>
+

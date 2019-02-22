@@ -1,34 +1,72 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>RailsWebApp</title>
-    <%= csrf_meta_tags %>
+<html lang="en">
+<head>
+  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "main" %>
+  <%= csrf_meta_tag %>
+  <title>TMS</title>
+</head>
+<body>
+  <h2>Tour Management System</h2>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-
+  <div id="header">
     <% if signed_in? %>
-      Signed in as: <%= current_user.email %>
-      <%= button_to 'Sign out', sign_out_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign in', sign_in_path %>
-    <% end %>
 
-    <hr>
-      <span><%= link_to " Home", root_path %></span>
-      <span><%= link_to " Welcome", landing_page_welcome_path %></span>
-    <span><%= link_to " Admin", rails_admin.dashboard_path %></span>
-    <hr>
-
-    <div id="flash">
-      <% flash.each do |key, value| %>
-        <div class="flash <%= key %>"><%= value %></div>
+      <% if current_user.role != "admin" %>
+        <h4>Currently signed in as: <%= current_user.first_name %> <%= current_user.last_name %> .
+          Your role is: <%= current_user.role.to_s %>.
+          Your email is: <%= current_user.email %>
+        </h4>
+      <% else %>
+        <h4>
+          Currently signed in as: Admin.
+          <% if current_user.first_name %>
+            Welcome <%= current_user.first_name %> <%= current_user.last_name %>.
+          <% end %>
+          Your email is: <%= current_user.email %>
+        </h4>
       <% end %>
-    </div>
 
-    <%= yield %>
-  </body>
+      <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
+    <% else -%>
+      <h4>Not signed in...</h4>
+      <%= link_to t(".sign_in"), sign_in_path %>
+    <% end -%>
+  </div>
+
+  <div id="link-menu">
+    <hr>
+      <span><%= link_to "Home", root_path %></span>
+      <% if signed_in? %>
+        <span><%= link_to "Profile", user_path(current_user.id) %></span>
+
+        <span><%= link_to "All Tours", tours_path %></span>
+        <span><%= link_to "My Tours", tours_path(:my_tours => true) %></span>
+
+      <% if current_user.role == "customer" || current_user.role == "admin" %>
+        <span><%= link_to "My Bookmarked Tours", tours_path(:bookmarked_tours => true) %></span>
+        <span><%= link_to "My Waitlisted Tours", tours_path(:waitlisted_tours => true) %></span>
+      <% end %>
+
+      <span><%= link_to "All Reviews", reviews_path %></span>
+
+      <% if current_user.role == "customer" || current_user.role == "admin" %>
+        <span><%= link_to "My Reviews", reviews_path(:my_reviews => true) %></span>
+      <% end %>
+        <%# if current_user.role == "admin" %>
+<!--          <span><%#= link_to " Admin Section", rails_admin.dashboard_path %></span>-->
+        <%# end %>
+      <% end %>
+    <hr>
+  </div>
+
+  <%= yield %>
+
+  <div id="flash">
+    <% flash.each do |key, value| -%>
+      <div id="flash_<%= key %>"><%=h value %></div>
+    <% end %>
+  </div>
+</body>
 </html>
