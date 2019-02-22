@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
-  before_action :set_role
   before_action :require_login
+  before_action :set_role
 
   def index
     session[:do_not_redirect] = true
