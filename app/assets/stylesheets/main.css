@@ -6,6 +6,10 @@ html, body {
     height: 100%;
 }
 
+body {
+    margin: 15px;
+}
+
 table {
     width: 100%;
 }
@@ -23,6 +27,20 @@ label, textarea {
     display: inline-block;
     text-align: right;
     padding: 15px 15px 15px;
+}
+
+.sign-in-field label {
+    width: 50px;
+    display: inline-block;
+    text-align: right;
+    margin: 0 15px 15px 15px;
+}
+
+.sign-up-field label {
+    width: 70px;
+    display: inline-block;
+    text-align: right;
+    margin: 0 15px 15px 15px;
 }
 
 .field textarea {
@@ -73,8 +91,8 @@ label, textarea {
     /*border-radius: 3px;*/
 }
 
-#link-menu span {
-    margin: 15px;
+.link-menu span {
+    margin-right: 15px;
 }
 
 .num-seats-label {
