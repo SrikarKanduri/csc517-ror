@@ -21,6 +21,7 @@ gem 'coffee-rails', '4.2.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '4.3.3'
+gem 'jquery-ui-rails', '6.0.1'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -36,7 +37,7 @@ gem 'therubyracer', '0.12.3'
 gem 'clearance'
 
 # Use RailsAdmin for an Admin dashboard
-gem 'rails_admin'
+#gem 'rails_admin'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

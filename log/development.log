@@ -42290,3 +42290,366 @@ Processing by ToursController#show as HTML
 Completed 200 OK in 201ms (Views: 180.4ms | ActiveRecord: 5.1ms)
 
 
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-02-23 02:01:06 +0900
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'a37ee8f9ff9420e3ea6e11b183bb991360c87d0a' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = '438592e94dd8ceae47c512c85ab21bf4099ef3c6', `updated_at` = '2019-02-22 17:01:06' WHERE `users`.`id` = 2[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 37ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-23 02:01:06 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (15.3ms)
+  Rendered sessions/new.html.erb within layouts/application (1081.0ms)
+Completed 500 Internal Server Error in 1441ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery-ui' with type 'application/javascript'
+Checked in these paths: 
+  /home/gabalmat/_git/csc517-ror/app/assets/config
+  /home/gabalmat/_git/csc517-ror/app/assets/images
+  /home/gabalmat/_git/csc517-ror/app/assets/javascripts
+  /home/gabalmat/_git/csc517-ror/app/assets/stylesheets
+  /home/gabalmat/_git/csc517-ror/vendor/assets/javascripts
+  /home/gabalmat/_git/csc517-ror/vendor/assets/stylesheets
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/nested_form_fields-0.8.2/lib/assets/javascripts
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/actioncable-5.2.2/lib/assets/compiled
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/activestorage-5.2.2/app/assets/javascripts
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/actionview-5.2.2/lib/assets/compiled
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/turbolinks-source-5.2.0/lib/assets/javascripts):
+    1: <!DOCTYPE html>
+    2: <html lang="en">
+    3: <head>
+    4:   <%= javascript_include_tag 'application' %>
+    5:   <%= stylesheet_link_tag "application" %>
+    6:   <%= stylesheet_link_tag "main" %>
+    7:   <%= csrf_meta_tag %>
+  
+app/assets/javascripts/application.js:18
+app/views/layouts/application.html.erb:4:in `_app_views_layouts_application_html_erb___2552477275507833809_70095549093340'
+Started GET "/" for 127.0.0.1 at 2019-02-23 02:01:48 +0900
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-23 02:01:48 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery-ui' with type 'application/javascript'
+Checked in these paths: 
+  /home/gabalmat/_git/csc517-ror/app/assets/config
+  /home/gabalmat/_git/csc517-ror/app/assets/images
+  /home/gabalmat/_git/csc517-ror/app/assets/javascripts
+  /home/gabalmat/_git/csc517-ror/app/assets/stylesheets
+  /home/gabalmat/_git/csc517-ror/vendor/assets/javascripts
+  /home/gabalmat/_git/csc517-ror/vendor/assets/stylesheets
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/nested_form_fields-0.8.2/lib/assets/javascripts
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/actioncable-5.2.2/lib/assets/compiled
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/activestorage-5.2.2/app/assets/javascripts
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/actionview-5.2.2/lib/assets/compiled
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/turbolinks-source-5.2.0/lib/assets/javascripts):
+    1: <!DOCTYPE html>
+    2: <html lang="en">
+    3: <head>
+    4:   <%= javascript_include_tag 'application' %>
+    5:   <%= stylesheet_link_tag "application" %>
+    6:   <%= stylesheet_link_tag "main" %>
+    7:   <%= csrf_meta_tag %>
+  
+app/assets/javascripts/application.js:18
+app/views/layouts/application.html.erb:4:in `_app_views_layouts_application_html_erb___2552477275507833809_70095611365640'
+Started GET "/" for 127.0.0.1 at 2019-02-23 02:02:47 +0900
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 868ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-23 02:02:48 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (15.4ms)
+  Rendered sessions/new.html.erb within layouts/application (16.6ms)
+Completed 500 Internal Server Error in 331ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery-ui' with type 'application/javascript'
+Checked in these paths: 
+  /home/gabalmat/_git/csc517-ror/app/assets/config
+  /home/gabalmat/_git/csc517-ror/app/assets/images
+  /home/gabalmat/_git/csc517-ror/app/assets/javascripts
+  /home/gabalmat/_git/csc517-ror/app/assets/stylesheets
+  /home/gabalmat/_git/csc517-ror/vendor/assets/javascripts
+  /home/gabalmat/_git/csc517-ror/vendor/assets/stylesheets
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/nested_form_fields-0.8.2/lib/assets/javascripts
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/actioncable-5.2.2/lib/assets/compiled
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/activestorage-5.2.2/app/assets/javascripts
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/actionview-5.2.2/lib/assets/compiled
+  /home/gabalmat/.rvm/gems/ruby-2.5.3/gems/turbolinks-source-5.2.0/lib/assets/javascripts):
+    1: <!DOCTYPE html>
+    2: <html lang="en">
+    3: <head>
+    4:   <%= javascript_include_tag 'application' %>
+    5:   <%= stylesheet_link_tag "application" %>
+    6:   <%= stylesheet_link_tag "main" %>
+    7:   <%= csrf_meta_tag %>
+  
+app/assets/javascripts/application.js:18
+app/views/layouts/application.html.erb:4:in `_app_views_layouts_application_html_erb__2673792588335147020_70197300021640'
+Started GET "/" for 127.0.0.1 at 2019-02-23 02:07:08 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 863ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-23 02:07:09 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (4.6ms)
+  Rendered sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 1881ms (Views: 1880.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-23 02:07:19 +0900
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-23 02:07:19 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (5.7ms)
+  Rendered sessions/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 284ms (Views: 279.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-23 02:08:19 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"adelia@dietrich.biz", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'adelia@dietrich.biz' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 125ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-23 02:08:19 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '02bcc337daed01f2bc3e109027488818122afa26' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 248ms (Views: 240.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tours?my_tours=true" for 127.0.0.1 at 2019-02-23 02:08:23 +0900
+Processing by ToursController#index as HTML
+  Parameters: {"my_tours"=>"true"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '02bcc337daed01f2bc3e109027488818122afa26' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUserTour Load (1.2ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 10[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 194ms (Views: 122.1ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/tours/13" for 127.0.0.1 at 2019-02-23 02:08:25 +0900
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '02bcc337daed01f2bc3e109027488818122afa26' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 13 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 13 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (2.2ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 10 AND `user_tours`.`tour_id` = 13 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (1.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 13[0m
+  Rendered tours/show.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 176ms (Views: 143.9ms | ActiveRecord: 8.5ms)
+
+
+Started POST "/bookmark" for 127.0.0.1 at 2019-02-23 02:08:32 +0900
+Processing by ToursController#bookmark as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "id"=>"13", "commit"=>"Bookmark Tour"}
+  [1m[36mTour Load (2.9ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '02bcc337daed01f2bc3e109027488818122afa26' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 13[0m
+  [1m[36mUserTour Load (1.8ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 10 AND `user_tours`.`tour_id` = 13 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m
+  [1m[36mUserTour Update (0.2ms)[0m  [1m[33mUPDATE `user_tours` SET `bookmarked` = TRUE, `updated_at` = '2019-02-22 17:08:32' WHERE `user_tours`.`id` = 831[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tours/13
+Completed 302 Found in 80ms (ActiveRecord: 13.5ms)
+
+
+Started GET "/tours/13" for 127.0.0.1 at 2019-02-23 02:08:32 +0900
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '02bcc337daed01f2bc3e109027488818122afa26' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (1.1ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 13 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 13 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 10 AND `user_tours`.`tour_id` = 13 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 13[0m
+  Rendered tours/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 238ms (Views: 224.1ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/updatebooking" for 127.0.0.1 at 2019-02-23 02:08:45 +0900
+Processing by ToursController#update_booking as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "cancel_seats"=>"23", "id"=>"13"}
+  [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '02bcc337daed01f2bc3e109027488818122afa26' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 13[0m
+  [1m[36mUserTour Load (1.0ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 10 AND `user_tours`.`tour_id` = 13 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m
+  [1m[36mUserTour Update (1.7ms)[0m  [1m[33mUPDATE `user_tours` SET `num_booked` = 0, `booked` = FALSE, `updated_at` = '2019-02-22 17:08:45' WHERE `user_tours`.`id` = 831[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 13 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` INNER JOIN `user_tours` `user_tours_users` ON `user_tours_users`.`user_id` = `users`.`id` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 13 AND `user_tours`.`num_wait_listed` BETWEEN 1 AND 23 ORDER BY user_tours.waitlisted_at LIMIT 1[0m
+Redirected to http://localhost:3000/tours/13
+Completed 302 Found in 39ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/tours/13" for 127.0.0.1 at 2019-02-23 02:08:45 +0900
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '02bcc337daed01f2bc3e109027488818122afa26' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 13 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 13 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (1.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 10 AND `user_tours`.`tour_id` = 13 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 13[0m
+  Rendered tours/show.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 269ms (Views: 256.3ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/book" for 127.0.0.1 at 2019-02-23 02:09:24 +0900
+Processing by ToursController#book as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "commit"=>"Book Tour", "num_seats"=>"1", "waitlist_amt"=>"", "id"=>"13"}
+  [1m[36mTour Load (1.8ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '02bcc337daed01f2bc3e109027488818122afa26' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 13[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 13 AND `user_tours`.`booked` = TRUE[0m
+  [1m[36mUserTour Load (0.4ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 10 AND `user_tours`.`tour_id` = 13 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m
+  [1m[36mUserTour Update (0.2ms)[0m  [1m[33mUPDATE `user_tours` SET `booked` = TRUE, `num_booked` = 1, `updated_at` = '2019-02-22 17:09:24' WHERE `user_tours`.`id` = 831[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tours/13
+Completed 302 Found in 37ms (ActiveRecord: 12.5ms)
+
+
+Started GET "/tours/13" for 127.0.0.1 at 2019-02-23 02:09:24 +0900
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '02bcc337daed01f2bc3e109027488818122afa26' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (1.1ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 13 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 13 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (0.4ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 10 AND `user_tours`.`tour_id` = 13 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 13[0m
+  Rendered tours/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 261ms (Views: 242.9ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/updatebooking" for 127.0.0.1 at 2019-02-23 02:09:29 +0900
+Processing by ToursController#update_booking as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "cancel_seats"=>"1", "id"=>"13"}
+  [1m[36mTour Load (0.8ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '02bcc337daed01f2bc3e109027488818122afa26' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 13[0m
+  [1m[36mUserTour Load (1.0ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 10 AND `user_tours`.`tour_id` = 13 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  [1m[36mTour Load (1.7ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m
+  [1m[36mUserTour Update (5.3ms)[0m  [1m[33mUPDATE `user_tours` SET `num_booked` = 0, `booked` = FALSE, `updated_at` = '2019-02-22 17:09:29' WHERE `user_tours`.`id` = 831[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 13 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` INNER JOIN `user_tours` `user_tours_users` ON `user_tours_users`.`user_id` = `users`.`id` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 13 AND `user_tours`.`num_wait_listed` BETWEEN 1 AND 1 ORDER BY user_tours.waitlisted_at LIMIT 1[0m
+Redirected to http://localhost:3000/tours/13
+Completed 302 Found in 65ms (ActiveRecord: 18.8ms)
+
+
+Started GET "/tours/13" for 127.0.0.1 at 2019-02-23 02:09:29 +0900
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '02bcc337daed01f2bc3e109027488818122afa26' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (0.8ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 13 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 13 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (1.1ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 10 AND `user_tours`.`tour_id` = 13 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (0.6ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 13[0m
+  Rendered tours/show.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 320ms (Views: 300.9ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/reviews?tour_id=13" for 127.0.0.1 at 2019-02-23 02:09:32 +0900
+Processing by ReviewsController#index as HTML
+  Parameters: {"tour_id"=>"13"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '02bcc337daed01f2bc3e109027488818122afa26' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM `reviews` WHERE `reviews`.`tour_id` = 13 LIMIT 1[0m
+  Rendered reviews/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 177ms (Views: 162.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/tours?my_tours=true" for 127.0.0.1 at 2019-02-23 02:09:36 +0900
+Processing by ToursController#index as HTML
+  Parameters: {"my_tours"=>"true"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '02bcc337daed01f2bc3e109027488818122afa26' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUserTour Load (1.4ms)[0m  [1m[34mSELECT `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 10[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 156ms (Views: 137.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/tours" for 127.0.0.1 at 2019-02-23 02:09:38 +0900
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '02bcc337daed01f2bc3e109027488818122afa26' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  Rendered tours/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 148ms (Views: 137.6ms | ActiveRecord: 1.3ms)
+
+
