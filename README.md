@@ -31,7 +31,7 @@ Features to Test
 3. Enroll in a waitlist
 4. Cancel a Tour entirely
 5. Cancel seats on a Tour
-6. Create a Review for a Completed Tour
+6. Create a Review for a Completed Tour. **Mark a tour as "Complete" first in order to create a Review**
 
 Features Missing
 ---
