@@ -15,7 +15,7 @@
 
 # Statically create Admin user if admin user doesn't exist
 # An admin does not have to create first or last name
-  if !User.exists?(email: "admin@test.org")
+  if !User.exists?(email: "admin@csc517.org")
     admin_file = IO.readlines("admin_secrets.txt")
     email = admin_file[0]
     passwd = admin_file[1]

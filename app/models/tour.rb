@@ -4,6 +4,16 @@ class Tour < ApplicationRecord
   has_many :tour_locations, dependent: :delete_all
   accepts_nested_attributes_for :tour_locations, allow_destroy: true
 
+  # search is only for available tours
+  # default_scope { where(status: "In Future") }
+
+  scope :status, -> (status) { where status: status}
+  scope :booking_deadline, -> (booking_deadline) { where booking_deadline:booking_deadline}
+  scope :from_date, -> (from_date) { where from_date: from_date }
+  scope :to_date, -> (to_date) { where to_date: to_date }
+  scope :price, -> (price) { where price: price}
+  scope :total_seats, -> (total_seats) { where total_seats: total_seats}
+
   enum status: {
       in_future: "In Future",
       completed: "Completed",

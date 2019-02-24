@@ -57,9 +57,7 @@
         <% if current_user.role == "customer" %>
           <span><%= link_to "My Reviews", reviews_path(:my_reviews => true) %></span>
         <% end %>
-          <%# if current_user.role == "admin" %>
-  <!--          <span><%#= link_to " Admin Section", rails_admin.dashboard_path %></span>-->
-          <%# end %>
+        <span><%= link_to "Search Tours", show_search_path %></span>
       <% end %>
     <hr>
   </div>

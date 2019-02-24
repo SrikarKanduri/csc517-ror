@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :tours
   resources :reviews
 
+  # Manually created
+  get "show_search" => "tours#show_search", as: "show_search"
+
   # Generated from Clearance
   resources :passwords, controller: "passwords", only: [:create, :new]
   resource :session, controller: "sessions", only: [:create]
