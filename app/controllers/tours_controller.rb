@@ -4,33 +4,53 @@ class ToursController < ApplicationController
   load_and_authorize_resource
   # before_action :check_review_options, only: [:show]
 
+  # GET /show_search
+  def show_search
+    @tour = Tour.new
+    @tour.tour_locations.build
+  end
+
+  def search
+    # creating model. Raw params are ugly to use
+    tour = Tour.new(tour_params)
+    puts tour.booking_deadline, tour.status, tour.tour_locations[0]
+    return find_tours_from_search(tour)
+  end
+
   # GET /tours
   # GET /tours.json
   def index
-    personalize = params[:my_tours]
-    bookmarked_tours = params[:bookmarked_tours]
-    waitlisted_tours = params[:waitlisted_tours]
-
-    if personalize
-      if %w[admin agent].include?(current_user.role)
-        @tours = current_user.tours
-        @page_title = "My Tours"
-      elsif current_user.role.eql? 'customer'
-        booked_user_tours = current_user.user_tours.select {|x| x.booked?}
-        @tours = booked_user_tours.map {|ut| Tour.find(ut[:tour_id])}
-        @page_title = "My Booked Tours"
-      end
-    elsif bookmarked_tours
-      bookmarked_user_tours = current_user.user_tours.select {|x| x.bookmarked?}
-      @tours = bookmarked_user_tours.map {|ut| Tour.find(ut[:tour_id])}
-      @page_title = "My Bookmarked Tours"
-    elsif waitlisted_tours
-      waitlisted_user_tours = current_user.user_tours.select {|x| x.wait_listed?}
-      @tours = waitlisted_user_tours.map {|ut| Tour.find(ut[:tour_id])}
-      @page_title = "My Waitlisted Tours"
+    if params[:search]
+      @page_title = "List of Tours from filter"
+      # function located above...
+      @tours = search
+      puts @tours
     else
-      @tours = Tour.all
-      @page_title = "All Tours"
+      personalize = params[:my_tours]
+      bookmarked_tours = params[:bookmarked_tours]
+      waitlisted_tours = params[:waitlisted_tours]
+
+      if personalize
+        if %w[admin agent].include?(current_user.role)
+          @tours = current_user.tours
+          @page_title = "My Tours"
+        elsif current_user.role.eql? 'customer'
+          booked_user_tours = current_user.user_tours.select {|x| x.booked?}
+          @tours = booked_user_tours.map {|ut| Tour.find(ut[:tour_id])}
+          @page_title = "My Booked Tours"
+        end
+      elsif bookmarked_tours
+        bookmarked_user_tours = current_user.user_tours.select {|x| x.bookmarked?}
+        @tours = bookmarked_user_tours.map {|ut| Tour.find(ut[:tour_id])}
+        @page_title = "My Bookmarked Tours"
+      elsif waitlisted_tours
+        waitlisted_user_tours = current_user.user_tours.select {|x| x.wait_listed?}
+        @tours = waitlisted_user_tours.map {|ut| Tour.find(ut[:tour_id])}
+        @page_title = "My Waitlisted Tours"
+      else
+        @tours = Tour.all
+        @page_title = "All Tours"
+      end
     end
   end
 
@@ -129,21 +149,32 @@ class ToursController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tour
-      @tour = Tour.find(params[:id])
+      tour = Tour.find(params[:id])
     end
 
-    # To create review, User must have booked Tour and Tour must be "completed"
-    # def check_review_options
-    #   user_id = current_user.id
-    #   if UserTour.find_by(id: params[:id], user_id: user_id)
-    #     @show_review_options = true
-    #   else
-    #     @show_review_options = false
-    #   end
-    # end
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
       params.require(:tour).permit(:id, :name, :description, :created_at, :updated_at, :price, :booking_deadline, :from_date, :to_date, :total_seats, :op_email, :op_phone, :status, :my_tours,
                                    tour_locations_attributes: [:id, :country, :state_or_province, :_destroy])
+    end
+
+    def search_params
+      params[:tour].slice(:name, :price, :booking_deadline, :from_date, :to_date, :total_seats, :status,
+                   tour_locations_attributes: [:country, :state_or_province])
+    end
+
+    def find_tours_from_search(tour)
+      puts "The tour name is: ",tour.name
+      tours = Tour.where(nil)
+      tours = tours.status(tour.status) if tour.status.present?
+      # scope for name didn't work for me
+      tours = Tour.where(name: tour.name) if tour.name.present?
+      tours = tours.price(tour.price) if tour.price.present?
+      tours = tours.booking_deadline(tour.booking_deadline) if tour.booking_deadline.present?
+      tours = tours.from_date(tour.from_date) if tour.from_date.present?
+      tours = tours.to_date(tour.to_date) if tour.to_date.present?
+      tours = tours.total_seats(tour.total_seats) if tour.total_seats.present?
+      # tours = Tour.joins(:tour_locations).merge(TourLocation.country, TourLocation.state_or_province) if tour.tour_locations.present?
+      return tours
     end
 end
