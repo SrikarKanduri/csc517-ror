@@ -11,14 +11,14 @@
 # puts IO.read("admin_secrets.txt")
 
 # Every time you run seed, recreate every User
-  User.destroy_all
+#   User.destroy_all
 
 # Statically create Admin user if admin user doesn't exist
 # An admin does not have to create first or last name
-  if !User.exists?(email: "admin@test.org")
-    admin_file = IO.readlines("admin_secrets.txt")
-    email = admin_file[0]
-    passwd = admin_file[1]
+  if !User.exists?(email: "admin@csc517.org")
+    # admin_file = IO.readlines("admin_secrets.txt")
+    email = "admin@csc517.org"
+    passwd = "admin"
     User.create!([email: email.to_s, password: passwd.to_s, role: "admin"])
   end
 
