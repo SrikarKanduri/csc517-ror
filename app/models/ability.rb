@@ -19,7 +19,7 @@ class Ability
       can :undo_bookmark, Tour
       can :book, Tour
       can :update_booking, Tour
-      can :read, Review
+      can [:read, :create], Review
       can :manage, Review, :user_id => user.id
     end
   end
