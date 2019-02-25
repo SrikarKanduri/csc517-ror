@@ -43302,3 +43302,236 @@ Processing by ToursController#show as HTML
 Completed 200 OK in 212ms (Views: 201.6ms | ActiveRecord: 2.4ms)
 
 
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-02-25 11:42:24 +0900
+  [1m[35m (293.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (452.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (605.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '8736d1cefd729e99d72186f330aace740fbe5410' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 1443ms (ActiveRecord: 1418.4ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-25 11:42:28 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (4.1ms)
+  Rendered sessions/new.html.erb within layouts/application (698.3ms)
+Completed 200 OK in 1153ms (Views: 1150.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-25 11:42:33 +0900
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-25 11:42:34 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (4.4ms)
+  Rendered sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 179ms (Views: 177.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-25 11:42:41 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"customer1@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (309.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'customer1@test.org' LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.1ms)
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 401 Unauthorized in 574ms (Views: 168.9ms | ActiveRecord: 309.3ms)
+
+
+  [1m[35m (299.8ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (264.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2019-02-25 11:43:39 +0900
+  [1m[35m (169.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (235.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 749ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-02-25 11:43:42 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (11.8ms)
+  Rendered sessions/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 467ms (Views: 466.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-02-25 11:44:08 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"customer1@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (287.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'customer1@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1239ms (ActiveRecord: 1060.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-25 11:44:09 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (168.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5ba1e553c6c9ae56c631ff42d16fc1cf832f39fc' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 370ms (Views: 193.0ms | ActiveRecord: 168.4ms)
+
+
+Started GET "/tours" for 127.0.0.1 at 2019-02-25 11:44:13 +0900
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (299.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5ba1e553c6c9ae56c631ff42d16fc1cf832f39fc' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (168.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  Rendered tours/index.html.erb within layouts/application (947.6ms)
+Completed 200 OK in 1587ms (Views: 383.6ms | ActiveRecord: 1172.9ms)
+
+
+Started GET "/tours/3" for 127.0.0.1 at 2019-02-25 11:44:16 +0900
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (169.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5ba1e553c6c9ae56c631ff42d16fc1cf832f39fc' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (191.2ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.1ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (301.7ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 3 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (299.5ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 3 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (296.5ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 16 AND `user_tours`.`tour_id` = 3 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (300.1ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 3[0m
+  Rendered tours/show.html.erb within layouts/application (971.4ms)
+Completed 200 OK in 2838ms (Views: 483.0ms | ActiveRecord: 2309.8ms)
+
+
+Started POST "/bookmark" for 127.0.0.1 at 2019-02-25 11:44:24 +0900
+Processing by ToursController#bookmark as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "id"=>"3", "commit"=>"Bookmark Tour"}
+  [1m[36mTour Load (205.5ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (231.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5ba1e553c6c9ae56c631ff42d16fc1cf832f39fc' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Exists (169.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 3 AND `users`.`id` = 16 LIMIT 1[0m
+  [1m[35m (269.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserTour Create (186.5ms)[0m  [1m[32mINSERT INTO `user_tours` (`user_id`, `tour_id`, `created_at`, `updated_at`) VALUES (16, 3, '2019-02-25 02:44:25', '2019-02-25 02:44:25')[0m
+  [1m[35m (330.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserTour Load (365.6ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 16 AND `user_tours`.`tour_id` = 3 LIMIT 1[0m
+  [1m[35m (310.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (298.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 16 LIMIT 1[0m
+  [1m[36mTour Load (301.2ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m
+  [1m[36mUserTour Update (305.0ms)[0m  [1m[33mUPDATE `user_tours` SET `bookmarked` = TRUE, `updated_at` = '2019-02-25 02:44:27' WHERE `user_tours`.`id` = 5[0m
+  [1m[35m (304.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tours/3
+Completed 302 Found in 3683ms (ActiveRecord: 3581.6ms)
+
+
+Started GET "/tours/3" for 127.0.0.1 at 2019-02-25 11:44:28 +0900
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (299.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5ba1e553c6c9ae56c631ff42d16fc1cf832f39fc' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (519.2ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.1ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (167.5ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 3 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (223.9ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 3 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (308.5ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 16 AND `user_tours`.`tour_id` = 3 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (280.0ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 3[0m
+  Rendered tours/show.html.erb within layouts/application (301.9ms)
+Completed 200 OK in 2053ms (Views: 234.7ms | ActiveRecord: 1798.6ms)
+
+
+Started POST "/undobookmark" for 127.0.0.1 at 2019-02-25 11:44:33 +0900
+Processing by ToursController#undo_bookmark as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "id"=>"3", "commit"=>"undo"}
+  [1m[36mTour Load (304.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (303.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5ba1e553c6c9ae56c631ff42d16fc1cf832f39fc' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUserTour Load (167.5ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 16 AND `user_tours`.`tour_id` = 3 LIMIT 1[0m
+  [1m[35m (440.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (304.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 16 LIMIT 1[0m
+  [1m[36mTour Load (308.6ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m
+  [1m[36mUserTour Update (302.5ms)[0m  [1m[33mUPDATE `user_tours` SET `bookmarked` = FALSE, `updated_at` = '2019-02-25 02:44:36' WHERE `user_tours`.`id` = 5[0m
+  [1m[35m (305.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tours/3
+Completed 302 Found in 2457ms (ActiveRecord: 2436.3ms)
+
+
+Started GET "/tours/3" for 127.0.0.1 at 2019-02-25 11:44:36 +0900
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (347.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5ba1e553c6c9ae56c631ff42d16fc1cf832f39fc' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (302.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.1ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (303.8ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 3 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (207.1ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 3 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (400.7ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 16 AND `user_tours`.`tour_id` = 3 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (287.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 3[0m
+  Rendered tours/show.html.erb within layouts/application (309.4ms)
+Completed 200 OK in 2093ms (Views: 221.4ms | ActiveRecord: 1848.2ms)
+
+
+Started POST "/book" for 127.0.0.1 at 2019-02-25 11:44:45 +0900
+Processing by ToursController#book as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "commit"=>"Book Tour", "num_seats"=>"6", "waitlist_amt"=>"", "id"=>"3"}
+  [1m[36mTour Load (300.8ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (306.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5ba1e553c6c9ae56c631ff42d16fc1cf832f39fc' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Exists (298.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 3 AND `users`.`id` = 16 LIMIT 1[0m
+  [1m[35m (305.2ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 3 AND `user_tours`.`booked` = TRUE[0m
+  [1m[36mUserTour Load (307.8ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 16 AND `user_tours`.`tour_id` = 3 LIMIT 1[0m
+  [1m[35m (303.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (542.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 16 LIMIT 1[0m
+  [1m[36mTour Load (379.2ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m
+  [1m[36mUserTour Update (298.4ms)[0m  [1m[33mUPDATE `user_tours` SET `booked` = TRUE, `num_booked` = 6, `updated_at` = '2019-02-25 02:44:48' WHERE `user_tours`.`id` = 5[0m
+  [1m[35m (305.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tours/3
+Completed 302 Found in 3380ms (ActiveRecord: 3346.6ms)
+
+
+Started GET "/tours/3" for 127.0.0.1 at 2019-02-25 11:44:49 +0900
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (299.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5ba1e553c6c9ae56c631ff42d16fc1cf832f39fc' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (313.5ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (294.1ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 3 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (306.4ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 3 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (306.5ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 16 AND `user_tours`.`tour_id` = 3 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (292.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 3[0m
+  Rendered tours/show.html.erb within layouts/application (304.1ms)
+Completed 200 OK in 2053ms (Views: 224.7ms | ActiveRecord: 1812.9ms)
+
+
+Started POST "/updatebooking" for 127.0.0.1 at 2019-02-25 11:44:59 +0900
+Processing by ToursController#update_booking as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "cancel_seats"=>"6", "id"=>"3"}
+  [1m[36mTour Load (301.7ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (306.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5ba1e553c6c9ae56c631ff42d16fc1cf832f39fc' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUserTour Load (301.1ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 16 AND `user_tours`.`tour_id` = 3 LIMIT 1[0m
+  [1m[35m (307.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserTour Destroy (300.4ms)[0m  [1m[31mDELETE FROM `user_tours` WHERE `user_tours`.`tour_id` = 3 AND `user_tours`.`user_id` = 16[0m
+  [1m[35m (307.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (304.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (305.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 16 LIMIT 1[0m
+  [1m[36mTour Load (305.5ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m
+  [1m[36mUserTour Update (303.9ms)[0m  [1m[33mUPDATE `user_tours` SET `num_booked` = 0, `booked` = FALSE, `wait_listed` = FALSE, `updated_at` = '2019-02-25 02:45:02' WHERE `user_tours`.`id` = 5[0m
+  [1m[35m (170.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (438.9ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 3 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUser Load (294.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` INNER JOIN `user_tours` `user_tours_users` ON `user_tours_users`.`user_id` = `users`.`id` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 3 AND `user_tours`.`num_wait_listed` BETWEEN 1 AND 6 ORDER BY user_tours.waitlisted_at LIMIT 1[0m
+Redirected to http://localhost:3000/tours/3
+Completed 302 Found in 3993ms (ActiveRecord: 3947.6ms)
+
+
+Started GET "/tours/3" for 127.0.0.1 at 2019-02-25 11:45:03 +0900
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (522.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5ba1e553c6c9ae56c631ff42d16fc1cf832f39fc' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (384.2ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.1ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (300.6ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 3 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (307.8ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 3 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (304.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 16 AND `user_tours`.`tour_id` = 3 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (288.1ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 3[0m
+  Rendered tours/show.html.erb within layouts/application (301.6ms)
+Completed 200 OK in 2330ms (Views: 203.0ms | ActiveRecord: 2107.5ms)
+
+
