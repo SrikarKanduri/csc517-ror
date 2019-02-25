@@ -13,8 +13,7 @@ class ToursController < ApplicationController
   def search
     # creating model. Raw params are ugly to use
     tour = Tour.new(tour_params)
-    puts tour.booking_deadline, tour.status, tour.tour_locations[0]
-    return find_tours_from_search(tour)
+    return [find_tours_from_search(tour), tour]
   end
 
   # GET /tours
@@ -23,8 +22,9 @@ class ToursController < ApplicationController
     if params[:search]
       @page_title = "List of Tours from filter"
       # function located above...
-      @tours = search
-      puts @tours
+      search_results = search()
+      @tours = search_results[0]
+      @filter = search_results[1]
     else
       personalize = params[:my_tours]
       bookmarked_tours = params[:bookmarked_tours]
@@ -164,7 +164,6 @@ class ToursController < ApplicationController
     end
 
     def find_tours_from_search(tour)
-      puts "The tour name is: ",tour.name
       tours = Tour.where(nil)
       tours = tours.status(tour.status) if tour.status.present?
       # scope for name didn't work for me
@@ -174,7 +173,13 @@ class ToursController < ApplicationController
       tours = tours.from_date(tour.from_date) if tour.from_date.present?
       tours = tours.to_date(tour.to_date) if tour.to_date.present?
       tours = tours.total_seats(tour.total_seats) if tour.total_seats.present?
-      # tours = Tour.joins(:tour_locations).merge(TourLocation.country, TourLocation.state_or_province) if tour.tour_locations.present?
+
+      # even if no itinerary provided, there's an element at index=0 which is empty
+      if tour.tour_locations.length > 0 and !tour.tour_locations[0].country.empty?
+        tour.tour_locations.each do |itinerary|
+          tours = tours.itinerary(itinerary) if itinerary
+        end
+      end
       return tours
     end
 end

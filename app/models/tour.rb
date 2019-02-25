@@ -13,6 +13,10 @@ class Tour < ApplicationRecord
   scope :to_date, -> (to_date) { where to_date: to_date }
   scope :price, -> (price) { where price: price}
   scope :total_seats, -> (total_seats) { where total_seats: total_seats}
+  scope :itinerary, -> (itinerary) { joins(:tour_locations).merge(TourLocation.country(itinerary.country))}
+  # scope :with_shipped_device, -> {
+  #   joins(:device).merge(Device.shipped)
+  # }
 
   enum status: {
       in_future: "In Future",

@@ -48229,3 +48229,995 @@ app/models/tour_location.rb:4:in `block in <class:TourLocation>'
 app/controllers/tours_controller.rb:177:in `find_tours_from_search'
 app/controllers/tours_controller.rb:17:in `search'
 app/controllers/tours_controller.rb:26:in `index'
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 19:48:26 -0500
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 19:48:26 -0500
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ToursController#show_search as HTML
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (1458.2ms)
+  Rendered tours/show_search.html.erb within layouts/application (1465.7ms)
+Completed 200 OK in 2467ms (Views: 2347.2ms | ActiveRecord: 18.8ms)
+
+
+Completed 200 OK in 2461ms (Views: 2347.4ms | ActiveRecord: 34.5ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=h&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=j&commit=Search" for 127.0.0.1 at 2019-02-24 19:48:35 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"h", "country"=>"j"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (1.6ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` WHERE `tours`.`status` = 'In Future' AND `tours`.`id` IN (SELECT `tour_locations`.`tour_id` FROM `tour_locations` WHERE `tour_locations`.`tour_id` IS NULL AND (1=0))[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 197ms (Views: 186.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 19:49:35 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 244ms (Views: 207.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=b&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=c&commit=Search" for 127.0.0.1 at 2019-02-24 19:49:40 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"b", "country"=>"c"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (0.6ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` WHERE `tours`.`status` = 'In Future' AND `tours`.`id` IN (SELECT `tour_locations`.`tour_id` FROM `tour_locations` WHERE `tour_locations`.`tour_id` IS NULL AND (1=0))[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 164ms (Views: 157.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 19:49:58 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 257ms (Views: 173.9ms | ActiveRecord: 29.4ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=b&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=c&commit=Search" for 127.0.0.1 at 2019-02-24 19:50:03 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"b", "country"=>"c"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/models/tour_location.rb:4:in `block in <class:TourLocation>'
+app/controllers/tours_controller.rb:179:in `find_tours_from_search'
+app/controllers/tours_controller.rb:17:in `search'
+app/controllers/tours_controller.rb:26:in `index'
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 19:50:42 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 408ms (Views: 337.8ms | ActiveRecord: 32.6ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=h&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=c&commit=Search" for 127.0.0.1 at 2019-02-24 19:50:47 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"h", "country"=>"c"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` WHERE `tours`.`status` = 'In Future' AND `tours`.`id` IN (SELECT `tour_locations`.`tour_id` FROM `tour_locations` WHERE `tour_locations`.`tour_id` IS NULL AND (1=0))[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 186ms (Views: 179.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tours" for 127.0.0.1 at 2019-02-24 19:51:09 -0500
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  Rendered tours/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 173ms (Views: 166.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/tours/1" for 127.0.0.1 at 2019-02-24 19:51:15 -0500
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (0.7ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 1 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 1 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 1 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (0.5ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 1[0m
+  Rendered tours/show.html.erb within layouts/application (48.2ms)
+Completed 200 OK in 239ms (Views: 205.8ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 19:51:18 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 178ms (Views: 153.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tours" for 127.0.0.1 at 2019-02-24 19:51:26 -0500
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  Rendered tours/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 183ms (Views: 178.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tours/1" for 127.0.0.1 at 2019-02-24 19:51:28 -0500
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 1 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 1 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (0.5ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 1 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 1[0m
+  Rendered tours/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 200ms (Views: 187.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 19:51:33 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 208ms (Views: 201.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 19:51:38 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` WHERE `tours`.`status` = 'In Future' AND `tours`.`id` IN (SELECT `tour_locations`.`tour_id` FROM `tour_locations` WHERE `tour_locations`.`tour_id` IS NULL AND (1=0))[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 255ms (Views: 245.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:05:58 -0500
+  [1m[35m (0.8ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.5ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` WHERE `tours`.`status` = 'In Future'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 462ms (Views: 281.9ms | ActiveRecord: 37.0ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:09:11 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` WHERE `tours`.`status` = 'In Future'[0m
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 28.7ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into String):
+  
+app/controllers/tours_controller.rb:182:in `find_tours_from_search'
+app/controllers/tours_controller.rb:16:in `search'
+app/controllers/tours_controller.rb:25:in `index'
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:09:33 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` WHERE `tours`.`status` = 'In Future'[0m
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 26.5ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into String):
+  
+app/controllers/tours_controller.rb:182:in `find_tours_from_search'
+app/controllers/tours_controller.rb:16:in `search'
+app/controllers/tours_controller.rb:25:in `index'
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:12:57 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` WHERE `tours`.`status` = 'In Future'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 328ms (Views: 228.9ms | ActiveRecord: 33.2ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:16:03 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` WHERE `tours`.`id` IS NULL[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 285ms (Views: 200.6ms | ActiveRecord: 28.6ms)
+
+
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 20:16:08 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 313ms (Views: 309.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:16:16 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` WHERE `tours`.`id` IS NULL[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 192ms (Views: 185.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2019-02-24 20:24:42 -0500
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM `reviews` LIMIT 1[0m
+  Rendered reviews/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 332ms (Views: 277.6ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 20:24:44 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 244ms (Views: 175.1ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:24:49 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.8ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.2ms)
+
+
+  
+ArgumentError (Unknown key: :country. Valid keys are: :includes, :eager_load, :preload, :select, :group, :order, :joins, :left_outer_joins, :references, :extending, :unscope, :limit, :offset, :lock, :readonly, :reordering, :reverse_order, :distinct, :create_with, :skip_query_cache, :where, :having, :from):
+  
+app/models/tour.rb:16:in `block in <class:Tour>'
+app/controllers/tours_controller.rb:182:in `block in find_tours_from_search'
+app/controllers/tours_controller.rb:177:in `find_tours_from_search'
+app/controllers/tours_controller.rb:16:in `search'
+app/controllers/tours_controller.rb:25:in `index'
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 20:28:41 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 18.7ms)
+
+
+  
+SyntaxError (/Users/bnmwaniki/Desktop/School/ECE 517/Code/csc517-ror/app/models/tour_location.rb:6: syntax error, unexpected '\n', expecting do (for lambda) or tLAMBEG):
+  
+app/models/tour_location.rb:6: syntax error, unexpected '\n', expecting do (for lambda) or tLAMBEG
+app/controllers/tours_controller.rb:10:in `show_search'
+Started GET "/tours" for 127.0.0.1 at 2019-02-24 20:31:27 -0500
+Started GET "/search" for 127.0.0.1 at 2019-02-24 20:31:27 -0500
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (1.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  Rendered tours/index.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 438ms (Views: 394.2ms | ActiveRecord: 23.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/search"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-02-24 20:31:28 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 210ms (Views: 170.7ms | ActiveRecord: 28.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-24 20:31:28 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 187ms (Views: 184.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-24 20:31:34 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 137ms (Views: 134.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-24 20:31:43 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 153ms (Views: 150.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//tours" for 127.0.0.1 at 2019-02-24 20:31:43 -0500
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  Rendered tours/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 277ms (Views: 260.2ms | ActiveRecord: 8.4ms)
+
+
+Started GET "//tours/1" for 127.0.0.1 at 2019-02-24 20:31:46 -0500
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 1 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 1 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 1 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 1[0m
+  Rendered tours/show.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 202ms (Views: 165.6ms | ActiveRecord: 21.2ms)
+
+
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 20:31:49 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 163ms (Views: 155.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:31:54 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` LIMIT 11[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.8ms)
+
+
+  
+  [1m[36mCACHE Tour Load (0.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` LIMIT 11[0m
+NoMethodError (undefined method `tour_locations' for #<Tour::ActiveRecord_Relation:0x00007ff92a3a5f18>):
+  
+app/controllers/tours_controller.rb:182:in `block in find_tours_from_search'
+app/controllers/tours_controller.rb:177:in `find_tours_from_search'
+app/controllers/tours_controller.rb:16:in `search'
+app/controllers/tours_controller.rb:25:in `index'
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 20:38:09 -0500
+  [1m[35m (1.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 395ms (Views: 293.6ms | ActiveRecord: 41.6ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=USA&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=NC&commit=Search" for 127.0.0.1 at 2019-02-24 20:40:44 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"USA", "country"=>"NC"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (4.2ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'NC' AND `tour_locations`.`state_or_province` = 'USA'[0m
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 30.1ms)
+
+
+  
+NoMethodError (undefined method `country' for nil:NilClass):
+  
+app/controllers/tours_controller.rb:180:in `block in find_tours_from_search'
+app/controllers/tours_controller.rb:177:in `find_tours_from_search'
+app/controllers/tours_controller.rb:16:in `search'
+app/controllers/tours_controller.rb:25:in `index'
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 20:41:02 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 20:41:02 -0500
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (45.8ms)
+  [1m[35m (2.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 451ms (Views: 445.3ms | ActiveRecord: 0.7ms)
+
+
+Completed 200 OK in 392ms (Views: 372.3ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:41:07 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.7ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (3.0ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 195ms (Views: 149.7ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/tours/1" for 127.0.0.1 at 2019-02-24 20:41:16 -0500
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (0.7ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 1 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 1 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 1 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 1[0m
+  Rendered tours/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 204ms (Views: 169.5ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:50:13 -0500
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.5ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.6ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 30.4ms)
+
+
+  
+TypeError (no implicit conversion of Tour::ActiveRecord_Relation into Integer):
+  
+app/controllers/tours_controller.rb:16:in `initialize'
+app/controllers/tours_controller.rb:16:in `new'
+app/controllers/tours_controller.rb:16:in `search'
+app/controllers/tours_controller.rb:25:in `index'
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:51:36 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 379ms (Views: 280.3ms | ActiveRecord: 29.2ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:52:33 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 212ms (Views: 205.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:52:47 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 185ms (Views: 179.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:52:57 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 289ms (Views: 282.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:53:16 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 191ms (Views: 184.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:53:29 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 191ms (Views: 185.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:53:40 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 284ms (Views: 276.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 20:59:05 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 218ms (Views: 210.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:00:08 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 183ms (Views: 176.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:01:22 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 192ms (Views: 185.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:01:43 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 268ms (Views: 254.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:02:32 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 185ms (Views: 177.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:02:52 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 276ms (Views: 267.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:03:05 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 179ms (Views: 171.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:04:10 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 203ms (Views: 196.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:04:17 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 184ms (Views: 177.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:04:49 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 278ms (Views: 270.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:05:46 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 174ms (Views: 166.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:06:08 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 233ms (Views: 226.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:06:30 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 273ms (Views: 263.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:07:00 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 228ms (Views: 222.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:07:14 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 278ms (Views: 270.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:07:35 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 179ms (Views: 172.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:07:53 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`country` = 'USA' AND `tour_locations`.`state_or_province` = 'NC'[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendering tours/index.html.erb within layouts/application
+  Rendered tours/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 218ms (Views: 211.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:10:28 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tour_locations`.`country` = 'USA'[0m
+  Rendered tours/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 344ms (Views: 255.4ms | ActiveRecord: 34.0ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:10:52 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tours`.`status` = 'In Future' AND `tour_locations`.`country` = 'USA'[0m
+  Rendered tours/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 224ms (Views: 165.1ms | ActiveRecord: 29.4ms)
+
+
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 21:10:55 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 328ms (Views: 323.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=Completed&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:11:04 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"Completed", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tours`.`status` = 'Completed' AND `tour_locations`.`country` = 'USA'[0m
+  Rendered tours/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 212ms (Views: 184.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=Completed&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:11:40 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"Completed", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tours`.`status` = 'Completed' AND `tour_locations`.`country` = 'USA'[0m
+  Rendered tours/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 247ms (Views: 241.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=Completed&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:13:18 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"Completed", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tours`.`status` = 'Completed' AND `tour_locations`.`country` = 'USA'[0m
+  Rendered tours/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 315ms (Views: 305.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=Completed&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:16:16 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"Completed", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tours`.`status` = 'Completed' AND `tour_locations`.`country` = 'USA'[0m
+  Rendered tours/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 228ms (Views: 222.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=Completed&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:16:33 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"Completed", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.6ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tours`.`status` = 'Completed' AND `tour_locations`.`country` = 'USA'[0m
+  Rendered tours/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 250ms (Views: 243.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 21:16:43 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (36.4ms)
+Completed 200 OK in 197ms (Views: 186.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=ksdjf&tour%5Bprice%5D=23&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=2018&tour%5Bfrom_date%282i%29%5D=4&tour%5Bfrom_date%283i%29%5D=4&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&tour%5Btour_locations_attributes%5D%5B1%5D%5Bstate_or_province%5D=CA&tour%5Btour_locations_attributes%5D%5B1%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:17:06 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"ksdjf", "price"=>"23", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"2018", "from_date(2i)"=>"4", "from_date(3i)"=>"4", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}, "1"=>{"state_or_province"=>"CA", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (1.1ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tours`.`name` = 'ksdjf' AND `tours`.`price` = 23.0 AND `tours`.`from_date` = '2018-04-04' AND `tour_locations`.`country` = 'USA'[0m
+  Rendered tours/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 184ms (Views: 177.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=ksdjf&tour%5Bprice%5D=23&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=2018&tour%5Bfrom_date%282i%29%5D=4&tour%5Bfrom_date%283i%29%5D=4&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&tour%5Btour_locations_attributes%5D%5B1%5D%5Bstate_or_province%5D=CA&tour%5Btour_locations_attributes%5D%5B1%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:17:54 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"ksdjf", "price"=>"23", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"2018", "from_date(2i)"=>"4", "from_date(3i)"=>"4", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}, "1"=>{"state_or_province"=>"CA", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tours`.`name` = 'ksdjf' AND `tours`.`price` = 23.0 AND `tours`.`from_date` = '2018-04-04' AND `tour_locations`.`country` = 'USA'[0m
+  Rendered tours/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 231ms (Views: 225.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tours" for 127.0.0.1 at 2019-02-24 21:18:17 -0500
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  Rendered tours/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 276ms (Views: 268.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 21:18:29 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 219ms (Views: 212.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=jh&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=&commit=Search" for 127.0.0.1 at 2019-02-24 21:18:33 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"jh", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"", "country"=>""}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tours`.`name` = 'jh' AND `tour_locations`.`country` = ''[0m
+  Rendered tours/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 275ms (Views: 269.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=jh&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=&commit=Search" for 127.0.0.1 at 2019-02-24 21:20:10 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"jh", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"", "country"=>""}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tours`.`name` = 'jh' AND `tour_locations`.`country` = ''[0m
+  Rendered tours/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 265ms (Views: 203.4ms | ActiveRecord: 28.0ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=jh&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=&commit=Search" for 127.0.0.1 at 2019-02-24 21:21:10 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"jh", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"", "country"=>""}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` WHERE `tours`.`name` = 'jh'[0m
+  Rendered tours/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 295ms (Views: 230.3ms | ActiveRecord: 28.1ms)
+
+
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 21:22:02 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 284ms (Views: 217.7ms | ActiveRecord: 31.3ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2019-02-24 21:22:04 -0500
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM `reviews` LIMIT 1[0m
+  Rendered reviews/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 192ms (Views: 180.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/tours" for 127.0.0.1 at 2019-02-24 21:22:04 -0500
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  Rendered tours/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 188ms (Views: 181.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 21:22:06 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 177ms (Views: 170.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=Tour+1&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=&commit=Search" for 127.0.0.1 at 2019-02-24 21:22:10 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"Tour 1", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"", "country"=>""}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` WHERE `tours`.`name` = 'Tour 1'[0m
+  Rendered tours/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 261ms (Views: 255.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 21:22:17 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 150ms (Views: 144.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=Tour+1&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:22:23 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"Tour 1", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tours`.`name` = 'Tour 1' AND `tour_locations`.`country` = 'USA'[0m
+  Rendered tours/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 168ms (Views: 162.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/show_search" for 127.0.0.1 at 2019-02-24 21:22:28 -0500
+Processing by ToursController#show_search as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/show_search.html.erb within layouts/application
+  Rendered tours/show_search.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 172ms (Views: 166.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tours?utf8=%E2%9C%93&search=true&tour%5Bstatus%5D=In+Future&tour%5Bname%5D=&tour%5Bprice%5D=&tour%5Bbooking_deadline%281i%29%5D=&tour%5Bbooking_deadline%282i%29%5D=&tour%5Bbooking_deadline%283i%29%5D=&tour%5Bbooking_deadline%284i%29%5D=&tour%5Bbooking_deadline%285i%29%5D=&tour%5Bfrom_date%281i%29%5D=&tour%5Bfrom_date%282i%29%5D=&tour%5Bfrom_date%283i%29%5D=&tour%5Bto_date%281i%29%5D=&tour%5Bto_date%282i%29%5D=&tour%5Bto_date%283i%29%5D=&tour%5Btotal_seats%5D=&tour%5Btour_locations_attributes%5D%5B0%5D%5Bstate_or_province%5D=NC&tour%5Btour_locations_attributes%5D%5B0%5D%5Bcountry%5D=USA&commit=Search" for 127.0.0.1 at 2019-02-24 21:22:37 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"true", "tour"=>{"status"=>"In Future", "name"=>"", "price"=>"", "booking_deadline(1i)"=>"", "booking_deadline(2i)"=>"", "booking_deadline(3i)"=>"", "booking_deadline(4i)"=>"", "booking_deadline(5i)"=>"", "from_date(1i)"=>"", "from_date(2i)"=>"", "from_date(3i)"=>"", "to_date(1i)"=>"", "to_date(2i)"=>"", "to_date(3i)"=>"", "total_seats"=>"", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}}, "commit"=>"Search"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '741f652f7d43dcafc7c23f30b42a8476b0f08ef4' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `tour_locations` ON `tour_locations`.`tour_id` = `tours`.`id` WHERE `tours`.`status` = 'In Future' AND `tour_locations`.`country` = 'USA'[0m
+  Rendered tours/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 134ms (Views: 127.8ms | ActiveRecord: 0.9ms)
+
+
