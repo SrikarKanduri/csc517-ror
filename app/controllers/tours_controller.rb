@@ -79,6 +79,7 @@ class ToursController < ApplicationController
   # POST /tours
   # POST /tours.json
   def create
+    # if image(s) attached they will be found inside tour_params
     @tour = Tour.new(tour_params)
 
     respond_to do |format|
@@ -97,7 +98,9 @@ class ToursController < ApplicationController
   # PATCH/PUT /tours/1
   # PATCH/PUT /tours/1.json
   def update
+
     respond_to do |format|
+      # if image(s) attached they will be found inside tour_params
       if @tour.update(tour_params)
         format.html { redirect_to @tour, notice: 'Tour was successfully updated.' }
         format.json { render :show, status: :ok, location: @tour }
@@ -108,14 +111,24 @@ class ToursController < ApplicationController
     end
   end
 
+
   # DELETE /tours/1
   # DELETE /tours/1.json
   def destroy
-    @tour.destroy
-    respond_to do |format|
-      format.html { redirect_to tours_url, notice: 'Tour was successfully destroyed.' }
-      format.json { head :no_content }
+    if params[:picture_id]
+      delete_picture(params[:picture_id])
+      respond_to do |format|
+        format.html { redirect_to tour_url(@tour.id), notice: 'Image was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      @tour.destroy
+      respond_to do |format|
+        format.html { redirect_to tours_url, notice: 'Tour was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
+
   end
 
   def bookmark
@@ -154,7 +167,10 @@ class ToursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
-      params.require(:tour).permit(:id, :name, :description, :created_at, :updated_at, :price, :booking_deadline, :from_date, :to_date, :total_seats, :op_email, :op_phone, :status, :my_tours,
+      params.require(:tour).permit(:id, :name, :description, :created_at, :updated_at, :price, 
+                                   :booking_deadline, :from_date, :to_date, :total_seats, 
+                                   :op_email, :op_phone, :status, :my_tours,
+                                   images: [],
                                    tour_locations_attributes: [:id, :country, :state_or_province, :_destroy])
     end
 
@@ -181,5 +197,11 @@ class ToursController < ApplicationController
         end
       end
       return tours
+    end
+
+    def delete_picture(picture_id)
+      image = ActiveStorage::Attachment.find(picture_id)
+      # Synchronously destroy the images and actual resource files.
+      image.purge
     end
 end

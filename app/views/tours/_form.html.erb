@@ -94,18 +94,36 @@
   </div>
 
 
-<!-- Photo(s) upload -->
-<h2>Upload Photo(s)</h2>
-<%= form_with model: @tour, local: true do |form| %>
 
-  <%= form.label :title, "Title of Picture" %>
-  <%= form.text_field :title %><br>
-  <br>
-  <%= form.label :title, "Choose picture(s)" %>
-  <%= form.file_field :images, multiple: true %><br>
-<% end %>
+  <!-- Pictures section -->
+  <div id="pictures">
+
+    <!-- Photo(s) upload -->
+    <div class="add-photos">
+      <h4>Upload Photo(s)</h4>
+      <%= form.label :title, "Choose picture(s)" %>
+      <%= form.file_field :images, multiple: true %><br>
+    </div>
+
+    <!-- Delete Photo section -->
+    <h4>Delete Picture(s)</h4>
+    <% if @tour.images.attached? %>
+      <ul>
+        <% @tour.images.each do |image| %>
+          <li>
+            <%= image_tag image %>
+            <%= link_to 'Delete Picture', tour_path(id: @tour.id, picture_id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p style="color: red">You have no pictures for this tour</p>
+      <%= link_to 'Add Pictures', edit_tour_path(@tour) %>
+    <% end %>
+  </div>
 
   <div class="actions create">
     <%= form.submit %>
   </div>
 <% end %>
+
