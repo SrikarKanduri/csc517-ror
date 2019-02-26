@@ -3,6 +3,7 @@ class Tour < ApplicationRecord
   has_many :users, through: :user_tours
   has_many :tour_locations, dependent: :delete_all
   accepts_nested_attributes_for :tour_locations, allow_destroy: true
+  has_many_attached :images
 
   # search is only for available tours
   # default_scope { where(status: "In Future") }
