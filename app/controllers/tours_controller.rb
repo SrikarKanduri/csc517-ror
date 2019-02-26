@@ -12,7 +12,7 @@ class ToursController < ApplicationController
     waitlisted_tours = params[:waitlisted_tours]
 
     if personalize
-      if current_user.role.eql? 'agent'
+      if %w[admin agent].include?(current_user.role)
         @tours = current_user.tours
         @page_title = "My Tours"
       elsif current_user.role.eql? 'customer'

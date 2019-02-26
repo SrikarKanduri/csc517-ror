@@ -105,7 +105,7 @@
 <% end %>
 
 <!--If the currently logged in user is a customer or the admin, allow them book or bookmark this tour-->
-<% if %w[admin agent].include?(current_user.role) %>
+<% if %w[admin customer].include?(current_user.role) %>
   <hr>
     <div>
       <span>
