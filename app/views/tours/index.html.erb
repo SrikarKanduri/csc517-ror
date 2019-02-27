@@ -42,8 +42,6 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Created at</th>
-      <th>Updated at</th>
       <th>Price</th>
       <th>Booking deadline</th>
       <th>From date</th>
@@ -61,12 +59,10 @@
       <tr>
         <td><%= tour.name %></td>
         <td><%= tour.description %></td>
-        <td><%= tour.created_at %></td>
-        <td><%= tour.updated_at %></td>
-        <td><%= tour.price %></td>
-        <td><%= tour.booking_deadline %></td>
-        <td><%= tour.from_date %></td>
-        <td><%= tour.to_date %></td>
+        <td><%= number_to_currency(tour.price) %></td>
+        <td><%= tour.booking_deadline.to_s(:long) %></td>
+        <td><%= tour.from_date.to_s(:long) %></td>
+        <td><%= tour.to_date.to_s(:long) %></td>
         <td><%= tour.total_seats %></td>
         <td><%= tour.op_email %></td>
         <td><%= tour.op_phone %></td>

@@ -28,12 +28,12 @@
 
 <p>
   <strong>Created at: </strong>
-  <%= @tour.created_at %>
+  <%= @tour.created_at.to_s(:long) %>
 </p>
 
 <p>
   <strong>Updated at: </strong>
-  <%= @tour.updated_at %>
+  <%= @tour.updated_at.to_s(:long) %>
 </p>
 
 <p>
@@ -43,32 +43,17 @@
 
 <p>
   <strong>Booking deadline: </strong>
-  <%= @tour.booking_deadline %>
+  <%= @tour.booking_deadline.to_s(:long) %>
 </p>
 
 <p>
   <strong>From date: </strong>
-  <%= @tour.from_date %>
+  <%= @tour.from_date.to_s(:long) %>
 </p>
 
 <p>
   <strong>To date: </strong>
-  <%= @tour.to_date %>
-</p>
-
-<p>
-  <strong>Total seats: </strong>
-  <%= @tour.total_seats %>
-</p>
-
-<p>
-  <strong>Available seats: </strong>
-  <%= @seats_available %>
-</p>
-
-<p>
-  <strong>Waitlisted seats: </strong>
-  <%= @seats_waitlisted %>
+  <%= @tour.to_date.to_s(:long) %>
 </p>
 
 <p>
@@ -86,29 +71,45 @@
   <%= Tour.statuses[@tour.status] %>
 </p>
 
+<p>
+  <strong># Total seats: </strong>
+  <%= @tour.total_seats %>
+</p>
+
+<p>
+  <strong># Available seats: </strong>
+  <%= @seats_available %>
+</p>
+
+<p>
+  <strong># Waitlisted seats: </strong>
+  <%= @seats_waitlisted %>
+</p>
+
 <div id="itinerary">
-  <h2>Itinerary:</h2>
+  <h2>Itinerary</h2>
+  <table>
+    <thead>
+      <th></th>
+      <th>State/Province</th>
+      <th>Country</th>
+    </thead>
+    <% @tour.tour_locations.each_with_index do |loc, idx| %>
+      <tr>
+        <td><%= idx+1 %></td>
+        <td><%= loc.state_or_province %></td>
+        <td><%= loc.country %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
 
-  <% @tour.tour_locations.each do |loc| %>
-    <div>
-      <p>
-        <strong>Country:</strong>
-        <%= loc.country %>
-      </p>
-    </div>
-
-    <div>
-      <p>
-        <strong>State/Province:</strong>
-        <%= loc.state_or_province %>
-      </p>
-    </div>
-  <% end %>
-
+<div>
   <!--If the currently logged in user is a customer or the admin, allow them book or bookmark this tour-->
   <% if %w[admin customer].include?(current_user.role) %>
     <hr>
-      <div>
+      <div id="book-here">
+        <h2>Book Tour</h2>
         <span>
           <% if @user_tour && @user_tour.bookmarked? %>
             <div class="tour-bookmark">
@@ -170,6 +171,35 @@
     </div>
   <% end %>
 </div>
+
+<% if %w[admin agent].include?(current_user.role) %>
+  <div id="customer-info">
+    <h2>Customers</h2>
+    <table>
+      <thead>
+        <th>Email</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Bookmarked?</th>
+        <th># Booked Seats</th>
+        <th># Waitlisted Seats</th>
+      </thead>
+      <% @tour.users.each do |user| %>
+        <% ut = UserTour.get_user_tour(@tour.id, user.id) %>
+        <% if ut.booked? || ut.wait_listed? || ut.bookmarked? %>
+          <tr>
+            <td><%= user.email %></td>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= check_box_tag "", ut.bookmarked, ut.bookmarked?, disabled: true  %></td>
+            <td><%= ut[:num_booked]%></td>
+            <td><%= ut[:num_wait_listed]%></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+<% end %>
 
 <div id="pictures">
   <h2>Picture(s)</h2>

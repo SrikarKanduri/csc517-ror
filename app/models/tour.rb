@@ -46,8 +46,9 @@ class Tour < ApplicationRecord
     seats_available = tour.total_seats - Tour.seats_booked(tour_id)
     seats_waitlisted = Tour.seats_waitlisted(tour_id)
     user_tour = UserTour.get_user_tour(tour_id, user_id)
+    customers = tour.users
 
-    {:tour => tour, :seats_available => seats_available, :user_tour => user_tour, :seats_waitlisted => seats_waitlisted}
+    {:tour => tour, :seats_available => seats_available, :user_tour => user_tour, :seats_waitlisted => seats_waitlisted, :customers => customers}
   end
 
   def add_bookmark(current_user)

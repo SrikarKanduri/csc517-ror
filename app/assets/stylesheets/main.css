@@ -128,3 +128,29 @@ label, textarea {
 #show-links span a {
     margin: 0 5px;
 }
+
+#customer-info table {
+    width: 42%;
+}
+
+#customer-info table input[type='checkbox'] {
+    height: 17px;
+    width: 17px;
+}
+
+#customer-info {
+    margin-bottom: 40px;
+}
+
+#itinerary {
+    width: 11%;
+    margin: 30px 0 40px 0;
+}
+
+#book-here h2 {
+    margin-top: 0;
+}
+
+#book-here {
+    padding: 10px 0;
+}
