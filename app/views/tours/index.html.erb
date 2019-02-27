@@ -2,6 +2,41 @@
 
 <h1><%= @page_title %></h1>
 
+<% if @filter %>
+  <div>
+    <% if @filter.status %>
+      <span style="color: blue"><b>Status: </b><%= @filter.status %></span>
+    <% end %>
+    <% if !@filter.name.empty? %>
+      <span style="color: darkorange"><b>Name: </b><%= @filter.name %></span>
+    <% end %>
+    <%if @filter.price %>
+      <span style="color: blue"><b>Price: </b><%= @filter.price %></span>
+    <%end %>
+    <%if @filter.booking_deadline %>
+      <span style="color: darkorange"><b>Booking Deadline: </b><%= @filter.booking_deadline %></span>
+    <%end %>
+    <%if @filter.from_date %>
+      <span style="color: blue"><b>From Date: </b><%= @filter.from_date %></span>
+    <%end %>
+    <%if @filter.to_date %>
+      <span style="color: darkorange"><b>To Date: </b><%= @filter.to_date %></span>
+    <%end %>
+  </div>
+  <% if @filter.tour_locations %>
+    <h4><b><u>Itinerary</u></b></h4>
+    <% @filter.tour_locations.each do |itinerary| %>
+      <ul>
+        <span style="color: blue"><b>Country: </b><%= itinerary.country %></span>
+        <span style="color: darkorange"><b>State/Province: </b><%= itinerary.state_or_province %></span>
+      </ul>
+      <ul>
+      </ul>
+    <% end %>
+  <% end %>
+  <br>
+<% end %>
+
 <table>
   <thead>
     <tr>

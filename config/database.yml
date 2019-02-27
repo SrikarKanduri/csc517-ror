@@ -6,21 +6,21 @@
 #
 
 ## Local host connection
-#default: &default
-#  adapter: mysql2
-#  username: "root"
-#  password: ""
-#  host: "localhost"
-#  port: 3306
+default: &default
+  adapter: mysql2
+  username: "root"
+  password: ""
+  host: "localhost"
+  port: 3306
 
 
  # AWS Connection
-default: &default
-  adapter: mysql2
-  username: "csc517proj2"
-  password: "nisekosnow"
-  host: "csc517-proj2.cs7westvbs2e.us-west-2.rds.amazonaws.com"
-  port: 3306
+#default: &default
+#  adapter: mysql2
+#  username: "csc517proj2"
+#  password: "nisekosnow"
+#  host: "csc517-proj2.cs7westvbs2e.us-west-2.rds.amazonaws.com"
+#  port: 3306
 
 development:
   <<: *default
