@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <% if can? :manage, @review %>
-  <%= link_to 'Edit', edit_review_path(@review) %> |
+  <%= link_to 'Edit', edit_review_path(@review, :tour_id => @review.tour.id) %> |
   <%= link_to 'Back', reviews_path %> |
   <%= link_to 'Delete Review', review_path(id: @review.id, tour_id: @review.tour.id) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
