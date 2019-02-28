@@ -50,6 +50,10 @@
       <th>Operator email</th>
       <th>Operator phone</th>
       <th>Status</th>
+      <% if %w[admin customer].include?(current_user.role) %>
+        <th>My Booked Seats</th>
+        <th>My Waitlisted Seats</th>
+      <% end %>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -67,6 +71,16 @@
         <td><%= tour.op_email %></td>
         <td><%= tour.op_phone %></td>
         <td><%= Tour.statuses[tour.status] %></td>
+        <% if %w[admin customer].include?(current_user.role) %>
+          <% ut = UserTour.get_user_tour(tour.id, current_user.id) %>
+          <% if ut %>
+            <td><%= ut[:num_booked] %></td>
+            <td><%= ut[:num_wait_listed] %></td>
+          <% else %>
+            <td></td>
+            <td></td>
+          <% end %>
+        <% end %>
         <td><%= link_to 'Show', tour %></td>
         <% if can? :manage, tour %>
           <td><%= link_to 'Edit', edit_tour_path(tour) %></td>

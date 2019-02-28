@@ -104,6 +104,35 @@
   </table>
 </div>
 
+<% if can? :manage, @tour %>
+  <div id="customer-info">
+    <h2>Customers</h2>
+    <table>
+      <thead>
+      <th>Email</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Bookmarked?</th>
+      <th># Booked Seats</th>
+      <th># Waitlisted Seats</th>
+      </thead>
+      <% @tour.users.each do |user| %>
+        <% ut = UserTour.get_user_tour(@tour.id, user.id) %>
+        <% if ut.booked? || ut.wait_listed? || ut.bookmarked? %>
+          <tr>
+            <td><%= user.email %></td>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= check_box_tag "", ut.bookmarked, ut.bookmarked?, disabled: true  %></td>
+            <td><%= ut[:num_booked]%></td>
+            <td><%= ut[:num_wait_listed]%></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+
 <div>
   <!--If the currently logged in user is a customer or the admin, allow them book or bookmark this tour-->
   <% if %w[admin customer].include?(current_user.role) %>
@@ -172,35 +201,6 @@
   <% end %>
 </div>
 
-<% if %w[admin agent].include?(current_user.role) %>
-  <div id="customer-info">
-    <h2>Customers</h2>
-    <table>
-      <thead>
-        <th>Email</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Bookmarked?</th>
-        <th># Booked Seats</th>
-        <th># Waitlisted Seats</th>
-      </thead>
-      <% @tour.users.each do |user| %>
-        <% ut = UserTour.get_user_tour(@tour.id, user.id) %>
-        <% if ut.booked? || ut.wait_listed? || ut.bookmarked? %>
-          <tr>
-            <td><%= user.email %></td>
-            <td><%= user.first_name %></td>
-            <td><%= user.last_name %></td>
-            <td><%= check_box_tag "", ut.bookmarked, ut.bookmarked?, disabled: true  %></td>
-            <td><%= ut[:num_booked]%></td>
-            <td><%= ut[:num_wait_listed]%></td>
-          </tr>
-        <% end %>
-      <% end %>
-    </table>
-  </div>
-<% end %>
-
 <div id="pictures">
   <h2>Picture(s)</h2>
   <% if @tour.images.attached? %>
@@ -212,7 +212,9 @@
       <% end %>
     </ul>
   <% else %>
-    <p style="color: red">You have no pictures for this tour</p>
-    <%= link_to 'Add Pictures', edit_tour_path(@tour) %>
+    <p style="color: red">There are no pictures for this tour</p>
+    <% if can? :manage, @tour %>
+      <%= link_to 'Add Pictures', edit_tour_path(@tour) %>
+    <% end %>
   <% end %>
 </div>
