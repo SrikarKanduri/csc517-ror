@@ -34,12 +34,12 @@
 
   <div class="field">
     <%= form.label :from_date, "From Date" %>
-    <%= form.date_select :from_date %>
+    <%= form.date_field :from_date %>
   </div>
 
   <div class="field">
     <%= form.label :to_date, "To Date" %>
-    <%= form.date_select :to_date %>
+    <%= form.date_field :to_date %>
   </div>
 
   <div class="field">
@@ -106,7 +106,7 @@
     </div>
 
     <!-- Delete Photo section -->
-    <h4>Delete Picture(s)</h4>
+    <h4>&nbsp;</h4>
     <% if @tour.images.attached? %>
       <ul>
         <% @tour.images.each do |image| %>
@@ -117,8 +117,10 @@
         <% end %>
       </ul>
     <% else %>
-      <p style="color: red">You have no pictures for this tour</p>
-      <%= link_to 'Add Pictures', edit_tour_path(@tour) %>
+      <%# if @tour.id %>
+<!--        <p style="color: red">You have no pictures for this tour</p>-->
+        <%#= link_to 'Add Pictures', edit_tour_path(@tour) %>
+      <%# end %>
     <% end %>
   </div>
 
