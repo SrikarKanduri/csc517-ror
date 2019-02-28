@@ -180,23 +180,16 @@ class ToursController < ApplicationController
     end
 
     def find_tours_from_search(tour)
-      tours = Tour.where(nil)
-      tours = tours.status(tour.status) if tour.status.present?
-      # scope for name didn't work for me
-      tours = Tour.where(name: tour.name) if tour.name.present?
-      tours = tours.price(tour.price) if tour.price.present?
-      tours = tours.booking_deadline(tour.booking_deadline) if tour.booking_deadline.present?
-      tours = tours.from_date(tour.from_date) if tour.from_date.present?
-      tours = tours.to_date(tour.to_date) if tour.to_date.present?
-      tours = tours.total_seats(tour.total_seats) if tour.total_seats.present?
+      query = Tour.joins(:tour_locations).distinct
+      query = query.status(tour.status) if tour.status.present?
+      query = query.where("name LIKE ?", "%#{tour.name}%") if tour.name.present?
+      query = query.price(tour.price) if tour.price.present?
+      query = query.from_date(tour.from_date) if tour.from_date.present?
+      query = query.to_date(tour.to_date) if tour.to_date.present?
+      query = query.where(tour_locations: {state_or_province: params[:tour]["tour_locations_attributes"]["0"]["state_or_province"]}) if params[:tour]["tour_locations_attributes"]["0"]["state_or_province"].present?
+      query = query.where(tour_locations: {country: params[:tour]["tour_locations_attributes"]["1"]["country"]}) if params[:tour]["tour_locations_attributes"]["1"]["country"].present?
 
-      # even if no itinerary provided, there's an element at index=0 which is empty
-      if tour.tour_locations.length > 0 and !tour.tour_locations[0].country.empty?
-        tour.tour_locations.each do |itinerary|
-          tours = tours.itinerary(itinerary) if itinerary
-        end
-      end
-      return tours
+      return query.all
     end
 
     def delete_picture(picture_id)

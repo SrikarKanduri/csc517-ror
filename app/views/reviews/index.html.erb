@@ -3,7 +3,7 @@
 <h1><%= @title_message %></h1>
 
 <% if @reviews == nil || @reviews.empty? %>
-  <h4 style="color: red">No Reviews yet...If you are a customer, you can use the links below to create a review.</h4>
+  <h4 style="color: red">No Reviews yet. Customers can use the links below to visit a tour's page and create a review.</h4>
   <span>
     <p style="margin-right: 10px;"><%= link_to "Go to All Tours", tours_path %></p>
     <p><%= link_to "Go to My Tours", tours_path(my_tours: true) %></p>
@@ -17,6 +17,7 @@
     <tr>
       <th>Subject</th>
       <th>Message</th>
+      <th>Reviewer Email</th>
       <th>Tour Name</th>
       <th>Tour Date</th>
       <th colspan="3"></th>
@@ -28,7 +29,8 @@
       <tr>
         <td><%= review.subject %></td>
         <td><%= review.message %></td>
-        <td><%= review.tour.name %></td>
+        <td><%= review.user.email %></td>
+        <td><%= link_to review.tour.name, review.tour %></td>
         <td><%= review.tour.created_at %></td>
         <td><%= link_to 'Show', review %></td>
         <% if can? :manage, review %>

@@ -154,3 +154,8 @@ label, textarea {
 #book-here {
     padding: 10px 0;
 }
+
+#filter-div span {
+    color: blue;
+    margin: 15px 15px 0 0;
+}
