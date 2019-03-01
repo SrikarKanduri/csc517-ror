@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 2019_02_26_172821) do
     t.string "first_name", limit: 128
     t.string "last_name", limit: 128
     t.string "role"
-    t.index ["email"], name: "index_users_on_email"
+    t.index ["email"], name: "index_users_on_email", length: 191
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
