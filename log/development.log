@@ -44417,3 +44417,1887 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 491ms (Views: 141.0ms | ActiveRecord: 343.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-03-02 02:20:36 +0900
+  [1m[35m (294.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (144.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (167.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '2168846d8b244f38caba39d62b3bd7999fef2e6e' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '2168846d8b244f38caba39d62b3bd7999fef2e6e' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1750ms (ActiveRecord: 855.9ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-03-02 02:20:40 +0900
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (271.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '2168846d8b244f38caba39d62b3bd7999fef2e6e' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (21.6ms)
+  Rendered sessions/new.html.erb within layouts/application (25.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '2168846d8b244f38caba39d62b3bd7999fef2e6e' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '2168846d8b244f38caba39d62b3bd7999fef2e6e' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 929ms (Views: 653.9ms | ActiveRecord: 271.2ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-03-02 02:20:55 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@csc517.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (288.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@csc517.org' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 387ms (ActiveRecord: 288.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-02 02:20:55 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (233.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 528ms (Views: 283.0ms | ActiveRecord: 233.4ms)
+
+
+Started GET "/users/34" for 127.0.0.1 at 2019-03-02 02:20:59 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (303.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (146.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 647ms (Views: 186.8ms | ActiveRecord: 449.7ms)
+
+
+Started GET "/users/34/edit" for 127.0.0.1 at 2019-03-02 02:21:04 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (144.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (272.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.3ms)
+  Rendered users/edit.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 591ms (Views: 165.3ms | ActiveRecord: 417.2ms)
+
+
+Started PATCH "/users/34" for 127.0.0.1 at 2019-03-02 02:21:11 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Admin", "last_name"=>"Hag"}, "commit"=>"Update User", "id"=>"34"}
+  [1m[36mUser Load (302.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (193.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  [1m[35m (414.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (301.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@csc517.org' AND `users`.`id` != 34 LIMIT 1[0m
+  [1m[35m (299.0ms)[0m  [1m[31mROLLBACK[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.0ms)
+  Rendered users/edit.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 1748ms (Views: 215.0ms | ActiveRecord: 1510.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-02 02:48:43 +0900
+  [1m[35m (308.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (301.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 1720ms (Views: 374.3ms | ActiveRecord: 1270.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-03-02 02:48:48 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (295.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (291.7ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (352.0ms)
+Completed 200 OK in 1031ms (Views: 433.5ms | ActiveRecord: 587.4ms)
+
+
+Started GET "/users/15" for 127.0.0.1 at 2019-03-02 02:48:51 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (332.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (303.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 1120ms (Views: 473.9ms | ActiveRecord: 635.9ms)
+
+
+Started GET "/users/15/edit" for 127.0.0.1 at 2019-03-02 02:48:55 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (320.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (304.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (15.3ms)
+  Rendered users/edit.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 1078ms (Views: 444.4ms | ActiveRecord: 625.2ms)
+
+
+Started PATCH "/users/15" for 127.0.0.1 at 2019-03-02 02:49:15 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"agent1", "last_name"=>"One", "password"=>"[FILTERED]", "role"=>"agent"}, "commit"=>"Update User", "id"=>"15"}
+  [1m[36mUser Load (182.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (403.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  [1m[35m (323.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (299.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'agent1@test.org' AND `users`.`id` != 15 LIMIT 1[0m
+  [1m[35m (308.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/15
+Completed 302 Found in 1539ms (ActiveRecord: 1516.4ms)
+
+
+Started GET "/users/15" for 127.0.0.1 at 2019-03-02 02:49:17 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (280.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (322.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 839ms (Views: 225.6ms | ActiveRecord: 602.8ms)
+
+
+Started GET "/users/15/edit" for 127.0.0.1 at 2019-03-02 02:49:34 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (495.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (303.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.0ms)
+  Rendered users/edit.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 1208ms (Views: 400.0ms | ActiveRecord: 798.6ms)
+
+
+Started GET "/users/34" for 127.0.0.1 at 2019-03-02 02:51:12 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (298.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (299.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 1087ms (Views: 471.4ms | ActiveRecord: 598.4ms)
+
+
+Started GET "/users/34/edit" for 127.0.0.1 at 2019-03-02 02:51:16 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (311.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (410.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.9ms)
+  Rendered users/edit.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 1232ms (Views: 500.7ms | ActiveRecord: 721.2ms)
+
+
+Started PATCH "/users/34" for 127.0.0.1 at 2019-03-02 02:51:23 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Admin test", "last_name"=>"Hag"}, "commit"=>"Update User", "id"=>"34"}
+  [1m[36mUser Load (226.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (305.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  [1m[35m (161.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (163.9ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@csc517.org' AND `users`.`id` != 34 LIMIT 1[0m
+  [1m[36mUser Update (162.4ms)[0m  [1m[33mUPDATE `users` SET `first_name` = 'Admin test', `updated_at` = '2019-03-01 17:51:24' WHERE `users`.`id` = 34[0m
+  [1m[35m (165.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/34
+Completed 302 Found in 1209ms (ActiveRecord: 1185.2ms)
+
+
+Started GET "/users/34" for 127.0.0.1 at 2019-03-02 02:51:24 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (189.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (163.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 631ms (Views: 269.4ms | ActiveRecord: 352.7ms)
+
+
+Started GET "/users/34/edit" for 127.0.0.1 at 2019-03-02 02:51:29 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (298.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (305.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.7ms)
+  Rendered users/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 1012ms (Views: 400.8ms | ActiveRecord: 603.7ms)
+
+
+Started PATCH "/users/34" for 127.0.0.1 at 2019-03-02 02:51:33 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Admin", "last_name"=>"Hag"}, "commit"=>"Update User", "id"=>"34"}
+  [1m[36mUser Load (300.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (302.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  [1m[35m (190.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (414.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@csc517.org' AND `users`.`id` != 34 LIMIT 1[0m
+  [1m[36mUser Update (206.7ms)[0m  [1m[33mUPDATE `users` SET `first_name` = 'Admin', `updated_at` = '2019-03-01 17:51:35' WHERE `users`.`id` = 34[0m
+  [1m[35m (399.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/34
+Completed 302 Found in 1842ms (ActiveRecord: 1813.1ms)
+
+
+Started GET "/users/34" for 127.0.0.1 at 2019-03-02 02:51:35 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (285.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (164.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 689ms (Views: 230.6ms | ActiveRecord: 450.3ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-03-02 02:51:40 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (298.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5c3b819c369ac78f1fe1cc9869a950ae338d196d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (401.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (301.6ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1', `updated_at` = '2019-03-01 17:51:41' WHERE `users`.`id` = 34[0m
+  [1m[35m (302.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 1320ms (ActiveRecord: 1303.8ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-03-02 02:51:42 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.1ms)
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 237ms (Views: 235.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-03-02 02:51:54 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"agent1@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (162.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'agent1@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 257ms (ActiveRecord: 162.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-02 02:51:54 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (170.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '997f7b636553085cb2958c94fe32c3f214fe9289' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 412ms (Views: 234.0ms | ActiveRecord: 170.9ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-03-02 02:52:00 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (341.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '997f7b636553085cb2958c94fe32c3f214fe9289' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (303.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (302.6ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf', `updated_at` = '2019-03-01 17:52:01' WHERE `users`.`id` = 15[0m
+  [1m[35m (305.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 1267ms (ActiveRecord: 1253.8ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-03-02 02:52:02 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (7.3ms)
+  Rendered sessions/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 309ms (Views: 307.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-03-02 02:52:16 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@csc517.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (315.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@csc517.org' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 396ms (ActiveRecord: 315.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-02 02:52:17 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (291.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 555ms (Views: 253.6ms | ActiveRecord: 291.3ms)
+
+
+Started GET "/users/34" for 127.0.0.1 at 2019-03-02 02:52:25 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (305.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (175.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 925ms (Views: 435.7ms | ActiveRecord: 480.7ms)
+
+
+Started GET "/users/34/edit" for 127.0.0.1 at 2019-03-02 02:52:29 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (300.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (309.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (12.3ms)
+  Rendered users/edit.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 1060ms (Views: 440.1ms | ActiveRecord: 610.3ms)
+
+
+Started PATCH "/users/34" for 127.0.0.1 at 2019-03-02 02:52:34 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Admin", "last_name"=>"Hag test"}, "commit"=>"Update User", "id"=>"34"}
+  [1m[36mUser Load (298.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (303.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  [1m[35m (304.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (301.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@csc517.org' AND `users`.`id` != 34 LIMIT 1[0m
+  [1m[36mUser Update (303.2ms)[0m  [1m[33mUPDATE `users` SET `last_name` = 'Hag test', `updated_at` = '2019-03-01 17:52:36' WHERE `users`.`id` = 34[0m
+  [1m[35m (211.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/34
+Completed 302 Found in 1748ms (ActiveRecord: 1722.5ms)
+
+
+Started GET "/users/34" for 127.0.0.1 at 2019-03-02 02:52:36 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (305.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (302.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 830ms (Views: 216.6ms | ActiveRecord: 607.9ms)
+
+
+Started GET "/users/34/edit" for 127.0.0.1 at 2019-03-02 02:52:40 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (304.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (302.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.7ms)
+  Rendered users/edit.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 1020ms (Views: 405.9ms | ActiveRecord: 606.9ms)
+
+
+Started PATCH "/users/34" for 127.0.0.1 at 2019-03-02 02:52:45 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Admin", "last_name"=>"Hag"}, "commit"=>"Update User", "id"=>"34"}
+  [1m[36mUser Load (164.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (162.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  [1m[35m (268.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (303.7ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@csc517.org' AND `users`.`id` != 34 LIMIT 1[0m
+  [1m[36mUser Update (301.2ms)[0m  [1m[33mUPDATE `users` SET `last_name` = 'Hag', `updated_at` = '2019-03-01 17:52:47' WHERE `users`.`id` = 34[0m
+  [1m[35m (304.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/34
+Completed 302 Found in 1532ms (ActiveRecord: 1504.9ms)
+
+
+Started GET "/users/34" for 127.0.0.1 at 2019-03-02 02:52:47 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (300.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (303.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 844ms (Views: 229.6ms | ActiveRecord: 603.9ms)
+
+
+Started GET "/users/34" for 127.0.0.1 at 2019-03-02 02:52:53 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (165.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (162.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 793ms (Views: 452.4ms | ActiveRecord: 328.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-02 02:52:55 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (300.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 777ms (Views: 468.1ms | ActiveRecord: 300.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-03-02 02:52:58 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (301.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (291.8ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (340.4ms)
+Completed 200 OK in 1131ms (Views: 529.7ms | ActiveRecord: 593.3ms)
+
+
+Started GET "/users/40/edit" for 127.0.0.1 at 2019-03-02 02:53:01 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mUser Load (183.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (161.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 40 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.4ms)
+  Rendered users/edit.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 865ms (Views: 511.9ms | ActiveRecord: 344.9ms)
+
+
+Started PATCH "/users/40" for 127.0.0.1 at 2019-03-02 02:53:09 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Serita test", "last_name"=>"Stroman", "password"=>"[FILTERED]", "role"=>"customer"}, "commit"=>"Update User", "id"=>"40"}
+  [1m[36mUser Load (193.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (294.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 40 LIMIT 1[0m
+  [1m[35m (302.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (303.9ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'carynernser@cruickshankrunolfsdottir.com' AND `users`.`id` != 40 LIMIT 1[0m
+  [1m[36mUser Update (298.8ms)[0m  [1m[33mUPDATE `users` SET `first_name` = 'Serita test', `updated_at` = '2019-03-01 17:53:10' WHERE `users`.`id` = 40[0m
+  [1m[35m (305.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/40
+Completed 302 Found in 1727ms (ActiveRecord: 1698.9ms)
+
+
+Started GET "/users/40" for 127.0.0.1 at 2019-03-02 02:53:11 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mUser Load (290.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (310.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 40 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 966ms (Views: 354.3ms | ActiveRecord: 600.8ms)
+
+
+Started GET "/users/40/edit" for 127.0.0.1 at 2019-03-02 02:53:20 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mUser Load (303.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (307.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 40 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (10.1ms)
+  Rendered users/edit.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 1123ms (Views: 501.8ms | ActiveRecord: 610.5ms)
+
+
+Started PATCH "/users/40" for 127.0.0.1 at 2019-03-02 02:53:26 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Serita", "last_name"=>"Stroman", "password"=>"[FILTERED]", "role"=>"customer"}, "commit"=>"Update User", "id"=>"40"}
+  [1m[36mUser Load (303.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (295.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 40 LIMIT 1[0m
+  [1m[35m (161.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (447.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'carynernser@cruickshankrunolfsdottir.com' AND `users`.`id` != 40 LIMIT 1[0m
+  [1m[36mUser Update (308.5ms)[0m  [1m[33mUPDATE `users` SET `first_name` = 'Serita', `updated_at` = '2019-03-01 17:53:27' WHERE `users`.`id` = 40[0m
+  [1m[35m (300.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/40
+Completed 302 Found in 1840ms (ActiveRecord: 1816.3ms)
+
+
+Started GET "/users/40" for 127.0.0.1 at 2019-03-02 02:53:28 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mUser Load (304.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (299.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 40 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 848ms (Views: 234.1ms | ActiveRecord: 604.3ms)
+
+
+Started GET "/users/40/edit" for 127.0.0.1 at 2019-03-02 02:54:52 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mUser Load (300.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (260.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 40 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (14.2ms)
+  Rendered users/edit.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 1000ms (Views: 428.5ms | ActiveRecord: 560.9ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-03-02 02:57:59 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (299.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '378dda53971555555242ad2f2871fbfc6029fed1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (162.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (162.1ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = 'b964cf7bc89b9ba28cb026b44bc4546c3188425f', `updated_at` = '2019-03-01 17:58:00' WHERE `users`.`id` = 34[0m
+  [1m[35m (235.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 874ms (ActiveRecord: 858.8ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-03-02 02:58:01 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (4.6ms)
+  Rendered sessions/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 245ms (Views: 242.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-03-02 02:58:55 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"danny@bergstromdibbert.name", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (351.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'danny@bergstromdibbert.name' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 441ms (ActiveRecord: 351.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-02 02:58:56 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (292.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5e292c28e4032735aa58ab474914c87b6d25f097' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 549ms (Views: 246.2ms | ActiveRecord: 292.7ms)
+
+
+Started GET "/users/24" for 127.0.0.1 at 2019-03-02 02:58:59 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (298.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5e292c28e4032735aa58ab474914c87b6d25f097' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (303.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 24 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 1039ms (Views: 426.3ms | ActiveRecord: 602.6ms)
+
+
+Started GET "/users/24/edit" for 127.0.0.1 at 2019-03-02 02:59:02 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (265.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5e292c28e4032735aa58ab474914c87b6d25f097' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (307.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 24 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.7ms)
+  Rendered users/edit.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 931ms (Views: 350.5ms | ActiveRecord: 572.5ms)
+
+
+Started PATCH "/users/24" for 127.0.0.1 at 2019-03-02 02:59:07 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Bettye user", "last_name"=>"Wolff", "password"=>"[FILTERED]", "role"=>"customer"}, "commit"=>"Update User", "id"=>"24"}
+  [1m[36mUser Load (169.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5e292c28e4032735aa58ab474914c87b6d25f097' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (408.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 24 LIMIT 1[0m
+  [1m[35m (303.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (164.7ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'danny@bergstromdibbert.name' AND `users`.`id` != 24 LIMIT 1[0m
+  [1m[36mUser Update (163.2ms)[0m  [1m[33mUPDATE `users` SET `first_name` = 'Bettye user', `updated_at` = '2019-03-01 17:59:09' WHERE `users`.`id` = 24[0m
+  [1m[35m (272.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/24
+Completed 302 Found in 1507ms (ActiveRecord: 1482.7ms)
+
+
+Started GET "/users/24" for 127.0.0.1 at 2019-03-02 02:59:09 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (232.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5e292c28e4032735aa58ab474914c87b6d25f097' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (369.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 24 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 857ms (Views: 245.8ms | ActiveRecord: 601.4ms)
+
+
+Started GET "/users/24/edit" for 127.0.0.1 at 2019-03-02 02:59:13 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (306.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5e292c28e4032735aa58ab474914c87b6d25f097' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (299.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 24 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (16.4ms)
+  Rendered users/edit.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 1038ms (Views: 422.0ms | ActiveRecord: 605.8ms)
+
+
+Started PATCH "/users/24" for 127.0.0.1 at 2019-03-02 02:59:18 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Bettye", "last_name"=>"Wolff", "password"=>"[FILTERED]", "role"=>"customer"}, "commit"=>"Update User", "id"=>"24"}
+  [1m[36mUser Load (302.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5e292c28e4032735aa58ab474914c87b6d25f097' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (300.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 24 LIMIT 1[0m
+  [1m[35m (302.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (296.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'danny@bergstromdibbert.name' AND `users`.`id` != 24 LIMIT 1[0m
+  [1m[36mUser Update (305.3ms)[0m  [1m[33mUPDATE `users` SET `first_name` = 'Bettye', `updated_at` = '2019-03-01 17:59:20' WHERE `users`.`id` = 24[0m
+  [1m[35m (303.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/24
+Completed 302 Found in 1840ms (ActiveRecord: 1811.2ms)
+
+
+Started GET "/users/24" for 127.0.0.1 at 2019-03-02 02:59:20 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (298.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5e292c28e4032735aa58ab474914c87b6d25f097' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (212.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 24 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 782ms (Views: 260.3ms | ActiveRecord: 510.4ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-03-02 02:59:33 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (293.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '5e292c28e4032735aa58ab474914c87b6d25f097' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (301.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (303.9ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = 'd56ca5788eca681e7d3496a8c97d22783c995df8', `updated_at` = '2019-03-01 17:59:34' WHERE `users`.`id` = 24[0m
+  [1m[35m (242.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 1160ms (ActiveRecord: 1141.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-03-02 02:59:34 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (4.2ms)
+  Rendered sessions/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 288ms (Views: 285.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-03-02 02:59:40 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"jamaalruecker@monahanfranecki.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1485.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'jamaalruecker@monahanfranecki.org' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1571ms (ActiveRecord: 1485.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-02 02:59:42 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (299.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '81ca91d074d5e3cb22ec6e45092d3e1f5714a18c' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 560ms (Views: 252.9ms | ActiveRecord: 299.1ms)
+
+
+Started GET "/users/21" for 127.0.0.1 at 2019-03-02 02:59:45 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (298.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '81ca91d074d5e3cb22ec6e45092d3e1f5714a18c' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (301.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 1100ms (Views: 486.2ms | ActiveRecord: 600.1ms)
+
+
+Started GET "/users/21/edit" for 127.0.0.1 at 2019-03-02 02:59:50 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (300.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '81ca91d074d5e3cb22ec6e45092d3e1f5714a18c' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (310.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (10.2ms)
+  Rendered users/edit.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 1040ms (Views: 420.3ms | ActiveRecord: 610.5ms)
+
+
+Started PATCH "/users/21" for 127.0.0.1 at 2019-03-02 02:59:58 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Rubin yes", "last_name"=>"Okuneva", "password"=>"[FILTERED]", "role"=>"agent"}, "commit"=>"Update User", "id"=>"21"}
+  [1m[36mUser Load (301.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '81ca91d074d5e3cb22ec6e45092d3e1f5714a18c' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (301.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  [1m[35m (304.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (305.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jamaalruecker@monahanfranecki.org' AND `users`.`id` != 21 LIMIT 1[0m
+  [1m[36mUser Update (310.8ms)[0m  [1m[33mUPDATE `users` SET `first_name` = 'Rubin yes', `updated_at` = '2019-03-01 17:59:59' WHERE `users`.`id` = 21[0m
+  [1m[35m (300.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/21
+Completed 302 Found in 1837ms (ActiveRecord: 1824.2ms)
+
+
+Started GET "/users/21" for 127.0.0.1 at 2019-03-02 03:00:00 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (304.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '81ca91d074d5e3cb22ec6e45092d3e1f5714a18c' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (162.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 694ms (Views: 218.3ms | ActiveRecord: 466.6ms)
+
+
+Started GET "/users/21/edit" for 127.0.0.1 at 2019-03-02 03:00:03 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (168.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '81ca91d074d5e3cb22ec6e45092d3e1f5714a18c' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (162.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.6ms)
+  Rendered users/edit.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 803ms (Views: 461.3ms | ActiveRecord: 330.8ms)
+
+
+Started PATCH "/users/21" for 127.0.0.1 at 2019-03-02 03:00:09 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Rubin", "last_name"=>"Okuneva", "password"=>"[FILTERED]", "role"=>"agent"}, "commit"=>"Update User", "id"=>"21"}
+  [1m[36mUser Load (298.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '81ca91d074d5e3cb22ec6e45092d3e1f5714a18c' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (304.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  [1m[35m (304.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (294.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jamaalruecker@monahanfranecki.org' AND `users`.`id` != 21 LIMIT 1[0m
+  [1m[36mUser Update (306.0ms)[0m  [1m[33mUPDATE `users` SET `first_name` = 'Rubin', `updated_at` = '2019-03-01 18:00:10' WHERE `users`.`id` = 21[0m
+  [1m[35m (302.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/21
+Completed 302 Found in 1838ms (ActiveRecord: 1809.8ms)
+
+
+Started GET "/users/21" for 127.0.0.1 at 2019-03-02 03:00:11 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (299.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '81ca91d074d5e3cb22ec6e45092d3e1f5714a18c' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (162.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 709ms (Views: 237.9ms | ActiveRecord: 462.1ms)
+
+
+Started GET "/users/21/edit" for 127.0.0.1 at 2019-03-02 03:00:16 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (168.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '81ca91d074d5e3cb22ec6e45092d3e1f5714a18c' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (307.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (7.7ms)
+  Rendered users/edit.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 914ms (Views: 430.8ms | ActiveRecord: 475.9ms)
+
+
+Started GET "/users/21/edit" for 127.0.0.1 at 2019-03-02 03:03:34 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (439.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '81ca91d074d5e3cb22ec6e45092d3e1f5714a18c' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (303.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.0ms)
+  Rendered users/edit.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 1011ms (Views: 254.5ms | ActiveRecord: 743.6ms)
+
+
+Started GET "/users/21/edit" for 127.0.0.1 at 2019-03-02 03:04:32 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (296.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '81ca91d074d5e3cb22ec6e45092d3e1f5714a18c' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (309.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (12.4ms)
+  Rendered users/edit.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 870ms (Views: 252.9ms | ActiveRecord: 606.5ms)
+
+
+Started GET "/tours" for 127.0.0.1 at 2019-03-02 03:04:53 +0900
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (281.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '81ca91d074d5e3cb22ec6e45092d3e1f5714a18c' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (253.7ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  [1m[36mUser Load (162.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 5[0m
+  [1m[36mUser Load (398.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 7[0m
+  [1m[36mUser Load (305.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 10[0m
+  [1m[36mUser Load (162.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 12[0m
+  [1m[36mUser Load (271.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 13[0m
+  Rendered tours/index.html.erb within layouts/application (2259.8ms)
+Completed 200 OK in 2835ms (Views: 445.7ms | ActiveRecord: 2332.5ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-03-02 03:05:08 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (300.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '81ca91d074d5e3cb22ec6e45092d3e1f5714a18c' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (303.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (304.8ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = '5c52374b17529ac9d7b35d285677dfb140ec0d4a', `updated_at` = '2019-03-01 18:05:09' WHERE `users`.`id` = 21[0m
+  [1m[35m (308.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 1231ms (ActiveRecord: 1217.8ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-03-02 03:05:09 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.5ms)
+  Rendered sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 269ms (Views: 266.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-03-02 03:05:26 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"agent1@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (255.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'agent1@test.org' LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.1ms)
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 401 Unauthorized in 569ms (Views: 209.9ms | ActiveRecord: 255.9ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-03-02 03:05:34 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"agent1@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (243.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'agent1@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 330ms (ActiveRecord: 243.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-02 03:05:35 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (301.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 569ms (Views: 261.6ms | ActiveRecord: 301.9ms)
+
+
+Started GET "/tours" for 127.0.0.1 at 2019-03-02 03:05:38 +0900
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (242.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (165.0ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  [1m[36mUser Load (162.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 5[0m
+  [1m[36mUser Load (165.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 7[0m
+  [1m[36mUser Load (164.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 10[0m
+  [1m[36mUser Load (241.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 12[0m
+  [1m[36mUser Load (294.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 13[0m
+  Rendered tours/index.html.erb within layouts/application (1237.2ms)
+Completed 200 OK in 2072ms (Views: 616.5ms | ActiveRecord: 1435.3ms)
+
+
+Started GET "/tours?my_tours=true" for 127.0.0.1 at 2019-03-02 03:05:42 +0900
+Processing by ToursController#index as HTML
+  Parameters: {"my_tours"=>"true"}
+  [1m[36mUser Load (301.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (281.2ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 15[0m
+  [1m[36mUser Load (261.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 5[0m
+  [1m[36mUser Load (338.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 7[0m
+  Rendered tours/index.html.erb within layouts/application (908.3ms)
+Completed 200 OK in 1848ms (Views: 654.0ms | ActiveRecord: 1182.1ms)
+
+
+Started GET "/tours/5/edit" for 127.0.0.1 at 2019-03-02 03:05:47 +0900
+Processing by ToursController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTour Load (296.7ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 5 LIMIT 1[0m
+  [1m[36mUser Load (307.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (301.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 5[0m
+  Rendering tours/edit.html.erb within layouts/application
+  [1m[36mTourLocation Load (311.0ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 5[0m
+  [1m[36mActiveStorage::Attachment Exists (163.4ms)[0m  [1m[34mSELECT  1 AS one FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 5 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images' LIMIT 1[0m
+  [1m[36mActiveStorage::Attachment Load (186.3ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 5 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images'[0m
+  [1m[36mActiveStorage::Blob Load (298.6ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 1 LIMIT 1[0m
+  Rendered tours/_form.html.erb (2795.6ms)
+  Rendered tours/edit.html.erb within layouts/application (2802.0ms)
+Completed 200 OK in 4250ms (Views: 915.1ms | ActiveRecord: 3315.7ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4abeb043b6ac4cbfbdca41094d6aa584d5099e65/north_carolina.jpg" for 127.0.0.1 at 2019-03-02 03:05:51 +0900
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4abeb043b6ac4cbfbdca41094d6aa584d5099e65", "filename"=>"north_carolina"}
+  [1m[36mActiveStorage::Blob Load (266.2ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 1 LIMIT 1[0m
+[36m  Disk Storage (3.8ms) [0m[34mGenerated URL for file at key: sCd36uCs8jCVrkDb3ec9DosJ (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjME5rTXpaMVEzTTRha05XY210RVlqTmxZemxFYjNOS0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODoxMDo1Mi4yNTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--5a9c5aa5d17299d330bb053bb7a096cbf08bc5ed/north_carolina.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22north_carolina.jpg%22%3B+filename%2A%3DUTF-8%27%27north_carolina.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjME5rTXpaMVEzTTRha05XY210RVlqTmxZemxFYjNOS0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODoxMDo1Mi4yNTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--5a9c5aa5d17299d330bb053bb7a096cbf08bc5ed/north_carolina.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22north_carolina.jpg%22%3B+filename%2A%3DUTF-8%27%27north_carolina.jpg
+Completed 302 Found in 280ms (ActiveRecord: 266.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjME5rTXpaMVEzTTRha05XY210RVlqTmxZemxFYjNOS0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODoxMDo1Mi4yNTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--5a9c5aa5d17299d330bb053bb7a096cbf08bc5ed/north_carolina.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22north_carolina.jpg%22%3B+filename%2A%3DUTF-8%27%27north_carolina.jpg" for 127.0.0.1 at 2019-03-02 03:05:52 +0900
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"north_carolina.jpg\"; filename*=UTF-8''north_carolina.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjME5rTXpaMVEzTTRha05XY210RVlqTmxZemxFYjNOS0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODoxMDo1Mi4yNTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--5a9c5aa5d17299d330bb053bb7a096cbf08bc5ed", "filename"=>"north_carolina"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_file_s_mtime - /home/gabalmat/_git/csc517-ror/storage/sC/d3/sCd36uCs8jCVrkDb3ec9DosJ):
+  
+rack (2.0.6) lib/rack/file.rb:63:in `mtime'
+rack (2.0.6) lib/rack/file.rb:63:in `serving'
+activestorage (5.2.2) app/controllers/active_storage/disk_controller.rb:42:in `serve_file'
+activestorage (5.2.2) app/controllers/active_storage/disk_controller.rb:12:in `show'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+clearance (1.16.1) lib/clearance/rack_session.rb:23:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/15" for 127.0.0.1 at 2019-03-02 03:06:47 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (162.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (445.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 1060ms (Views: 440.3ms | ActiveRecord: 608.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjME5rTXpaMVEzTTRha05XY210RVlqTmxZemxFYjNOS0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODoxMDo1Mi4yNTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--5a9c5aa5d17299d330bb053bb7a096cbf08bc5ed/north_carolina.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22north_carolina.jpg%22%3B+filename%2A%3DUTF-8%27%27north_carolina.jpg" for 127.0.0.1 at 2019-03-02 03:06:49 +0900
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"north_carolina.jpg\"; filename*=UTF-8''north_carolina.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjME5rTXpaMVEzTTRha05XY210RVlqTmxZemxFYjNOS0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODoxMDo1Mi4yNTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--5a9c5aa5d17299d330bb053bb7a096cbf08bc5ed", "filename"=>"north_carolina"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_file_s_mtime - /home/gabalmat/_git/csc517-ror/storage/sC/d3/sCd36uCs8jCVrkDb3ec9DosJ):
+  
+rack (2.0.6) lib/rack/file.rb:63:in `mtime'
+rack (2.0.6) lib/rack/file.rb:63:in `serving'
+activestorage (5.2.2) app/controllers/active_storage/disk_controller.rb:42:in `serve_file'
+activestorage (5.2.2) app/controllers/active_storage/disk_controller.rb:12:in `show'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+clearance (1.16.1) lib/clearance/rack_session.rb:23:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/15/edit" for 127.0.0.1 at 2019-03-02 03:06:50 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (304.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (302.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.7ms)
+  Rendered users/edit.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 1065ms (Views: 452.1ms | ActiveRecord: 607.1ms)
+
+
+Started GET "/users/21/edit" for 127.0.0.1 at 2019-03-02 03:07:01 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (297.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (165.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.8ms)
+  Rendered users/edit.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 747ms (Views: 273.6ms | ActiveRecord: 463.8ms)
+
+
+Started GET "/tours?my_tours=true" for 127.0.0.1 at 2019-03-02 03:07:07 +0900
+Processing by ToursController#index as HTML
+  Parameters: {"my_tours"=>"true"}
+  [1m[36mUser Load (164.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (417.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 15[0m
+  [1m[36mUser Load (237.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 5[0m
+  [1m[36mUser Load (173.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 7[0m
+  Rendered tours/index.html.erb within layouts/application (851.5ms)
+Completed 200 OK in 1521ms (Views: 517.8ms | ActiveRecord: 992.7ms)
+
+
+Started GET "/tours/5/edit" for 127.0.0.1 at 2019-03-02 03:07:10 +0900
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjME5rTXpaMVEzTTRha05XY210RVlqTmxZemxFYjNOS0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODoxMDo1Mi4yNTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--5a9c5aa5d17299d330bb053bb7a096cbf08bc5ed/north_carolina.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22north_carolina.jpg%22%3B+filename%2A%3DUTF-8%27%27north_carolina.jpg" for 127.0.0.1 at 2019-03-02 03:07:10 +0900
+Processing by ToursController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTour Load (346.9ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 5 LIMIT 1[0m
+  [1m[36mUser Load (165.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (163.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 5[0m
+  Rendering tours/edit.html.erb within layouts/application
+  [1m[36mTourLocation Load (188.2ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 5[0m
+  [1m[35m (258.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mActiveStorage::Attachment Exists (236.6ms)[0m  [1m[34mSELECT  1 AS one FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 5 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images' LIMIT 1[0m
+  [1m[36mActiveStorage::Attachment Load (355.5ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 5 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images'[0m
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"north_carolina.jpg\"; filename*=UTF-8''north_carolina.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjME5rTXpaMVEzTTRha05XY210RVlqTmxZemxFYjNOS0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODoxMDo1Mi4yNTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--5a9c5aa5d17299d330bb053bb7a096cbf08bc5ed", "filename"=>"north_carolina"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_file_s_mtime - /home/gabalmat/_git/csc517-ror/storage/sC/d3/sCd36uCs8jCVrkDb3ec9DosJ):
+  
+rack (2.0.6) lib/rack/file.rb:63:in `mtime'
+rack (2.0.6) lib/rack/file.rb:63:in `serving'
+activestorage (5.2.2) app/controllers/active_storage/disk_controller.rb:42:in `serve_file'
+activestorage (5.2.2) app/controllers/active_storage/disk_controller.rb:12:in `show'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+clearance (1.16.1) lib/clearance/rack_session.rb:23:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mActiveStorage::Blob Load (289.9ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 1 LIMIT 1[0m
+  Rendered tours/_form.html.erb (1182.8ms)
+  Rendered tours/edit.html.erb within layouts/application (1191.3ms)
+Completed 200 OK in 2522ms (Views: 758.7ms | ActiveRecord: 1746.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjME5rTXpaMVEzTTRha05XY210RVlqTmxZemxFYjNOS0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODoxMDo1Mi4yNTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--5a9c5aa5d17299d330bb053bb7a096cbf08bc5ed/north_carolina.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22north_carolina.jpg%22%3B+filename%2A%3DUTF-8%27%27north_carolina.jpg" for 127.0.0.1 at 2019-03-02 03:07:13 +0900
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"north_carolina.jpg\"; filename*=UTF-8''north_carolina.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjME5rTXpaMVEzTTRha05XY210RVlqTmxZemxFYjNOS0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODoxMDo1Mi4yNTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--5a9c5aa5d17299d330bb053bb7a096cbf08bc5ed", "filename"=>"north_carolina"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_file_s_mtime - /home/gabalmat/_git/csc517-ror/storage/sC/d3/sCd36uCs8jCVrkDb3ec9DosJ):
+  
+rack (2.0.6) lib/rack/file.rb:63:in `mtime'
+rack (2.0.6) lib/rack/file.rb:63:in `serving'
+activestorage (5.2.2) app/controllers/active_storage/disk_controller.rb:42:in `serve_file'
+activestorage (5.2.2) app/controllers/active_storage/disk_controller.rb:12:in `show'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+clearance (1.16.1) lib/clearance/rack_session.rb:23:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/21/edit" for 127.0.0.1 at 2019-03-02 03:08:57 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (172.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (426.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.8ms)
+  Rendered users/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 841ms (Views: 232.7ms | ActiveRecord: 598.9ms)
+
+
+Started GET "/users/21/edit" for 127.0.0.1 at 2019-03-02 03:10:37 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (291.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (307.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.7ms)
+  Rendered users/edit.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 844ms (Views: 235.7ms | ActiveRecord: 598.6ms)
+
+
+Started GET "/users/21/edit" for 127.0.0.1 at 2019-03-02 03:13:43 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (295.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (305.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.6ms)
+  Rendered users/edit.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 1503ms (Views: 891.4ms | ActiveRecord: 601.0ms)
+
+
+Started GET "/users/21/edit" for 127.0.0.1 at 2019-03-02 03:14:34 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (297.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (306.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (7.2ms)
+  Rendered users/edit.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 887ms (Views: 275.1ms | ActiveRecord: 604.5ms)
+
+
+Started GET "/users/21/edit" for 127.0.0.1 at 2019-03-02 03:15:43 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (452.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (305.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (8.8ms)
+  Rendered users/edit.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 1064ms (Views: 293.7ms | ActiveRecord: 757.4ms)
+
+
+Started GET "/users/21/edit" for 127.0.0.1 at 2019-03-02 03:16:00 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (291.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (310.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (8.3ms)
+  Rendered users/edit.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 881ms (Views: 268.1ms | ActiveRecord: 601.8ms)
+
+
+Started GET "/users/21/edit" for 127.0.0.1 at 2019-03-02 03:17:23 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (161.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (161.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (10.6ms)
+  Rendered users/edit.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 633ms (Views: 298.2ms | ActiveRecord: 322.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-02 03:17:39 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (459.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 621ms (Views: 138.6ms | ActiveRecord: 459.0ms)
+
+
+Started GET "/users/15" for 127.0.0.1 at 2019-03-02 03:17:42 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (161.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (450.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 1125ms (Views: 502.6ms | ActiveRecord: 612.1ms)
+
+
+Started GET "/users/15/edit" for 127.0.0.1 at 2019-03-02 03:17:46 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (299.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (305.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (10.9ms)
+  Rendered users/edit.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 1060ms (Views: 446.2ms | ActiveRecord: 605.2ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2019-03-02 03:17:51 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (299.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '0ddb45633bafcc527f7569f657fdb329c24dfdaf' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (306.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (302.4ms)[0m  [1m[33mUPDATE `users` SET `remember_token` = 'd2712af07c8fab6ef58e6b95d22c70c70d214cbb', `updated_at` = '2019-03-01 18:17:52' WHERE `users`.`id` = 15[0m
+  [1m[35m (309.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 1231ms (ActiveRecord: 1217.6ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-03-02 03:17:53 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.9ms)
+  Rendered sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 259ms (Views: 255.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2019-03-02 03:17:55 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.9ms)
+  Rendered users/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 167ms (Views: 164.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-02 03:18:00 +0900
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-03-02 03:18:01 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (4.0ms)
+  Rendered sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 163ms (Views: 161.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-03-02 03:18:18 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"agent1@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (292.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'agent1@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 380ms (ActiveRecord: 292.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-02 03:18:19 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (303.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'd2712af07c8fab6ef58e6b95d22c70c70d214cbb' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 567ms (Views: 255.7ms | ActiveRecord: 303.4ms)
+
+
+Started GET "/users/15" for 127.0.0.1 at 2019-03-02 03:18:23 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (299.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'd2712af07c8fab6ef58e6b95d22c70c70d214cbb' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (302.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 1111ms (Views: 492.8ms | ActiveRecord: 601.5ms)
+
+
+Started GET "/users/15/edit" for 127.0.0.1 at 2019-03-02 03:18:26 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (198.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'd2712af07c8fab6ef58e6b95d22c70c70d214cbb' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (308.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.4ms)
+  Rendered users/edit.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 943ms (Views: 428.5ms | ActiveRecord: 506.4ms)
+
+
+Started PATCH "/users/15" for 127.0.0.1 at 2019-03-02 03:18:32 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"agent1 ytr", "last_name"=>"One", "password"=>"[FILTERED]", "role"=>"agent"}, "commit"=>"Update User", "id"=>"15"}
+  [1m[36mUser Load (292.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'd2712af07c8fab6ef58e6b95d22c70c70d214cbb' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (164.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  [1m[35m (441.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (300.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'agent1@test.org' AND `users`.`id` != 15 LIMIT 1[0m
+  [1m[36mUser Update (301.0ms)[0m  [1m[33mUPDATE `users` SET `first_name` = 'agent1 ytr', `updated_at` = '2019-03-01 18:18:34' WHERE `users`.`id` = 15[0m
+  [1m[35m (302.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/15
+Completed 302 Found in 1840ms (ActiveRecord: 1802.4ms)
+
+
+Started GET "/users/15" for 127.0.0.1 at 2019-03-02 03:18:34 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (425.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'd2712af07c8fab6ef58e6b95d22c70c70d214cbb' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (302.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 1004ms (Views: 263.0ms | ActiveRecord: 727.8ms)
+
+
+Started GET "/users/15/edit" for 127.0.0.1 at 2019-03-02 03:18:37 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (295.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'd2712af07c8fab6ef58e6b95d22c70c70d214cbb' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (305.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (14.9ms)
+  Rendered users/edit.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 1077ms (Views: 466.7ms | ActiveRecord: 600.2ms)
+
+
+Started PATCH "/users/15" for 127.0.0.1 at 2019-03-02 03:18:43 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"agent1", "last_name"=>"One", "password"=>"[FILTERED]", "role"=>"agent"}, "commit"=>"Update User", "id"=>"15"}
+  [1m[36mUser Load (299.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'd2712af07c8fab6ef58e6b95d22c70c70d214cbb' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (307.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  [1m[35m (271.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (336.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'agent1@test.org' AND `users`.`id` != 15 LIMIT 1[0m
+  [1m[36mUser Update (300.0ms)[0m  [1m[33mUPDATE `users` SET `first_name` = 'agent1', `updated_at` = '2019-03-01 18:18:45' WHERE `users`.`id` = 15[0m
+  [1m[35m (305.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/15
+Completed 302 Found in 1841ms (ActiveRecord: 1820.6ms)
+
+
+Started GET "/users/15" for 127.0.0.1 at 2019-03-02 03:18:45 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (299.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'd2712af07c8fab6ef58e6b95d22c70c70d214cbb' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (307.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 873ms (Views: 257.8ms | ActiveRecord: 607.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-02 03:34:32 +0900
+  [1m[35m (2.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'd2712af07c8fab6ef58e6b95d22c70c70d214cbb' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'd2712af07c8fab6ef58e6b95d22c70c70d214cbb' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 915ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-03-02 03:34:33 +0900
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'd2712af07c8fab6ef58e6b95d22c70c70d214cbb' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (8.0ms)
+  Rendered sessions/new.html.erb within layouts/application (10.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'd2712af07c8fab6ef58e6b95d22c70c70d214cbb' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = 'd2712af07c8fab6ef58e6b95d22c70c70d214cbb' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 692ms (Views: 690.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-03-02 03:34:40 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 80ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-02 03:34:40 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 305ms (Views: 300.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tours" for 127.0.0.1 at 2019-03-02 03:34:43 +0900
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 13 LIMIT 1[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 15 LIMIT 1[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 17 LIMIT 1[0m
+  Rendered tours/index.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 165ms (Views: 144.9ms | ActiveRecord: 4.3ms)
+
+
+Started DELETE "/tours/13" for 127.0.0.1 at 2019-03-02 03:34:51 +0900
+Processing by ToursController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"13"}
+  [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 13 LIMIT 1[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserTour Destroy (5.0ms)[0m  [1m[31mDELETE FROM `user_tours` WHERE `user_tours`.`tour_id` = 13[0m
+  [1m[36mTourLocation Destroy (0.3ms)[0m  [1m[31mDELETE FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 13[0m
+  [1m[36mTour Destroy (3.1ms)[0m  [1m[31mDELETE FROM `tours` WHERE `tours`.`id` = 13[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 13 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images'[0m
+Redirected to http://localhost:3000/tours
+Completed 302 Found in 96ms (ActiveRecord: 17.5ms)
+
+
+Started GET "/tours" for 127.0.0.1 at 2019-03-02 03:34:51 +0900
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (1.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  [1m[36mUserTour Load (1.0ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mUserTour Load (0.6ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 15 LIMIT 1[0m
+  [1m[36mUserTour Load (0.9ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 17 LIMIT 1[0m
+  Rendered tours/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 327ms (Views: 314.0ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/tours/14" for 127.0.0.1 at 2019-03-02 03:34:59 +0900
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 14 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 14 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 14[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 14[0m
+  [1m[36mUserTour Load (0.4ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 2 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mUserTour Load (0.4ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 9 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 14 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images' LIMIT 1[0m
+  Rendered tours/show.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 174ms (Views: 155.2ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/tours/14/edit" for 127.0.0.1 at 2019-03-02 03:35:02 +0900
+Processing by ToursController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTour Load (0.9ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/edit.html.erb within layouts/application
+  [1m[36mTourLocation Load (0.5ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 14[0m
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 14 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images' LIMIT 1[0m
+  Rendered tours/_form.html.erb (48.0ms)
+  Rendered tours/edit.html.erb within layouts/application (52.5ms)
+Completed 200 OK in 198ms (Views: 184.1ms | ActiveRecord: 2.9ms)
+
+
+Started PATCH "/tours/14" for 127.0.0.1 at 2019-03-02 03:35:10 +0900
+Processing by ToursController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "tour"=>{"name"=>"Africa Tour", "description"=>"A tour of Africa", "price"=>"3000.0", "booking_deadline(1i)"=>"2019", "booking_deadline(2i)"=>"2", "booking_deadline(3i)"=>"22", "booking_deadline(4i)"=>"16", "booking_deadline(5i)"=>"16", "from_date"=>"2019-02-22", "to_date"=>"2019-02-22", "total_seats"=>"1", "op_email"=>"op@email.com", "op_phone"=>"", "status"=>"Cancelled", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"Mogadishu", "country"=>"Somalia", "id"=>"25"}}, "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fdff85570f0 @tempfile=#<Tempfile:/tmp/RackMultipart20190302-18718-4g42ij.jpg>, @original_filename="north_carolina.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"tour[images][]\"; filename=\"north_carolina.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Update Tour", "id"=>"14"}
+  [1m[36mTour Load (0.6ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[36m  Disk Storage (2.6ms) [0m[32mUploaded file to key: 9VwCPwsoyqtv2XBWdbHdWGds (checksum: MQdtAdGZ5iory9nhjowRqw==)[0m
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('9VwCPwsoyqtv2XBWdbHdWGds', 'north_carolina.jpg', 'image/jpeg', '{\"identified\":true}', 49084, 'MQdtAdGZ5iory9nhjowRqw==', '2019-03-01 18:35:10')[0m
+  [1m[36mActiveStorage::Attachment Create (0.3ms)[0m  [1m[32mINSERT INTO `active_storage_attachments` (`name`, `record_type`, `record_id`, `blob_id`, `created_at`) VALUES ('images', 'Tour', 14, 10, '2019-03-01 18:35:10')[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 14 AND `tour_locations`.`id` = 25[0m
+  [1m[35m (2.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering tours/edit.html.erb within layouts/application
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 14[0m
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 14 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images'[0m
+  Rendered tours/_form.html.erb (25.8ms)
+  Rendered tours/edit.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 420ms (Views: 316.6ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBZ3ciLCJleHAiOm51bGwsInB1ciI6ImJsb2JfaWQifX0=--c0dd0c42e0c33f411cce75968047d1ba23e8879c/north_carolina.jpg" for 127.0.0.1 at 2019-03-02 03:35:11 +0900
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBZ3ciLCJleHAiOm51bGwsInB1ciI6ImJsb2JfaWQifX0=--c0dd0c42e0c33f411cce75968047d1ba23e8879c", "filename"=>"north_carolina"}
+Filter chain halted as :set_blob rendered or redirected
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started PATCH "/tours/14" for 127.0.0.1 at 2019-03-02 03:36:06 +0900
+Processing by ToursController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "tour"=>{"name"=>"Africa Tour", "description"=>"A tour of Africa", "price"=>"3000.0", "booking_deadline(1i)"=>"2019", "booking_deadline(2i)"=>"2", "booking_deadline(3i)"=>"22", "booking_deadline(4i)"=>"16", "booking_deadline(5i)"=>"16", "from_date"=>"2019-02-22", "to_date"=>"2019-02-22", "total_seats"=>"1", "op_email"=>"op@email.com", "op_phone"=>"", "status"=>"Completed", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"Mogadishu", "country"=>"Somalia", "id"=>"25"}}}, "commit"=>"Update Tour", "id"=>"14"}
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTourLocation Load (1.2ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 14 AND `tour_locations`.`id` = 25[0m
+  [1m[36mTour Update (4.7ms)[0m  [1m[33mUPDATE `tours` SET `status` = 'Completed', `updated_at` = '2019-03-01 18:36:06' WHERE `tours`.`id` = 14[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tours/14
+Completed 302 Found in 27ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/tours/14" for 127.0.0.1 at 2019-03-02 03:36:06 +0900
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 14 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 14 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 14[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 14[0m
+  [1m[36mUserTour Load (1.5ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 2 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mUserTour Load (1.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 9 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 14 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images' LIMIT 1[0m
+  Rendered tours/show.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 280ms (Views: 269.9ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/tours/14/edit" for 127.0.0.1 at 2019-03-02 03:36:11 +0900
+Processing by ToursController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTour Load (0.7ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/edit.html.erb within layouts/application
+  [1m[36mTourLocation Load (0.5ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 14[0m
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 14 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images' LIMIT 1[0m
+  Rendered tours/_form.html.erb (42.4ms)
+  Rendered tours/edit.html.erb within layouts/application (45.6ms)
+Completed 200 OK in 181ms (Views: 169.4ms | ActiveRecord: 2.9ms)
+
+
+Started PATCH "/tours/14" for 127.0.0.1 at 2019-03-02 03:36:29 +0900
+Processing by ToursController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "tour"=>{"name"=>"Africa Tour", "description"=>"A tour of Africa", "price"=>"3000.0", "booking_deadline(1i)"=>"2019", "booking_deadline(2i)"=>"2", "booking_deadline(3i)"=>"22", "booking_deadline(4i)"=>"16", "booking_deadline(5i)"=>"16", "from_date"=>"2019-02-22", "to_date"=>"2019-02-22", "total_seats"=>"1", "op_email"=>"op@email.com", "op_phone"=>"", "status"=>"Completed", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"Mogadishu", "country"=>"Somalia", "id"=>"25"}}, "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fe01903a5b0 @tempfile=#<Tempfile:/tmp/RackMultipart20190302-18718-148d6w3.jpg>, @original_filename="north_carolina.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"tour[images][]\"; filename=\"north_carolina.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Update Tour", "id"=>"14"}
+  [1m[36mTour Load (0.7ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[36m  Disk Storage (4.5ms) [0m[32mUploaded file to key: mBrPwRdD2b5RXcZscj6qZZBA (checksum: MQdtAdGZ5iory9nhjowRqw==)[0m
+  [1m[36mActiveStorage::Blob Create (1.3ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('mBrPwRdD2b5RXcZscj6qZZBA', 'north_carolina.jpg', 'image/jpeg', '{\"identified\":true}', 49084, 'MQdtAdGZ5iory9nhjowRqw==', '2019-03-01 18:36:29')[0m
+  [1m[36mActiveStorage::Attachment Create (2.4ms)[0m  [1m[32mINSERT INTO `active_storage_attachments` (`name`, `record_type`, `record_id`, `blob_id`, `created_at`) VALUES ('images', 'Tour', 14, 11, '2019-03-01 18:36:29')[0m
+  [1m[36mTourLocation Load (1.0ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 14 AND `tour_locations`.`id` = 25[0m
+  [1m[36mTour Update (0.7ms)[0m  [1m[33mUPDATE `tours` SET `updated_at` = '2019-03-01 18:36:29' WHERE `tours`.`id` = 14[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: bd19642c-04c1-4ec6-afb4-65eb9431bdaa) to Async(default) with arguments: #<GlobalID:0x00007fe018e41ab0 @uri=#<URI::GID gid://rails-web-app/ActiveStorage::Blob/11>>
+Redirected to http://localhost:3000/tours/14
+Completed 302 Found in 100ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/tours/14" for 127.0.0.1 at 2019-03-02 03:36:29 +0900
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 11 LIMIT 1[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bd19642c-04c1-4ec6-afb4-65eb9431bdaa] Performing ActiveStorage::AnalyzeJob (Job ID: bd19642c-04c1-4ec6-afb4-65eb9431bdaa) from Async(default) with arguments: #<GlobalID:0x00007fe018e042f0 @uri=#<URI::GID gid://rails-web-app/ActiveStorage::Blob/11>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bd19642c-04c1-4ec6-afb4-65eb9431bdaa] [36m  Disk Storage (0.5ms) [0m[34mDownloaded file from key: mBrPwRdD2b5RXcZscj6qZZBA[0m
+  [1m[35m (2.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bd19642c-04c1-4ec6-afb4-65eb9431bdaa] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bd19642c-04c1-4ec6-afb4-65eb9431bdaa]   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"14"}
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bd19642c-04c1-4ec6-afb4-65eb9431bdaa]   [1m[36mActiveStorage::Blob Update (2.0ms)[0m  [1m[33mUPDATE `active_storage_blobs` SET `metadata` = '{\"identified\":true,\"analyzed\":true}' WHERE `active_storage_blobs`.`id` = 11[0m
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bd19642c-04c1-4ec6-afb4-65eb9431bdaa]   [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bd19642c-04c1-4ec6-afb4-65eb9431bdaa] Performed ActiveStorage::AnalyzeJob (Job ID: bd19642c-04c1-4ec6-afb4-65eb9431bdaa) from Async(default) in 20.69ms
+  [1m[36mTour Load (0.9ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 14 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 14 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mUserTour Load (0.4ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mTourLocation Load (0.3ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 14[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 14[0m
+  [1m[36mUserTour Load (1.4ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 2 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mUserTour Load (1.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 9 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 14 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images' LIMIT 1[0m
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 14 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images'[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 11 LIMIT 1[0m
+  Rendered tours/show.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 305ms (Views: 276.4ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1b4fbcae011d9d408169075c550330ca2ea757c8/north_carolina.jpg" for 127.0.0.1 at 2019-03-02 03:36:29 +0900
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1b4fbcae011d9d408169075c550330ca2ea757c8", "filename"=>"north_carolina"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 11 LIMIT 1[0m
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: mBrPwRdD2b5RXcZscj6qZZBA (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiVUp5VUhkU1pFUXlZalZTV0dOYWMyTnFObkZhV2tKQkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODo0MToyOS41MzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--30903417245ba6a33e2f462c339ead06a850193f/north_carolina.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22north_carolina.jpg%22%3B+filename%2A%3DUTF-8%27%27north_carolina.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiVUp5VUhkU1pFUXlZalZTV0dOYWMyTnFObkZhV2tKQkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODo0MToyOS41MzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--30903417245ba6a33e2f462c339ead06a850193f/north_carolina.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22north_carolina.jpg%22%3B+filename%2A%3DUTF-8%27%27north_carolina.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiVUp5VUhkU1pFUXlZalZTV0dOYWMyTnFObkZhV2tKQkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODo0MToyOS41MzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--30903417245ba6a33e2f462c339ead06a850193f/north_carolina.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22north_carolina.jpg%22%3B+filename%2A%3DUTF-8%27%27north_carolina.jpg" for 127.0.0.1 at 2019-03-02 03:36:29 +0900
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"north_carolina.jpg\"; filename*=UTF-8''north_carolina.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiVUp5VUhkU1pFUXlZalZTV0dOYWMyTnFObkZhV2tKQkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODo0MToyOS41MzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--30903417245ba6a33e2f462c339ead06a850193f", "filename"=>"north_carolina"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/tours" for 127.0.0.1 at 2019-03-02 03:36:35 +0900
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  [1m[36mUserTour Load (0.5ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mUserTour Load (0.5ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 15 LIMIT 1[0m
+  [1m[36mUserTour Load (0.4ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 17 LIMIT 1[0m
+  Rendered tours/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 153ms (Views: 140.5ms | ActiveRecord: 4.1ms)
+
+
+Started DELETE "/tours/14" for 127.0.0.1 at 2019-03-02 03:36:43 +0900
+Processing by ToursController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"14"}
+  [1m[36mTour Load (1.9ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserTour Destroy (1.1ms)[0m  [1m[31mDELETE FROM `user_tours` WHERE `user_tours`.`tour_id` = 14[0m
+  [1m[36mTourLocation Destroy (0.9ms)[0m  [1m[31mDELETE FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 14[0m
+  [1m[36mTour Destroy (7.4ms)[0m  [1m[31mDELETE FROM `tours` WHERE `tours`.`id` = 14[0m
+  [1m[35m (2.6ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 15.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Cannot delete or update a parent row: a foreign key constraint fails (`dev_proj2`.`reviews`, CONSTRAINT `fk_rails_cbf2a12b63` FOREIGN KEY (`tour_id`) REFERENCES `tours` (`id`)): DELETE FROM `tours` WHERE `tours`.`id` = 14):
+  
+app/controllers/tours_controller.rb:125:in `destroy'
+Started GET "/tours/14" for 127.0.0.1 at 2019-03-02 03:40:04 +0900
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (0.9ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.1ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 14 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 14 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (1.1ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mUserTour Load (0.8ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mTourLocation Load (0.7ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 14[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 14[0m
+  [1m[36mUserTour Load (0.8ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 2 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mUserTour Load (0.8ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 9 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mActiveStorage::Attachment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 14 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images' LIMIT 1[0m
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 14 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images'[0m
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 11 LIMIT 1[0m
+  Rendered tours/show.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 196ms (Views: 166.6ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiVUp5VUhkU1pFUXlZalZTV0dOYWMyTnFObkZhV2tKQkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODo0MToyOS41MzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--30903417245ba6a33e2f462c339ead06a850193f/north_carolina.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22north_carolina.jpg%22%3B+filename%2A%3DUTF-8%27%27north_carolina.jpg" for 127.0.0.1 at 2019-03-02 03:40:05 +0900
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"north_carolina.jpg\"; filename*=UTF-8''north_carolina.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiVUp5VUhkU1pFUXlZalZTV0dOYWMyTnFObkZhV2tKQkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTl5ZEdoZlkyRnliMnhwYm1FdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1YjNKMGFGOWpZWEp2YkdsdVlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMVQxODo0MToyOS41MzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--30903417245ba6a33e2f462c339ead06a850193f", "filename"=>"north_carolina"}
+Completed 304 Not Modified in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/tours" for 127.0.0.1 at 2019-03-02 03:42:57 +0900
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 15 LIMIT 1[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 17 LIMIT 1[0m
+  Rendered tours/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 181ms (Views: 162.4ms | ActiveRecord: 3.5ms)
+
+
+Started DELETE "/tours/14" for 127.0.0.1 at 2019-03-02 03:43:02 +0900
+Processing by ToursController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"14"}
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserTour Destroy (1.6ms)[0m  [1m[31mDELETE FROM `user_tours` WHERE `user_tours`.`tour_id` = 14[0m
+  [1m[36mTourLocation Destroy (1.2ms)[0m  [1m[31mDELETE FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 14[0m
+  [1m[36mActiveStorage::Attachment Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 14 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images' LIMIT 1[0m
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 14 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images'[0m
+  [1m[36mActiveStorage::Attachment Destroy (1.0ms)[0m  [1m[31mDELETE FROM `active_storage_attachments` WHERE `active_storage_attachments`.`id` = 10[0m
+  [1m[36mTour Destroy (2.5ms)[0m  [1m[31mDELETE FROM `tours` WHERE `tours`.`id` = 14[0m
+  [1m[35m (3.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 17.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Cannot delete or update a parent row: a foreign key constraint fails (`dev_proj2`.`reviews`, CONSTRAINT `fk_rails_cbf2a12b63` FOREIGN KEY (`tour_id`) REFERENCES `tours` (`id`)): DELETE FROM `tours` WHERE `tours`.`id` = 14):
+  
+app/controllers/tours_controller.rb:125:in `destroy'
+Started GET "/tours" for 127.0.0.1 at 2019-03-02 03:43:52 +0900
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  [1m[36mUserTour Load (1.2ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mUserTour Load (0.6ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 15 LIMIT 1[0m
+  [1m[36mUserTour Load (1.5ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 17 LIMIT 1[0m
+  Rendered tours/index.html.erb within layouts/application (57.6ms)
+Completed 200 OK in 466ms (Views: 407.6ms | ActiveRecord: 10.3ms)
+
+
+Started DELETE "/tours/14" for 127.0.0.1 at 2019-03-02 03:43:57 +0900
+Processing by ToursController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"14"}
+  [1m[36mTour Load (0.8ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserTour Destroy (1.3ms)[0m  [1m[31mDELETE FROM `user_tours` WHERE `user_tours`.`tour_id` = 14[0m
+  [1m[36mTourLocation Destroy (1.3ms)[0m  [1m[31mDELETE FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 14[0m
+  [1m[36mActiveStorage::Attachment Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 14 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images' LIMIT 1[0m
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 14 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images'[0m
+  [1m[36mActiveStorage::Attachment Destroy (1.0ms)[0m  [1m[31mDELETE FROM `active_storage_attachments` WHERE `active_storage_attachments`.`id` = 10[0m
+  [1m[36mTour Destroy (3.2ms)[0m  [1m[31mDELETE FROM `tours` WHERE `tours`.`id` = 14[0m
+  [1m[35m (3.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 17.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Cannot delete or update a parent row: a foreign key constraint fails (`dev_proj2`.`reviews`, CONSTRAINT `fk_rails_cbf2a12b63` FOREIGN KEY (`tour_id`) REFERENCES `tours` (`id`)): DELETE FROM `tours` WHERE `tours`.`id` = 14):
+  
+app/controllers/tours_controller.rb:125:in `destroy'
+Started GET "/tours" for 127.0.0.1 at 2019-03-02 03:48:51 +0900
+  [1m[35m (0.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 14 LIMIT 1[0m
+  [1m[36mUserTour Load (0.4ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 15 LIMIT 1[0m
+  [1m[36mUserTour Load (0.4ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 17 LIMIT 1[0m
+  Rendered tours/index.html.erb within layouts/application (762.0ms)
+Completed 200 OK in 1285ms (Views: 1216.9ms | ActiveRecord: 3.9ms)
+
+
+Started DELETE "/tours/14" for 127.0.0.1 at 2019-03-02 03:48:57 +0900
+Processing by ToursController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"14"}
+  [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 14 LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserTour Destroy (0.4ms)[0m  [1m[31mDELETE FROM `user_tours` WHERE `user_tours`.`tour_id` = 14[0m
+  [1m[36mTourLocation Destroy (0.4ms)[0m  [1m[31mDELETE FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 14[0m
+  [1m[36mReview Destroy (0.2ms)[0m  [1m[31mDELETE FROM `reviews` WHERE `reviews`.`tour_id` = 14[0m
+  [1m[36mTour Destroy (0.2ms)[0m  [1m[31mDELETE FROM `tours` WHERE `tours`.`id` = 14[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 14 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Destroy (0.2ms)[0m  [1m[31mDELETE FROM `active_storage_attachments` WHERE `active_storage_attachments`.`id` = 10[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 11 LIMIT 1[0m
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 36fe813c-fa38-457d-b598-d3682e11950e) to Async(default) with arguments: #<GlobalID:0x00007f9f6400d128 @uri=#<URI::GID gid://rails-web-app/ActiveStorage::Blob/11>>
+Redirected to http://localhost:3000/tours
+Completed 302 Found in 216ms (ActiveRecord: 20.5ms)
+
+
+Started GET "/tours" for 127.0.0.1 at 2019-03-02 03:48:57 +0900
+  [1m[36mActiveStorage::Blob Load (3.2ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 11 LIMIT 1[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [36fe813c-fa38-457d-b598-d3682e11950e] Performing ActiveStorage::PurgeJob (Job ID: 36fe813c-fa38-457d-b598-d3682e11950e) from Async(default) with arguments: #<GlobalID:0x00007f9f6402a520 @uri=#<URI::GID gid://rails-web-app/ActiveStorage::Blob/11>>
+[ActiveJob] [ActiveStorage::PurgeJob] [36fe813c-fa38-457d-b598-d3682e11950e]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ToursController#index as HTML
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '22943d0b0ca2f6c1af5f1bc7b1fac4bab1a85a67' ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [36fe813c-fa38-457d-b598-d3682e11950e]   [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `active_storage_attachments` WHERE `active_storage_attachments`.`blob_id` = 11 LIMIT 1[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [36fe813c-fa38-457d-b598-d3682e11950e]   [1m[36mActiveStorage::Blob Destroy (10.6ms)[0m  [1m[31mDELETE FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 11[0m
+  Rendering tours/index.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::PurgeJob] [36fe813c-fa38-457d-b598-d3682e11950e]   [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTour Load (1.0ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  [1m[36mUserTour Load (0.5ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 15 LIMIT 1[0m
+  [1m[36mUserTour Load (2.0ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 12 AND `user_tours`.`tour_id` = 17 LIMIT 1[0m
+  Rendered tours/index.html.erb within layouts/application (22.3ms)
+[ActiveJob] [ActiveStorage::PurgeJob] [36fe813c-fa38-457d-b598-d3682e11950e]   [1m[36mActiveStorage::Attachment Load (2.3ms)[0m  [1m[34mSELECT  `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 11 AND `active_storage_attachments`.`record_type` = 'ActiveStorage::Blob' AND `active_storage_attachments`.`name` = 'preview_image' LIMIT 1[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [36fe813c-fa38-457d-b598-d3682e11950e] [36m  Disk Storage (0.5ms) [0m[31mDeleted file from key: mBrPwRdD2b5RXcZscj6qZZBA[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [36fe813c-fa38-457d-b598-d3682e11950e] [36m  Disk Storage (0.2ms) [0m[31mDeleted files by key prefix: variants/mBrPwRdD2b5RXcZscj6qZZBA/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [36fe813c-fa38-457d-b598-d3682e11950e] Performed ActiveStorage::PurgeJob (Job ID: 36fe813c-fa38-457d-b598-d3682e11950e) from Async(default) in 69.63ms
+Completed 200 OK in 268ms (Views: 235.3ms | ActiveRecord: 10.9ms)
+
+

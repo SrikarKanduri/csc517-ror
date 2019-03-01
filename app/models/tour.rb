@@ -4,6 +4,7 @@ class Tour < ApplicationRecord
   has_many :tour_locations, dependent: :delete_all
   accepts_nested_attributes_for :tour_locations, allow_destroy: true
   has_many_attached :images
+  has_many :reviews, dependent: :delete_all
 
   enum status: {
       in_future: "In Future",
