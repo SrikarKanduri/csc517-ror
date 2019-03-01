@@ -29,7 +29,7 @@
 
   <div class="field">
     <%= form.label :booking_deadline %>
-    <%= form.datetime_select :booking_deadline %>
+    <%= form.datetime_select :booking_deadline, default: DateTime.current.midnight %>
   </div>
 
   <div class="field">

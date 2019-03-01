@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   include Clearance::User
 
-  has_many :user_tours
+  has_many :user_tours, dependent: :delete_all
   has_many :tours, through: :user_tours
-  has_many :reviews
+  has_many :reviews, dependent: :delete_all
 
   # User can have only one role
   # Default should be customer?

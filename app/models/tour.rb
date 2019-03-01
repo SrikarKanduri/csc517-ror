@@ -41,11 +41,12 @@ class Tour < ApplicationRecord
   end
 
   after_update do
-    # if status.to_s.eql? "cancelled"
-    #   #users.where.not(role: "admin").destroy_all
-    #   test = user_tours.where.not(:users => {:roll => 'agent'})
-    #   puts test
-    # end
+    # if a tour's status is updated to 'cancelled', then delete associated user_tours records through the 'users' attribute
+    if status.to_s.eql? "cancelled"
+      users.each do |user|
+        users.delete(user) unless user.role.eql? 'agent'
+      end
+    end
   end
 
   def self.seats_booked(tour_id)
