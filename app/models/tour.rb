@@ -5,32 +5,51 @@ class Tour < ApplicationRecord
   accepts_nested_attributes_for :tour_locations, allow_destroy: true
   has_many_attached :images
 
-  # search is only for available tours
-  # default_scope { where(status: "In Future") }
-
-  scope :status, -> (status) { where status: status}
-  scope :booking_deadline, -> (booking_deadline) { where booking_deadline:booking_deadline}
-  scope :from_date, -> (from_date) { where from_date: from_date }
-  scope :to_date, -> (to_date) { where to_date: to_date }
-  scope :price, -> (price) { where price: price}
-  scope :total_seats, -> (total_seats) { where total_seats: total_seats}
-  scope :itinerary, -> (itinerary) { joins(:tour_locations).merge(TourLocation.country(itinerary.country))}
-  # scope :with_shipped_device, -> {
-  #   joins(:device).merge(Device.shipped)
-  # }
-
   enum status: {
       in_future: "In Future",
       completed: "Completed",
       cancelled: "Cancelled"
   }
 
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :price, presence: true
+  validates :booking_deadline, presence: true
+  validates :from_date, presence: true
+  validates :to_date, presence: true
+  validates :total_seats, presence: true
+  validates :op_email, presence: true
+  # Make sure a tour's status can't be Cancelled or In Future if it has already started
+  validates :status,
+            exclusion: {in: %w(cancelled in_future),
+                        if: :from_date_past?,
+                        message: "cannot be changed to 'Completed' or 'In Future' if the Tour has already started"}
+
+  # search is only for available tours
+  # default_scope { where(status: "In Future") }
+
+  scope :status, -> (status) { where status: status}
+  #scope :booking_deadline, -> (booking_deadline) { where booking_deadline:booking_deadline}
+  scope :from_date, -> (from_date) { where from_date: from_date }
+  scope :to_date, -> (to_date) { where to_date: to_date }
+  scope :price, -> (price) { where price: price}
+  #scope :total_seats, -> (total_seats) { where total_seats: total_seats}
+  #scope :itinerary, -> (itinerary) { joins(:tour_locations).merge(TourLocation.country(itinerary.country))}
+  # scope :with_shipped_device, -> {
+  #   joins(:device).merge(Device.shipped)
+  # }
+
+  def from_date_past?
+    return Date.today >= from_date if from_date.present?
+    false
+  end
+
   after_update do
-    if status.to_s.eql? "cancelled"
-      #users.where.not(role: "admin").destroy_all
-      test = user_tours.where.not(:users => {:roll => 'agent'})
-      puts test
-    end
+    # if status.to_s.eql? "cancelled"
+    #   #users.where.not(role: "admin").destroy_all
+    #   test = user_tours.where.not(:users => {:roll => 'agent'})
+    #   puts test
+    # end
   end
 
   def self.seats_booked(tour_id)

@@ -16,81 +16,83 @@
 </span>
 </div>
 
-<p>
-  <strong>Name: </strong>
-  <%= @tour.name %>
-</p>
+<div id="show-page-fields">
+  <p>
+    <span><strong>Name: </strong></span>
+    <span><%= @tour.name %></span>
+  </p>
 
-<p>
-  <strong>Description: </strong>
-  <%= @tour.description %>
-</p>
+  <p>
+    <span><strong>Description: </strong></span>
+    <span><%= @tour.description %></span>
+  </p>
 
-<p>
-  <strong>Created at: </strong>
-  <%= @tour.created_at.to_s(:long) %>
-</p>
+  <p>
+    <span><strong>Created at: </strong></span>
+    <span><%= @tour.created_at.to_s(:long) %></span>
+  </p>
 
-<p>
-  <strong>Updated at: </strong>
-  <%= @tour.updated_at.to_s(:long) %>
-</p>
+  <p>
+    <span><strong>Updated at: </strong></span>
+    <span><%= @tour.updated_at.to_s(:long) %></span>
+  </p>
 
-<p>
-  <strong>Price: </strong>
-  <%= number_to_currency(@tour.price) %>
-</p>
+  <p>
+    <span><strong>Price: </strong></span>
+    <span><%= number_to_currency(@tour.price) %></span>
+  </p>
 
-<p>
-  <strong>Booking deadline: </strong>
-  <%= @tour.booking_deadline.to_s(:long) %>
-</p>
+  <p>
+    <span><strong>Booking deadline: </strong></span>
+    <span><%= @tour.booking_deadline.to_s(:long) %></span>
+  </p>
 
-<p>
-  <strong>From date: </strong>
-  <%= @tour.from_date.to_s(:long) %>
-</p>
+  <p>
+    <span><strong>From date: </strong></span>
+    <span><%= @tour.from_date.to_s(:long) %></span>
+  </p>
 
-<p>
-  <strong>To date: </strong>
-  <%= @tour.to_date.to_s(:long) %>
-</p>
+  <p>
+    <span><strong>To date: </strong></span>
+    <span><%= @tour.to_date.to_s(:long) %></span>
+  </p>
 
-<p>
-  <strong>Operator email: </strong>
-  <%= @tour.op_email %>
-</p>
+  <p>
+    <span><strong>Operator email: </strong></span>
+    <span><%= @tour.op_email %></span>
+  </p>
 
-<p>
-  <strong>Operator phone: </strong>
-  <%= @tour.op_phone %>
-</p>
+  <p>
+    <span><strong>Operator phone: </strong></span>
+    <span><%= @tour.op_phone %></span>
+  </p>
 
-<p>
-  <strong>Status: </strong>
-  <%= Tour.statuses[@tour.status] %>
-</p>
+  <p>
+    <span><strong>Status: </strong></span>
+    <span><%= Tour.statuses[@tour.status] %></span>
+  </p>
 
-<p>
-  <strong># Total seats: </strong>
-  <%= @tour.total_seats %>
-</p>
+  <p>
+    <span><strong># Total seats: </strong></span>
+    <span><%= @tour.total_seats %></span>
+  </p>
 
-<p>
-  <strong># Available seats: </strong>
-  <%= @seats_available %>
-</p>
+  <p>
+    <span><strong># Available seats: </strong></span>
+    <span><%= @seats_available %></span>
+  </p>
 
-<p>
-  <strong># Waitlisted seats: </strong>
-  <%= @seats_waitlisted %>
-</p>
+  <p>
+    <span><strong># Waitlisted seats: </strong></span>
+    <span><%= @seats_waitlisted %></span>
+  </p>
+</div>
 
 <div id="itinerary">
   <h2>Itinerary</h2>
   <table>
     <thead>
-      <th></th>
+      <th>Stop</th>
       <th>State/Province</th>
       <th>Country</th>
     </thead>
