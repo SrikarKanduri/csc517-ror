@@ -14,18 +14,16 @@
     <% if signed_in? %>
 
       <% if current_user.role != "admin" %>
-        <h4>Currently signed in as: <%= current_user.first_name %> <%= current_user.last_name %> .
-          Your role is: <%= current_user.role.to_s %>.
-          Your email is: <%= current_user.email %>
-        </h4>
+        <div class="user-info-header">
+          <span><strong>Currently signed in as: </strong><%= current_user.first_name %> <%= current_user.last_name %></span>
+          <span><strong>Role: </strong><%= current_user.role.to_s %></span>
+          <span><strong>Email: </strong><%= current_user.email %></span>
+        </div>
       <% else %>
-        <h4>
-          Currently signed in as: Admin.
-          <% if current_user.first_name %>
-            Welcome <%= current_user.first_name %> <%= current_user.last_name %>.
-          <% end %>
-          Your email is: <%= current_user.email %>
-        </h4>
+        <div class="user-info-header">
+          <span><strong>Currently signed in as: </strong>Admin</span>
+          <span><strong>Email: </strong><%= current_user.email %></span>
+        </div>
       <% end %>
 
       <%= button_to t(".sign_out"), sign_out_path, method: :delete %>

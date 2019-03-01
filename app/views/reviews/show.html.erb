@@ -11,14 +11,18 @@
 <%# if  @multiple_reviews %>
 
 <%# else %>
-  <h3>Review for <%= @review.tour.name %></h3>
-  <p>
-    <strong>Subject:</strong>
-    <%= @review.subject %>
-  </p>
+  <div class="page-title">
+    <h3>Review for <%= @review.tour.name %></h3>
+  </div>
+  <div class="show-page-fields">
+    <p>
+      <span><strong>Subject:</strong></span>
+      <span><%= @review.subject %></span>
+    </p>
 
-  <p>
-    <strong>Message:</strong>
-    <%= @review.message %>
-  </p>
+    <p>
+      <span><strong>Message:</strong></span>
+      <span><%= @review.message %></span>
+    </p>
+  </div>
 <%# end %>

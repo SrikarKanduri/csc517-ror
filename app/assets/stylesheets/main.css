@@ -173,7 +173,7 @@ label, textarea {
     margin: 15px 15px 0 0;
 }
 
-#show-page-fields p span:first-child {
+.show-page-fields p span:first-child {
     width: 120px;
     display: inline-block;
     text-align: right;
@@ -182,4 +182,19 @@ label, textarea {
 
 #pictures {
     margin-top: 30px;
+}
+
+.user-info-header span {
+    margin-right: 40px;
+}
+
+.user-info-header {
+    margin-bottom: 20px;
+}
+
+.user-show-page-fields p span:first-child {
+    width: 80px;
+    display: inline-block;
+    text-align: right;
+    padding: 0 15px 0 0;
 }
