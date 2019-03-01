@@ -23,7 +23,7 @@ class Tour < ApplicationRecord
   validates :status,
             exclusion: {in: %w(cancelled in_future),
                         if: :from_date_passed?,
-                        message: "cannot be changed to 'Completed' or 'In Future' if the Tour has already started"}
+                        message: "cannot be changed to 'Cancelled' or 'In Future' if the Tour has already started"}
 
   scope :status, -> (status) { where status: status}
   scope :from_date, -> (from_date) { where from_date: from_date }

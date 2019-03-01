@@ -37,10 +37,10 @@ label, textarea {
 }
 
 .sign-up-field label {
-    width: 70px;
+    width: 75px;
     display: inline-block;
     text-align: right;
-    margin: 0 15px 15px 15px;
+    padding: 15px 15px 15px;
 }
 
 .field textarea {

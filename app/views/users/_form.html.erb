@@ -26,11 +26,9 @@
     <%= form.password_field :password %>
   </div>
 
-  <div class="role-dropdown">
-    <p>
-      <%= form.label :role %><br />
-      <%= form.collection_select :role, User::ROLES.select { |role|  role != "admin"  }, :to_s, :titleize %>
-    </p>
+  <div class="role-dropdown sign-up-field" style="margin-bottom: 20px;">
+    <%= form.label :role %>
+    <%= form.collection_select :role, User::ROLES.select { |role|  role != "admin"  }, :to_s, :titleize %>
   </div>
 
 <% end %>
