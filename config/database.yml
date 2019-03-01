@@ -14,7 +14,7 @@ default: &default
   port: 3306
 
 
-# AWS Connection
+#AWS Connection
 #default: &default
 #  adapter: mysql2
 #  username: "csc517proj2"
