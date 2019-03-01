@@ -64,3 +64,5 @@ gem "faker", "~> 1.9"
 #gem "cancan", "~> 1.6"
 gem 'cancancan', '~> 2.0'
 gem 'nested_form_fields'
+
+gem "aws-sdk-s3", "~> 1.30"

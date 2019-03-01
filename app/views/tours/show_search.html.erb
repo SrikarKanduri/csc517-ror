@@ -6,7 +6,7 @@
   <%= hidden_field_tag "search", "true" %>
   <div class="field">
     <%= form.label :status %>
-    <%= form.select :status, options_for_select(["In Future", "Completed", "Canceled"]) %>
+    <%= form.select :status, options_for_select(["", "In Future", "Completed", "Canceled"]) %>
   </div>
 
   <div class="field">
@@ -20,46 +20,27 @@
   </div>
 
   <div class="field">
-    <%= form.label :booking_deadline %>
-    <%= form.datetime_select :booking_deadline,include_blank: true %>
-  </div>
-
-  <div class="field">
     <%= form.label :from_date, "From Date" %>
-    <%= form.date_select :from_date, include_blank: true %>
+    <%= form.date_field :from_date %>
   </div>
 
   <div class="field">
     <%= form.label :to_date, "To Date" %>
-    <%= form.date_select :to_date, include_blank: true %>
+    <%= form.date_field :to_date %>
   </div>
 
   <div class="field">
-    <%= form.label :total_seats, "Total Seats" %>
-    <%= form.select :total_seats, (1..1000), include_blank: true %>
+    <%= form.nested_fields_for :tour_locations do |location| %>
+      <%= location.label :state_or_province, "State/Province" %>
+      <%= location.select :state_or_province, options_for_select(TourLocation.distinct.pluck(:state_or_province)), include_blank: true %>
+    <% end %>
   </div>
 
-  <div class="field page-title"><b><h2>Itinerary</h2></b></div>
-
-  <ul class="nested-form-ul">
-    <%= form.nested_fields_for :tour_locations do |tour_loc_form| %>
-      <li>
-        <div class="field">
-          <%= tour_loc_form.label :state_or_province, "State/Province" %>
-          <%= tour_loc_form.text_field :state_or_province %>
-          <%= tour_loc_form.remove_nested_fields_link "Remove", class: "remove-link" %>
-        </div>
-        <div class="field">
-          <%= tour_loc_form.label :country %>
-          <%= tour_loc_form.text_field :country%>
-        </div>
-      </li>
+  <div class="field">
+    <%= form.nested_fields_for :tour_locations do |location| %>
+      <%= location.label :country, "Country" %>
+      <%= location.select :country, options_for_select(TourLocation.distinct.pluck(:country)), include_blank: true %>
     <% end %>
-  </ul>
-
-  <!--  Add Location link-->
-  <div class="page-title">
-    <%= form.add_nested_fields_link :tour_locations %>
   </div>
 
   <div class="actions create">

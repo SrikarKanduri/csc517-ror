@@ -1,6 +1,10 @@
 <h1>Editing Tour</h1>
 
-<%= render 'form', tour: @tour %>
+<span>
+    <h3 style="color: green">Options: </h3>
+    <%= link_to 'Show', @tour %> |
+    <%= link_to 'Back', tours_path %>
+    <br>
+</span>
 
-<%= link_to 'Show', @tour %> |
-<%= link_to 'Back', tours_path %>
+<%= render 'form', tour: @tour %>

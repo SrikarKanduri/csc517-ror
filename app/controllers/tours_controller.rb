@@ -79,6 +79,7 @@ class ToursController < ApplicationController
   # POST /tours
   # POST /tours.json
   def create
+    # if image(s) attached they will be found inside tour_params
     @tour = Tour.new(tour_params)
 
     respond_to do |format|
@@ -97,7 +98,9 @@ class ToursController < ApplicationController
   # PATCH/PUT /tours/1
   # PATCH/PUT /tours/1.json
   def update
+
     respond_to do |format|
+      # if image(s) attached they will be found inside tour_params
       if @tour.update(tour_params)
         format.html { redirect_to @tour, notice: 'Tour was successfully updated.' }
         format.json { render :show, status: :ok, location: @tour }
@@ -108,14 +111,24 @@ class ToursController < ApplicationController
     end
   end
 
+
   # DELETE /tours/1
   # DELETE /tours/1.json
   def destroy
-    @tour.destroy
-    respond_to do |format|
-      format.html { redirect_to tours_url, notice: 'Tour was successfully destroyed.' }
-      format.json { head :no_content }
+    if params[:picture_id]
+      delete_picture(params[:picture_id])
+      respond_to do |format|
+        format.html { redirect_to tour_url(@tour.id), notice: 'Image was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      @tour.destroy
+      respond_to do |format|
+        format.html { redirect_to tours_url, notice: 'Tour was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
+
   end
 
   def bookmark
@@ -149,12 +162,15 @@ class ToursController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tour
-      tour = Tour.find(params[:id])
+      @tour = Tour.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
-      params.require(:tour).permit(:id, :name, :description, :created_at, :updated_at, :price, :booking_deadline, :from_date, :to_date, :total_seats, :op_email, :op_phone, :status, :my_tours,
+      params.require(:tour).permit(:id, :name, :description, :created_at, :updated_at, :price, 
+                                   :booking_deadline, :from_date, :to_date, :total_seats, 
+                                   :op_email, :op_phone, :status, :my_tours,
+                                   images: [],
                                    tour_locations_attributes: [:id, :country, :state_or_province, :_destroy])
     end
 
@@ -164,22 +180,21 @@ class ToursController < ApplicationController
     end
 
     def find_tours_from_search(tour)
-      tours = Tour.where(nil)
-      tours = tours.status(tour.status) if tour.status.present?
-      # scope for name didn't work for me
-      tours = Tour.where(name: tour.name) if tour.name.present?
-      tours = tours.price(tour.price) if tour.price.present?
-      tours = tours.booking_deadline(tour.booking_deadline) if tour.booking_deadline.present?
-      tours = tours.from_date(tour.from_date) if tour.from_date.present?
-      tours = tours.to_date(tour.to_date) if tour.to_date.present?
-      tours = tours.total_seats(tour.total_seats) if tour.total_seats.present?
+      query = Tour.joins(:tour_locations).distinct
+      query = query.status(tour.status) if tour.status.present?
+      query = query.where("name LIKE ?", "%#{tour.name}%") if tour.name.present?
+      query = query.price(tour.price) if tour.price.present?
+      query = query.from_date(tour.from_date) if tour.from_date.present?
+      query = query.to_date(tour.to_date) if tour.to_date.present?
+      query = query.where(tour_locations: {state_or_province: params[:tour]["tour_locations_attributes"]["0"]["state_or_province"]}) if params[:tour]["tour_locations_attributes"]["0"]["state_or_province"].present?
+      query = query.where(tour_locations: {country: params[:tour]["tour_locations_attributes"]["1"]["country"]}) if params[:tour]["tour_locations_attributes"]["1"]["country"].present?
 
-      # even if no itinerary provided, there's an element at index=0 which is empty
-      if tour.tour_locations.length > 0 and !tour.tour_locations[0].country.empty?
-        tour.tour_locations.each do |itinerary|
-          tours = tours.itinerary(itinerary) if itinerary
-        end
-      end
-      return tours
+      return query.all
+    end
+
+    def delete_picture(picture_id)
+      image = ActiveStorage::Attachment.find(picture_id)
+      # Synchronously destroy the images and actual resource files.
+      image.purge
     end
 end

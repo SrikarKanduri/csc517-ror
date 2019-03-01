@@ -8,13 +8,13 @@ class Ability
       can :manage, :all
 
     elsif user.role.eql? "agent"
-      can [:read, :create], Tour
+      can [:read, :create, :search, :show_search], Tour
       can :manage, Tour, :users => { :id => user.id }
       can :read, Review
 
     elsif user.role.eql? "customer"
       can :read, Tour
-      can :search, Tour
+      can [:search, :show_search], Tour
       can :bookmark, Tour
       can :undo_bookmark, Tour
       can :book, Tour

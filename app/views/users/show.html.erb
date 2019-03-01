@@ -2,28 +2,43 @@
 
 <% if current_user && @user %>
 
-<div class="available-options">
-<!--  This is the admin (current_user) viewing some other user (agent or customer)-->
-  <% if current_user.id != @user.id && current_user.role == "admin" %>
-    <h4><b>The User to modify... </b></h4>
-    <p><b>Full name: </b><%= @user.first_name %> <%= @user.last_name %></p>
-    <p><b>Email: </b><%= @user.email %></p>
-    <p><b>Role: </b><%= @user.role %></p>
-    <h4><b>Available Options: </b></h4>
-    <%= button_to ("Delete User"), user_path(@user.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-    <br>
-    <%= link_to 'Edit User', edit_user_path(@user) %>
+  <div class="available-options">
+    <div id="show-links">
+      <% if current_user.id != @user.id && current_user.role == "admin" %>
+          <!--  This is the admin (current_user) viewing some other user (agent or customer)-->
+          <span><%= link_to ("Delete User"), user_path(@user.id), method: :delete, data: { confirm: 'Are you sure?' } %></span>
+          <span><%= link_to 'Edit User', edit_user_path(@user) %></span>
+      <% else %>
+        <!--  This is the user (agent or customer) viewing their profile-->
+        <span><%= link_to 'Edit Myself', edit_user_path(@user) %></span>
+        <% if @user.role != "admin" %>
+          <span><%= link_to ("Delete Myself"), user_path(@user.id), method: :delete, data: { confirm: 'Are you sure?' } %></span>
+        <% end %>
+      <% end %>
+    </div>
 
-<!--  This is the user (agent or customer) viewing their profile-->
-  <% else %>
-    <h4><b>Available Options: </b></h4>
-    <% if @user.role != "admin" %>
-      <%= button_to ("Delete Myself"), user_path(@user.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-    <br>
-    <%= link_to 'Edit Myself', edit_user_path(@user) %>
-  <% end %>
-</div>
+      <div class="user-show-page-fields">
+        <p>
+          <span><strong>First Name:</strong></span>
+          <span><%= @user.first_name %></span>
+        </p>
+
+        <p>
+          <span><strong>Last Name:</strong></span>
+          <span><%= @user.last_name %></span>
+        </p>
+
+        <p>
+          <span><strong>Email:</strong></span>
+          <span><%= @user.email %></span>
+        </p>
+
+        <p>
+          <span><strong>Role:</strong></span>
+          <span><%= @user.role %></span>
+        </p>
+      </div>
+  </div>
 
 <% else %>
   An error has occurred. This page requires both current_user and @user of which, none were found

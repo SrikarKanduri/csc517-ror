@@ -121,7 +121,7 @@ class ReviewsController < ApplicationController
         redirect_to home_url, notice: "Agents cannot create reviews"
       elsif tour_id == nil
         redirect_to tours_url, notice: "No tour id found in url"
-      elsif !UserTour.find_by(tour_id: tour_id, user_id: user_id)
+      elsif !UserTour.find_by(tour_id: tour_id, user_id: user_id) && !current_user.role.eql?("admin")
         redirect_to tours_url, notice: "No tour found for the User"
       elsif !tour
         redirect_to tours_url, notice: "The selected Tour for User is not 'Completed'"
@@ -137,8 +137,8 @@ class ReviewsController < ApplicationController
 
       if current_user.role == "agent"
         redirect_to tours_url, notice: "Agents cannot delete reviews"
-      elsif !UserTour.find_by(user_id: user_id, tour_id: tour_id)
-        redirect_to tours_url, notice: "Cannot delete tour. You did not book this tour."
+      elsif !UserTour.find_by(user_id: user_id, tour_id: tour_id) && !current_user.role.eql?("admin")
+        redirect_to tours_url, notice: "Cannot delete review. You did not book this tour."
       else
         @review = review
       end

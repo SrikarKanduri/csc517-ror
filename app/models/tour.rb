@@ -3,20 +3,7 @@ class Tour < ApplicationRecord
   has_many :users, through: :user_tours
   has_many :tour_locations, dependent: :delete_all
   accepts_nested_attributes_for :tour_locations, allow_destroy: true
-
-  # search is only for available tours
-  # default_scope { where(status: "In Future") }
-
-  scope :status, -> (status) { where status: status}
-  scope :booking_deadline, -> (booking_deadline) { where booking_deadline:booking_deadline}
-  scope :from_date, -> (from_date) { where from_date: from_date }
-  scope :to_date, -> (to_date) { where to_date: to_date }
-  scope :price, -> (price) { where price: price}
-  scope :total_seats, -> (total_seats) { where total_seats: total_seats}
-  scope :itinerary, -> (itinerary) { joins(:tour_locations).merge(TourLocation.country(itinerary.country))}
-  # scope :with_shipped_device, -> {
-  #   joins(:device).merge(Device.shipped)
-  # }
+  has_many_attached :images
 
   enum status: {
       in_future: "In Future",
@@ -24,11 +11,41 @@ class Tour < ApplicationRecord
       cancelled: "Cancelled"
   }
 
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :price, presence: true
+  validates :booking_deadline, presence: true
+  validates :from_date, presence: true
+  validates :to_date, presence: true
+  validates :total_seats, presence: true
+  validates :op_email, presence: true
+  # Make sure a tour's status can't be Cancelled or In Future if it has already started
+  validates :status,
+            exclusion: {in: %w(cancelled in_future),
+                        if: :from_date_passed?,
+                        message: "cannot be changed to 'Completed' or 'In Future' if the Tour has already started"}
+
+  scope :status, -> (status) { where status: status}
+  scope :from_date, -> (from_date) { where from_date: from_date }
+  scope :to_date, -> (to_date) { where to_date: to_date }
+  scope :price, -> (price) { where price: price}
+
+  def from_date_passed?
+    return Date.today >= from_date if from_date.present?
+    false
+  end
+
+  def booking_deadline_passed?
+    return Date.today > booking_deadline if booking_deadline.present?
+    false
+  end
+
   after_update do
+    # if a tour's status is updated to 'cancelled', then delete associated user_tours records through the 'users' attribute
     if status.to_s.eql? "cancelled"
-      #users.where.not(role: "admin").destroy_all
-      test = user_tours.where.not(:users => {:roll => 'agent'})
-      puts test
+      users.each do |user|
+        users.delete(user) unless user.role.eql? 'agent'
+      end
     end
   end
 
@@ -45,8 +62,9 @@ class Tour < ApplicationRecord
     seats_available = tour.total_seats - Tour.seats_booked(tour_id)
     seats_waitlisted = Tour.seats_waitlisted(tour_id)
     user_tour = UserTour.get_user_tour(tour_id, user_id)
+    customers = tour.users
 
-    {:tour => tour, :seats_available => seats_available, :user_tour => user_tour, :seats_waitlisted => seats_waitlisted}
+    {:tour => tour, :seats_available => seats_available, :user_tour => user_tour, :seats_waitlisted => seats_waitlisted, :customers => customers}
   end
 
   def add_bookmark(current_user)

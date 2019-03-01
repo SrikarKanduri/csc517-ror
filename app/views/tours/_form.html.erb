@@ -29,17 +29,17 @@
 
   <div class="field">
     <%= form.label :booking_deadline %>
-    <%= form.datetime_select :booking_deadline %>
+    <%= form.datetime_select :booking_deadline, default: DateTime.current.midnight %>
   </div>
 
   <div class="field">
     <%= form.label :from_date, "From Date" %>
-    <%= form.date_select :from_date %>
+    <%= form.date_field :from_date %>
   </div>
 
   <div class="field">
     <%= form.label :to_date, "To Date" %>
-    <%= form.date_select :to_date %>
+    <%= form.date_field :to_date %>
   </div>
 
   <div class="field">
@@ -93,7 +93,31 @@
     <%= form.add_nested_fields_link :tour_locations %>
   </div>
 
+  <!-- Pictures section -->
+  <div id="pictures">
+    <!-- Photo(s) upload -->
+    <div class="field page-title add-photos">
+      <h2>Upload Photo(s)</h2>
+<!--      <span><%#= form.label :title, "Choose picture(s)" %></span>-->
+      <span><%= form.file_field :images, multiple: true %><br></span>
+    </div>
+
+    <!-- Delete Photo section -->
+    <h4>&nbsp;</h4>
+    <% if @tour.images.attached? %>
+      <ul>
+        <% @tour.images.each do |image| %>
+          <li>
+            <%= image_tag image %>
+            <%= link_to 'Delete Picture', tour_path(id: @tour.id, picture_id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
   <div class="actions create">
     <%= form.submit %>
   </div>
 <% end %>
+
