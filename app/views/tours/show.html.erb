@@ -168,20 +168,30 @@
               <span>Tickets Waitlisted: </span>
               <span><%= @user_tour.num_wait_listed %></span>
               <span>
-                <%= form_with :url => update_booking_path, method: :post, id: :update_book_form, data: {}, class: "update_booking" do |f| %>
-                  <%= f.submit "cancel seats" %>
-                  <%= f.hidden_field :cancel_seats, :value =>nil, :id => 'seats_to_cancel' %>
-                  <%= f.hidden_field :id, :value => @tour.id %>
+                <%= form_with :url => update_booking_path, method: :post, id: :update_book_form, data: {"start-date" => @tour.from_date.to_s}, class: "update_booking" do |f| %>
+                  <% if @tour.from_date_passed? %>
+                    <%= f.submit "cancel seats", disabled: true  %>
+                  <% else %>
+                    <%= f.submit "cancel seats" %>
+                    <%= f.hidden_field :cancel_seats, :value =>nil, :id => 'seats_to_cancel' %>
+                    <%= f.hidden_field :id, :value => @tour.id %>
+                  <% end %>
                 <% end %>
               </span>
             </div>
           <% else %>
             <%= form_with :url => book_path, method: :post, id: :book_form, data: {"seats" => @seats_available} do |f| %>
-            <%= f.submit "Book Tour" %>
-              <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
-              <%= f.select(:num_seats, options_for_select(1..@tour.total_seats), {}, {id: 'book_tour_select'}) %>
-              <%= f.hidden_field :waitlist_amt, :value => nil, :id => 'waitlist_amt' %>
-              <%= f.hidden_field :id, :value => @tour.id %>
+              <% if @tour.booking_deadline_passed? || @tour.from_date_passed? %>
+                <%= f.submit "Book Tour", disabled: true %>
+                <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
+                <%= f.select(:num_seats, options_for_select(1..@tour.total_seats), {}, {id: 'book_tour_select', disabled: true}) %>
+              <% else %>
+                <%= f.submit "Book Tour" %>
+                <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
+                <%= f.select(:num_seats, options_for_select(1..@tour.total_seats), {}, {id: 'book_tour_select'}) %>
+                <%= f.hidden_field :waitlist_amt, :value => nil, :id => 'waitlist_amt' %>
+                <%= f.hidden_field :id, :value => @tour.id %>
+              <% end %>
             <% end %>
           <% end %>
         </span>

@@ -22,25 +22,21 @@ class Tour < ApplicationRecord
   # Make sure a tour's status can't be Cancelled or In Future if it has already started
   validates :status,
             exclusion: {in: %w(cancelled in_future),
-                        if: :from_date_past?,
+                        if: :from_date_passed?,
                         message: "cannot be changed to 'Completed' or 'In Future' if the Tour has already started"}
 
-  # search is only for available tours
-  # default_scope { where(status: "In Future") }
-
   scope :status, -> (status) { where status: status}
-  #scope :booking_deadline, -> (booking_deadline) { where booking_deadline:booking_deadline}
   scope :from_date, -> (from_date) { where from_date: from_date }
   scope :to_date, -> (to_date) { where to_date: to_date }
   scope :price, -> (price) { where price: price}
-  #scope :total_seats, -> (total_seats) { where total_seats: total_seats}
-  #scope :itinerary, -> (itinerary) { joins(:tour_locations).merge(TourLocation.country(itinerary.country))}
-  # scope :with_shipped_device, -> {
-  #   joins(:device).merge(Device.shipped)
-  # }
 
-  def from_date_past?
+  def from_date_passed?
     return Date.today >= from_date if from_date.present?
+    false
+  end
+
+  def booking_deadline_passed?
+    return Date.today > booking_deadline if booking_deadline.present?
     false
   end
 

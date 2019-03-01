@@ -108,12 +108,17 @@ label, textarea {
     margin-left: 15px;
 }
 
+.other-links {
+    margin-top: 20px;
+}
+
 .other-links span {
     margin: 10px 10px 0 0;
 }
 
 .num-seats-label {
     margin-left: 10px;
+    display: inline;
 }
 
 .no-close .ui-dialog-titlebar-close {
