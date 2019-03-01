@@ -25,7 +25,7 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true, if: :user_is_not_admin?
 
   validates :password,
-            :length => { minimum: 6 },
+            :length => { minimum: 5 },
             :if => lambda{ new_record? || !password.nil? }
 
   # check if user is admin
