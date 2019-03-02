@@ -46301,3 +46301,106 @@ Processing by ToursController#index as HTML
 Completed 200 OK in 268ms (Views: 235.3ms | ActiveRecord: 10.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-03-01 20:55:58 -0500
+  [1m[35m (2.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 911ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-03-01 20:56:00 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (13.2ms)
+  Rendered sessions/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 829ms (Views: 828.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-03-01 20:57:01 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@test.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@test.org' LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 401 Unauthorized in 188ms (Views: 148.7ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2019-03-01 20:57:06 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"admin@csc517.org", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@csc517.org' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 89ms (ActiveRecord: 20.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 20:57:06 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1565bee91695ab22c57c5c140739f88ddc6b6335' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 180ms (Views: 177.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tours?my_tours=true" for 127.0.0.1 at 2019-03-01 20:57:12 -0500
+Processing by ToursController#index as HTML
+  Parameters: {"my_tours"=>"true"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1565bee91695ab22c57c5c140739f88ddc6b6335' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (1.3ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` INNER JOIN `user_tours` ON `tours`.`id` = `user_tours`.`tour_id` WHERE `user_tours`.`user_id` = 14[0m
+  [1m[36mUserTour Load (0.4ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 1 LIMIT 1[0m
+  [1m[36mUserTour Load (0.4ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 2 LIMIT 1[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 3 LIMIT 1[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 4 LIMIT 1[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 5 LIMIT 1[0m
+  Rendered tours/index.html.erb within layouts/application (73.2ms)
+Completed 200 OK in 273ms (Views: 216.1ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/tours/new" for 127.0.0.1 at 2019-03-01 20:57:14 -0500
+Processing by ToursController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1565bee91695ab22c57c5c140739f88ddc6b6335' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (39.3ms)
+  Rendered tours/new.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 260ms (Views: 209.6ms | ActiveRecord: 24.9ms)
+
+
+Started POST "/tours" for 127.0.0.1 at 2019-03-01 20:57:56 -0500
+Processing by ToursController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "tour"=>{"name"=>"Sample Tour", "description"=>"a sample tour", "price"=>"100", "booking_deadline(1i)"=>"2019", "booking_deadline(2i)"=>"3", "booking_deadline(3i)"=>"2", "booking_deadline(4i)"=>"00", "booking_deadline(5i)"=>"00", "from_date"=>"1/1/2019", "to_date"=>"3/1/2019", "total_seats"=>"10", "op_email"=>"bnmwanik@ncsu.edu", "op_phone"=>"", "status"=>"In Future", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"NC", "country"=>"USA"}}, "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fec9c3e8df8 @tempfile=#<Tempfile:/var/folders/cl/lb2b0th54mng7_j0mhlvf15w0000gn/T/RackMultipart20190301-30785-1suxl05.jpg>, @original_filename="horse.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"tour[images][]\"; filename=\"horse.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Tour"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1565bee91695ab22c57c5c140739f88ddc6b6335' ORDER BY `users`.`id` ASC LIMIT 1[0m
+[36m  Disk Storage (2.1ms) [0m[32mUploaded file to key: bfxAqRVJi84YExC1YDvMDEEi (checksum: DibmJ18tDATt7NEvLVRO0w==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (2.5ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('bfxAqRVJi84YExC1YDvMDEEi', 'horse.jpg', 'image/jpeg', '{\"identified\":true}', 11518, 'DibmJ18tDATt7NEvLVRO0w==', '2019-03-02 01:57:56')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (1.1ms) [0m[32mUploaded file to key: 87Hp88Wyjjzib9GYHQ3vzhUg (checksum: DibmJ18tDATt7NEvLVRO0w==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (1.3ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('87Hp88Wyjjzib9GYHQ3vzhUg', 'horse.jpg', 'image/jpeg', '{\"identified\":true}', 11518, 'DibmJ18tDATt7NEvLVRO0w==', '2019-03-02 01:57:56')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (13.9ms)
+  Rendered tours/new.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 17.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"tours", :id=>nil, :picture_id=>nil}, possible unmatched constraints: [:id]):
+    109:         <% @tour.images.each do |image| %>
+    110:           <li>
+    111:             <%= image_tag image %>
+    112:             <%= link_to 'Delete Picture', tour_path(id: @tour.id, picture_id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    113:           </li>
+    114:         <% end %>
+    115:       </ul>
+  
+app/views/tours/_form.html.erb:112:in `block (2 levels) in _app_views_tours__form_html_erb__1838800764479578690_70327152407000'
+app/views/tours/_form.html.erb:109:in `block in _app_views_tours__form_html_erb__1838800764479578690_70327152407000'
+app/views/tours/_form.html.erb:1:in `_app_views_tours__form_html_erb__1838800764479578690_70327152407000'
+app/views/tours/new.html.erb:3:in `_app_views_tours_new_html_erb__3486678389043372780_70327107177060'
+app/controllers/tours_controller.rb:92:in `block (2 levels) in create'
+app/controllers/tours_controller.rb:85:in `create'
