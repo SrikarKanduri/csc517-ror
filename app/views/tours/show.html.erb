@@ -207,7 +207,7 @@
   <% if @user_tour && @user_tour.num_booked %>
     <div id="cancel_seats_dialog" title="Cancel Seats" style="display:none">
       <p>How many seats would you like to cancel?</p>
-      <%= select_tag(:cancel_seats_select, options_for_select(1..@user_tour.num_booked)) %>
+      <%= select_tag(:cancel_seats_select, options_for_select(1..@user_tour.num_booked+@user_tour.num_wait_listed)) %>
     </div>
   <% end %>
 </div>

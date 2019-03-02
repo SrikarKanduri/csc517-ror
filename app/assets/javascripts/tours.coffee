@@ -47,8 +47,6 @@ $(document).on 'turbolinks:load', ->
     width: 400,
     modal: true,
     buttons: {
-      Cancel: ->
-        $(this).dialog('close')
       Submit: ->
         $('#seats_to_cancel').val($('#cancel_seats_select').val())
         $('#update_book_form').submit()
