@@ -170,6 +170,7 @@
                 <%= form_with :url => update_booking_path, method: :post, id: :update_book_form, data: {"start-date" => @tour.from_date.to_s}, class: "update_booking" do |f| %>
                   <% if @tour.from_date_passed? || %w[completed cancelled].include?(@tour.status) %>
                     <%= f.submit "cancel seats", disabled: true  %>
+                    <span style="color: red; margin-left: 10px;">Cannot modify booking after start date or if Tour is completed</span>
                   <% else %>
                     <%= f.submit "cancel seats" %>
                     <%= f.hidden_field :cancel_seats, :value =>nil, :id => 'seats_to_cancel' %>
@@ -184,6 +185,7 @@
                 <%= f.submit "Book Tour", disabled: true %>
                 <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>
                 <%= f.select(:num_seats, options_for_select(1..@tour.total_seats), {}, {id: 'book_tour_select', disabled: true}) %>
+                <span style="color: red; margin-left: 10px;">Cannot book after start date or booking deadline or if Tour is completed'</span>
               <% else %>
                 <%= f.submit "Book Tour" %>
                 <%= f.label :num_seats, "# seats: ", :class => 'num-seats-label' %>

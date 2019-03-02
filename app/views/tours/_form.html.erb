@@ -102,17 +102,19 @@
       <span><%= form.file_field :images, multiple: true %><br></span>
     </div>
 
-    <!-- Delete Photo section -->
-    <h4>&nbsp;</h4>
-    <% if @tour.images.attached? %>
-      <ul>
-        <% @tour.images.each do |image| %>
-          <li>
-            <%= image_tag image %>
-            <%= link_to 'Delete Picture', tour_path(id: @tour.id, picture_id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-          </li>
-        <% end %>
-      </ul>
+    <% if @tour.id %>
+      <!-- Delete Photo section -->
+      <h4>&nbsp;</h4>
+      <% if @tour.images.attached? %>
+        <ul>
+          <% @tour.images.each do |image| %>
+            <li>
+              <%= image_tag image %>
+              <%= link_to 'Delete Picture', tour_path(id: @tour.id, picture_id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
     <% end %>
   </div>
 

@@ -45,7 +45,7 @@
 
         <% if %w[admin customer].include?(current_user.role) %>
           <span><%= link_to "My Bookmarked Tours", tours_path(:bookmarked_tours => true) %></span>
-          <span><%= link_to "My Waitlisted Tours", tours_path(:waitlisted_tours => true) %></span>
+<!--          <span><%#= link_to "My Waitlisted Tours", tours_path(:waitlisted_tours => true) %></span>-->
         <% end %>
 
         <span><%= link_to "All Reviews", reviews_path %></span>

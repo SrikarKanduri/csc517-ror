@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 #
 
-## Local host connection
+# Local host connection
 #default: &default
 #  adapter: mysql2
 #  username: "root"

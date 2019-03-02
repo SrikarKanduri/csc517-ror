@@ -35,9 +35,9 @@ class ToursController < ApplicationController
           @tours = current_user.tours
           @page_title = "My Tours"
         elsif current_user.role.eql? 'customer'
-          booked_user_tours = current_user.user_tours.select {|x| x.booked?}
+          booked_user_tours = current_user.user_tours.select {|x| x.booked? || x.wait_listed?}
           @tours = booked_user_tours.map {|ut| Tour.find(ut[:tour_id])}
-          @page_title = "My Booked Tours"
+          @page_title = "My Tours"
         end
       elsif bookmarked_tours
         bookmarked_user_tours = current_user.user_tours.select {|x| x.bookmarked?}

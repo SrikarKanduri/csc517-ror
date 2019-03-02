@@ -114,18 +114,38 @@ class Tour < ApplicationRecord
   def update_booking(current_user, num_cancel_seats)
 
     user_tour = UserTour.get_user_tour(id, current_user.id)
-    user_tour[:num_booked] = user_tour[:num_booked] - num_cancel_seats
+    num_waitlisted_seats = user_tour[:num_wait_listed] || 0
+    num_booked_seats = user_tour[:num_booked_seats] || 0
+
+    if user_tour[:num_booked].zero?
+      # then subtract all seats from the waitlist
+      user_tour[:num_wait_listed] = [num_waitlisted_seats - num_cancel_seats, 0].max
+    elsif num_booked_seats <= num_cancel_seats
+      # then subtract all booked seats
+      remaining_seats = num_cancel_seats - num_booked_seats
+      user_tour[:num_booked] = 0
+      user_tour[:num_wait_listed] = [num_waitlisted_seats - remaining_seats, 0].max
+    else
+      # then num booked seats is greater than the num seats to cancel
+      user_tour[:num_booked] = [num_booked_seats - num_cancel_seats, 0].max
+    end
 
     if user_tour[:num_booked].zero?
       user_tour[:booked] = false
-      user_tour[:wait_listed] = false
-      user_tour[:num_wait_listed] = 0
-      users.delete(current_user) unless user_tour[:bookmarked]
     end
+
+    if user_tour[:num_wait_listed].zero?
+      user_tour[:wait_listed] = false
+    end
+
     user_tour.save
 
+    users.delete(current_user) unless user_tour[:bookmarked] || user_tour[:booked] || user_tour[:wait_listed]
+
+    num_available_seats = total_seats - Tour.seats_booked(id)
+
     waitlisted = Tour.seats_waitlisted(id)
-    next_waitlisted_customer = users.joins(:user_tours).where({user_tours: {num_wait_listed: 1..num_cancel_seats}})
+    next_waitlisted_customer = users.joins(:user_tours).where({user_tours: {num_wait_listed: 1..num_available_seats}})
                                    .order("user_tours.waitlisted_at").first()
     if waitlisted > 0 && next_waitlisted_customer
       new_user_tour = UserTour.get_user_tour(id, next_waitlisted_customer.id)
