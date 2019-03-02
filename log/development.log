@@ -46404,3 +46404,121 @@ app/views/tours/_form.html.erb:1:in `_app_views_tours__form_html_erb__1838800764
 app/views/tours/new.html.erb:3:in `_app_views_tours_new_html_erb__3486678389043372780_70327107177060'
 app/controllers/tours_controller.rb:92:in `block (2 levels) in create'
 app/controllers/tours_controller.rb:85:in `create'
+Started GET "/tours/new" for 127.0.0.1 at 2019-03-01 21:15:00 -0500
+Started GET "/tours" for 127.0.0.1 at 2019-03-01 21:15:00 -0500
+  [1m[35m (1.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.8ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ToursController#index as HTML
+Processing by ToursController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1565bee91695ab22c57c5c140739f88ddc6b6335' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (17.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1565bee91695ab22c57c5c140739f88ddc6b6335' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tours/index.html.erb within layouts/application
+  [1m[36mTour Load (5.0ms)[0m  [1m[34mSELECT `tours`.* FROM `tours`[0m
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (1345.9ms)
+  Rendered tours/new.html.erb within layouts/application (1366.2ms)
+Completed 200 OK in 2217ms (Views: 2000.2ms | ActiveRecord: 81.7ms)
+
+
+  [1m[36mUserTour Load (1.4ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 1 LIMIT 1[0m
+  [1m[36mUserTour Load (0.4ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 2 LIMIT 1[0m
+  [1m[36mUserTour Load (0.4ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 3 LIMIT 1[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 4 LIMIT 1[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 5 LIMIT 1[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 6 LIMIT 1[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 7 LIMIT 1[0m
+  Rendered tours/index.html.erb within layouts/application (2137.0ms)
+Completed 200 OK in 2465ms (Views: 2345.1ms | ActiveRecord: 40.2ms)
+
+
+Started POST "/tours" for 127.0.0.1 at 2019-03-01 21:15:58 -0500
+Processing by ToursController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "tour"=>{"name"=>"Sample Tour 5", "description"=>"Please work", "price"=>"44", "booking_deadline(1i)"=>"2019", "booking_deadline(2i)"=>"3", "booking_deadline(3i)"=>"2", "booking_deadline(4i)"=>"00", "booking_deadline(5i)"=>"00", "from_date"=>"5/4/2013", "to_date"=>"9/4/2018", "total_seats"=>"5", "op_email"=>"bnmwaniki@gmail.com", "op_phone"=>"", "status"=>"In Future", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"WV", "country"=>"USA"}}, "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fd67032e9b8 @tempfile=#<Tempfile:/var/folders/cl/lb2b0th54mng7_j0mhlvf15w0000gn/T/RackMultipart20190301-33478-yodjaj.jpg>, @original_filename="horse.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"tour[images][]\"; filename=\"horse.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Tour"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1565bee91695ab22c57c5c140739f88ddc6b6335' ORDER BY `users`.`id` ASC LIMIT 1[0m
+[36m  Disk Storage (4.0ms) [0m[32mUploaded file to key: v8vY3Hgc88CR1ip7SVHY4XHR (checksum: DibmJ18tDATt7NEvLVRO0w==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (2.2ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('v8vY3Hgc88CR1ip7SVHY4XHR', 'horse.jpg', 'image/jpeg', '{\"identified\":true}', 11518, 'DibmJ18tDATt7NEvLVRO0w==', '2019-03-02 02:15:58')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (2.2ms) [0m[32mUploaded file to key: 4u5BpGsfnf8Q33BvFE9qEgiK (checksum: DibmJ18tDATt7NEvLVRO0w==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('4u5BpGsfnf8Q33BvFE9qEgiK', 'horse.jpg', 'image/jpeg', '{\"identified\":true}', 11518, 'DibmJ18tDATt7NEvLVRO0w==', '2019-03-02 02:15:58')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering tours/new.html.erb within layouts/application
+  Rendered tours/_form.html.erb (12.3ms)
+  Rendered tours/new.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 300ms (Views: 201.4ms | ActiveRecord: 24.4ms)
+
+
+Started POST "/tours" for 127.0.0.1 at 2019-03-01 21:16:43 -0500
+Processing by ToursController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "tour"=>{"name"=>"Sample Tour 5", "description"=>"Please work", "price"=>"44", "booking_deadline(1i)"=>"2019", "booking_deadline(2i)"=>"3", "booking_deadline(3i)"=>"2", "booking_deadline(4i)"=>"00", "booking_deadline(5i)"=>"00", "from_date"=>"2019-04-05", "to_date"=>"2019-04-09", "total_seats"=>"5", "op_email"=>"bnmwaniki@gmail.com", "op_phone"=>"", "status"=>"In Future", "tour_locations_attributes"=>{"0"=>{"state_or_province"=>"WV", "country"=>"USA"}}, "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fd671f0dfd0 @tempfile=#<Tempfile:/var/folders/cl/lb2b0th54mng7_j0mhlvf15w0000gn/T/RackMultipart20190301-33478-1lqb09d.jpg>, @original_filename="horse.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"tour[images][]\"; filename=\"horse.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Tour"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1565bee91695ab22c57c5c140739f88ddc6b6335' ORDER BY `users`.`id` ASC LIMIT 1[0m
+[36m  Disk Storage (1.5ms) [0m[32mUploaded file to key: mysdkwaj9gQXLgF8RzJ7oR49 (checksum: DibmJ18tDATt7NEvLVRO0w==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('mysdkwaj9gQXLgF8RzJ7oR49', 'horse.jpg', 'image/jpeg', '{\"identified\":true}', 11518, 'DibmJ18tDATt7NEvLVRO0w==', '2019-03-02 02:16:43')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (1.4ms) [0m[32mUploaded file to key: jTcKQ1Stv1WQmgGqMHMVfKzp (checksum: DibmJ18tDATt7NEvLVRO0w==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('jTcKQ1Stv1WQmgGqMHMVfKzp', 'horse.jpg', 'image/jpeg', '{\"identified\":true}', 11518, 'DibmJ18tDATt7NEvLVRO0w==', '2019-03-02 02:16:43')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTour Create (0.4ms)[0m  [1m[32mINSERT INTO `tours` (`name`, `description`, `created_at`, `updated_at`, `price`, `booking_deadline`, `from_date`, `to_date`, `total_seats`, `op_email`, `op_phone`, `status`) VALUES ('Sample Tour 5', 'Please work', '2019-03-02 02:16:43', '2019-03-02 02:16:43', 44.0, '2019-03-02 00:00:00', '2019-04-05', '2019-04-09', 5, 'bnmwaniki@gmail.com', '', 'In Future')[0m
+  [1m[36mTourLocation Create (1.0ms)[0m  [1m[32mINSERT INTO `tour_locations` (`country`, `state_or_province`, `tour_id`, `created_at`, `updated_at`) VALUES ('USA', 'WV', 8, '2019-03-02 02:16:43', '2019-03-02 02:16:43')[0m
+  [1m[36mActiveStorage::Attachment Create (0.4ms)[0m  [1m[32mINSERT INTO `active_storage_attachments` (`name`, `record_type`, `record_id`, `blob_id`, `created_at`) VALUES ('images', 'Tour', 8, 17, '2019-03-02 02:16:43')[0m
+  [1m[36mTour Update (0.2ms)[0m  [1m[33mUPDATE `tours` SET `updated_at` = '2019-03-02 02:16:43' WHERE `tours`.`id` = 8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 59359d27-11a0-49d1-aa25-0570d4caa7c2) to Async(default) with arguments: #<GlobalID:0x00007fd676224bc0 @uri=#<URI::GID gid://rails-web-app/ActiveStorage::Blob/17>>
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 17 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [59359d27-11a0-49d1-aa25-0570d4caa7c2] Performing ActiveStorage::AnalyzeJob (Job ID: 59359d27-11a0-49d1-aa25-0570d4caa7c2) from Async(default) with arguments: #<GlobalID:0x00007fd6705cc198 @uri=#<URI::GID gid://rails-web-app/ActiveStorage::Blob/17>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [59359d27-11a0-49d1-aa25-0570d4caa7c2] [36m  Disk Storage (0.6ms) [0m[34mDownloaded file from key: jTcKQ1Stv1WQmgGqMHMVfKzp[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [59359d27-11a0-49d1-aa25-0570d4caa7c2] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [59359d27-11a0-49d1-aa25-0570d4caa7c2]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [59359d27-11a0-49d1-aa25-0570d4caa7c2]   [1m[36mActiveStorage::Blob Update (2.2ms)[0m  [1m[33mUPDATE `active_storage_blobs` SET `metadata` = '{\"identified\":true,\"analyzed\":true}' WHERE `active_storage_blobs`.`id` = 17[0m
+  [1m[36mUserTour Create (0.7ms)[0m  [1m[32mINSERT INTO `user_tours` (`user_id`, `tour_id`, `created_at`, `updated_at`) VALUES (14, 8, '2019-03-02 02:16:43', '2019-03-02 02:16:43')[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [59359d27-11a0-49d1-aa25-0570d4caa7c2]   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [59359d27-11a0-49d1-aa25-0570d4caa7c2] Performed ActiveStorage::AnalyzeJob (Job ID: 59359d27-11a0-49d1-aa25-0570d4caa7c2) from Async(default) in 26.24ms
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tours/8
+Completed 302 Found in 105ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/tours/8" for 127.0.0.1 at 2019-03-01 21:16:43 -0500
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`remember_token` = '1565bee91695ab22c57c5c140739f88ddc6b6335' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 8 LIMIT 1[0m
+  [1m[36mCACHE Tour Load (0.0ms)[0m  [1m[34mSELECT  `tours`.* FROM `tours` WHERE `tours`.`id` = 8 LIMIT 1[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_booked`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 8 AND `user_tours`.`booked` = TRUE[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM(`user_tours`.`num_wait_listed`) FROM `user_tours` WHERE `user_tours`.`tour_id` = 8 AND `user_tours`.`wait_listed` = TRUE[0m
+  [1m[36mUserTour Load (0.2ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 8 LIMIT 1[0m
+  Rendering tours/show.html.erb within layouts/application
+  [1m[36mTourLocation Load (0.4ms)[0m  [1m[34mSELECT `tour_locations`.* FROM `tour_locations` WHERE `tour_locations`.`tour_id` = 8[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `user_tours` ON `users`.`id` = `user_tours`.`user_id` WHERE `user_tours`.`tour_id` = 8[0m
+  [1m[36mUserTour Load (0.3ms)[0m  [1m[34mSELECT  `user_tours`.* FROM `user_tours` WHERE `user_tours`.`user_id` = 14 AND `user_tours`.`tour_id` = 8 LIMIT 1[0m
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 8 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images' LIMIT 1[0m
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 8 AND `active_storage_attachments`.`record_type` = 'Tour' AND `active_storage_attachments`.`name` = 'images'[0m
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 17 LIMIT 1[0m
+  Rendered tours/show.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 267ms (Views: 255.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ed746746f66f53a6b12ce6e5643fc2ad2414a2ce/horse.jpg" for 127.0.0.1 at 2019-03-01 21:16:44 -0500
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ed746746f66f53a6b12ce6e5643fc2ad2414a2ce", "filename"=>"horse"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 17 LIMIT 1[0m
+[36m  Disk Storage (1.2ms) [0m[34mGenerated URL for file at key: jTcKQ1Stv1WQmgGqMHMVfKzp (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhbFJqUzFFeFUzUjJNVmRSYldkSGNVMUlUVlptUzNwd0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhRzl5YzJVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRvYjNKelpTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMlQwMjoyMTo0NC4zODFaIiwicHVyIjoiYmxvYl9rZXkifX0=--790cdd0abdc76866570a7a0b6af3541399693ee6/horse.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22horse.jpg%22%3B+filename%2A%3DUTF-8%27%27horse.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhbFJqUzFFeFUzUjJNVmRSYldkSGNVMUlUVlptUzNwd0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhRzl5YzJVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRvYjNKelpTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMlQwMjoyMTo0NC4zODFaIiwicHVyIjoiYmxvYl9rZXkifX0=--790cdd0abdc76866570a7a0b6af3541399693ee6/horse.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22horse.jpg%22%3B+filename%2A%3DUTF-8%27%27horse.jpg
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhbFJqUzFFeFUzUjJNVmRSYldkSGNVMUlUVlptUzNwd0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhRzl5YzJVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRvYjNKelpTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMlQwMjoyMTo0NC4zODFaIiwicHVyIjoiYmxvYl9rZXkifX0=--790cdd0abdc76866570a7a0b6af3541399693ee6/horse.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22horse.jpg%22%3B+filename%2A%3DUTF-8%27%27horse.jpg" for 127.0.0.1 at 2019-03-01 21:16:44 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"horse.jpg\"; filename*=UTF-8''horse.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhbFJqUzFFeFUzUjJNVmRSYldkSGNVMUlUVlptUzNwd0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhRzl5YzJVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRvYjNKelpTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMy0wMlQwMjoyMTo0NC4zODFaIiwicHVyIjoiYmxvYl9rZXkifX0=--790cdd0abdc76866570a7a0b6af3541399693ee6", "filename"=>"horse"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
